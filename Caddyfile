@@ -3,7 +3,7 @@
 # AŞAMA 1 — Doğrulama (DNS henüz conforcus.com'u VPS'e işaret etmiyor):
 # srv hostname zaten VPS IP'sine (152.239.114.242) çözüldüğü için Caddy
 # bunun için geçerli bir sertifika alabilir → https://srv1709361.hstgr.cloud
-srv1709361.hstgr.cloud {
+srv1709361.hstgr.cloud, web.conforcus.com {
 	reverse_proxy web:3000
 }
 
