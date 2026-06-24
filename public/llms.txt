@@ -1,0 +1,37 @@
+# Conforcus
+
+> Conforcus (Conforcus Bilişim Danışmanlık A.Ş.) is a SAP consultancy delivering deep
+> expertise across SAP support (AMS), S/4HANA transformations, global rollout, and 48+
+> ready-made SAP solutions. 130+ active clients, 50+ countries, 30+ industries, 70+
+> consultants, 95% client retention. Headquartered in Ataşehir, İstanbul, Türkiye.
+> Tagline: "Deep Expertise. Smart Solutions. Lasting Trust." Default language Turkish (/),
+> English under /en/.
+
+## Services
+- SAP Support Services (AMS): SLA-backed continuous maintenance, issue resolution and improvement for live SAP systems.
+- S/4HANA Transformations: greenfield, brownfield, cloud and on-premise conversions with a proven methodology.
+- Global Rollout: corporate SAP template deployment across 50+ countries with full local compliance and IFRS-aligned localization.
+- Product & Solution Development: custom builds with ABAP, Fiori and SAP BTP/cloud, plus 48+ ready-made solution packages.
+
+## Confiq — AI Product Family
+- Confiq Decode: ask SAP in plain language, get answers in seconds.
+- Confiq Predict: 3–6 months of foresight in cash flow and financial risk.
+- Confiq Cortex: decision intelligence uniting questions and foresight.
+- Confiq Bridge: smart cross-module data flow and automation.
+- Confiq Scan (FREE): comprehensive SAP system analysis and risk map within 48 hours.
+
+## Key pages
+- Home (TR): https://conforcus.com/
+- Home (EN): https://conforcus.com/en
+- Services / Hizmetler: https://conforcus.com/hizmetler — https://conforcus.com/en/services
+- Solution Catalog / Çözümler (48+ FI, CO, MM, SD, PS, FM solutions): https://conforcus.com/cozumler — https://conforcus.com/en/solutions
+- Confiq AI: https://conforcus.com/confiq — https://conforcus.com/en/confiq
+- References / Referanslar: https://conforcus.com/referanslar — https://conforcus.com/en/references
+- Conforcus Way & Careers: https://conforcus.com/conforcus-way — https://conforcus.com/en/conforcus-way
+- Blog: https://conforcus.com/blog — https://conforcus.com/en/blog
+- Free SAP Analysis / Ücretsiz SAP Analizi: https://conforcus.com/analiz — https://conforcus.com/en/analysis
+
+## Contact
+- Email: info@conforcus.com
+- LinkedIn: https://www.linkedin.com/company/conforcus
+- Address: İçerenköy Mah. Yeşilvadi Sok. No:8, Öneren İş Merkezi Kat:3, Ataşehir / İstanbul, Türkiye
