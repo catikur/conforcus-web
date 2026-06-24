@@ -13,6 +13,14 @@ RUN npm ci
 FROM node:20-alpine AS builder
 WORKDIR /app
 ENV NEXT_TELEMETRY_DISABLED=1
+# Sanity build-time env — derleme sırasında da gerçek içerik üretilsin (SSG ilk hali);
+# runtime'da compose environment ile birlikte ISR tazeler.
+ARG SANITY_PROJECT_ID=""
+ARG SANITY_DATASET="production"
+ARG SANITY_API_VERSION="2024-01-01"
+ENV SANITY_PROJECT_ID=$SANITY_PROJECT_ID \
+    SANITY_DATASET=$SANITY_DATASET \
+    SANITY_API_VERSION=$SANITY_API_VERSION
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 RUN npm run build

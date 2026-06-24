@@ -5,7 +5,12 @@ name: conforcus-web
 
 services:
   web:
-    build: .
+    build:
+      context: .
+      args:
+        SANITY_PROJECT_ID: ${SANITY_PROJECT_ID}
+        SANITY_DATASET: ${SANITY_DATASET:-production}
+        SANITY_API_VERSION: ${SANITY_API_VERSION:-2024-01-01}
     restart: unless-stopped
     expose:
       - "3000"

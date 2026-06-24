@@ -4,6 +4,8 @@ import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata("referanslar", "en");
 
+export const revalidate = 60; // ISR — Sanity icerigi 60sn'de tazelenir
+
 export default function Page() {
   return (
     <>
