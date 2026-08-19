@@ -1,7 +1,7 @@
 import type { Locale } from "./i18n";
 import { COMPANY } from "./site";
 
-export type LegalDoc = { h1: { tr: string; en: string }; paras: { tr: string; en: string }[] };
+export type LegalDoc = { h1: { tr: string; en: string }; paras: readonly { tr: string; en: string }[] };
 
 export const LEGAL = {
   kvkk: {
