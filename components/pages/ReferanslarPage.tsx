@@ -5,6 +5,7 @@ import Testimonials from "@/components/Testimonials";
 import { getReferences, getReferencesByCountry } from "@/lib/references";
 import { getTestimonials } from "@/lib/testimonials";
 import { pathFor, pick, type Locale } from "@/lib/i18n";
+import { lineBreak } from "@/lib/lineBreak";
 
 export default async function ReferanslarPage({ locale }: { locale: Locale }) {
   const [references, refsByCountry, testimonials] = await Promise.all([
@@ -20,19 +21,7 @@ export default async function ReferanslarPage({ locale }: { locale: Locale }) {
         <div className="wrap">
           <div className="eyebrow">{pick(locale, "Referanslarımız", "Our References")}</div>
           <h1>
-            {pick(
-              locale,
-              <>
-                130+ müşteri, 30+ sektör,
-                <br />
-                50+ ülke
-              </>,
-              <>
-                130+ clients, 30+ industries,
-                <br />
-                50+ countries
-              </>
-            )}
+            {pick(locale, lineBreak("130+ müşteri, 30+ sektör,", "50+ ülke"), lineBreak("130+ clients, 30+ industries,", "50+ countries"))}
           </h1>
           <p className="lead">
             {pick(
@@ -72,8 +61,8 @@ export default async function ReferanslarPage({ locale }: { locale: Locale }) {
           <p className="note">
             {pick(
               locale,
-              "* Bu sayfada logo kullanım onayı bulunan müşterilerimiz listelenmektedir; tam referans listesi için bizimle iletişime geçin. Prototipte marka adları yazıyla temsil edilmiştir.",
-              "* This page lists clients who approved logo usage; contact us for the full reference list. Brand names are shown as text in this prototype."
+              "* Bu sayfada logo kullanım onayı bulunan müşterilerimiz listelenmektedir; tam referans listesi için bizimle iletişime geçin.",
+              "* This page lists clients who approved logo usage; contact us for the full reference list."
             )}
           </p>
           <div className="cta-mid">

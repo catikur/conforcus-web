@@ -16,5 +16,6 @@ export const sanityClient = sanityConfigured
       apiVersion,
       useCdn: true, // yayın içeriği; webhook revalidate ile tazelik sağlanır
       perspective: "published",
+      stega: false,
     })
   : null;

@@ -1,5 +1,6 @@
 import { getJobs } from "@/lib/jobs";
 import { pick, type Locale } from "@/lib/i18n";
+import { lineBreak } from "@/lib/lineBreak";
 
 export default async function ConforcusWayPage({ locale }: { locale: Locale }) {
   const jobs = await getJobs(locale);
@@ -10,19 +11,7 @@ export default async function ConforcusWayPage({ locale }: { locale: Locale }) {
         <div className="wrap">
           <div className="eyebrow">Conforcus Way</div>
           <h1>
-            {pick(
-              locale,
-              <>
-                Mutlu çalışan,
-                <br />
-                mutlu müşteri
-              </>,
-              <>
-                Happy employees,
-                <br />
-                happy clients
-              </>
-            )}
+            {pick(locale, lineBreak("Mutlu çalışan,", "mutlu müşteri"), lineBreak("Happy employees,", "happy clients"))}
           </h1>
           <p className="lead">
             {pick(

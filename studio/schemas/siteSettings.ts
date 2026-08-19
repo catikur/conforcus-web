@@ -1,6 +1,5 @@
 import { defineField, defineType } from "sanity";
 
-// Singleton — yalnızca bir doküman (Studio'da "Site Settings" altında düzenlenir).
 export default defineType({
   name: "siteSettings",
   title: "Site Settings / Site Ayarları",
@@ -14,6 +13,7 @@ export default defineType({
     defineField({ name: "hero_cta_primary_en", title: "Hero Primary CTA (EN)", type: "string" }),
     defineField({ name: "hero_cta_secondary_tr", title: "Hero Secondary CTA (TR)", type: "string" }),
     defineField({ name: "hero_cta_secondary_en", title: "Hero Secondary CTA (EN)", type: "string" }),
+    defineField({ name: "seo", title: "SEO", type: "seo" }),
   ],
   preview: { prepare: () => ({ title: "Site Settings" }) },
 });

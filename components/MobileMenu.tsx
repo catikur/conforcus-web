@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { pathFor, pick, type Locale, type RouteKey } from "@/lib/i18n";
+import { COMPANY } from "@/lib/site";
 import { NAV_SECTIONS } from "@/lib/nav";
 import { linkHref, MLink } from "./navShared";
 
@@ -80,6 +81,9 @@ export default function MobileMenu({ locale, activeKey }: { locale: Locale; acti
           );
         })}
 
+        <a className="mobpanel-cta" href={COMPANY.telHref} onClick={() => setOpen(false)} style={{ display: "block", marginBottom: 10, fontWeight: 600 }}>
+          {COMPANY.telephoneDisplay}
+        </a>
         <Link className="btn btn-p mobpanel-cta" href={pathFor("analiz", locale)} onClick={() => setOpen(false)}>
           {pick(locale, "Ücretsiz SAP Analizi", "Free SAP Analysis")}
         </Link>

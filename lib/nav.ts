@@ -42,10 +42,10 @@ export const NAV_SECTIONS: NavSection[] = [
     cta_tr: "Tüm hizmetler →",
     cta_en: "All services →",
     links: [
-      { key: "hizmetler", tr: "SAP Destek Hizmetleri", en: "SAP Support Services", sub_tr: "SLA garantili sürekli destek ve bakım", sub_en: "SLA-backed ongoing support & maintenance" },
-      { key: "hizmetler", tr: "S/4HANA Dönüşümleri", en: "S/4HANA Transformations", sub_tr: "Greenfield, brownfield, bulut ve on-premise", sub_en: "Greenfield, brownfield, cloud & on-premise" },
-      { key: "hizmetler", tr: "Global Rollout", en: "Global Rollout", sub_tr: "6 kıtada, 50+ ülkede şablon yaygınlaştırma", sub_en: "Template deployment across 50+ countries" },
-      { key: "hizmetler", tr: "Ürün & Çözüm Geliştirme", en: "Product & Solution Development", sub_tr: "ABAP, Fiori ve bulutla özel geliştirme", sub_en: "Custom builds with ABAP, Fiori & cloud" },
+      { key: "hizmet-sap-ams", tr: "SAP Destek Hizmetleri", en: "SAP Support Services", sub_tr: "SLA garantili sürekli destek ve bakım", sub_en: "SLA-backed ongoing support & maintenance" },
+      { key: "hizmet-s4hana", tr: "S/4HANA Dönüşümleri", en: "S/4HANA Transformations", sub_tr: "Greenfield, brownfield, bulut ve on-premise", sub_en: "Greenfield, brownfield, cloud & on-premise" },
+      { key: "hizmet-rollout", tr: "Global Rollout", en: "Global Rollout", sub_tr: "6 kıtada, 50+ ülkede şablon yaygınlaştırma", sub_en: "Template deployment across 50+ countries" },
+      { key: "hizmet-urun", tr: "Ürün & Çözüm Geliştirme", en: "Product & Solution Development", sub_tr: "ABAP, Fiori ve bulutla özel geliştirme", sub_en: "Custom builds with ABAP, Fiori & cloud" },
     ],
   },
   {

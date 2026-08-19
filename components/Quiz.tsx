@@ -32,7 +32,7 @@ export default function Quiz({ locale }: { locale: Locale }) {
       const res = await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, score: "68/100", lang: locale }),
+        body: JSON.stringify({ ...form, score: "qualitative-lead", lang: locale }),
       });
       const data = await res.json();
       setStatus(data.ok ? "sent" : "error");
@@ -115,13 +115,13 @@ export default function Quiz({ locale }: { locale: Locale }) {
           {pick(locale, "Ön Değerlendirme", "Preliminary Assessment")}
         </p>
         <div className="score" id="scoreval">
-          {done ? "68/100" : "—"}
+          {done ? pick(locale, "Alındı", "Received") : "—"}
         </div>
         <p style={{ marginTop: 8, color: "var(--ink-2)" }}>
           {pick(
             locale,
-            "Sisteminizde belirgin iyileştirme alanları görünüyor. Detaylı raporunuz için bilgilerinizi bırakın; 48 saat içinde uzman yorumuyla birlikte gönderelim.",
-            "Your system shows clear room for improvement. Leave your details and we'll send your full report with expert commentary within 48 hours."
+            "Ön değerlendirme tamam. Detaylı bakış için bilgilerinizi bırakın; 48 saat içinde uzman yorumuyla dönüş yapalım. Sayısal bir ‘sistem skoru’ uydurmayız — rapor sizin cevaplarınıza ve konuşmaya göre yazılır.",
+            "Preliminary questions are done. Leave your details and we will come back within 48 hours with an expert note. We do not invent a numeric ‘system score’ — the write-up follows your answers and the conversation."
           )}
         </p>
         {status === "sent" ? (
@@ -170,8 +170,8 @@ export default function Quiz({ locale }: { locale: Locale }) {
         <p className="note">
           {pick(
             locale,
-            "* Skor örnektir; canlı sitede Confiq Scan motorundan gelecek. Form bilgileri info@conforcus.com adresine iletilir.",
-            "* The score is a sample; on the live site it will come from the Confiq Scan engine. Form details are sent to info@conforcus.com."
+            "* Form bilgileri info@conforcus.com adresine iletilir. Taahhüt yoktur.",
+            "* Form details are sent to info@conforcus.com. No commitment."
           )}
         </p>
       </div>
