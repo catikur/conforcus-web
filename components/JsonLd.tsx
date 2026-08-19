@@ -1,32 +1,42 @@
-import { ROUTES, SITE_URL, type Locale, type RouteKey } from "@/lib/i18n";
+import { COMPANY, SITE_URL } from "@/lib/site";
+import { ROUTES, type Locale, type RouteKey } from "@/lib/i18n";
 
 function Script({ data }: { data: object }) {
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />;
 }
 
-// Kuruluş bilgisi — agentic search + zengin sonuçlar için en kritik şema.
 export function OrganizationJsonLd() {
   return (
     <Script
       data={{
         "@context": "https://schema.org",
         "@type": "Organization",
-        name: "Conforcus",
-        legalName: "Conforcus Bilişim Danışmanlık A.Ş.",
+        name: COMPANY.name,
+        legalName: COMPANY.legalName,
         url: SITE_URL,
         logo: SITE_URL + "/logo.png",
-        slogan: "Deep Expertise. Smart Solutions. Lasting Trust.",
+        slogan: COMPANY.slogan,
         description:
           "SAP danışmanlığında derin uzmanlık: SAP destek (AMS), S/4HANA dönüşümleri, global rollout ve 48+ hazır SAP çözümü.",
-        email: "info@conforcus.com",
-        sameAs: ["https://www.linkedin.com/company/conforcus"],
+        email: COMPANY.email,
+        telephone: COMPANY.telephone,
+        sameAs: [COMPANY.linkedin],
         address: {
           "@type": "PostalAddress",
-          streetAddress: "İçerenköy Mah. Yeşilvadi Sok. No:8, Öneren İş Merkezi Kat:3",
-          addressLocality: "Ataşehir",
-          addressRegion: "İstanbul",
-          addressCountry: "TR",
+          streetAddress: COMPANY.streetAddress,
+          addressLocality: COMPANY.addressLocality,
+          addressRegion: COMPANY.addressRegion,
+          addressCountry: COMPANY.addressCountry,
         },
+        contactPoint: [
+          {
+            "@type": "ContactPoint",
+            telephone: COMPANY.telephone,
+            email: COMPANY.email,
+            contactType: "customer service",
+            availableLanguage: ["Turkish", "English"],
+          },
+        ],
       }}
     />
   );
@@ -38,16 +48,15 @@ export function WebSiteJsonLd({ locale }: { locale: Locale }) {
       data={{
         "@context": "https://schema.org",
         "@type": "WebSite",
-        name: "Conforcus",
+        name: COMPANY.name,
         url: SITE_URL + (locale === "en" ? "/en" : "/"),
         inLanguage: locale === "tr" ? "tr-TR" : "en-US",
-        publisher: { "@type": "Organization", name: "Conforcus" },
+        publisher: { "@type": "Organization", name: COMPANY.name, url: SITE_URL, logo: SITE_URL + "/logo.png" },
       }}
     />
   );
 }
 
-// Ana sayfa: sunulan SAP hizmetleri kataloğu.
 export function ProfessionalServiceJsonLd({ locale }: { locale: Locale }) {
   const services =
     locale === "tr"
@@ -58,9 +67,11 @@ export function ProfessionalServiceJsonLd({ locale }: { locale: Locale }) {
       data={{
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
-        name: "Conforcus",
+        name: COMPANY.name,
         url: SITE_URL + ROUTES.home[locale],
         image: SITE_URL + "/logo.png",
+        telephone: COMPANY.telephone,
+        email: COMPANY.email,
         priceRange: "$$$",
         areaServed: "Worldwide",
         knowsAbout: ["SAP", "S/4HANA", "SAP FI", "SAP CO", "SAP MM", "SAP SD", "ABAP", "SAP Fiori", "AMS"],
@@ -77,7 +88,23 @@ export function ProfessionalServiceJsonLd({ locale }: { locale: Locale }) {
   );
 }
 
-// Blog yazısı — BlogPosting (agentic + zengin sonuçlar) + 3 seviyeli breadcrumb.
+export function FaqJsonLd({ faqs }: { faqs: { q: string; a: string }[] }) {
+  if (!faqs.length) return null;
+  return (
+    <Script
+      data={{
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqs.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      }}
+    />
+  );
+}
+
 export function ArticleJsonLd({
   locale,
   title,
@@ -108,8 +135,13 @@ export function ArticleJsonLd({
         mainEntityOfPage: url,
         url,
         image: coverUrl || `${SITE_URL}/og`,
-        author: authorName ? { "@type": "Person", name: authorName } : { "@type": "Organization", name: "Conforcus" },
-        publisher: { "@type": "Organization", name: "Conforcus", logo: { "@type": "ImageObject", url: `${SITE_URL}/logo.png` } },
+        author: authorName ? { "@type": "Person", name: authorName } : { "@type": "Organization", name: COMPANY.name },
+        publisher: {
+          "@type": "Organization",
+          name: COMPANY.name,
+          url: SITE_URL,
+          logo: { "@type": "ImageObject", url: `${SITE_URL}/logo.png` },
+        },
       }}
     />
   );
@@ -132,7 +164,6 @@ export function PostBreadcrumbJsonLd({ locale, title, slug }: { locale: Locale; 
   );
 }
 
-// Genel 3 seviyeli breadcrumb: Ana Sayfa → üst sayfa → detay.
 export function DetailBreadcrumbJsonLd({
   locale,
   parentKey,

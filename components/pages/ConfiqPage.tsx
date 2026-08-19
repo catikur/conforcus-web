@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { pathFor, pick, type Locale } from "@/lib/i18n";
+import { lineBreak } from "@/lib/lineBreak";
 
 export default function ConfiqPage({ locale }: { locale: Locale }) {
   return (
@@ -11,16 +12,8 @@ export default function ConfiqPage({ locale }: { locale: Locale }) {
           <h1 style={{ fontSize: "clamp(32px,5vw,52px)" }}>
             {pick(
               locale,
-              <>
-                SAP veriniz konuşabilseydi,
-                <br />
-                <span className="grad">ona ne sorardınız?</span>
-              </>,
-              <>
-                If your SAP data could talk,
-                <br />
-                <span className="grad">what would you ask?</span>
-              </>
+              lineBreak("SAP veriniz konuşabilseydi,", <span className="grad">ona ne sorardınız?</span>),
+              lineBreak("If your SAP data could talk,", <span className="grad">what would you ask?</span>)
             )}
           </h1>
           <p className="lead">

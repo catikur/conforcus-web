@@ -11,6 +11,7 @@ services:
         SANITY_PROJECT_ID: ${SANITY_PROJECT_ID}
         SANITY_DATASET: ${SANITY_DATASET:-production}
         SANITY_API_VERSION: ${SANITY_API_VERSION:-2024-01-01}
+        NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL:-https://web.conforcus.com}
     restart: unless-stopped
     expose:
       - "3000"
@@ -25,6 +26,7 @@ services:
       - SMTP_PASS=${SMTP_PASS:-}
       - LEAD_TO=${LEAD_TO:-info@conforcus.com}
       - REVALIDATE_SECRET=${REVALIDATE_SECRET}
+      - NEXT_PUBLIC_SITE_URL=${NEXT_PUBLIC_SITE_URL:-https://web.conforcus.com}
 
   caddy:
     image: caddy:2

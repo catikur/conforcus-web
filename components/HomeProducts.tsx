@@ -1,14 +1,16 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import type { SolutionCard } from "@/lib/solutions";
-import { pick, type Locale } from "@/lib/i18n";
+import { pathFor, pick, type Locale } from "@/lib/i18n";
 
 // Ana sayfa "Ürünlerimiz" sekmeleri. Kartlar sunucudan (Sanity-or-fallback)
 // yerelleştirilmiş gelir; fallback = HOME_PRODUCTS (mevcut tablar aynen).
 export default function HomeProducts({ locale, fin, log }: { locale: Locale; fin: SolutionCard[]; log: SolutionCard[] }) {
   const [grp, setGrp] = useState<"fin" | "log">("fin");
   const items = grp === "fin" ? fin : log;
+  const catalogBase = pathFor("cozumler", locale);
 
   return (
     <>
@@ -24,11 +26,11 @@ export default function HomeProducts({ locale, fin, log }: { locale: Locale; fin
       </div>
       <div className="pgrid" id="homeprods">
         {items.map((s, i) => (
-          <div className="pcard" key={i}>
+          <Link className="pcard" href={`${catalogBase}/${s.slug}`} key={i}>
             <span className={"mod m-" + s.module}>{s.module}</span>
             <h4>{s.name}</h4>
             {s.short ? <p>{s.short}</p> : null}
-          </div>
+          </Link>
         ))}
       </div>
     </>

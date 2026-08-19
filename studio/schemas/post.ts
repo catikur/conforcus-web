@@ -1,7 +1,6 @@
-import { defineArrayMember, defineField, defineType } from "sanity";
+import { defineField, defineType } from "sanity";
+import { imageWithAlt, portableText } from "./objects";
 
-// CLAUDE.md: post {title_tr/en, slug, excerpt_tr/en, body_tr/en (portable text),
-// coverImage, author→ref, category, publishedAt}.
 export default defineType({
   name: "post",
   title: "Blog Post / Yazı",
@@ -18,19 +17,9 @@ export default defineType({
     }),
     defineField({ name: "excerpt_tr", title: "Excerpt (TR) / Özet", type: "text", rows: 3 }),
     defineField({ name: "excerpt_en", title: "Excerpt (EN)", type: "text", rows: 3 }),
-    defineField({
-      name: "body_tr",
-      title: "Body (TR) / İçerik",
-      type: "array",
-      of: [defineArrayMember({ type: "block" }), defineArrayMember({ type: "image", options: { hotspot: true } })],
-    }),
-    defineField({
-      name: "body_en",
-      title: "Body (EN)",
-      type: "array",
-      of: [defineArrayMember({ type: "block" }), defineArrayMember({ type: "image", options: { hotspot: true } })],
-    }),
-    defineField({ name: "coverImage", title: "Cover Image / Kapak", type: "image", options: { hotspot: true } }),
+    defineField({ name: "body_tr", title: "Body (TR) / İçerik", type: "array", of: portableText }),
+    defineField({ name: "body_en", title: "Body (EN)", type: "array", of: portableText }),
+    imageWithAlt("coverImage", "Cover Image / Kapak"),
     defineField({ name: "author", title: "Author / Yazar", type: "reference", to: [{ type: "author" }] }),
     defineField({
       name: "category",
@@ -39,6 +28,8 @@ export default defineType({
       options: { list: ["S/4HANA", "Global Rollout", "Confiq AI", "SAP Destek", "Genel"] },
     }),
     defineField({ name: "publishedAt", title: "Published At / Yayın Tarihi", type: "datetime", validation: (r) => r.required() }),
+    defineField({ name: "faqs", title: "FAQ", type: "array", of: [{ type: "faqItem" }] }),
+    defineField({ name: "seo", title: "SEO", type: "seo" }),
   ],
   orderings: [{ title: "Published (newest)", name: "publishedDesc", by: [{ field: "publishedAt", direction: "desc" }] }],
   preview: { select: { title: "title_tr", subtitle: "category", media: "coverImage" } },

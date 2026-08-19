@@ -26,6 +26,7 @@ export default function Catalog({
   solutions.forEach((s) => (counts[s.module] = (counts[s.module] || 0) + 1));
   const list = solutions.filter((s) => mod === "ALL" || s.module === mod);
   const analiz = pathFor("analiz", locale);
+  const catalogBase = pathFor("cozumler", locale);
 
   return (
     <>
@@ -60,8 +61,8 @@ export default function Catalog({
               <div className="pcard" key={i}>
                 <span className={"mod m-" + s.module}>{s.module}</span>
                 <h4>{s.name}</h4>
-                <Link className="more" style={{ color: "var(--blue)", fontSize: 13, fontWeight: 600 }} href={analiz}>
-                  {pick(locale, "Detay iste →", "Request details →")}
+                <Link className="more" style={{ color: "var(--blue)", fontSize: 13, fontWeight: 600 }} href={`${catalogBase}/${s.slug}`}>
+                  {pick(locale, "Detay →", "Details →")}
                 </Link>
               </div>
             ))}

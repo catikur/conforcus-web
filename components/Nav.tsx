@@ -4,7 +4,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { MouseEvent } from "react";
-import { keyFromPath, pathFor, pick, type Locale } from "@/lib/i18n";
+import { navKeyFromPath, pathFor, pick, type Locale } from "@/lib/i18n";
+import { COMPANY, LOGO_SIZE } from "@/lib/site";
 import { NAV_SECTIONS } from "@/lib/nav";
 import { linkHref, MLink } from "./navShared";
 import LangToggle from "./LangToggle";
@@ -25,13 +26,13 @@ function closeMega(e: MouseEvent<HTMLAnchorElement>) {
 
 export default function Nav({ locale }: { locale: Locale }) {
   const pathname = usePathname();
-  const active = keyFromPath(pathname);
+  const active = navKeyFromPath(pathname);
 
   return (
     <nav className="nav">
       <div className="wrap nav-in">
         <Link className="nav-logo" href={pathFor("home", locale)}>
-          <img src="/logo.png" alt="Conforcus" />
+          <img src="/logo.png" alt="Conforcus" width={LOGO_SIZE.width} height={LOGO_SIZE.height} />
         </Link>
 
         {/* Masaüstü mega-menü — tek kaynak: NAV_SECTIONS */}
@@ -69,6 +70,9 @@ export default function Nav({ locale }: { locale: Locale }) {
         </div>
 
         <span className="sp" />
+        <a className="nav-tel" href={COMPANY.telHref}>
+          {COMPANY.telephoneDisplay}
+        </a>
         <Link className="btn btn-p nav-cta" href={pathFor("analiz", locale)}>
           {pick(locale, "Ücretsiz SAP Analizi", "Free SAP Analysis")}
         </Link>

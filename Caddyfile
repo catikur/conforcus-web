@@ -5,12 +5,23 @@
 # bunun için geçerli bir sertifika alabilir → https://srv1709361.hstgr.cloud
 srv1709361.hstgr.cloud, web.conforcus.com {
 	reverse_proxy web:3000
+	header {
+		X-Content-Type-Options nosniff
+		Referrer-Policy strict-origin-when-cross-origin
+		X-Frame-Options SAMEORIGIN
+	}
 }
 
 # AŞAMA 2 — DNS geçişinden SONRA (yalnızca Atilla'nın açık onayıyla):
-# yukarıdaki bloğu yorumlayıp aşağıdakini açın; Caddy conforcus.com ve
-# www.conforcus.com için otomatik SSL sertifikası alır.
+# yukarıdaki bloğu yorumlayıp aşağıdakini açın; Caddy www için SSL alır,
+# apex ve web. kalıcı olarak www'ye yönlenir.
 #
-# conforcus.com, www.conforcus.com {
+# www.conforcus.com {
 # 	reverse_proxy web:3000
+# }
+# conforcus.com {
+# 	redir https://www.conforcus.com{uri} permanent
+# }
+# web.conforcus.com {
+# 	redir https://www.conforcus.com{uri} permanent
 # }
