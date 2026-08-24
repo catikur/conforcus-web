@@ -1,6 +1,5 @@
 import { COMPANY, SITE_URL } from "@/lib/site";
 import { ROUTES, type Locale, type RouteKey } from "@/lib/i18n";
-import { FAQ } from "@/lib/faq";
 
 function Script({ data }: { data: object }) {
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />;
@@ -209,20 +208,3 @@ export function BreadcrumbJsonLd({ locale, pageKey, name }: { locale: Locale; pa
   );
 }
 
-// FAQPage — ana sayfadaki SSS bölümüyle aynı kaynaktan (lib/faq.ts) beslenir.
-// Google zengin sonuçlarında SSS açılır listesi için uygunluk sağlar.
-export function FaqJsonLd({ locale }: { locale: Locale }) {
-  return (
-    <Script
-      data={{
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        mainEntity: FAQ.map((f) => ({
-          "@type": "Question",
-          name: locale === "tr" ? f.q.tr : f.q.en,
-          acceptedAnswer: { "@type": "Answer", text: locale === "tr" ? f.a.tr : f.a.en },
-        })),
-      }}
-    />
-  );
-}

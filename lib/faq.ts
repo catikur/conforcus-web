@@ -95,3 +95,6 @@ export const faqLede = (l: Locale) =>
   l === "tr"
     ? "SAP yolculuğuna başlarken en çok sorulanlar. Aradığınızı bulamazsanız bize yazın; aynı gün dönüş yapıyoruz."
     : "The questions we hear most when a SAP journey begins. If yours isn't here, write to us — we reply the same day.";
+
+// JSON-LD için düzleştirilmiş liste (components/JsonLd.tsx FaqJsonLd imzası).
+export const faqForJsonLd = (l: Locale) => FAQ.map((f) => ({ q: l === "tr" ? f.q.tr : f.q.en, a: l === "tr" ? f.a.tr : f.a.en }));
