@@ -7,6 +7,7 @@ import { CASE_FALLBACKS } from "./casePages";
 export type SitemapPair = { tr: string; en: string; lastmod?: string; priority?: number };
 
 export async function getSitemapEntries(): Promise<SitemapPair[]> {
+  let sanityHasRefs = false;
   const out: SitemapPair[] = [];
   const seen = new Set<string>();
   const add = (e: SitemapPair) => {
@@ -27,6 +28,7 @@ export async function getSitemapEntries(): Promise<SitemapPair[]> {
     }
     try {
       const refs: { slug: string; _updatedAt?: string }[] = await sanityClient.fetch(SITEMAP_REFERENCES_QUERY);
+      if (refs?.length) sanityHasRefs = true;
       for (const r of refs || []) {
         if (!r.slug) continue;
         add({ tr: `/referanslar/${r.slug}`, en: `/en/references/${r.slug}`, lastmod: r._updatedAt, priority: 0.65 });
@@ -52,8 +54,12 @@ export async function getSitemapEntries(): Promise<SitemapPair[]> {
     if (p.slug === "testing") continue;
     add({ tr: `/blog/${p.slug}`, en: `/en/blog/${p.slug}`, lastmod: p.publishedAt, priority: 0.7 });
   }
-  for (const c of CASE_FALLBACKS) {
-    add({ tr: `/referanslar/${c.slug}`, en: `/en/references/${c.slug}`, priority: 0.65 });
+  // Sanity'de referans varsa sabit vaka slug'ları EKLENMEZ: Sanity'de yeniden
+  // adlandırılan bir referansın eski slug'ı sitemap'te 404 olarak kalıyordu.
+  if (!sanityHasRefs) {
+    for (const c of CASE_FALLBACKS) {
+      add({ tr: `/referanslar/${c.slug}`, en: `/en/references/${c.slug}`, priority: 0.65 });
+    }
   }
   return out;
 }

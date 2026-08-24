@@ -13,18 +13,14 @@ function fmtDate(iso: string, locale: Locale): string {
 }
 
 function metaText(post: PostCard, locale: Locale): string {
-  if (post.isSample) {
-    const mins = post.readMins ?? 5;
-    return pick(locale, `Örnek içerik · ${mins} dk okuma`, `Sample content · ${mins} min read`);
-  }
   const parts = [post.category, post.publishedAt ? fmtDate(post.publishedAt, locale) : ""].filter(Boolean);
+  if (post.readMins) parts.push(pick(locale, `${post.readMins} dk okuma`, `${post.readMins} min read`));
   return parts.join(" · ");
 }
 
 export default async function BlogPage({ locale }: { locale: Locale }) {
   const posts = await getPosts(locale);
   const base = pathFor("blog", locale);
-  const anySample = posts.some((p) => p.isSample);
 
   return (
     <main data-page="blog" className="active" id="main" tabIndex={-1}>
@@ -72,13 +68,6 @@ export default async function BlogPage({ locale }: { locale: Locale }) {
               </Link>
             ))}
           </div>
-          {anySample && (
-            <p className="note" style={{ textAlign: "center" }}>
-              {pick(
-                locale,
-                "* Blog içerikleri örnektir; Sanity CMS bağlandığında gerçek yazılarla değişecek.",
-                "* Posts are placeholders; they will be replaced with real content once Sanity CMS is connected."
-              )}
             </p>
           )}
         </div>

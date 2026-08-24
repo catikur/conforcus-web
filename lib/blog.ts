@@ -120,19 +120,29 @@ function sampleToFull(s: SamplePost, locale: Locale): PostFull {
   return { ...sampleToCard(s, locale), body: s.body[locale] };
 }
 
+// Kod içinde tutulan editoryal makaleler — Sanity'den bağımsız GERÇEK içerik
+// (lib/blogSamples.ts). "sample" adı tarihsel; bunlar yayınlanabilir yazılardır.
+function editorialCards(locale: Locale): PostCard[] {
+  return SAMPLE_POSTS.filter((s) => s.slug !== "testing").map((s) => sampleToCard(s, locale));
+}
+
 export async function getPosts(locale: Locale): Promise<PostCard[]> {
   if (sanityConfigured && sanityClient) {
     try {
       const data: RawCard[] = await sanityClient.fetch(POSTS_QUERY);
       const live = (data || []).map((d) => rawToCard(d, locale)).filter((p) => !p.noIndex && p.slug !== "testing");
-      if (live.length) return live;
+      if (live.length) {
+        // Sanity yazıları + editoryal makaleler birlikte (slug çakışırsa Sanity kazanır).
+        const have = new Set(live.map((c) => c.slug));
+        return [...live, ...editorialCards(locale).filter((c) => !have.has(c.slug))].sort((a, b) =>
+          (b.publishedAt || "").localeCompare(a.publishedAt || "")
+        );
+      }
     } catch {
       /* geri-dönüş */
     }
   }
-  // Sanity bağlıysa örnek yazı gösterme — canlıda sahte içerik olmamalı.
-  if (sanityConfigured) return [];
-  return SAMPLE_POSTS.filter((s) => s.slug !== "testing").map((s) => sampleToCard(s, locale));
+  return editorialCards(locale);
 }
 
 export async function getPost(locale: Locale, slug: string): Promise<PostFull | null> {
@@ -161,7 +171,6 @@ export async function getPost(locale: Locale, slug: string): Promise<PostFull | 
       /* geri-dönüş */
     }
   }
-  if (sanityConfigured) return null;
   const s = SAMPLE_POSTS.find((p) => p.slug === slug);
   return s ? sampleToFull(s, locale) : null;
 }
@@ -171,11 +180,13 @@ export async function getPostSlugs(): Promise<string[]> {
     try {
       const s: string[] = await sanityClient.fetch(SLUGS_QUERY);
       const live = (s || []).filter((x) => x && x !== "testing");
-      if (live.length) return live;
+      if (live.length) {
+        const extra = SAMPLE_POSTS.filter((p) => p.slug !== "testing" && !live.includes(p.slug)).map((p) => p.slug);
+        return [...live, ...extra];
+      }
     } catch {
       /* geri-dönüş */
     }
   }
-  if (sanityConfigured) return [];
   return SAMPLE_POSTS.filter((p) => p.slug !== "testing").map((p) => p.slug);
 }
