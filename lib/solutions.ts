@@ -76,6 +76,15 @@ export async function getSolution(l: Locale, slug: string): Promise<SolutionFull
       /* fallback */
     }
   }
+  // Sanity'de çözüm varsa yedek veriye düşme (bkz. lib/references.ts aynı gerekçe).
+  if (sanityConfigured && sanityClient) {
+    try {
+      const n: number = await sanityClient.fetch(`count(*[_type == "solution"])`);
+      if (n > 0) return null;
+    } catch {
+      /* sayım başarısızsa yedeğe izin ver */
+    }
+  }
   const s = SOLUTIONS.find((x) => slugify(x.en) === slug);
   return s
     ? { slug, name: l === "tr" ? s.tr : s.en, module: s.m, group: groupFor(s.m), short: "", featured: false, body: [] }

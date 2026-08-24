@@ -8,6 +8,7 @@ import { getFeaturedSolutions } from "@/lib/solutions";
 import { getTestimonials } from "@/lib/testimonials";
 import { getHeroSettings } from "@/lib/siteSettings";
 import { pathFor, pick, type Locale } from "@/lib/i18n";
+import Faq from "@/components/Faq";
 
 const cvar = (v: string): CSSProperties => ({ "--c": v }) as unknown as CSSProperties;
 
@@ -473,6 +474,8 @@ export default async function HomePage({ locale }: { locale: Locale }) {
       </section>
 
       <Testimonials locale={locale} items={testimonials} />
+
+      <Faq locale={locale} />
 
       <section className="hc">
         <div className="wrap">

@@ -23,7 +23,16 @@ const SMTP_PORT = Number(process.env.SMTP_PORT || 587);
 const LEAD_TO = process.env.LEAD_TO || "info@conforcus.com";
 const smtpConfigured = Boolean(SMTP_HOST && SMTP_USER && SMTP_PASS);
 
-type LeadBody = { name?: string; email?: string; company?: string; score?: string; lang?: string; website?: string };
+type LeadBody = {
+  name?: string;
+  email?: string;
+  company?: string;
+  score?: string;
+  lang?: string;
+  website?: string;
+  answers?: string[];
+  recommendations?: string[];
+};
 const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 function valid(b: LeadBody): boolean {
   return typeof b.name === "string" && b.name.trim().length > 1 && typeof b.email === "string" && EMAIL_RE.test(b.email);
@@ -44,8 +53,9 @@ export async function POST(req: NextRequest) {
   if (body.website) return NextResponse.json({ ok: true });
   if (!valid(body)) return NextResponse.json({ ok: false, error: "validation" }, { status: 422 });
 
-  const { name, email, company, score, lang } = body;
+  const { name, email, company, score, lang, answers, recommendations } = body;
   const subject = `Conforcus — Yeni SAP Analiz talebi: ${name}${company ? ` (${company})` : ""}`;
+  const list = (arr?: string[]) => (arr?.length ? arr.map((x, i) => `  ${i + 1}. ${x}`).join("\n") : "  -");
   const text = [
     `Ad Soyad: ${name}`,
     `E-posta: ${email}`,
@@ -53,6 +63,12 @@ export async function POST(req: NextRequest) {
     `Skor: ${score || "-"}`,
     `Dil: ${lang || "-"}`,
     `IP: ${ip}`,
+    "",
+    "— Değerlendirme cevapları —",
+    list(answers),
+    "",
+    "— Önerilen odak —",
+    list(recommendations),
   ].join("\n");
 
   if (!smtpConfigured) {

@@ -74,6 +74,8 @@ export async function getPosts(locale: Locale): Promise<PostCard[]> {
       /* geri-dönüş */
     }
   }
+  // Sanity bağlıysa örnek yazı gösterme — canlıda sahte içerik olmamalı.
+  if (sanityConfigured) return [];
   return SAMPLE_POSTS.map((s) => sampleToCard(s, locale));
 }
 
@@ -86,6 +88,7 @@ export async function getPost(locale: Locale, slug: string): Promise<PostFull | 
       /* geri-dönüş */
     }
   }
+  if (sanityConfigured) return null;
   const s = SAMPLE_POSTS.find((p) => p.slug === slug);
   return s ? sampleToFull(s, locale) : null;
 }
@@ -99,5 +102,6 @@ export async function getPostSlugs(): Promise<string[]> {
       /* geri-dönüş */
     }
   }
+  if (sanityConfigured) return [];
   return SAMPLE_POSTS.map((p) => p.slug);
 }

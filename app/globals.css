@@ -458,3 +458,21 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;
 .minfo .mlogo{width:48px;height:34px;border-radius:7px;border:1px solid var(--line);background:#FAFCFE;display:grid;place-items:center;font-size:8px;font-weight:700;color:#8A94A6;text-align:center;cursor:pointer;transition:border-color .15s,transform .15s;text-decoration:none;letter-spacing:.3px;overflow:hidden;padding:3px;line-height:1.1;}
 .minfo .mlogo img{max-width:100%;max-height:100%;object-fit:contain;}
 .minfo .mlogo:hover{border-color:var(--blue);transform:translateY(-2px);}
+
+/* 4 — SSS (ana sayfa) — native details/summary, marka tokenlarıyla */
+.faq{padding:96px 0;background:var(--mist);}
+.faq-list{margin-top:34px;display:grid;gap:12px;max-width:920px;}
+.faq-item{background:#fff;border:1px solid var(--line);border-radius:8px;transition:border-color .18s,box-shadow .18s;}
+.faq-item[open]{border-color:rgba(11,37,69,.25);box-shadow:var(--shadow-s);}
+.faq-item:hover{border-color:rgba(11,37,69,.35);}
+.faq-item summary{list-style:none;cursor:pointer;display:flex;align-items:flex-start;justify-content:space-between;gap:20px;padding:20px 24px;font-family:var(--disp);font-weight:600;font-size:17px;line-height:1.4;color:var(--navy);letter-spacing:-.005em;}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary:focus-visible{outline:2px solid var(--blue);outline-offset:-2px;border-radius:8px;}
+.faq-item summary i{flex:none;width:18px;height:18px;position:relative;margin-top:4px;}
+.faq-item summary i::before,.faq-item summary i::after{content:'';position:absolute;background:var(--amber);border-radius:2px;transition:transform .2s;}
+.faq-item summary i::before{top:8px;left:0;width:18px;height:2px;}
+.faq-item summary i::after{top:0;left:8px;width:2px;height:18px;}
+.faq-item[open] summary i::after{transform:scaleY(0);}
+.faq-item p{margin:0;padding:0 24px 22px;font-size:15.5px;line-height:1.7;color:var(--ink-2);max-width:72ch;}
+@media(max-width:640px){.faq{padding:72px 0;}.faq-item summary{font-size:15.5px;padding:17px 18px;}.faq-item p{padding:0 18px 18px;font-size:15px;}}
+@media(prefers-reduced-motion:reduce){.faq-item,.faq-item summary i::before,.faq-item summary i::after{transition:none;}}

@@ -44,6 +44,15 @@ export default async function BlogPage({ locale }: { locale: Locale }) {
 
       <section style={{ padding: "50px 0 70px" }}>
         <div className="wrap">
+          {posts.length === 0 ? (
+            <p className="lead" style={{ textAlign: "center", padding: "40px 0" }}>
+              {pick(
+                locale,
+                "İlk yazılarımız çok yakında burada olacak. Bu arada sorularınız için bize yazabilirsiniz.",
+                "Our first articles will appear here shortly. In the meantime, feel free to get in touch."
+              )}
+            </p>
+          ) : null}
           <div className="bgrid">
             {posts.map((post) => (
               <Link className="bpost" href={`${base}/${post.slug}`} key={post.slug}>

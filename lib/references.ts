@@ -83,6 +83,16 @@ export async function getReference(l: Locale, slug: string): Promise<RefFull | n
       /* fallback */
     }
   }
+  // Sanity yapılandırılmış ve içerik varsa yedek veriye DÜŞME: aksi halde
+  // eski örnek markalar (Sanity'de olmayan) hayalet referans sayfası üretir.
+  if (sanityConfigured && sanityClient) {
+    try {
+      const n: number = await sanityClient.fetch(`count(*[_type == "clientReference"])`);
+      if (n > 0) return null;
+    } catch {
+      /* sayım başarısızsa yedeğe izin ver */
+    }
+  }
   const r = REFS.find((x) => slugify(x.n) === slug);
   return r ? { ...fallbackCard(r, l), body: [], testimonials: [] } : null;
 }
