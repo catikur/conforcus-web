@@ -93,7 +93,10 @@ export async function getReferences(l: Locale): Promise<RefCard[]> {
   if (sanityConfigured && sanityClient) {
     try {
       const d: RawRef[] = await sanityClient.fetch(REFERENCES_QUERY);
-      if (d?.length) return mergeCaseFallbacks(d.map((x) => rawToCard(x, l)), l);
+      // Sanity doluysa TEK KAYNAK odur; sabit vaka yedekleri EKLENMEZ.
+      // (Eklenseydi, Sanity'de slug değişince eski slug ikinci bir kart olarak
+      //  görünürdü — "Flormar" + "Flormar Germany" mükerrerliği böyle oluşmuştu.)
+      if (d?.length) return d.map((x) => rawToCard(x, l));
     } catch {
       /* fallback */
     }
@@ -129,7 +132,16 @@ export async function getReference(l: Locale, slug: string): Promise<RefFull | n
       /* fallback */
     }
   }
-  // Küratörlü vaka içeriği (santa-farma / evyap / flormar-germany) her zaman geçerli.
+  // Sanity doluysa tek kaynak odur: orada olmayan slug 404 döner (hayalet sayfa olmasın).
+  if (sanityConfigured && sanityClient) {
+    try {
+      const n: number = await sanityClient.fetch(`count(*[_type == "clientReference"])`);
+      if (n > 0) return null;
+    } catch {
+      /* sayım başarısızsa yedeğe izin ver */
+    }
+  }
+  // Sanity yoksa küratörlü vaka içeriği devreye girer.
   const fb = caseBySlug(slug);
   if (fb) {
     return {
@@ -143,16 +155,6 @@ export async function getReference(l: Locale, slug: string): Promise<RefFull | n
       body: fb.body[l],
       testimonials: [],
     };
-  }
-  // Eski örnek marka listesinden HAYALET sayfa üretme: Sanity'de referans
-  // varsa, küratörlü vakalar dışındaki eski slug'lar 404 döner.
-  if (sanityConfigured && sanityClient) {
-    try {
-      const n: number = await sanityClient.fetch(`count(*[_type == "clientReference"])`);
-      if (n > 0) return null;
-    } catch {
-      /* sayım başarısızsa yedeğe izin ver */
-    }
   }
   const r = REFS.find((x) => slugify(x.n) === slug);
   return r ? { ...fallbackCard(r, l), body: [], testimonials: [] } : null;
