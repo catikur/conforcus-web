@@ -68,8 +68,6 @@ export default async function BlogPage({ locale }: { locale: Locale }) {
               </Link>
             ))}
           </div>
-            </p>
-          )}
         </div>
       </section>
     </main>
