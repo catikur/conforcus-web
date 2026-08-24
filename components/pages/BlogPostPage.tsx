@@ -1,5 +1,7 @@
 import Link from "next/link";
+import FaqList, { localizedFaqs } from "@/components/FaqList";
 import PortableBody from "@/components/PortableBody";
+import { FaqJsonLd } from "@/components/JsonLd";
 import { type PostFull } from "@/lib/blog";
 import { pathFor, pick, type Locale } from "@/lib/i18n";
 
@@ -20,6 +22,7 @@ export default function BlogPostPage({ locale, post }: { locale: Locale; post: P
 
   return (
     <main data-page="blog" className="active" id="main" tabIndex={-1}>
+      {post.faqs?.length ? <FaqJsonLd faqs={localizedFaqs(locale, post.faqs)} /> : null}
       <article>
         <div className="phero">
           <div className="wrap" style={{ maxWidth: 780 }}>
@@ -42,13 +45,21 @@ export default function BlogPostPage({ locale, post }: { locale: Locale; post: P
         {post.coverUrl ? (
           <div className="wrap" style={{ maxWidth: 900, marginTop: 36 }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={post.coverUrl} alt={post.title} style={{ width: "100%", borderRadius: 12, border: "1px solid var(--line)" }} />
+            <img
+              src={post.coverUrl}
+              alt={post.coverAlt || post.title}
+              width={1200}
+              height={630}
+              loading="lazy"
+              style={{ width: "100%", height: "auto", borderRadius: 12, border: "1px solid var(--line)" }}
+            />
           </div>
         ) : null}
 
         <section style={{ padding: "44px 0 80px" }}>
           <div className="wrap" style={{ maxWidth: 780 }}>
             <PortableBody value={post.body} />
+            {post.faqs?.length ? <FaqList locale={locale} faqs={post.faqs} /> : null}
             <div style={{ marginTop: 48, paddingTop: 28, borderTop: "1px solid var(--line)" }}>
               <Link className="btn btn-p" href={pathFor("analiz", locale)}>
                 {pick(locale, "Ücretsiz SAP Analizi", "Free SAP Analysis")}

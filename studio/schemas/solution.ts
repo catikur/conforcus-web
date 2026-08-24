@@ -1,4 +1,5 @@
-import { defineArrayMember, defineField, defineType } from "sanity";
+import { defineField, defineType } from "sanity";
+import { portableText } from "./objects";
 
 export default defineType({
   name: "solution",
@@ -24,20 +25,12 @@ export default defineType({
     defineField({ name: "slug", title: "Slug", type: "slug", options: { source: "name_en", maxLength: 96 } }),
     defineField({ name: "short_tr", title: "Short (TR) / Kısa açıklama", type: "text", rows: 2 }),
     defineField({ name: "short_en", title: "Short (EN)", type: "text", rows: 2 }),
-    defineField({
-      name: "body_tr",
-      title: "Body (TR) / Detay",
-      type: "array",
-      of: [defineArrayMember({ type: "block" }), defineArrayMember({ type: "image", options: { hotspot: true } })],
-    }),
-    defineField({
-      name: "body_en",
-      title: "Body (EN)",
-      type: "array",
-      of: [defineArrayMember({ type: "block" }), defineArrayMember({ type: "image", options: { hotspot: true } })],
-    }),
+    defineField({ name: "body_tr", title: "Body (TR) / Detay", type: "array", of: portableText }),
+    defineField({ name: "body_en", title: "Body (EN)", type: "array", of: portableText }),
+    defineField({ name: "faqs", title: "FAQ", type: "array", of: [{ type: "faqItem" }] }),
     defineField({ name: "featured", title: "Featured / Ana sayfa tabında göster", type: "boolean", initialValue: false }),
     defineField({ name: "order", title: "Order / Sıra", type: "number" }),
+    defineField({ name: "seo", title: "SEO", type: "seo" }),
   ],
   orderings: [{ title: "Order", name: "orderAsc", by: [{ field: "order", direction: "asc" }] }],
   preview: { select: { title: "name_tr", subtitle: "module" } },

@@ -178,7 +178,8 @@ export default function Quiz({ locale }: { locale: Locale }) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...form,
-          score: `${score}/100`,
+          // Uydurma sayısal skor yok; satışa nitel profil + cevaplar gider.
+          score: band,
           lang: locale,
           answers: qa,
           recommendations: tags.map((t) => pick(locale, ADVICE[t].tr, ADVICE[t].en)),
@@ -234,7 +235,7 @@ export default function Quiz({ locale }: { locale: Locale }) {
           {pick(locale, "Ön Değerlendirme", "Preliminary Assessment")} · {band}
         </p>
         <div className="score" id="scoreval">
-          {done ? `${score}/100` : "—"}
+          {done ? band : "—"}
         </div>
         <p style={{ marginTop: 8, color: "var(--ink-2)" }}>{summary}</p>
 
@@ -248,6 +249,14 @@ export default function Quiz({ locale }: { locale: Locale }) {
             ))}
           </div>
         ) : null}
+
+        <p style={{ color: "var(--ink-2)", marginTop: 14 }}>
+          {pick(
+            locale,
+            "Detaylı bakış için bilgilerinizi bırakın; 48 saat içinde uzman yorumuyla dönüş yapalım. Sayısal bir “sistem skoru” uydurmayız — rapor sizin cevaplarınıza ve konuşmaya göre yazılır.",
+            "Leave your details for a detailed look and we will come back within 48 hours with an expert note. We do not invent a numeric “system score” — the write-up follows your answers and the conversation."
+          )}
+        </p>
 
         {status === "sent" ? (
           <div className="frm" style={{ textAlign: "center" }}>
@@ -297,8 +306,8 @@ export default function Quiz({ locale }: { locale: Locale }) {
         <p className="note">
           {pick(
             locale,
-            "* Skor, verdiğiniz 6 cevaba dayanan bir ön değerlendirmedir. Detaylı rapor, uzmanımızın sisteminizi incelemesiyle hazırlanır. Bilgileriniz info@conforcus.com adresine iletilir.",
-            "* The score is a preliminary assessment based on your six answers. The detailed report is prepared after our consultant reviews your system. Your details are sent to info@conforcus.com."
+            "* Değerlendirme, verdiğiniz 6 cevaba dayanır. Form bilgileri info@conforcus.com adresine iletilir. Taahhüt yoktur.",
+            "* The assessment is based on your six answers. Form details are sent to info@conforcus.com. No commitment."
           )}
         </p>
       </div>

@@ -1,26 +1,82 @@
 import type { Metadata } from "next";
-import { alternatesFor, ROUTES, SITE_URL, type Locale, type RouteKey } from "./i18n";
+import { alternatesFor, alternatesForPath, ROUTES, SITE_URL, type Locale, type RouteKey } from "./i18n";
 
-// Sayfa başına SEO metadata: title, description, canonical + hreflang, OG, Twitter.
-export function pageMetadata(key: RouteKey, locale: Locale): Metadata {
+export type SeoOverride = {
+  title?: string | null;
+  description?: string | null;
+  image?: string | null;
+  noIndex?: boolean | null;
+};
+
+export function pageMetadata(key: RouteKey, locale: Locale, seo?: SeoOverride): Metadata {
   const r = ROUTES[key];
-  const title = r.title[locale];
-  const description = r.desc[locale];
-  const url = SITE_URL + r[locale];
-  return {
-    metadataBase: new URL(SITE_URL),
+  const title = seo?.title || r.title[locale];
+  const description = seo?.description || r.desc[locale];
+  return buildMetadata({
+    locale,
     title,
     description,
-    alternates: alternatesFor(key, locale),
+    path: r[locale],
+    languages: alternatesFor(key, locale).languages,
+    canonical: SITE_URL + r[locale],
+    noIndex: !!seo?.noIndex,
+    image: seo?.image,
+  });
+}
+
+export function buildMetadata(opts: {
+  locale: Locale;
+  title: string;
+  description: string;
+  path: string;
+  canonical?: string;
+  languages?: Record<string, string>;
+  noIndex?: boolean;
+  image?: string | null;
+  type?: "website" | "article";
+  publishedTime?: string;
+}): Metadata {
+  const url = opts.canonical || SITE_URL + opts.path;
+  const image = opts.image || `${SITE_URL}/og`;
+  const languages = opts.languages;
+  return {
+    metadataBase: new URL(SITE_URL),
+    title: opts.title,
+    description: opts.description,
+    alternates: languages
+      ? { canonical: url, languages }
+      : { canonical: url },
+    robots: opts.noIndex ? { index: false, follow: false } : { index: true, follow: true },
     openGraph: {
-      title,
-      description,
+      title: opts.title,
+      description: opts.description,
       url,
-      type: "website",
+      type: opts.type || "website",
       siteName: "Conforcus",
-      locale: locale === "tr" ? "tr_TR" : "en_US",
-      images: [{ url: `${SITE_URL}/og`, width: 1200, height: 630, alt: "Conforcus" }],
+      locale: opts.locale === "tr" ? "tr_TR" : "en_US",
+      images: [{ url: image, width: 1200, height: 630, alt: "Conforcus" }],
+      ...(opts.publishedTime ? { publishedTime: opts.publishedTime } : {}),
     },
-    twitter: { title, description, card: "summary_large_image", images: [`${SITE_URL}/og`] },
+    twitter: { title: opts.title, description: opts.description, card: "summary_large_image", images: [image] },
   };
+}
+
+export function pathMetadata(
+  locale: Locale,
+  trPath: string,
+  enPath: string,
+  title: string,
+  description: string,
+  seo?: SeoOverride
+): Metadata {
+  const path = locale === "tr" ? trPath : enPath;
+  return buildMetadata({
+    locale,
+    title: seo?.title || title,
+    description: seo?.description || description,
+    path,
+    ...alternatesForPath(locale, trPath, enPath),
+    noIndex: !!seo?.noIndex,
+    image: seo?.image,
+  });
 }

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { pathFor, pick, type Locale } from "@/lib/i18n";
+import { lineBreak } from "@/lib/lineBreak";
 
 export default function HizmetlerPage({ locale }: { locale: Locale }) {
   return (
@@ -8,19 +9,7 @@ export default function HizmetlerPage({ locale }: { locale: Locale }) {
         <div className="wrap">
           <div className="eyebrow">{pick(locale, "Hizmetlerimiz", "Our Services")}</div>
           <h1>
-            {pick(
-              locale,
-              <>
-                SAP yolculuğunuzun
-                <br />
-                her adımında
-              </>,
-              <>
-                At every step of
-                <br />
-                your SAP journey
-              </>
-            )}
+            {pick(locale, lineBreak("SAP yolculuğunuzun", "her adımında"), lineBreak("At every step of", "your SAP journey"))}
           </h1>
           <p className="lead">
             {pick(
@@ -76,6 +65,9 @@ export default function HizmetlerPage({ locale }: { locale: Locale }) {
                 )}
               </li>
             </ul>
+            <Link className="btn btn-b" href={pathFor("hizmet-sap-ams", locale)} style={{ marginTop: 18 }}>
+              {pick(locale, "AMS detayı →", "AMS details →")}
+            </Link>
           </div>
         </div>
       </section>
@@ -108,6 +100,9 @@ export default function HizmetlerPage({ locale }: { locale: Locale }) {
               <li>{pick(locale, "Go-live sonrası stabilizasyon ve hypercare desteği", "Post-go-live stabilization and hypercare support")}</li>
               <li>{pick(locale, "Türkiye lokalizasyonunda (e-dönüşüm, mevzuat) tam uyum", "Full compliance with local regulatory requirements")}</li>
             </ul>
+            <Link className="btn btn-b" href={pathFor("hizmet-s4hana", locale)} style={{ marginTop: 18 }}>
+              {pick(locale, "Dönüşüm detayı →", "Transformation details →")}
+            </Link>
           </div>
         </div>
       </section>
@@ -139,6 +134,9 @@ export default function HizmetlerPage({ locale }: { locale: Locale }) {
               <li>{pick(locale, "Merkez-ülke arasında şablon yönetişimi", "Template governance between HQ and countries")}</li>
               <li>{pick(locale, "Saat dilimlerine yayılmış destek organizasyonu", "Support organization spanning time zones")}</li>
             </ul>
+            <Link className="btn btn-b" href={pathFor("hizmet-rollout", locale)} style={{ marginTop: 18 }}>
+              {pick(locale, "Rollout detayı →", "Rollout details →")}
+            </Link>
           </div>
         </div>
       </section>
@@ -171,6 +169,9 @@ export default function HizmetlerPage({ locale }: { locale: Locale }) {
               <li>{pick(locale, "Fiori ile modern, mobil uyumlu kullanıcı deneyimi", "Modern, mobile-ready UX with Fiori")}</li>
               <li>{pick(locale, "Yapay zekâ destekli kurumsal uygulamalar", "AI-assisted enterprise applications")}</li>
             </ul>
+            <Link className="btn btn-b" href={pathFor("hizmet-urun", locale)} style={{ marginTop: 18 }}>
+              {pick(locale, "Geliştirme detayı →", "Development details →")}
+            </Link>
           </div>
         </div>
       </section>

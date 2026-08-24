@@ -1,6 +1,9 @@
 # conforcus-web — Caddy ters proxy + otomatik HTTPS (Let's Encrypt)
+#
+# DİKKAT: Bu dosya sunucudaki TÜM siteleri yönetir. Aşağıdaki
+# trade./llm./florence. blokları BAŞKA projelere aittir — silinmemeli.
 
-# Ortak güvenlik başlıkları — her site bloğu bunu import eder.
+# Ortak güvenlik başlıkları — conforcus-web blokları bunu import eder.
 (guvenlik) {
 	header {
 		# HTTPS'i tarayıcıya hatırlat (1 yıl)
@@ -18,21 +21,56 @@
 	}
 }
 
-# ── TEST ORTAMI ────────────────────────────────────────────────
-# Bu iki adres yalnızca doğrulama içindir; arama motorlarına KAPALI
-# (X-Robots-Tag). Üretim alan adına geçince bu kural onları etkilemez.
+# ── TEST / ÖNİZLEME ────────────────────────────────────────────
+# Yalnızca doğrulama içindir; arama motorlarına KAPALI (X-Robots-Tag).
+# Cutover'da www.conforcus.com üretim olur, burası web.→www yönlenir.
 srv1709361.hstgr.cloud, web.conforcus.com {
 	import guvenlik
 	header X-Robots-Tag "noindex, nofollow"
+	encode zstd gzip
 	reverse_proxy web:3000
 }
 
-# ── ÜRETİM ─────────────────────────────────────────────────────
-# DNS geçişinden SONRA (yalnızca Atilla'nın açık onayıyla) aşağıdaki
-# bloğu açın; Caddy conforcus.com ve www için otomatik SSL alır.
-# Not: burada X-Robots-Tag YOK — üretim indexlenmeye açıktır.
+# ── ÜRETİM (cutover) ───────────────────────────────────────────
+# DNS geçişinden SONRA (yalnızca Atilla'nın açık onayıyla) aşağıdakileri açın:
+# www canonical, apex ve web. kalıcı olarak www'ye yönlenir.
+# Not: üretim bloğunda X-Robots-Tag YOK — indexlenmeye açıktır.
 #
-# conforcus.com, www.conforcus.com {
+# www.conforcus.com {
 # 	import guvenlik
+# 	encode zstd gzip
 # 	reverse_proxy web:3000
 # }
+# conforcus.com {
+# 	redir https://www.conforcus.com{uri} permanent
+# }
+# web.conforcus.com {
+# 	redir https://www.conforcus.com{uri} permanent
+# }
+
+# ═══════════════════════════════════════════════════════════════
+# AŞAĞISI BAŞKA PROJELERE AİT — conforcus-web dağıtımında korunur
+# ═══════════════════════════════════════════════════════════════
+
+# trade.conforcus.com — telegram-bybit-tradebot manual ingestion console.
+# Reverse-proxied to the tradebot console container (joined to this stack network
+# under alias tradebot-console). Console enforces CONSOLE_AUTH_TOKEN on top of TLS.
+trade.conforcus.com {
+	encode gzip
+	request_body {
+		max_size 40MB
+	}
+	reverse_proxy tradebot-console:8770
+}
+
+# llm.conforcus.com — LLM Explorer statik SPA (/opt/llm-explorer stack)
+llm.conforcus.com {
+	encode gzip
+	reverse_proxy llm-explorer:80
+}
+
+# florence.conforcus.com — Florence Hakediş (revenue-share app, /root/florence-hakedis stack)
+florence.conforcus.com {
+	encode gzip
+	reverse_proxy florence-app:8000
+}

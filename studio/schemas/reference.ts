@@ -1,6 +1,6 @@
 import { defineArrayMember, defineField, defineType } from "sanity";
+import { imageWithAlt, portableText } from "./objects";
 
-// Harita eşleşmesi için ülke adları prototipteki Türkçe yazımla BİREBİR aynı olmalı.
 export const COUNTRY_OPTIONS = [
   "Türkiye", "ABD", "Meksika", "Brezilya", "Arjantin", "Uruguay",
   "Almanya", "Birleşik Krallık", "Fransa", "İtalya", "İspanya", "Hollanda",
@@ -17,7 +17,7 @@ export default defineType({
   type: "document",
   fields: [
     defineField({ name: "name", title: "Name / Marka adı", type: "string", validation: (r) => r.required() }),
-    defineField({ name: "logo", title: "Logo", type: "image", options: { hotspot: true } }),
+    imageWithAlt("logo", "Logo"),
     defineField({
       name: "slug",
       title: "Slug",
@@ -36,20 +36,11 @@ export default defineType({
     }),
     defineField({ name: "blurb_tr", title: "Blurb (TR) / Kısa (popup)", type: "text", rows: 2 }),
     defineField({ name: "blurb_en", title: "Blurb (EN)", type: "text", rows: 2 }),
-    defineField({
-      name: "body_tr",
-      title: "Body (TR) / Detay",
-      type: "array",
-      of: [defineArrayMember({ type: "block" }), defineArrayMember({ type: "image", options: { hotspot: true } })],
-    }),
-    defineField({
-      name: "body_en",
-      title: "Body (EN)",
-      type: "array",
-      of: [defineArrayMember({ type: "block" }), defineArrayMember({ type: "image", options: { hotspot: true } })],
-    }),
+    defineField({ name: "body_tr", title: "Body (TR) / Detay", type: "array", of: portableText }),
+    defineField({ name: "body_en", title: "Body (EN)", type: "array", of: portableText }),
     defineField({ name: "featured", title: "Featured / Öne çıkan", type: "boolean", initialValue: false }),
     defineField({ name: "order", title: "Order / Sıra", type: "number" }),
+    defineField({ name: "seo", title: "SEO", type: "seo" }),
   ],
   orderings: [{ title: "Order", name: "orderAsc", by: [{ field: "order", direction: "asc" }] }],
   preview: { select: { title: "name", subtitle: "sector_tr", media: "logo" } },

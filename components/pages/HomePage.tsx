@@ -9,6 +9,7 @@ import { getTestimonials } from "@/lib/testimonials";
 import { getHeroSettings } from "@/lib/siteSettings";
 import { pathFor, pick, type Locale } from "@/lib/i18n";
 import Faq from "@/components/Faq";
+import { lineBreak } from "@/lib/lineBreak";
 
 const cvar = (v: string): CSSProperties => ({ "--c": v }) as unknown as CSSProperties;
 
@@ -141,37 +142,37 @@ export default async function HomePage({ locale }: { locale: Locale }) {
         <div className="wrap stats-in">
           <div className="stat rv">
             <b data-n="130" data-suf="+">
-              0
+              130+
             </b>
             <span>{pick(locale, "Aktif Müşteri", "Active Clients")}</span>
           </div>
           <div className="stat rv">
             <b data-n="50" data-suf="+">
-              0
+              50+
             </b>
             <span>{pick(locale, "Ülke", "Countries")}</span>
           </div>
           <div className="stat rv">
             <b data-n="30" data-suf="+">
-              0
+              30+
             </b>
             <span>{pick(locale, "Sektör", "Industries")}</span>
           </div>
           <div className="stat rv">
             <b data-n="48" data-suf="+">
-              0
+              48+
             </b>
             <span>{pick(locale, "Hazır Çözüm", "Ready Solutions")}</span>
           </div>
           <div className="stat rv">
             <b data-n="70" data-suf="+">
-              0
+              70+
             </b>
             <span>{pick(locale, "Danışman", "Consultants")}</span>
           </div>
           <div className="stat rv">
             <b data-n="95" data-pre-tr="%" data-suf-en="%">
-              0
+              {pick(locale, "%95", "95%")}
             </b>
             <span>{pick(locale, "Müşteri Devamlılığı", "Client Retention")}</span>
           </div>
@@ -187,18 +188,7 @@ export default async function HomePage({ locale }: { locale: Locale }) {
                 {pick(locale, "Global Deneyim", "Global Experience")}
               </div>
               <h2>
-                {pick(
-                  locale,
-                  <>
-                    6 kıtada, 50+ ülkede
-                    <br />
-                    SAP projeleri
-                  </>,
-                  <>
-                    SAP projects across
-                    <br />6 continents, 50+ countries
-                  </>
-                )}
+                {pick(locale, lineBreak("6 kıtada, 50+ ülkede", "SAP projeleri"), lineBreak("SAP projects across", "6 continents, 50+ countries"))}
               </h2>
               <p className="lead">
                 {pick(
@@ -232,19 +222,7 @@ export default async function HomePage({ locale }: { locale: Locale }) {
                 {pick(locale, "Hizmetlerimiz", "Our Services")}
               </div>
               <h2>
-                {pick(
-                  locale,
-                  <>
-                    SAP'ta uçtan uca
-                    <br />
-                    dört uzmanlık alanı
-                  </>,
-                  <>
-                    Four areas of expertise,
-                    <br />
-                    end to end in SAP
-                  </>
-                )}
+                {pick(locale, lineBreak("SAP'ta uçtan uca", "dört uzmanlık alanı"), lineBreak("Four areas of expertise,", "end to end in SAP"))}
               </h2>
               <p className="lead">
                 {pick(
@@ -269,7 +247,7 @@ export default async function HomePage({ locale }: { locale: Locale }) {
                   "Continuous maintenance, issue resolution and improvement for companies running live SAP systems. For us, this is not a support contract — it's a partnership."
                 )}
               </p>
-              <Link className="more" href={p("hizmetler")}>
+              <Link className="more" href={p("hizmet-sap-ams")}>
                 {pick(locale, "Detaylı bilgi →", "Learn more →")}
               </Link>
             </div>
@@ -283,7 +261,7 @@ export default async function HomePage({ locale }: { locale: Locale }) {
                   "New implementation or migration, in the cloud or on-premise — we run every S/4HANA scenario with a proven methodology."
                 )}
               </p>
-              <Link className="more" href={p("hizmetler")}>
+              <Link className="more" href={p("hizmet-s4hana")}>
                 {pick(locale, "Detaylı bilgi →", "Learn more →")}
               </Link>
             </div>
@@ -297,7 +275,7 @@ export default async function HomePage({ locale }: { locale: Locale }) {
                   "We deploy your corporate SAP template country by country, with full local compliance. Project experience across 6 continents and 50+ countries."
                 )}
               </p>
-              <Link className="more" href={p("hizmetler")}>
+              <Link className="more" href={p("hizmet-rollout")}>
                 {pick(locale, "Detaylı bilgi →", "Learn more →")}
               </Link>
             </div>
@@ -311,8 +289,8 @@ export default async function HomePage({ locale }: { locale: Locale }) {
                   "With ABAP, Fiori and cloud technologies, we build custom developments and ready-made solution packages that make life easier."
                 )}
               </p>
-              <Link className="more" href={p("cozumler")}>
-                {pick(locale, "Çözüm kataloğu →", "Solution catalog →")}
+              <Link className="more" href={p("hizmet-urun")}>
+                {pick(locale, "Detaylı bilgi →", "Learn more →")}
               </Link>
             </div>
           </div>
@@ -328,19 +306,7 @@ export default async function HomePage({ locale }: { locale: Locale }) {
                 {pick(locale, "Ürünlerimiz", "Our Products")}
               </div>
               <h2>
-                {pick(
-                  locale,
-                  <>
-                    48+ hazır SAP çözümü,
-                    <br />
-                    kurulmayı bekliyor
-                  </>,
-                  <>
-                    48+ ready-made SAP solutions,
-                    <br />
-                    waiting to be deployed
-                  </>
-                )}
+                {pick(locale, lineBreak("48+ hazır SAP çözümü,", "kurulmayı bekliyor"), lineBreak("48+ ready-made SAP solutions,", "waiting to be deployed"))}
               </h2>
               <p className="lead">
                 {pick(
@@ -430,19 +396,7 @@ export default async function HomePage({ locale }: { locale: Locale }) {
                 {pick(locale, "Referanslarımız", "Our References")}
               </div>
               <h2>
-                {pick(
-                  locale,
-                  <>
-                    Türkiye&apos;nin ve dünyanın
-                    <br />
-                    önde gelen markaları
-                  </>,
-                  <>
-                    Leading brands of
-                    <br />
-                    Türkiye and the world
-                  </>
-                )}
+                {pick(locale, lineBreak("Türkiye'nin ve dünyanın", "önde gelen markaları"), lineBreak("Leading brands of", "Türkiye and the world"))}
               </h2>
             </div>
             <Link className="btn btn-g" href={p("referanslar")}>
@@ -454,7 +408,7 @@ export default async function HomePage({ locale }: { locale: Locale }) {
               <Link className="ltile" href={`${refsBase}/${r.slug}`} key={r.slug}>
                 <div>
                   {r.logoUrl ? (
-                    <img src={r.logoUrl} alt={r.name} style={{ maxHeight: 42, maxWidth: "100%", margin: "0 auto" }} />
+                    <img src={r.logoUrl} alt={r.logoAlt || r.name} width={160} height={42} loading="lazy" style={{ maxHeight: 42, maxWidth: "100%", margin: "0 auto", height: "auto" }} />
                   ) : (
                     <b>{r.name}</b>
                   )}
@@ -466,8 +420,8 @@ export default async function HomePage({ locale }: { locale: Locale }) {
           <p className="note">
             {pick(
               locale,
-              "* Prototipte marka adları yazıyla temsil edilmiştir; canlı sitede onaylı logo dosyaları kullanılacaktır.",
-              "* Brand names are shown as text in this prototype; approved logo files will be used on the live site."
+              "* Logo kullanımı onaylı müşterilerimiz. Tam liste için iletişime geçin.",
+              "* Logos shown with client approval. Contact us for the full list."
             )}
           </p>
         </div>

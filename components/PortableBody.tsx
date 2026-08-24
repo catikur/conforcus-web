@@ -22,7 +22,7 @@ const components: PortableTextComponents = {
       const b = urlFor(value);
       const src = b ? b.width(1200).fit("max").auto("format").url() : null;
       if (!src) return null;
-      return <img src={src} alt={(value?.alt as string) || ""} loading="lazy" />;
+      return <img src={src} alt={(value?.alt as string) || ""} width={1200} height={675} loading="lazy" style={{ width: "100%", height: "auto" }} />;
     },
   },
 };
