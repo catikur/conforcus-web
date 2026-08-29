@@ -15,6 +15,7 @@ export type SamplePost = {
   readMins: number;
   author: { name: string; role_tr: string; role_en: string };
   body: { tr: PTBlock[]; en: PTBlock[] };
+  faqs?: { q: { tr: string; en: string }; a: { tr: string; en: string } }[];
 };
 
 const AUTHOR = { name: "Atilla Kuruüzüm", role_tr: "Managing Partner", role_en: "Managing Partner" };
@@ -34,6 +35,11 @@ export const SAMPLE_POSTS: SamplePost[] = [
     publishedAt: "2026-03-12",
     readMins: 8,
     author: AUTHOR,
+    faqs: [
+      { q: { tr: "Greenfield mi brownfield mı daha hızlı?", en: "Which is faster, greenfield or brownfield?" }, a: { tr: "Brownfield genelde daha kısa görünür çünkü süreçler yeniden tasarlanmaz; ancak taşınan Z-kod ve kirli ana veri süreyi geri alır. Greenfield'da takvim, veri taşıma kapsamına bağlıdır. Gerçek cevap, hazırlık analizindeki özel geliştirme envanterinden çıkar.", en: "Brownfield usually looks shorter because processes are not redesigned; however migrated custom code and dirty master data give that time back. In greenfield the timeline depends on data migration scope. The real answer comes from the custom-code inventory in the readiness assessment." } },
+      { q: { tr: "Bluefield gerçek bir yöntem mi?", en: "Is bluefield a real method?" }, a: { tr: "Bluefield, seçmeli veri taşımayla ilerleyen yaklaşımların pazarlama adıdır. Teknik olarak mümkündür ama yönetişim ister: hangi şirket kodunun yeni kurulacağı, hangisinin taşınacağı yazılı kriterlere bağlanmazsa şablon dağılır.", en: "Bluefield is the marketing name for selective data transition approaches. It is technically possible but demands governance: unless written criteria decide which company code is rebuilt and which is migrated, the template falls apart." } },
+      { q: { tr: "Karar için ilk adım ne olmalı?", en: "What is the first step in deciding?" }, a: { tr: "Sistem fotoğrafı: son 12–24 ayda hangi özel nesne kaç kez çalıştı, ana veri kalitesi nedir, hangi yasal gereklilikler kritik. Bu envanter olmadan alınan yöntem kararı, projenin ortasında revize ediliyor.", en: "A picture of the system: which custom objects ran how often in the past 12–24 months, what master data quality looks like, which statutory requirements are critical. A method decision without this inventory tends to be revised mid-project." } },
+    ],
     body: {
       tr: [
         p("S/4HANA konuşması çoğu masada aynı cümleyle açılır: greenfield mı brownfield mı. Bluefield sonra eklenir, çünkü birileri ‘ikisinin ortası’ demiştir. Ortası, bir yöntem adı değildir. Hangi verinin, hangi sürecin, hangi Z-kodun yeni dünyaya taşınacağına dair bir seçim paketidir. Bu yazı üç yolu yan yana koyuyor; kazanan ilan etmiyor."),
@@ -79,6 +85,11 @@ export const SAMPLE_POSTS: SamplePost[] = [
     publishedAt: "2026-04-02",
     readMins: 7,
     author: AUTHOR,
+    faqs: [
+      { q: { tr: "AMS ile normal danışmanlık arasındaki fark ne?", en: "How does AMS differ from regular consulting?" }, a: { tr: "Danışmanlık proje bazlıdır, başlar ve biter. AMS süreklidir: sisteminizi tanıyan sabit bir ekip, SLA süreleriyle bağlı olarak günlük operasyonu ve dönem sonu kapanışını destekler, aynı zamanda tekrar eden sorunları kökünden çözer.", en: "Consulting is project-based; it starts and ends. AMS is continuous: a named team that knows your system supports daily operations and period-end close against SLA targets, while also removing the root cause of recurring issues." } },
+      { q: { tr: "Kendi iç ekibimiz varken AMS'e ihtiyacımız olur mu?", en: "Do we need AMS if we already have an in-house team?" }, a: { tr: "Çoğu şirkette AMS iç ekibin yerine değil, yanına kurulur. İç ekip iş bilgisini taşır; AMS derinlik (modül uzmanlığı, mevzuat, ABAP) ve süreklilik (izin, ayrılma, dönem sonu yoğunluğu) sağlar.", en: "In most companies AMS is set up next to the in-house team, not instead of it. The in-house team carries business knowledge; AMS adds depth (module expertise, regulation, ABAP) and continuity (leave, attrition, period-end peaks)." } },
+      { q: { tr: "AMS maliyeti nasıl belirlenir?", en: "How is AMS pricing determined?" }, a: { tr: "Modül kapsamı, bilet hacmi, SLA kademesi ve kapanış desteğinin kapsamı belirleyicidir. Sağlıklı bir teklif için önce birkaç aylık gerçek bilet verisi ve kapanış takvimi incelenir; kapsam netleşmeden verilen fiyat genelde ikisinden birine zarar verir.", en: "Module scope, ticket volume, SLA tier and the extent of close support drive it. A sound proposal starts from a few months of real ticket data and the close calendar; a price quoted before scope is clear usually hurts one side or the other." } },
+    ],
     body: {
       tr: [
         p("AMS (Application Management Services) kelimesi, tekliflerde ‘7/24 destek’ diye şişer. 7/24, bir telefonun çalmasıdır. AMS, kimin çalacağını, kapanışta kimin masada duracağını ve aynı hatanın üçüncü kez gelmeyeceğini tarif eder. Bu yazı tanım cümlesi; sihirli SLA tablosu değil."),
@@ -120,6 +131,11 @@ export const SAMPLE_POSTS: SamplePost[] = [
     publishedAt: "2026-05-08",
     readMins: 9,
     author: AUTHOR,
+    faqs: [
+      { q: { tr: "SAP standardı Türkiye e-dönüşümünü tek başına karşılar mı?", en: "Does standard SAP cover Türkiye e-transformation on its own?" }, a: { tr: "Karşılamaz. e-Fatura, e-Arşiv, e-İrsaliye ve e-Defter için entegratör bağlantısı, yerel format ve mevzuat takibi gerekir. Standart SAP altyapıyı verir; uyum katmanı ayrıca kurulur ve mevzuat değiştikçe güncellenir.", en: "It does not. e-Invoice, e-Archive, e-Delivery note and e-Ledger require integrator connectivity, local formats and regulatory tracking. Standard SAP provides the foundation; the compliance layer is built separately and updated as regulation changes." } },
+      { q: { tr: "Global şablonla yerel mevzuat nasıl bir arada yürür?", en: "How do a global template and local regulation coexist?" }, a: { tr: "Yerel gereklilikler şablonu bozmadan, ülkeye özel katman olarak eklenir. Kritik kural şudur: merkezî süreç ve hesap planı ortak kalır, yasal çıktı ve raporlama ülke katmanında çözülür.", en: "Local requirements are added as a country layer without breaking the template. The critical rule: the central process and chart of accounts stay shared, while statutory output and reporting are solved in the country layer." } },
+      { q: { tr: "Mevzuat değiştiğinde ne oluyor?", en: "What happens when regulation changes?" }, a: { tr: "Takvim genelde kısa olur. Bu yüzden uyum katmanının kim tarafından, hangi SLA ile güncelleneceği baştan tanımlanmalıdır; aksi halde her değişiklik acil proje hâline gelir.", en: "The deadline is usually short. That is why it must be defined upfront who updates the compliance layer and under which SLA; otherwise every change turns into an emergency project." } },
+    ],
     body: {
       tr: [
         p("Türkiye’de SAP konuşması, bir noktada GİB’e çarpar. e-Fatura, e-arşiv, e-irsaliye, e-defter — her biri ayrı tebliğ, ayrı kesinti, ayrı ret penceresi. Uluslararası şablon bunları ‘local add-on’ diye 2. faza iter. 2. faz, ilk yasal ayın Excel’idir. Bu yazının Türkçe yarısı pratik; İngilizce yarısı aynı gerçeği localization kelimesinin içine gömer."),
@@ -161,6 +177,11 @@ export const SAMPLE_POSTS: SamplePost[] = [
     publishedAt: "2026-06-18",
     readMins: 8,
     author: AUTHOR,
+    faqs: [
+      { q: { tr: "RISE, GROW ve on-premise arasındaki temel fark ne?", en: "What is the core difference between RISE, GROW and on-premise?" }, a: { tr: "On-premise'de altyapı ve sürüm kontrolü sizde, sorumluluk da sizde. RISE, mevcut karmaşıklığı olan kurumlar için yönetilen bir bulut paketidir. GROW, standarda yakın çalışan ve hızlı başlamak isteyen şirketler için tasarlanmıştır.", en: "On-premise leaves infrastructure and release control — and responsibility — with you. RISE is a managed cloud package for organisations carrying existing complexity. GROW is designed for companies close to standard that want to start quickly." } },
+      { q: { tr: "Özel geliştirmelerimiz varsa hangisi uygun?", en: "Which fits if we have heavy custom development?" }, a: { tr: "Yoğun özel geliştirme ve entegrasyon varsa GROW dar gelir. Bu durumda ya RISE ya da on-premise değerlendirilir; karar, geliştirmelerin ne kadarının standartla karşılanabileceğine bakılarak verilir.", en: "With heavy custom development and integrations, GROW becomes tight. RISE or on-premise are then evaluated; the decision rests on how much of that development standard functionality can absorb." } },
+      { q: { tr: "Bulut daha mı ucuz?", en: "Is cloud cheaper?" }, a: { tr: "Toplam sahip olma maliyetine bakmak gerekir: lisans, altyapı, operasyon ekibi, yükseltme emeği ve kesinti riski birlikte hesaplanır. Bulut çoğu zaman maliyeti öngörülebilir kılar; her senaryoda ucuzlatmaz.", en: "You have to look at total cost of ownership: licences, infrastructure, operations staff, upgrade effort and downtime risk together. Cloud usually makes cost predictable; it does not make it lower in every scenario." } },
+    ],
     body: {
       tr: [
         p("SAP’nin ürün ve sözleşme isimleri masada yöntem gibi durur. RISE with SAP, GROW with SAP, on-premise S/4. Üçü de S/4HANA’ya gidebilir; üçü de greenfield veya brownfield ile birleşebilir. Karıştırınca ‘buluta geçiyoruz’ cümlesi her kararı yutar. Bu yazı yutar cümleyi ayırır. Fiyat listesi değildir."),

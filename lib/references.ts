@@ -20,7 +20,10 @@ export type RefCard = {
   hasBody?: boolean;
 };
 export type RefTestimonial = { quote: string; person: string; role?: string; company?: string };
-export type RefFull = RefCard & { body: PTBlock[]; testimonials: RefTestimonial[]; seo?: SeoOverride };
+export type RefFull = RefCard & {
+  videoUrl?: string;
+  projectImageUrl?: string;
+  projectImageAlt?: string; body: PTBlock[]; testimonials: RefTestimonial[]; seo?: SeoOverride };
 
 type RawRef = {
   slug: string;
@@ -37,6 +40,9 @@ type RawRef = {
   hasBody?: boolean;
 };
 type RawRefFull = RawRef & {
+  videoUrl?: string;
+  projectImageUrl?: string;
+  projectImageAlt?: string;
   body_tr?: PTBlock[];
   body_en?: PTBlock[];
   seoTitle?: string;
@@ -114,6 +120,9 @@ export async function getReference(l: Locale, slug: string): Promise<RefFull | n
         const useBody = body.length && (d.hasBody || !fb) ? body : fb ? fb.body[l] : body;
         return {
           ...rawToCard(d, l),
+          videoUrl: d.videoUrl,
+          projectImageUrl: d.projectImageUrl,
+          projectImageAlt: d.projectImageAlt,
           body: useBody,
           seo: {
             title: d.seoTitle,

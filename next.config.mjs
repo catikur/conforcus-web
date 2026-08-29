@@ -6,6 +6,16 @@ const nextConfig = {
   output: "standalone",
   reactStrictMode: true,
   poweredByHeader: false,
+  images: {
+    // Fotoğraflar eklendiğinde sayfa ağırlığını korumak için: modern format + ölçekleme.
+    formats: ["image/avif", "image/webp"],
+    remotePatterns: [
+      { protocol: "https", hostname: "cdn.sanity.io" }, // Sanity görselleri
+      { protocol: "https", hostname: "i.ytimg.com" }, // YouTube kapak görselleri
+    ],
+    deviceSizes: [360, 480, 640, 828, 1080, 1280, 1600],
+    imageSizes: [64, 96, 128, 200, 320, 420],
+  },
   async redirects() {
     /** Eski Hostinger HTML yolları — yalnızca bilinen dört adres. */
     const paths = [

@@ -1,8 +1,11 @@
 import { getJobs } from "@/lib/jobs";
 import { pick, type Locale } from "@/lib/i18n";
 import { lineBreak } from "@/lib/lineBreak";
+import MediaSlot from "@/components/MediaSlot";
+import { getSiteMedia } from "@/lib/siteSettings";
 
 export default async function ConforcusWayPage({ locale }: { locale: Locale }) {
+  const media = await getSiteMedia(locale);
   const jobs = await getJobs(locale);
 
   return (
@@ -22,6 +25,19 @@ export default async function ConforcusWayPage({ locale }: { locale: Locale }) {
           </p>
         </div>
       </div>
+
+      <section style={{ padding: "0 0 10px" }}>
+        <div className="wrap">
+          <MediaSlot
+            src={media.teamImageUrl}
+            alt={media.teamImageAlt}
+            field="siteSettings.teamImage"
+            locale={locale}
+            label={{ tr: "Ekip fotoğrafı", en: "Team photo" }}
+            ratio="21 / 9"
+          />
+        </div>
+      </section>
 
       <section style={{ padding: "60px 0", background: "var(--mist)" }}>
         <div className="wrap">

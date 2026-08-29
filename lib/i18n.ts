@@ -19,6 +19,7 @@ export type RouteKey =
   | "conforcus-way"
   | "blog"
   | "analiz"
+  | "ekip"
   | "hakkimizda"
   | "iletisim"
   | "kvkk"
@@ -111,6 +112,15 @@ export const ROUTES: Record<RouteKey, RouteMeta> = {
     desc: {
       tr: "5 dakikalık ücretsiz değerlendirmeyle SAP sisteminizin verimlilik ve risk haritasını çıkarın. Confiq Scan altyapısıyla, uzman yorumuyla 48 saatte rapor.",
       en: "Map your SAP system's efficiency and risks with a free 5-minute assessment. Powered by Confiq Scan, with expert commentary delivered in 48 hours.",
+    },
+  },
+  ekip: {
+    tr: "/ekip",
+    en: "/en/team",
+    title: { tr: "Ekibimiz — Conforcus", en: "Our Team — Conforcus" },
+    desc: {
+      tr: "SAP danışmanlarımız: FI, CO, MM, SD, PS ve FM modüllerinde saha deneyimi. Projelerinizde birlikte çalışacağınız ekip.",
+      en: "Our SAP consultants: field experience across FI, CO, MM, SD, PS and FM. The team you will actually work with.",
     },
   },
   hakkimizda: {

@@ -34,6 +34,13 @@ export default defineType({
       of: [defineArrayMember({ type: "string" })],
       options: { list: COUNTRY_OPTIONS.map((c) => ({ title: c, value: c })) },
     }),
+    defineField({
+      name: "videoUrl",
+      title: "Müşteri videosu (YouTube URL)",
+      type: "url",
+      description: "Referans konuşması. Girilirse vaka sayfasında oynatıcı belirir.",
+    }),
+    imageWithAlt("projectImage", "Proje görseli (müşteri izniyle)"),
     defineField({ name: "blurb_tr", title: "Blurb (TR) / Kısa (popup)", type: "text", rows: 2 }),
     defineField({ name: "blurb_en", title: "Blurb (EN)", type: "text", rows: 2 }),
     defineField({ name: "body_tr", title: "Body (TR) / Detay", type: "array", of: portableText }),

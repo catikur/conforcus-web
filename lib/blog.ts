@@ -117,7 +117,7 @@ function sampleToCard(s: SamplePost, locale: Locale): PostCard {
   };
 }
 function sampleToFull(s: SamplePost, locale: Locale): PostFull {
-  return { ...sampleToCard(s, locale), body: s.body[locale] };
+  return { ...sampleToCard(s, locale), body: s.body[locale], faqs: s.faqs };
 }
 
 // Kod içinde tutulan editoryal makaleler — Sanity'den bağımsız GERÇEK içerik

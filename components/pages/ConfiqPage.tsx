@@ -1,12 +1,29 @@
 import Link from "next/link";
 import { pathFor, pick, type Locale } from "@/lib/i18n";
 import { lineBreak } from "@/lib/lineBreak";
+import { ConfiqArchitecture } from "@/components/Diagrams";
+import MediaSlot from "@/components/MediaSlot";
+import YouTube from "@/components/YouTube";
+import { getSiteMedia } from "@/lib/siteSettings";
 
-export default function ConfiqPage({ locale }: { locale: Locale }) {
+export default async function ConfiqPage({ locale }: { locale: Locale }) {
+  const media = await getSiteMedia(locale);
   return (
     <main data-page="confiq" className="active" id="main" tabIndex={-1}>
       <section className="confiq" style={{ padding: "80px 0" }}>
         <div className="wrap">
+          <ConfiqArchitecture locale={locale} />
+          <div className="mediarow">
+            <MediaSlot
+              src={media.confiqShotUrl}
+              alt={media.confiqShotAlt}
+              field="siteSettings.confiqShot"
+              locale={locale}
+              label={{ tr: "Confiq arayüz görüntüsü", en: "Confiq interface screenshot" }}
+              ratio="16 / 10"
+            />
+            <YouTube url={media.confiqVideoUrl} locale={locale} title={pick(locale, "Confiq demo", "Confiq demo")} />
+          </div>
           <div className="eyebrow">{pick(locale, "Yapay Zekâ Ürün Ailesi", "AI Product Family")}</div>
           {/* Sayfanın tek H1'i (SEO başlık hiyerarşisi) — görünüm prototipteki büyük başlıkla aynı */}
           <h1 style={{ fontSize: "clamp(32px,5vw,52px)" }}>

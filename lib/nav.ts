@@ -115,6 +115,7 @@ export const NAV_SECTIONS: NavSection[] = [
     cta_en: "Get to know our culture →",
     links: [
       { key: "conforcus-way", tr: "Kültürümüz", en: "Our Culture", sub_tr: "Bizi biz yapan dört ilke", sub_en: "The four principles that define us" },
+      { key: "ekip", tr: "Ekibimiz", en: "Our Team", sub_tr: "Projede karşınızda olacak danışmanlar", sub_en: "The consultants you will work with" },
       { key: "conforcus-way", tr: "Conforcus Prime", en: "Conforcus Prime", sub_tr: "Genç danışman ve mentorluk programı", sub_en: "Young consultant & mentoring program" },
       { key: "conforcus-way", tr: "Kariyer", en: "Careers", sub_tr: "Açık pozisyonlar ve başvuru", sub_en: "Open positions & applications" },
       { href: "mailto:info@conforcus.com", tr: "Genel Başvuru", en: "General Application", sub_tr: "CV'nizi her zaman bekliyoruz", sub_en: "We always welcome your CV" },

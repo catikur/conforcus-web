@@ -10,10 +10,13 @@ import { getHeroSettings } from "@/lib/siteSettings";
 import { pathFor, pick, type Locale } from "@/lib/i18n";
 import Faq from "@/components/Faq";
 import { lineBreak } from "@/lib/lineBreak";
+import YouTube from "@/components/YouTube";
+import { getSiteMedia } from "@/lib/siteSettings";
 
 const cvar = (v: string): CSSProperties => ({ "--c": v }) as unknown as CSSProperties;
 
 export default async function HomePage({ locale }: { locale: Locale }) {
+  const media = await getSiteMedia(locale);
   const p = (k: Parameters<typeof pathFor>[0]) => pathFor(k, locale);
   const [hero, references, finSol, logSol, testimonials] = await Promise.all([
     getHeroSettings(locale),
@@ -428,6 +431,16 @@ export default async function HomePage({ locale }: { locale: Locale }) {
       </section>
 
       <Testimonials locale={locale} items={testimonials} />
+
+      {media.introVideoUrl ? (
+        <section className="vidsec">
+          <div className="wrap">
+            <p className="eyebrow rv">{pick(locale, "Tanıtım", "Introduction")}</p>
+            <h2 className="rv">{media.introVideoTitle || pick(locale, "Conforcus'u tanıyın", "Meet Conforcus")}</h2>
+            <YouTube url={media.introVideoUrl} locale={locale} title={media.introVideoTitle} />
+          </div>
+        </section>
+      ) : null}
 
       <Faq locale={locale} />
 

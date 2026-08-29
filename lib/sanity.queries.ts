@@ -47,6 +47,7 @@ const REF_CARD = `{
 export const REFERENCES_QUERY = groq`*[_type == "clientReference" && defined(slug.current)] | order(order asc, name asc) ${REF_CARD}`;
 
 export const REFERENCE_QUERY = groq`*[_type == "clientReference" && slug.current == $slug][0]{
+  videoUrl, "projectImageUrl": projectImage.asset->url, "projectImageAlt": projectImage.alt,
   "slug": slug.current, name, sector_tr, sector_en, countries, blurb_tr, blurb_en, body_tr, body_en, featured, order,
   "logoUrl": logo.asset->url,
   "logoAlt": logo.alt,
@@ -108,8 +109,17 @@ export const JOBS_QUERY = groq`*[_type == "jobPosting" && active == true] | orde
   title_tr, title_en, location, body_tr, body_en, applyEmail, applyUrl
 }`;
 
+export const TEAM_QUERY = groq`*[_type == "teamMember"] | order(order asc, name asc){
+  _id, name, role_tr, role_en, bio_tr, bio_en, expertise, linkedin, email, featured, order,
+  "photoUrl": photo.asset->url, "photoAlt": photo.alt
+}`;
+
 export const SITE_SETTINGS_QUERY = groq`*[_type == "siteSettings"][0]{
   hero_title_tr, hero_title_en, hero_sub_tr, hero_sub_en,
   hero_cta_primary_tr, hero_cta_primary_en, hero_cta_secondary_tr, hero_cta_secondary_en,
+  introVideoUrl, introVideoTitle_tr, introVideoTitle_en, confiqVideoUrl,
+  "confiqShotUrl": confiqShot.asset->url, "confiqShotAlt": confiqShot.alt,
+  "officeImageUrl": officeImage.asset->url, "officeImageAlt": officeImage.alt,
+  "teamImageUrl": teamImage.asset->url, "teamImageAlt": teamImage.alt,
   "noIndex": seo.noIndex == true
 }`;

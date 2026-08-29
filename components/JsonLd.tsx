@@ -208,3 +208,71 @@ export function BreadcrumbJsonLd({ locale, pageKey, name }: { locale: Locale; pa
   );
 }
 
+
+/* Ekip — her üye için Person şeması. Uzmanlık sinyali (E-E-A-T) hem Google hem
+   yapay zekâ motorları için değerli: "kim söylüyor" sorusunun makine cevabı. */
+export function TeamJsonLd({ team }: { team: { name: string; role: string; bio?: string; photoUrl?: string; linkedin?: string; expertise: string[] }[] }) {
+  if (!team.length) return null;
+  return (
+    <Script
+      data={{
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        itemListElement: team.map((m, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          item: {
+            "@type": "Person",
+            name: m.name,
+            jobTitle: m.role,
+            ...(m.bio ? { description: m.bio } : {}),
+            ...(m.photoUrl ? { image: m.photoUrl } : {}),
+            ...(m.linkedin ? { sameAs: [m.linkedin] } : {}),
+            ...(m.expertise.length ? { knowsAbout: m.expertise } : {}),
+            worksFor: { "@type": "Organization", name: COMPANY.name, url: SITE_URL },
+          },
+        })),
+      }}
+    />
+  );
+}
+
+/* Vaka sayfası — Article + about:Organization. Yapay zekâ motorları için vaka
+   içeriği en değerli alıntı malzemesi; şemasız kalması kayıptı. */
+export function CaseArticleJsonLd({
+  locale,
+  name,
+  slug,
+  blurb,
+  sector,
+  imageUrl,
+}: {
+  locale: Locale;
+  name: string;
+  slug: string;
+  blurb?: string;
+  sector?: string;
+  imageUrl?: string;
+}) {
+  const base = SITE_URL + ROUTES.referanslar[locale];
+  return (
+    <Script
+      data={{
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: locale === "tr" ? `${name} — SAP vaka çalışması` : `${name} — SAP case study`,
+        ...(blurb ? { description: blurb } : {}),
+        ...(imageUrl ? { image: imageUrl } : {}),
+        inLanguage: locale === "tr" ? "tr-TR" : "en-US",
+        mainEntityOfPage: `${base}/${slug}`,
+        about: { "@type": "Organization", name, ...(sector ? { industry: sector } : {}) },
+        author: { "@type": "Organization", name: COMPANY.name, url: SITE_URL },
+        publisher: {
+          "@type": "Organization",
+          name: COMPANY.name,
+          logo: { "@type": "ImageObject", url: `${SITE_URL}/logo.png` },
+        },
+      }}
+    />
+  );
+}

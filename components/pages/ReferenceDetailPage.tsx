@@ -4,6 +4,9 @@ import PortableBody from "@/components/PortableBody";
 import { COUNTRY_NAMES_EN } from "@/lib/data";
 import type { RefFull } from "@/lib/references";
 import { pathFor, pick, type Locale } from "@/lib/i18n";
+import MediaSlot from "@/components/MediaSlot";
+import YouTube from "@/components/YouTube";
+import { CaseArticleJsonLd } from "@/components/JsonLd";
 
 export default function ReferenceDetailPage({ locale, reference }: { locale: Locale; reference: RefFull }) {
   const cName = (c: string) => (locale === "tr" ? c : COUNTRY_NAMES_EN[c] || c);
@@ -11,6 +14,14 @@ export default function ReferenceDetailPage({ locale, reference }: { locale: Loc
 
   return (
     <main data-page="referanslar" className="active" id="main" tabIndex={-1}>
+      <CaseArticleJsonLd
+        locale={locale}
+        name={reference.name}
+        slug={reference.slug}
+        blurb={reference.blurb}
+        sector={reference.sector}
+        imageUrl={reference.projectImageUrl || reference.logoUrl}
+      />
       <div className="phero">
         <div className="wrap" style={{ maxWidth: 1000 }}>
           <Link href={pathFor("referanslar", locale)} className="mega-cta" style={{ display: "inline-block", marginBottom: 18 }}>
@@ -51,6 +62,21 @@ export default function ReferenceDetailPage({ locale, reference }: { locale: Loc
                     )}
                 </p>
               )}
+            </div>
+            <div className="rd-media">
+              <MediaSlot
+                src={reference.projectImageUrl}
+                alt={reference.projectImageAlt}
+                field="clientReference.projectImage"
+                locale={locale}
+                label={{ tr: "Proje görseli (müşteri izniyle)", en: "Project image (with client consent)" }}
+                ratio="16 / 9"
+              />
+              <YouTube
+                url={reference.videoUrl}
+                locale={locale}
+                title={`${reference.name} — ${pick(locale, "müşteri görüşü", "client testimonial")}`}
+              />
             </div>
             <aside className="rd-side">
               {reference.sector ? (

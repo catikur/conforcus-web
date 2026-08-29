@@ -1,8 +1,11 @@
 import Link from "next/link";
 import { COMPANY } from "@/lib/site";
 import { pathFor, pick, type Locale } from "@/lib/i18n";
+import MediaSlot from "@/components/MediaSlot";
+import { getSiteMedia } from "@/lib/siteSettings";
 
-export default function AboutPage({ locale }: { locale: Locale }) {
+export default async function AboutPage({ locale }: { locale: Locale }) {
+  const media = await getSiteMedia(locale);
   return (
     <main data-page="hakkimizda" className="active" id="main" tabIndex={-1}>
       <div className="phero">
@@ -18,6 +21,19 @@ export default function AboutPage({ locale }: { locale: Locale }) {
           </p>
         </div>
       </div>
+      <section style={{ padding: "0 0 8px" }}>
+        <div className="wrap">
+          <MediaSlot
+            src={media.officeImageUrl}
+            alt={media.officeImageAlt}
+            field="siteSettings.officeImage"
+            locale={locale}
+            label={{ tr: "Ofis fotoğrafı — Ataşehir, İstanbul", en: "Office photo — Ataşehir, Istanbul" }}
+            ratio="21 / 9"
+          />
+        </div>
+      </section>
+
       <section style={{ padding: "40px 0 80px" }}>
         <div className="wrap legal" style={{ maxWidth: 840 }}>
           <h2>{pick(locale, "Ne iş yaparız", "What we do")}</h2>

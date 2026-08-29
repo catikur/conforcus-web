@@ -1,5 +1,6 @@
 import Link from "next/link";
 import FaqList, { localizedFaqs } from "@/components/FaqList";
+import { ServiceDiagram } from "@/components/Diagrams";
 import { FaqJsonLd } from "@/components/JsonLd";
 import { pathFor, pick, type Locale } from "@/lib/i18n";
 import type { ServicePage } from "@/lib/servicePages";
@@ -32,6 +33,7 @@ export default function ServiceDetailPage({ locale, page }: { locale: Locale; pa
           <p className="lead" style={{ maxWidth: "72ch" }}>
             {pick(locale, page.icp.tr, page.icp.en)}
           </p>
+          <ServiceDiagram routeKey={page.key} locale={locale} />
           <h2>{pick(locale, page.stepsTitle.tr, page.stepsTitle.en)}</h2>
           <ol className="steps">
             {page.steps.map((s, i) => (
