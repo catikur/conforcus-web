@@ -5,5 +5,9 @@ export default defineCliConfig({
     projectId: process.env.SANITY_STUDIO_PROJECT_ID || "bl5w7h11",
     dataset: process.env.SANITY_STUDIO_DATASET || "production",
   },
-  // İlk `sanity deploy` çalıştırmasında studio adresi sorulur (ör. conforcus → conforcus.sanity.studio).
+  // Dağıtım hedefi sabit: https://conforcus-website.sanity.studio
+  // (appId olmadan `sanity deploy` her seferinde adres soruyor.)
+  deployment: {
+    appId: "ukfeobyxqj2lh3jj2eankmra",
+  },
 });
