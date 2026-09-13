@@ -6,7 +6,7 @@ export function GET() {
   const body = `# Conforcus
 
 > ${COMPANY.legalName} is a SAP consultancy delivering deep
-> expertise across SAP support (AMS), S/4HANA transformations, global rollout, and 48+
+> expertise across SAP support (AMS), S/4HANA transformations, global rollout, and 55+
 > ready-made SAP solutions. 130+ active clients, 50+ countries, 30+ industries, 70+
 > consultants, 95% client retention. Headquartered in Ataşehir, İstanbul, Türkiye.
 > Tagline: "${COMPANY.slogan}" Default language Turkish (/),

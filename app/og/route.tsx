@@ -40,7 +40,7 @@ export function GET() {
           Lasting trust in your business.
         </div>
         <div style={{ display: "flex", marginTop: 36, fontSize: 30, color: "#B9C6D9" }}>
-          SAP Support · S/4HANA · Global Rollout · 48+ Solutions · Confiq AI
+          SAP Support · S/4HANA · Global Rollout · 55+ Solutions · Confiq AI
         </div>
       </div>
     ),
