@@ -4,7 +4,7 @@ import WorldMap from "@/components/WorldMap";
 import HomeProducts from "@/components/HomeProducts";
 import Testimonials from "@/components/Testimonials";
 import { getReferences } from "@/lib/references";
-import { getFeaturedSolutions } from "@/lib/solutions";
+import { getFeaturedSolutions, getSolutions } from "@/lib/solutions";
 import { getTestimonials } from "@/lib/testimonials";
 import { getHeroSettings } from "@/lib/siteSettings";
 import { pathFor, pick, type Locale } from "@/lib/i18n";
@@ -18,15 +18,18 @@ const cvar = (v: string): CSSProperties => ({ "--c": v }) as unknown as CSSPrope
 export default async function HomePage({ locale }: { locale: Locale }) {
   const media = await getSiteMedia(locale);
   const p = (k: Parameters<typeof pathFor>[0]) => pathFor(k, locale);
-  const [hero, references, finSol, logSol, edonSol, testimonials] = await Promise.all([
+  const [hero, references, finSol, logSol, edonSol, testimonials, allSol] = await Promise.all([
     getHeroSettings(locale),
     getReferences(locale),
     getFeaturedSolutions(locale, "fin"),
     getFeaturedSolutions(locale, "log"),
     getFeaturedSolutions(locale, "edon"),
     getTestimonials(locale, true),
+    getSolutions(locale),
   ]);
   const refsBase = pathFor("referanslar", locale);
+  // Çözüm sayısı katalogla aynı kaynaktan (Sanity-or-fallback); sabit "48" kalmasın.
+  const solN = `${Math.max(allSol.length, 48)}+`;
   return (
     <main data-page="home" className="active" id="main" tabIndex={-1}>
       <header className="hero">
@@ -121,13 +124,13 @@ export default async function HomePage({ locale }: { locale: Locale }) {
               <span className="ar">→</span>
             </Link>
             <Link className="hs rv" style={cvar("var(--green)")} href={p("cozumler")}>
-              <span className="hk">{pick(locale, "48+ Hazır Çözüm", "48+ Ready Solutions")}</span>
+              <span className="hk">{pick(locale, `${solN} Hazır Çözüm`, `${solN} Ready Solutions`)}</span>
               <b>{pick(locale, "Saatler süren işler, dakikalara insin.", "Hours of work, down to minutes.")}</b>
               <p>
                 {pick(
                   locale,
-                  "Mutabakat hâlâ Excel'de mi? Ekibinizin en çok zaman kaybettiği 48 süreci çoktan paketledik.",
-                  "Still reconciling in Excel? We've already packaged the 48 processes that cost your team the most time."
+                  `Mutabakat hâlâ Excel'de mi? Ekibinizin en çok zaman kaybettiği ${allSol.length} süreci çoktan paketledik.`,
+                  `Still reconciling in Excel? We've already packaged the ${allSol.length} processes that cost your team the most time.`
                 )}
               </p>
               <span className="ar">→</span>
@@ -163,8 +166,8 @@ export default async function HomePage({ locale }: { locale: Locale }) {
             <span>{pick(locale, "Sektör", "Industries")}</span>
           </div>
           <div className="stat rv">
-            <b data-n="48" data-suf="+">
-              48+
+            <b data-n={String(Math.max(allSol.length, 48))} data-suf="+">
+              {solN}
             </b>
             <span>{pick(locale, "Hazır Çözüm", "Ready Solutions")}</span>
           </div>
@@ -310,7 +313,7 @@ export default async function HomePage({ locale }: { locale: Locale }) {
                 {pick(locale, "Ürünlerimiz", "Our Products")}
               </div>
               <h2>
-                {pick(locale, lineBreak("48+ hazır SAP çözümü,", "kurulmayı bekliyor"), lineBreak("48+ ready-made SAP solutions,", "waiting to be deployed"))}
+                {pick(locale, lineBreak(`${solN} hazır SAP çözümü,`, "kurulmayı bekliyor"), lineBreak(`${solN} ready-made SAP solutions,`, "waiting to be deployed"))}
               </h2>
               <p className="lead">
                 {pick(
@@ -321,7 +324,7 @@ export default async function HomePage({ locale }: { locale: Locale }) {
               </p>
             </div>
             <Link className="btn btn-b" href={p("cozumler")}>
-              {pick(locale, "48+ Ürünün Tamamı →", "See All 48+ Products →")}
+              {pick(locale, `${solN} Ürünün Tamamı →`, `See All ${solN} Products →`)}
             </Link>
           </div>
           <HomeProducts locale={locale} fin={finSol} log={logSol} edon={edonSol} />
