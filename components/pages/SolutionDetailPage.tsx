@@ -2,7 +2,7 @@ import Link from "next/link";
 import FaqList, { localizedFaqs, type Faq } from "@/components/FaqList";
 import PortableBody from "@/components/PortableBody";
 import { FaqJsonLd } from "@/components/JsonLd";
-import type { SolutionFull } from "@/lib/solutions";
+import { modLabel, type SolutionFull } from "@/lib/solutions";
 import { PRODUCT_PAGES } from "@/lib/productPages";
 import { pathFor, pick, type Locale } from "@/lib/i18n";
 
@@ -20,7 +20,7 @@ export default function SolutionDetailPage({ locale, sol }: { locale: Locale; so
             {pick(locale, "← Tüm çözümler", "← All solutions")}
           </Link>
           <div style={{ marginBottom: 10 }}>
-            <span className={"mod m-" + sol.module}>{sol.module}</span>
+            <span className={"mod m-" + sol.module}>{modLabel(sol.module)}</span>
           </div>
           <h1>{pack ? pick(locale, pack.name.tr, pack.name.en) : sol.name}</h1>
           {pack ? (
@@ -56,6 +56,25 @@ export default function SolutionDetailPage({ locale, sol }: { locale: Locale; so
               )}
             </p>
           )}
+          {sol.refs?.length ? (
+            <div className="solrefs">
+              <div className="eyebrow">{pick(locale, "Bu çözümü kullanan müşterilerimiz", "Clients using this solution")}</div>
+              <div className="solrefs-row">
+                {sol.refs.map((r) => (
+                  <Link className="ltile" href={`${pathFor("referanslar", locale)}/${r.slug}`} key={r.slug}>
+                    <div>
+                      {r.logoUrl ? (
+                        // eslint-disable-next-line @next/next/no-img-element -- Sanity CDN, sabit yükseklik
+                        <img src={r.logoUrl} alt={r.name} style={{ maxHeight: 40, maxWidth: "100%", margin: "0 auto" }} />
+                      ) : (
+                        <b>{r.name}</b>
+                      )}
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ) : null}
           {faqs.length ? <FaqList locale={locale} faqs={faqs} /> : null}
           <div style={{ marginTop: 40 }}>
             <Link className="btn btn-p" href={pathFor("analiz", locale)}>

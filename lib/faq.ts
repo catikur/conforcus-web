@@ -33,8 +33,8 @@ export const FAQ: FaqItem[] = [
       en: "How does your SAP support (AMS) model work?",
     },
     a: {
-      tr: "Sisteminizi tanıyan sabit bir danışman ekibi atanır; her talep SLA süreleriyle takip edilir. Günlük operasyonel destekten (hata çözümü, kullanıcı soruları, dönem sonu kapanış desteği) sürekli iyileştirmeye kadar uzanır. Kurum içi ekibiniz varsa modeli tamamlayıcı biçimde kurarız — yerine geçmek zorunda değiliz.",
-      en: "You get a fixed consultant team that knows your system, with every request tracked against SLA targets. It spans daily operations — incident resolution, user questions, period-end close support — through to continuous improvement. If you have an in-house team, we design the model to complement it rather than replace it.",
+      tr: "Sisteminizi tanıyan sabit bir danışman ekibi atanır; her talep SLA süreleriyle takip edilir. Günlük operasyonel destekten (hata çözümü, kullanıcı soruları, dönem sonu kapanış desteği) sürekli iyileştirmeye kadar uzanır. Kurum içi ekibiniz varsa modeli tamamlayıcı biçimde kurarız — yerine geçmek zorunda değiliz. Rönesans Holding gibi 200'den fazla şirket kodu içeren yapılarda finansal modüllerin tamamını bu modelle destekliyoruz.",
+      en: "You get a fixed consultant team that knows your system, with every request tracked against SLA targets. It spans daily operations — incident resolution, user questions, period-end close support — through to continuous improvement. If you have an in-house team, we design the model to complement it rather than replace it. In structures such as Rönesans Holding, with more than 200 company codes, we support the full set of financial modules under this model.",
     },
   },
   {
@@ -43,8 +43,8 @@ export const FAQ: FaqItem[] = [
       en: "Do you have multi-country SAP rollout experience?",
     },
     a: {
-      tr: "Altı kıtada, 50'den fazla ülkede rollout projelerinde çalıştık. Kritik konu şablon (template) yönetimidir: merkezi süreç standardı ile ülke bazlı yasal gereklilikler arasındaki dengeyi kurmak. Yerel mevzuat, vergi, e-fatura ve raporlama farklarını merkezî şablonu bozmadan çözüyoruz.",
-      en: "We have delivered rollout projects in more than 50 countries across six continents. The critical topic is template management: balancing a central process standard against country-specific legal requirements. We handle local regulation, tax, e-invoicing and reporting differences without breaking the central template.",
+      tr: "Altı kıtada, 50'den fazla ülkede rollout projelerinde çalıştık. Kritik konu şablon (template) yönetimidir: merkezi süreç standardı ile ülke bazlı yasal gereklilikler arasındaki dengeyi kurmak. Yerel mevzuat, vergi, e-fatura ve raporlama farklarını merkezî şablonu bozmadan çözüyoruz; 200'den fazla şirket kodlu holding yapılarında da aynı disiplin geçerli.",
+      en: "We have delivered rollout projects in more than 50 countries across six continents. The critical topic is template management: balancing a central process standard against country-specific legal requirements. We handle local regulation, tax, e-invoicing and reporting differences without breaking the central template — the same discipline applies in holding structures with more than 200 company codes.",
     },
   },
   {
@@ -55,6 +55,16 @@ export const FAQ: FaqItem[] = [
     a: {
       tr: "Yıllar içinde sahada tekrar eden ihtiyaçları ürünleştirdik: mutabakat, avans onay süreci, dönemselleştirme, maliyet raporları, kredi yönetimi gibi 48'den fazla hazır SAP çözümü. Sıfırdan geliştirme yerine kurulup şirketinize uyarlandıkları için devreye alma süresi haftalarla ölçülür, aylarla değil.",
       en: "We productised the needs that recur in the field: over 48 ready-to-deploy SAP solutions covering reconciliation, advance approval, accruals, costing reports, credit management and more. Because they are configured and adapted rather than built from scratch, go-live is measured in weeks rather than months.",
+    },
+  },
+  {
+    q: {
+      tr: "E-dönüşüm (e-fatura, e-defter, e-mutabakat) tarafında ne sunuyorsunuz?",
+      en: "What do you offer for Turkish e-transformation (e-invoice, e-ledger, e-reconciliation)?",
+    },
+    a: {
+      tr: "GİB e-dönüşüm belgelerinin tamamını SAP içinde uçtan uca kuruyoruz: e-Fatura, e-Arşiv, e-İrsaliye, e-Defter, e-Beyanname, e-Envanter; ayrıca cari ve BA/BS e-Mutabakat ile elektronik hesap özeti (EHÖ) entegrasyonu. Paketler mevzuat değiştikçe güncellenir; entegratör bağımsızdır.",
+      en: "We implement the full set of Turkish e-transformation documents end to end inside SAP: e-Invoice, e-Archive, e-Delivery note, e-Ledger, e-Declaration, e-Inventory; plus customer/vendor and BA/BS e-Reconciliation and electronic bank statement (EBS) integration. Packages are updated as regulation changes and are integrator-independent.",
     },
   },
   {

@@ -18,11 +18,12 @@ const cvar = (v: string): CSSProperties => ({ "--c": v }) as unknown as CSSPrope
 export default async function HomePage({ locale }: { locale: Locale }) {
   const media = await getSiteMedia(locale);
   const p = (k: Parameters<typeof pathFor>[0]) => pathFor(k, locale);
-  const [hero, references, finSol, logSol, testimonials] = await Promise.all([
+  const [hero, references, finSol, logSol, edonSol, testimonials] = await Promise.all([
     getHeroSettings(locale),
     getReferences(locale),
     getFeaturedSolutions(locale, "fin"),
     getFeaturedSolutions(locale, "log"),
+    getFeaturedSolutions(locale, "edon"),
     getTestimonials(locale, true),
   ]);
   const refsBase = pathFor("referanslar", locale);
@@ -323,7 +324,7 @@ export default async function HomePage({ locale }: { locale: Locale }) {
               {pick(locale, "48+ Ürünün Tamamı →", "See All 48+ Products →")}
             </Link>
           </div>
-          <HomeProducts locale={locale} fin={finSol} log={logSol} />
+          <HomeProducts locale={locale} fin={finSol} log={logSol} edon={edonSol} />
         </div>
       </section>
 

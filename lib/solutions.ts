@@ -8,7 +8,10 @@ import { PRODUCT_PAGES, PRODUCT_SLUG_SET } from "./productPages";
 import type { Faq } from "@/components/FaqList";
 import type { SeoOverride } from "./seo";
 
-export type SolGroup = "fin" | "log";
+import { type SolGroup } from "./modules";
+export { MODULE_LABEL, modLabel, type SolGroup } from "./modules";
+
+export type SolutionRef = { name: string; slug: string; logoUrl?: string };
 export type SolutionCard = {
   slug: string;
   name: string;
@@ -21,12 +24,13 @@ export type SolutionCard = {
 };
 export type SolutionFull = SolutionCard & {
   body: PTBlock[];
+  refs?: SolutionRef[];
   faqs?: Faq[];
   seo?: SeoOverride;
 };
 
 const FIN_MODULES = ["FI", "CO", "PS", "FM"];
-const groupFor = (m: string): SolGroup => (FIN_MODULES.includes(m) ? "fin" : "log");
+const groupFor = (m: string): SolGroup => (m === "E" ? "edon" : FIN_MODULES.includes(m) ? "fin" : "log");
 const loc = (l: Locale, tr?: string, en?: string) => (l === "tr" ? tr : en) || tr || en || "";
 
 type RawSol = {
@@ -43,6 +47,7 @@ type RawSol = {
 };
 type RawFaq = { question_tr?: string; question_en?: string; answer_tr?: string; answer_en?: string };
 type RawSolFull = RawSol & {
+  refs?: SolutionRef[];
   body_tr?: PTBlock[];
   body_en?: PTBlock[];
   faqs?: RawFaq[];
@@ -144,6 +149,7 @@ export async function getSolution(l: Locale, slug: string): Promise<SolutionFull
         return {
           ...card,
           body: (l === "tr" ? d.body_tr : d.body_en) || d.body_tr || d.body_en || [],
+          refs: (d.refs || []).filter((r) => r && r.slug),
           faqs: mapFaqs(d.faqs),
           seo: {
             title: l === "tr" ? d.seoTitle : d.seoTitle_en,

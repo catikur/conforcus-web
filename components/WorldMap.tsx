@@ -141,11 +141,15 @@ function setupMap(slot: HTMLElement, locale: Locale, refsByCountry: Record<strin
       refs && refs.length
         ? '<div class="mlogos">' +
           refs
+            .slice(0, 14)
             .map((r) => {
               const inner = r.logoUrl ? '<img src="' + esc(r.logoUrl) + '" alt="' + esc(r.name) + '">' : esc(r.name);
               return '<a class="mlogo" href="' + esc(refsBase + "/" + r.slug) + '">' + inner + "</a>";
             })
             .join("") +
+          (refs.length > 14
+            ? '<a class="mlogo mlogo-more" href="' + esc(refsBase) + '">+' + (refs.length - 14) + "</a>"
+            : "") +
           "</div>"
         : '<span class="mi-sub">' + (isTr ? inf.tr : inf.en) + "</span>";
     info.innerHTML = '<div class="mi-eyebrow">' + eyebrow + "</div>" + "<b>" + name(n) + "</b>" + sub;
