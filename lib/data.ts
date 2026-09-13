@@ -3,7 +3,7 @@
 
 export type Lang = "tr" | "en";
 
-/* ---------- Çözüm kataloğu (48+) ---------- */
+/* ---------- Çözüm kataloğu (55+) ---------- */
 export type Solution = { m: string; tr: string; en: string };
 export const SOLUTIONS: Solution[] = [
   { m: "FI", tr: "Müşteri Satıcı E-Mutabakat", en: "Customer & Vendor e-Reconciliation" },

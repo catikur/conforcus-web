@@ -54,7 +54,7 @@ export const FAQ: FaqItem[] = [
     },
     a: {
       tr: "Yıllar içinde sahada tekrar eden ihtiyaçları ürünleştirdik: mutabakat, avans onay süreci, dönemselleştirme, maliyet raporları, kredi yönetimi gibi 48'den fazla hazır SAP çözümü. Sıfırdan geliştirme yerine kurulup şirketinize uyarlandıkları için devreye alma süresi haftalarla ölçülür, aylarla değil.",
-      en: "We productised the needs that recur in the field: over 48 ready-to-deploy SAP solutions covering reconciliation, advance approval, accruals, costing reports, credit management and more. Because they are configured and adapted rather than built from scratch, go-live is measured in weeks rather than months.",
+      en: "We productised the needs that recur in the field: over 55 ready-to-deploy SAP solutions covering reconciliation, advance approval, accruals, costing reports, credit management and more. Because they are configured and adapted rather than built from scratch, go-live is measured in weeks rather than months.",
     },
   },
   {

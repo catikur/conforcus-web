@@ -17,7 +17,7 @@ export function OrganizationJsonLd() {
         logo: SITE_URL + "/logo.png",
         slogan: COMPANY.slogan,
         description:
-          "SAP danışmanlığında derin uzmanlık: SAP destek (AMS), S/4HANA dönüşümleri, global rollout ve 48+ hazır SAP çözümü.",
+          "SAP danışmanlığında derin uzmanlık: SAP destek (AMS), S/4HANA dönüşümleri, global rollout ve 55+ hazır SAP çözümü.",
         email: COMPANY.email,
         telephone: COMPANY.telephone,
         sameAs: [COMPANY.linkedin],

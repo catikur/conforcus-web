@@ -47,8 +47,8 @@ export const ROUTES: Record<RouteKey, RouteMeta> = {
     en: "/en",
     title: { tr: "Conforcus — SAP Danışmanlığında Güvenilir Ortak", en: "Conforcus — Your Trusted SAP Partner" },
     desc: {
-      tr: "SAP danışmanlığında derin uzmanlık: SAP destek (AMS), S/4HANA dönüşümleri, global rollout ve 48+ hazır SAP çözümü. 130+ müşteri, 50+ ülke.",
-      en: "Deep expertise in SAP consulting: SAP support (AMS), S/4HANA transformations, global rollout and 48+ ready-made SAP solutions. 130+ clients, 50+ countries.",
+      tr: "SAP danışmanlığında derin uzmanlık: SAP destek (AMS), S/4HANA dönüşümleri, global rollout ve 55+ hazır SAP çözümü. 130+ müşteri, 50+ ülke.",
+      en: "Deep expertise in SAP consulting: SAP support (AMS), S/4HANA transformations, global rollout and 55+ ready-made SAP solutions. 130+ clients, 50+ countries.",
     },
   },
   hizmetler: {
@@ -65,8 +65,8 @@ export const ROUTES: Record<RouteKey, RouteMeta> = {
     en: "/en/solutions",
     title: { tr: "Çözüm Kataloğu — Conforcus", en: "Solution Catalog — Conforcus" },
     desc: {
-      tr: "Sahada kanıtlanmış, kurulmaya hazır 48+ SAP çözümü: FI, CO, MM, SD, PS ve FM modüllerinde mutabakat, IFRS, ithalat, onay akışları ve daha fazlası.",
-      en: "48+ field-proven, ready-to-deploy SAP solutions across FI, CO, MM, SD, PS and FM: reconciliation, IFRS, import, approval workflows and more.",
+      tr: "Sahada kanıtlanmış, kurulmaya hazır 55+ SAP çözümü: FI, CO, MM, SD, PS ve FM modüllerinde mutabakat, IFRS, ithalat, onay akışları ve daha fazlası.",
+      en: "55+ field-proven, ready-to-deploy SAP solutions across FI, CO, MM, SD, PS and FM: reconciliation, IFRS, import, approval workflows and more.",
     },
   },
   confiq: {
@@ -201,8 +201,8 @@ export const ROUTES: Record<RouteKey, RouteMeta> = {
     en: "/en/services/product-development",
     title: { tr: "Ürün & Çözüm Geliştirme — Conforcus", en: "Product & Solution Development — Conforcus" },
     desc: {
-      tr: "ABAP, Fiori ve BTP ile özel geliştirme; 48+ hazır SAP çözümü. FS → TS → CR kalite zinciri, e-dönüşüm ve onay akışları.",
-      en: "Custom development with ABAP, Fiori and BTP plus 48+ ready SAP packages. FS → TS → CR quality chain, e-invoicing and approval flows.",
+      tr: "ABAP, Fiori ve BTP ile özel geliştirme; 55+ hazır SAP çözümü. FS → TS → CR kalite zinciri, e-dönüşüm ve onay akışları.",
+      en: "Custom development with ABAP, Fiori and BTP plus 55+ ready SAP packages. FS → TS → CR quality chain, e-invoicing and approval flows.",
     },
   },
 };

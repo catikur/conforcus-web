@@ -48,8 +48,8 @@ export default async function AboutPage({ locale }: { locale: Locale }) {
           <p>
             {pick(
               locale,
-              "Mutlu çalışan, mutlu müşteri — Conforcus Way. Rakamları (130+ müşteri, 50+ ülke, 30+ sektör, 48+ çözüm, 70+ danışman, %95 devam) sitede istatistik olarak kullanırız; uydurma ‘tasarruf milyonları’ yazmayız. Referans anlatımı kamuya açık veya onaylıdır.",
-              "Happy employees, happy clients — Conforcus Way. We use the site statistics (130+ clients, 50+ countries, 30+ industries, 48+ solutions, 70+ consultants, 95% retention) as published figures; we do not invent ‘millions saved’. Reference write-ups are public or approved."
+              "Mutlu çalışan, mutlu müşteri — Conforcus Way. Rakamları (130+ müşteri, 50+ ülke, 30+ sektör, 55+ çözüm, 70+ danışman, %95 devam) sitede istatistik olarak kullanırız; uydurma ‘tasarruf milyonları’ yazmayız. Referans anlatımı kamuya açık veya onaylıdır.",
+              "Happy employees, happy clients — Conforcus Way. We use the site statistics (130+ clients, 50+ countries, 30+ industries, 55+ solutions, 70+ consultants, 95% retention) as published figures; we do not invent ‘millions saved’. Reference write-ups are public or approved."
             )}
           </p>
           <h2>{pick(locale, "Neredeyiz", "Where we are")}</h2>

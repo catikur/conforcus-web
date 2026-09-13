@@ -152,7 +152,7 @@ export default function HizmetlerPage({ locale }: { locale: Locale }) {
               {pick(
                 locale,
                 "ABAP, Fiori ve bulut teknolojileriyle şirketinize özel geliştirmeler yapıyor; en sık ihtiyaç duyulan süreçler için 48'den fazla hazır çözüm paketi sunuyoruz. Emek ve zaman tasarrufunu teknolojiyle buluşturuyoruz.",
-                "We build custom developments with ABAP, Fiori and cloud technologies, and offer 48+ ready-made packages for the most common needs — bringing technology to where your teams lose the most time."
+                "We build custom developments with ABAP, Fiori and cloud technologies, and offer 55+ ready-made packages for the most common needs — bringing technology to where your teams lose the most time."
               )}
             </p>
             <div className="badges">
@@ -164,7 +164,7 @@ export default function HizmetlerPage({ locale }: { locale: Locale }) {
           </div>
           <div>
             <ul>
-              <li>{pick(locale, "FI'dan SD'ye 6 modülde 48+ hazır çözüm", "48+ ready solutions across 6 modules, FI to SD")}</li>
+              <li>{pick(locale, "FI'dan SD'ye 6 modülde 55+ hazır çözüm", "55+ ready solutions across 6 modules, FI to SD")}</li>
               <li>{pick(locale, "FS → TS → CR kalite zinciriyle standartlaştırılmış geliştirme", "Standardized development with an FS → TS → CR quality chain")}</li>
               <li>{pick(locale, "Fiori ile modern, mobil uyumlu kullanıcı deneyimi", "Modern, mobile-ready UX with Fiori")}</li>
               <li>{pick(locale, "Yapay zekâ destekli kurumsal uygulamalar", "AI-assisted enterprise applications")}</li>
