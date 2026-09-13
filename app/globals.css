@@ -564,3 +564,15 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;
   justify-content:space-between;gap:18px;flex-wrap:wrap;}
 .tmcta p{margin:0;color:var(--ink-2);}
 @media(prefers-reduced-motion:reduce){.tmcard,.yt-btn{transition:none;}}
+
+/* ═══ 6 — E-Çözümler + çözüm-referans bağlantısı ═══ */
+.m-E{color:#0B6E4F;border-color:rgba(11,110,79,.32);background:rgba(11,110,79,.06);}
+.chip-e{color:#0B6E4F;border-color:rgba(11,110,79,.35);text-decoration:none;}
+.chip-e:hover{background:rgba(11,110,79,.06);}
+.esec{padding:64px 0 40px;background:var(--mist);border-top:1px solid var(--line);border-bottom:1px solid var(--line);scroll-margin-top:90px;}
+.esec .pgrid{margin-top:30px;}
+.esec .pcard{background:#fff;}
+.solrefs{margin:44px 0 0;padding-top:30px;border-top:1px solid var(--line);}
+.solrefs-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:16px;}
+.solrefs .ltile{min-height:74px;padding:12px;}
+.minfo .mlogo-more{font-size:11px;font-weight:700;color:var(--blue-d);background:#EAF4FC;border-color:rgba(21,131,199,.3);}

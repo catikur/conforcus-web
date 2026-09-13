@@ -30,6 +30,8 @@ export function GET() {
 - Home (EN): ${u("/en")}
 - Services / Hizmetler: ${u("/hizmetler")} — ${u("/en/services")}
 - Solution Catalog / Çözümler: ${u("/cozumler")} — ${u("/en/solutions")}
+- E-Solutions (Turkish e-transformation, GİB): e-Fatura, e-Arşiv, e-İrsaliye, e-Defter, e-Mutabakat, EHÖ (electronic bank statement), e-Beyanname, e-Envanter — ${u("/cozumler")}#e-cozumler
+- Scale reference: Rönesans Holding — 200+ company codes, all financial modules (FI, CO, FM, TRM, PS); AMS, S/4HANA transformation and e-solutions — ${u("/referanslar/ronesans-holding")}
 - About / Hakkımızda: ${u("/hakkimizda")} — ${u("/en/about")}
 - Contact / İletişim: ${u("/iletisim")} — ${u("/en/contact")}
 - Confiq AI: ${u("/confiq")} — ${u("/en/confiq")}

@@ -3,13 +3,24 @@
 import { useState } from "react";
 import Link from "next/link";
 import type { SolutionCard } from "@/lib/solutions";
+import { modLabel, type SolGroup } from "@/lib/modules";
 import { pathFor, pick, type Locale } from "@/lib/i18n";
 
-// Ana sayfa "Ürünlerimiz" sekmeleri. Kartlar sunucudan (Sanity-or-fallback)
-// yerelleştirilmiş gelir; fallback = HOME_PRODUCTS (mevcut tablar aynen).
-export default function HomeProducts({ locale, fin, log }: { locale: Locale; fin: SolutionCard[]; log: SolutionCard[] }) {
-  const [grp, setGrp] = useState<"fin" | "log">("fin");
-  const items = grp === "fin" ? fin : log;
+// Ana sayfa "Ürünlerimiz" sekmeleri: Finans · Lojistik · E-Çözümler.
+// Kartlar sunucudan (Sanity-or-fallback) yerelleştirilmiş gelir.
+export default function HomeProducts({
+  locale,
+  fin,
+  log,
+  edon = [],
+}: {
+  locale: Locale;
+  fin: SolutionCard[];
+  log: SolutionCard[];
+  edon?: SolutionCard[];
+}) {
+  const [grp, setGrp] = useState<SolGroup>("fin");
+  const items = grp === "fin" ? fin : grp === "log" ? log : edon;
   const catalogBase = pathFor("cozumler", locale);
 
   return (
@@ -23,16 +34,29 @@ export default function HomeProducts({ locale, fin, log }: { locale: Locale; fin
           <span>{pick(locale, "Lojistik Çözümleri", "Logistics Solutions")}</span>
           <i>MM · SD</i>
         </button>
+        {edon.length ? (
+          <button className={"ptab" + (grp === "edon" ? " on" : "")} data-g="edon" onClick={() => setGrp("edon")}>
+            <span>{pick(locale, "E-Çözümler", "E-Solutions")}</span>
+            <i>{pick(locale, "e-Fatura · e-Defter · e-Mutabakat", "e-Invoice · e-Ledger · e-Reconciliation")}</i>
+          </button>
+        ) : null}
       </div>
       <div className="pgrid" id="homeprods">
         {items.map((s, i) => (
           <Link className="pcard" href={`${catalogBase}/${s.slug}`} key={i}>
-            <span className={"mod m-" + s.module}>{s.module}</span>
+            <span className={"mod m-" + s.module}>{modLabel(s.module)}</span>
             <h4>{s.name}</h4>
             {s.short ? <p>{s.short}</p> : null}
           </Link>
         ))}
       </div>
+      {grp === "edon" ? (
+        <p style={{ marginTop: 18, textAlign: "center" }}>
+          <Link className="mega-cta" href={`${catalogBase}#e-cozumler`}>
+            {pick(locale, "Tüm e-çözümler →", "All e-solutions →")}
+          </Link>
+        </p>
+      ) : null}
     </>
   );
 }

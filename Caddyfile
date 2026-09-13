@@ -74,3 +74,10 @@ florence.conforcus.com {
 	encode gzip
 	reverse_proxy florence-app:8000
 }
+
+# racing.conforcus.com - isolated racing project, /opt/racing
+racing.conforcus.com {
+	encode zstd gzip
+	header X-Robots-Tag "noindex, nofollow"
+	reverse_proxy racing-web:8080
+}

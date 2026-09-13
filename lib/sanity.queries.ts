@@ -87,6 +87,7 @@ const SOL_CARD = `{
 export const SOLUTIONS_QUERY = groq`*[_type == "solution"] | order(order asc, name_tr asc) ${SOL_CARD}`;
 
 export const SOLUTION_QUERY = groq`*[_type == "solution" && slug.current == $slug][0]{
+  "refs": references[]->{ name, "slug": slug.current, "logoUrl": logo.asset->url },
   "slug": slug.current, name_tr, name_en, module, group, short_tr, short_en, body_tr, body_en, featured,
   faqs,
   "noIndex": seo.noIndex == true,
