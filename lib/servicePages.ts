@@ -112,8 +112,8 @@ export const SERVICE_PAGES: ServicePage[] = [
     eyebrow: { tr: "Özel Geliştirme", en: "Custom Development" },
     h1: { tr: "Ürün & Çözüm Geliştirme", en: "Product & Solution Development" },
     lead: {
-      tr: "Standart SAP her şirketin Excel’ini bitirmez. ABAP, Fiori ve BTP ile ya 48+ hazır paketten birini kurarız ya da sizin kapanışınızı yavaşlatan süreci yazılım hâline getiririz.",
-      en: "Standard SAP will not retire every spreadsheet. With ABAP, Fiori and BTP we either deploy one of 48+ ready packages or turn the process that slows your close into software.",
+      tr: "Standart SAP her şirketin Excel’ini bitirmez. ABAP, Fiori ve BTP ile ya 55+ hazır paketten birini kurarız ya da sizin kapanışınızı yavaşlatan süreci yazılım hâline getiririz.",
+      en: "Standard SAP will not retire every spreadsheet. With ABAP, Fiori and BTP we either deploy one of 55+ ready packages or turn the process that slows your close into software.",
     },
     icp: {
       tr: "Mutabakat, onay, ithalat, e-ödeme, enflasyon veya IFRS 16 gibi tekrarlayan işi hâlâ e-posta ve Excel’de taşıyan finans/satın alma ekipleri. ‘Bunu Z-programla çözelim’ demeden önce paket var mı diye bakın.",
@@ -128,7 +128,7 @@ export const SERVICE_PAGES: ServicePage[] = [
       { tr: "Canlı ve AMS’e devir: runbook, izleme, küçük iyileştirme.", en: "Live and hand to AMS: runbook, monitoring, small improvements." },
     ],
     faqs: [
-      { q: { tr: "48+ çözümün hepsi aynı derinlikte mi?", en: "Are all 48+ solutions equally deep?" }, a: { tr: "Hayır. Sekiz çözümün uzun, indekslenen anlatımı var. Diğerleri katalogda durur; ince sayfa olarak indexlenmez. İhtiyacınız listede yoksa analiz formundan özel talep açın.", en: "No. Eight solutions have long, indexed pages. The rest stay in the catalog and are not indexed as thin pages. If you do not see what you need, open a custom request from the analysis form." } },
+      { q: { tr: "55+ çözümün hepsi aynı derinlikte mi?", en: "Are all 55+ solutions equally deep?" }, a: { tr: "Hayır. Her çözümün ihtiyaç, çözüm ve kazanç başlıklarıyla kendi detay sayfası var; Fatura Onay, e-Mutabakat gibi sahada en çok kurulanların anlatımı daha derin ve referanslı. İhtiyacınız listede yoksa analiz formundan özel talep açın.", en: "No. Every solution has its own detail page covering the need, the solution and the gain; the most frequently deployed ones — invoice approval, e-reconciliation — go deeper and carry references. If you do not see what you need, open a custom request from the analysis form." } },
       { q: { tr: "Fiori şart mı?", en: "Is Fiori mandatory?" }, a: { tr: "Kullanıcıya dokunan onay ve mutabakat işlerinde tercih ederiz. Toplu finans programı GUI’de kalabilir. Araç, süreçten sonra seçilir.", en: "We prefer it where people approve or reconcile. Mass finance programs can stay in GUI. The tool is chosen after the process." } },
       { q: { tr: "FS → TS → CR neden?", en: "Why FS → TS → CR?" }, a: { tr: "Sözlü ‘bir Z yazın’ talebi canlıda sapar. Yazılı fonksiyon, teknik ve değişiklik kaydı; sonraki AMS ekibinin okuyacağı metindir.", en: "A spoken ‘write a Z’ request drifts in production. Written FS, TS and change record is what the next AMS team will actually read." } },
       { q: { tr: "Hazır paket ne kadar sürede kurulur?", en: "How fast is a ready package?" }, a: { tr: "Süreç uyumu ve test verisine bağlı. ‘Yarın’ demeyiz; keşif sonrası konuşuruz. Saatler süren işi dakikaya indirmek iddiası, kurulum süresini gizlemez.", en: "It depends on process fit and test data. We will not say ‘tomorrow’; we talk after discovery. Cutting hours of work to minutes does not hide the install time." } },

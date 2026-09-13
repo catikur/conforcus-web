@@ -151,7 +151,7 @@ export default function HizmetlerPage({ locale }: { locale: Locale }) {
             <p className="lead">
               {pick(
                 locale,
-                "ABAP, Fiori ve bulut teknolojileriyle şirketinize özel geliştirmeler yapıyor; en sık ihtiyaç duyulan süreçler için 48'den fazla hazır çözüm paketi sunuyoruz. Emek ve zaman tasarrufunu teknolojiyle buluşturuyoruz.",
+                "ABAP, Fiori ve bulut teknolojileriyle şirketinize özel geliştirmeler yapıyor; en sık ihtiyaç duyulan süreçler için 55'ten fazla hazır çözüm paketi sunuyoruz. Emek ve zaman tasarrufunu teknolojiyle buluşturuyoruz.",
                 "We build custom developments with ABAP, Fiori and cloud technologies, and offer 55+ ready-made packages for the most common needs — bringing technology to where your teams lose the most time."
               )}
             </p>
