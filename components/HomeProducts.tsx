@@ -45,14 +45,14 @@ export default function HomeProducts({
         {items.map((s, i) => (
           <Link className="pcard" href={`${catalogBase}/${s.slug}`} key={i}>
             <span className={"mod m-" + s.module}>{modLabel(s.module)}</span>
-            <h4>{s.name}</h4>
+            <h3>{s.name}</h3>
             {s.short ? <p>{s.short}</p> : null}
           </Link>
         ))}
       </div>
       {grp === "edon" ? (
         <p style={{ marginTop: 18, textAlign: "center" }}>
-          <Link className="mega-cta" href={`${catalogBase}#e-cozumler`}>
+          <Link className="mega-cta" href={pathFor("e-cozumler", locale)}>
             {pick(locale, "Tüm e-çözümler →", "All e-solutions →")}
           </Link>
         </p>

@@ -25,7 +25,7 @@ export default defineType({
       name: "category",
       title: "Category / Kategori",
       type: "string",
-      options: { list: ["S/4HANA", "Global Rollout", "Confiq AI", "SAP Destek", "Genel"] },
+      options: { list: ["S/4HANA", "Global Rollout", "Confiq AI", "SAP Destek", "E-Dönüşüm", "Genel"] },
     }),
     defineField({ name: "publishedAt", title: "Published At / Yayın Tarihi", type: "datetime", validation: (r) => r.required() }),
     defineField({ name: "faqs", title: "FAQ", type: "array", of: [{ type: "faqItem" }] }),

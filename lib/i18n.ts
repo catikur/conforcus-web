@@ -14,6 +14,7 @@ export type RouteKey =
   | "home"
   | "hizmetler"
   | "cozumler"
+  | "e-cozumler"
   | "confiq"
   | "referanslar"
   | "conforcus-way"
@@ -67,6 +68,15 @@ export const ROUTES: Record<RouteKey, RouteMeta> = {
     desc: {
       tr: "Sahada kanıtlanmış, kurulmaya hazır 55+ SAP çözümü: FI, CO, MM, SD, PS ve FM modüllerinde mutabakat, IFRS, ithalat, onay akışları ve daha fazlası.",
       en: "55+ field-proven, ready-to-deploy SAP solutions across FI, CO, MM, SD, PS and FM: reconciliation, IFRS, import, approval workflows and more.",
+    },
+  },
+  "e-cozumler": {
+    tr: "/e-cozumler",
+    en: "/en/e-solutions",
+    title: { tr: "E-Çözümler: e-Fatura, e-Defter, e-Mutabakat — Conforcus", en: "E-Solutions: e-Invoice, e-Ledger, e-Reconciliation — Conforcus" },
+    desc: {
+      tr: "GİB e-dönüşüm belgeleri ve elektronik finans süreçleri SAP içinde: e-Fatura, e-Arşiv, e-İrsaliye, e-Defter, e-Mutabakat, EHÖ, e-Beyanname, e-Envanter. 2026 yükümlülük takvimi ve SSS.",
+      en: "Turkish e-transformation documents and electronic finance processes inside SAP: e-Invoice, e-Archive, e-Delivery, e-Ledger, e-Reconciliation, EBS, e-Declaration, e-Inventory. 2026 obligations and FAQ.",
     },
   },
   confiq: {

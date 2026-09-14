@@ -9,7 +9,7 @@ export default function LangToggle({ locale }: { locale: Locale }) {
   const pathname = usePathname();
   const { otherPath } = oppositePath(pathname);
   return (
-    <a className="lang" id="langbtn" href={otherPath} aria-label="Dil / Language" hrefLang={locale === "tr" ? "en" : "tr"}>
+    <a className="lang" id="langbtn" href={otherPath} aria-label={locale === "tr" ? "TR | EN — dil seçimi, İngilizce sürüme geç" : "TR | EN — language, switch to Turkish"} hrefLang={locale === "tr" ? "en" : "tr"}>
       {locale === "tr" ? (
         <>
           <b>TR</b> | EN

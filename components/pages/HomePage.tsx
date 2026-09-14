@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { CSSProperties } from "react";
 import WorldMap from "@/components/WorldMap";
 import HomeProducts from "@/components/HomeProducts";
+import { LogoWall } from "@/components/LogoWall";
 import Testimonials from "@/components/Testimonials";
 import { getReferences } from "@/lib/references";
 import { getFeaturedSolutions, getSolutions } from "@/lib/solutions";
@@ -410,27 +411,14 @@ export default async function HomePage({ locale }: { locale: Locale }) {
               {pick(locale, "Tüm Referanslar →", "All References →")}
             </Link>
           </div>
-          <div className="lgrid" id="homelogos">
-            {references.slice(0, 12).map((r) => (
-              <Link className="ltile" href={`${refsBase}/${r.slug}`} key={r.slug}>
-                <div>
-                  {r.logoUrl ? (
-                    <img src={r.logoUrl} alt={r.logoAlt || r.name} width={160} height={42} loading="lazy" style={{ maxHeight: 42, maxWidth: "100%", margin: "0 auto", height: "auto" }} />
-                  ) : (
-                    <b>{r.name}</b>
-                  )}
-                  {r.sector ? <small>{r.sector}</small> : null}
-                </div>
-              </Link>
-            ))}
-          </div>
-          <p className="note">
-            {pick(
-              locale,
-              "* Logo kullanımı onaylı müşterilerimiz. Tam liste için iletişime geçin.",
-              "* Logos shown with client approval. Contact us for the full list."
-            )}
-          </p>
+          <LogoWall items={references.slice(0, 12)} base={refsBase} cols={6} />
+          {references.length > 12 ? (
+            <p className="lw-more">
+              <b>{pick(locale, `ve ${references.length - 12} marka daha`, `and ${references.length - 12} more brands`)}</b>
+              <span>{references.filter((r) => !r.logoUrl).slice(0, 6).map((r) => r.name).join(" · ")}</span>
+              <Link href={p("referanslar")}>{pick(locale, "tümünü gör →", "see all →")}</Link>
+            </p>
+          ) : null}
         </div>
       </section>
 

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { LogoWall } from "@/components/LogoWall";
 import FaqList, { localizedFaqs, type Faq } from "@/components/FaqList";
 import PortableBody from "@/components/PortableBody";
 import { FaqJsonLd } from "@/components/JsonLd";
@@ -59,20 +60,14 @@ export default function SolutionDetailPage({ locale, sol }: { locale: Locale; so
           {sol.refs?.length ? (
             <div className="solrefs">
               <div className="eyebrow">{pick(locale, "Bu çözümü kullanan müşterilerimiz", "Clients using this solution")}</div>
-              <div className="solrefs-row">
-                {sol.refs.map((r) => (
-                  <Link className="ltile" href={`${pathFor("referanslar", locale)}/${r.slug}`} key={r.slug}>
-                    <div>
-                      {r.logoUrl ? (
-                        // eslint-disable-next-line @next/next/no-img-element -- Sanity CDN, sabit yükseklik
-                        <img src={r.logoUrl} alt={r.name} style={{ maxHeight: 40, maxWidth: "100%", margin: "0 auto" }} />
-                      ) : (
-                        <b>{r.name}</b>
-                      )}
-                    </div>
-                  </Link>
-                ))}
-              </div>
+              <LogoWall items={sol.refs} base={pathFor("referanslar", locale)} cols={4} compact />
+                {sol.refs.some((r) => !r.logoUrl) ? (
+                  <p className="solrefs-names">
+                    {sol.refs.filter((r) => !r.logoUrl).map((r, i) => (
+                      <Link href={`${pathFor("referanslar", locale)}/${r.slug}`} key={r.slug}>{r.name}</Link>
+                    ))}
+                  </p>
+                ) : null}
             </div>
           ) : null}
           {faqs.length ? <FaqList locale={locale} faqs={faqs} /> : null}

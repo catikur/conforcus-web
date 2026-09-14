@@ -78,11 +78,16 @@ export default function Catalog({
                 "Turkish e-transformation documents and electronic finance processes: end-to-end inside SAP, kept current as regulation changes."
               )}
             </p>
+            <p style={{ marginTop: -6, marginBottom: 22 }}>
+              <Link href={pathFor("e-cozumler", locale)} style={{ color: "#0B6E4F", fontWeight: 600, fontSize: 14 }}>
+                {pick(locale, "E-dönüşüm rehberi ve 2026 takvimi →", "E-transformation guide and 2026 calendar →")}
+              </Link>
+            </p>
             <div className="pgrid">
               {eSols.map((s) => (
                 <Link className="pcard" href={`${catalogBase}/${s.slug}`} key={s.slug}>
                   <span className="mod m-E">{modLabel(s.module)}</span>
-                  <h4>{s.name}</h4>
+                  <h3>{s.name}</h3>
                   {s.short ? <p>{s.short}</p> : null}
                 </Link>
               ))}
@@ -103,7 +108,7 @@ export default function Catalog({
             {list.map((s, i) => (
               <div className="pcard" key={i}>
                 <span className={"mod m-" + s.module}>{modLabel(s.module)}</span>
-                <h4>{s.name}</h4>
+                <h3>{s.name}</h3>
                 <Link className="more" style={{ color: "var(--blue)", fontSize: 13, fontWeight: 600 }} href={`${catalogBase}/${s.slug}`}>
                   {pick(locale, "Detay →", "Details →")}
                 </Link>

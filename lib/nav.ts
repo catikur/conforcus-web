@@ -60,7 +60,7 @@ export const NAV_SECTIONS: NavSection[] = [
     cta_en: "Full catalog →",
     cols3: true,
     links: [
-      { key: "cozumler", query: "#e-cozumler", tr: "E-Çözümler", en: "E-Solutions", note: "· 8", sub_tr: "e-Fatura, e-Defter, e-Mutabakat, EHÖ…", sub_en: "e-Invoice, e-Ledger, e-Reconciliation…", pill: { tr: "Yeni", en: "New" } },
+      { key: "e-cozumler", tr: "E-Çözümler", en: "E-Solutions", note: "· 8", sub_tr: "e-Fatura, e-Defter, e-Mutabakat, EHÖ…", sub_en: "e-Invoice, e-Ledger, e-Reconciliation…", pill: { tr: "Yeni", en: "New" } },
       { key: "cozumler", query: "?m=FI", tr: "FI", en: "FI", note: "· 16", sub_tr: "Finansal Muhasebe", sub_en: "Financial Accounting" },
       { key: "cozumler", query: "?m=CO", tr: "CO", en: "CO", note: "· 7", sub_tr: "Maliyet Muhasebesi", sub_en: "Controlling" },
       { key: "cozumler", query: "?m=MM", tr: "MM", en: "MM", note: "· 12", sub_tr: "Malzeme Yönetimi", sub_en: "Materials Management" },

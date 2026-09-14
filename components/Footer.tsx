@@ -17,14 +17,14 @@ export default function Footer({ locale }: { locale: Locale }) {
             </p>
           </div>
           <div>
-            <h4>{pick(locale, "Hizmetler", "Services")}</h4>
+            <h3>{pick(locale, "Hizmetler", "Services")}</h3>
             <Link href={pathFor("hizmet-sap-ams", locale)}>{pick(locale, "SAP Destek (AMS)", "SAP Support (AMS)")}</Link>
             <Link href={pathFor("hizmet-s4hana", locale)}>{pick(locale, "S/4HANA Dönüşümleri", "S/4HANA Transformations")}</Link>
             <Link href={pathFor("hizmet-rollout", locale)}>Global Rollout</Link>
             <Link href={pathFor("hizmet-urun", locale)}>{pick(locale, "Ürün & Çözüm Geliştirme", "Product & Solution Development")}</Link>
           </div>
           <div>
-            <h4>{pick(locale, "Şirket", "Company")}</h4>
+            <h3>{pick(locale, "Şirket", "Company")}</h3>
             <Link href={pathFor("hakkimizda", locale)}>{pick(locale, "Hakkımızda", "About")}</Link>
             <Link href={pathFor("conforcus-way", locale)}>Conforcus Way</Link>
             <Link href={pathFor("referanslar", locale)}>{pick(locale, "Referanslar", "References")}</Link>
@@ -32,7 +32,7 @@ export default function Footer({ locale }: { locale: Locale }) {
             <Link href={pathFor("iletisim", locale)}>{pick(locale, "İletişim", "Contact")}</Link>
           </div>
           <div>
-            <h4>{pick(locale, "İletişim", "Contact")}</h4>
+            <h3>{pick(locale, "İletişim", "Contact")}</h3>
             <a href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a>
             <a href={COMPANY.telHref}>{COMPANY.telephoneDisplay}</a>
             <a href={COMPANY.linkedin} target="_blank" rel="noopener">
