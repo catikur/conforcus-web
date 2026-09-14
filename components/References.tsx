@@ -23,12 +23,12 @@ export default function References({ locale, references }: { locale: Locale; ref
 
   return (
     <>
-      <div className="secbar" role="tablist" aria-label={pick(locale, "Sektöre göre filtrele", "Filter by industry")}>
-        <button className={"secchip" + (sec === "ALL" ? " on" : "")} role="tab" aria-selected={sec === "ALL"} onClick={() => setSec("ALL")}>
+      <div className="secbar" aria-label={pick(locale, "Sektöre göre filtrele", "Filter by industry")}>
+        <button className={"secchip" + (sec === "ALL" ? " on" : "")} aria-pressed={sec === "ALL"} onClick={() => setSec("ALL")}>
           {pick(locale, "Tümü", "All")} <i>{references.length}</i>
         </button>
         {sectors.slice(0, 10).map(([s, n]) => (
-          <button key={s} className={"secchip" + (sec === s ? " on" : "")} role="tab" aria-selected={sec === s} onClick={() => setSec(s)}>
+          <button key={s} className={"secchip" + (sec === s ? " on" : "")} aria-pressed={sec === s} onClick={() => setSec(s)}>
             {s} <i>{n}</i>
           </button>
         ))}
