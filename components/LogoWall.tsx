@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import Image from "next/image";
 import Link from "next/link";
 import type { RefCard } from "@/lib/references";
 
@@ -35,11 +34,12 @@ export function LogoWall({
   );
 }
 
-// SVG'ler next/image optimizasyonundan geçmez; PNG/JPG'ler CDN'den küçültülerek gelir.
+// Görseller Sanity CDN'den boyutlandırılmış ve auto=format (webp) ile gelir; sunucu tarafı
+// next/image optimizasyonu VPS'te CPU'ya bindiği için kullanılmaz. SVG'ler olduğu gibi.
 function Logo({ url, alt }: { url: string; alt: string }) {
   const svg = /\.svg(\?|$)/i.test(url);
-  if (svg) return <img src={url} alt={alt} width={220} height={72} loading="lazy" decoding="async" />;
-  return <Image src={url} alt={alt} width={220} height={72} sizes="(max-width:600px) 40vw, 220px" quality={80} />;
+  const src = svg ? url : `${url}?w=440&h=144&fit=max&auto=format&q=80`;
+  return <img src={src} alt={alt} width={220} height={72} loading="lazy" decoding="async" />;
 }
 
 /* Marka dizini — logosu olmayan markalar tipografik, çok sütunlu bir liste olarak.

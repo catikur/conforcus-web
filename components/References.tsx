@@ -27,11 +27,24 @@ export default function References({ locale, references }: { locale: Locale; ref
         <button className={"secchip" + (sec === "ALL" ? " on" : "")} role="tab" aria-selected={sec === "ALL"} onClick={() => setSec("ALL")}>
           {pick(locale, "Tümü", "All")} <i>{references.length}</i>
         </button>
-        {sectors.map(([s, n]) => (
+        {sectors.slice(0, 10).map(([s, n]) => (
           <button key={s} className={"secchip" + (sec === s ? " on" : "")} role="tab" aria-selected={sec === s} onClick={() => setSec(s)}>
             {s} <i>{n}</i>
           </button>
         ))}
+        {sectors.length > 10 ? (
+          <label className={"secsel" + (sec !== "ALL" && !sectors.slice(0, 10).some(([s]) => s === sec) ? " on" : "")}>
+            <span>{pick(locale, "Diğer sektörler", "Other industries")}</span>
+            <select value={sectors.slice(0, 10).some(([s]) => s === sec) || sec === "ALL" ? "" : sec} onChange={(e) => setSec(e.target.value || "ALL")} aria-label={pick(locale, "Diğer sektörler", "Other industries")}>
+              <option value="">{pick(locale, "Seçin…", "Choose…")}</option>
+              {sectors.slice(10).map(([s, n]) => (
+                <option key={s} value={s}>
+                  {s} ({n})
+                </option>
+              ))}
+            </select>
+          </label>
+        ) : null}
       </div>
 
       <LogoWall items={list} base={base} cols={5} />
