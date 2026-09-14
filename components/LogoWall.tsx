@@ -24,7 +24,7 @@ export function LogoWall({
     <ul className={"lwall lwall-" + cols + (compact ? " lwall-sm" : "")}>
       {logos.map((r) => (
         <li key={r.slug}>
-          <Link className="lw" href={`${base}/${r.slug}`} aria-label={r.name}>
+          <Link className="lw" href={`${base}/${r.slug}`}>
             <Logo url={r.logoUrl!} alt={r.logoAlt || r.name} />
             {r.sector ? <span className="lw-cap">{r.sector}</span> : null}
           </Link>
