@@ -1,4 +1,4 @@
-import { defineField, defineType } from "sanity";
+import { defineArrayMember, defineField, defineType } from "sanity";
 import { portableText } from "./objects";
 
 export default defineType({
@@ -27,6 +27,24 @@ export default defineType({
     defineField({ name: "short_en", title: "Short (EN)", type: "text", rows: 2 }),
     defineField({ name: "body_tr", title: "Body (TR) / Detay", type: "array", of: portableText }),
     defineField({ name: "body_en", title: "Body (EN)", type: "array", of: portableText }),
+    defineField({
+      name: "benefits_tr",
+      title: "Benefits (TR) / Kazanımlar",
+      type: "array",
+      of: [defineArrayMember({ type: "string" })],
+      description: "3–5 kısa madde. Detay sayfasında \"Kazanımlar\" listesi olarak görünür; arama sonucu açıklamasını da besler.",
+    }),
+    defineField({ name: "benefits_en", title: "Benefits (EN)", type: "array", of: [defineArrayMember({ type: "string" })] }),
+    defineField({
+      name: "technical_tr",
+      title: "Technical scope (TR) / Teknik kapsam",
+      type: "text",
+      rows: 3,
+      description: "Çözümün SAP'ta hangi modül ve nesnelere oturduğu. Detay sayfasında \"SAP'ta nereye oturur\" başlığıyla görünür.",
+    }),
+    defineField({ name: "technical_en", title: "Technical scope (EN)", type: "text", rows: 3 }),
+    defineField({ name: "audience_tr", title: "Audience (TR) / Kimler için", type: "string", description: "Örn. CFO, Finans Müdürü, Muhasebe & Hazine" }),
+    defineField({ name: "audience_en", title: "Audience (EN)", type: "string" }),
     defineField({ name: "faqs", title: "FAQ", type: "array", of: [{ type: "faqItem" }] }),
     defineField({
       name: "references",

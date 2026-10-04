@@ -3,6 +3,7 @@ import { SITEMAP_POSTS_QUERY, SITEMAP_REFERENCES_QUERY, SITEMAP_SOLUTIONS_QUERY 
 import { PRODUCT_SLUGS } from "./productPages";
 import { SAMPLE_POSTS } from "./blogSamples";
 import { CASE_FALLBACKS } from "./casePages";
+import { SECTOR_SLUGS } from "./sectorSlugs";
 
 export type SitemapPair = { tr: string; en: string; lastmod?: string; priority?: number };
 
@@ -47,6 +48,9 @@ export async function getSitemapEntries(): Promise<SitemapPair[]> {
     }
   }
 
+  for (const s of SECTOR_SLUGS) {
+    add({ tr: `/sektorler/${s.tr}`, en: `/en/industries/${s.en}`, priority: 0.8 });
+  }
   for (const slug of PRODUCT_SLUGS) {
     add({ tr: `/cozumler/${slug}`, en: `/en/solutions/${slug}`, priority: 0.75 });
   }

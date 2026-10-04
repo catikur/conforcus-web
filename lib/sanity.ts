@@ -1,5 +1,5 @@
 import "server-only";
-import { createClient } from "next-sanity";
+import { createClient } from "@sanity/client";
 
 // CLAUDE.md docker env: SANITY_PROJECT_ID, SANITY_DATASET=production.
 export const projectId = process.env.SANITY_PROJECT_ID || "";

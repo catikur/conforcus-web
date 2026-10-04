@@ -3,6 +3,7 @@ import { inter, sora } from "@/lib/fonts";
 import "../globals.css";
 import Shell from "@/components/Shell";
 import { ROUTES, SITE_URL } from "@/lib/i18n";
+import { verificationMeta } from "@/lib/analytics";
 
 // TR kök layout (varsayılan dil, kök yollar). <html lang="tr">
 export const metadata: Metadata = {
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
   openGraph: { type: "website", siteName: "Conforcus", locale: "tr_TR" },
   twitter: { card: "summary_large_image" },
   robots: { index: true, follow: true },
+  verification: verificationMeta(),
 };
 
 export default function TrRootLayout({ children }: { children: React.ReactNode }) {

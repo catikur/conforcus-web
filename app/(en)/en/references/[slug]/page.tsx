@@ -5,6 +5,8 @@ import { DetailBreadcrumbJsonLd } from "@/components/JsonLd";
 import { getReference, getReferenceSlugs } from "@/lib/references";
 import { buildMetadata } from "@/lib/seo";
 import { SITE_URL } from "@/lib/site";
+import { referenceDescription, referenceTitle } from "@/lib/seoText";
+import { COUNTRY_NAMES_EN } from "@/lib/data";
 
 export const revalidate = 60;
 export const dynamicParams = true;
@@ -17,8 +19,9 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const r = await getReference("en", params.slug);
   if (!r) return { title: "References — Conforcus" };
-  const desc = r.seo?.description || r.blurb || `${r.name} — a Conforcus SAP reference${r.sector ? ` · ${r.sector}` : ""}.`;
-  const title = r.seo?.title || `${r.name} — Conforcus`;
+  const cName = (c: string) => COUNTRY_NAMES_EN[c] || c;
+  const desc = r.seo?.description || referenceDescription(r, "en", cName);
+  const title = r.seo?.title || referenceTitle(r.name, !!r.hasBody, "en");
   return buildMetadata({
     locale: "en",
     title,
@@ -30,7 +33,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       en: `${SITE_URL}/en/references/${r.slug}`,
       "x-default": `${SITE_URL}/referanslar/${r.slug}`,
     },
-    noIndex: !!r.noIndex,
+    // Vaka anlatımı olmayan referans sayfası ince içeriktir: dizine girmez, bağlantıları izlenir.
+    noIndex: !!r.noIndex || !r.hasBody,
     image: r.logoUrl,
     type: "article",
   });

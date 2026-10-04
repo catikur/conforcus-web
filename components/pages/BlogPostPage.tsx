@@ -4,6 +4,7 @@ import PortableBody from "@/components/PortableBody";
 import { FaqJsonLd } from "@/components/JsonLd";
 import { type PostFull } from "@/lib/blog";
 import { pathFor, pick, type Locale } from "@/lib/i18n";
+import { sanityImg, sanitySrcSet } from "@/lib/img";
 
 function fmtDate(iso: string, locale: Locale): string {
   try {
@@ -46,11 +47,13 @@ export default function BlogPostPage({ locale, post }: { locale: Locale; post: P
           <div className="wrap" style={{ maxWidth: 900, marginTop: 36 }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={post.coverUrl}
+              src={sanityImg(post.coverUrl, { w: 900 })}
+              srcSet={sanitySrcSet(post.coverUrl, { w: 900 })}
               alt={post.coverAlt || post.title}
               width={1200}
               height={630}
-              loading="lazy"
+              fetchPriority="high"
+              decoding="async"
               style={{ width: "100%", height: "auto", borderRadius: 12, border: "1px solid var(--line)" }}
             />
           </div>

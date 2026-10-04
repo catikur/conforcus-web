@@ -87,6 +87,53 @@ export default async function ConforcusWayPage({ locale }: { locale: Locale }) {
         </div>
       </section>
 
+      <section style={{ padding: "64px 0 10px" }}>
+        <div className="wrap legal" style={{ maxWidth: 840 }}>
+          <h2>{pick(locale, "Neden böyle çalışıyoruz", "Why we work this way")}</h2>
+          <p>
+            {pick(
+              locale,
+              "Çıkış noktamız basit bir gözlem: müşteriye yansıyan kalite, danışmanın işini nasıl yaptığıyla başlar. Düşük stresli, inisiyatife açık bir ortamda çalışan danışman doğru cevabı zamanında verir; müşterisini gerçekten memnun eden danışman da işinde anlam bulur. İki yön birbirini besler.",
+              "Our starting point is a simple observation: the quality a client experiences begins with how the consultant does their work. A consultant working in a low-stress environment that welcomes initiative gives the right answer on time; and a consultant who truly satisfies their client finds meaning in the job. The two directions feed each other."
+            )}
+          </p>
+          <p>
+            {pick(
+              locale,
+              "Bu yüzden kararları işe en yakın yerde alıyoruz, bilgiyi paylaşıyoruz ve hatadan birlikte öğreniyoruz. Müşteriye de aynı açıklıkla yaklaşıyoruz: gerçek ihtiyacı anlamadan çözüm önermiyor, satması kolay olanı değil doğru olanı tavsiye ediyoruz. Şirket büyürken bu kültürü iyi niyete bırakmıyoruz; genç danışmanları yetiştiren Conforcus Prime programı ve düzenli birebir görüşmeler bunun yapısal güvencesi.",
+              "That is why we take decisions as close to the work as possible, share knowledge and learn from mistakes together. We approach clients with the same openness: we do not propose a solution before understanding the real need, and we recommend what is right rather than what is easy to sell. As the company grows we do not leave this culture to goodwill; the Conforcus Prime programme that develops young consultants, and regular one-to-one conversations, are its structural safeguards."
+            )}
+          </p>
+          <h2>{pick(locale, "Sloganımızın üç sözü", "The three promises in our slogan")}</h2>
+          <ul className="sx-list ok" style={{ maxWidth: "72ch" }}>
+            <li>
+              <b>Deep Expertise.</b>{" "}
+              {pick(
+                locale,
+                "70'ten fazla danışman; yarısından fazlası 10 yılı aşkın SAP deneyimine sahip. Finans ve kontrol modüllerinde butik uzmanlık.",
+                "More than 70 consultants; over half with more than ten years of SAP experience. Boutique expertise in finance and control modules."
+              )}
+            </li>
+            <li>
+              <b>Smart Solutions.</b>{" "}
+              {pick(
+                locale,
+                "Sahada tekrar eden ihtiyaçlardan doğan hazır çözüm paketleri ve yapay zekâ ürün ailemiz Confiq.",
+                "Ready-made solution packages born from needs that recur in the field, and our AI product family, Confiq."
+              )}
+            </li>
+            <li>
+              <b>Lasting Trust.</b>{" "}
+              {pick(
+                locale,
+                "130'dan fazla müşteri, %95 müşteri devamlılığı ve yıllara yayılan iş ortaklıkları.",
+                "More than 130 clients, 95% client retention and partnerships that span years."
+              )}
+            </li>
+          </ul>
+        </div>
+      </section>
+
       <section style={{ padding: "70px 0" }}>
         <div className="wrap">
           <div className="eyebrow">{pick(locale, "Kariyer", "Careers")}</div>

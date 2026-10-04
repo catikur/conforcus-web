@@ -1,4 +1,5 @@
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element */
+import { sanityImg, sanitySrcSet } from "@/lib/img";
 import Link from "next/link";
 import { getTeam, initials } from "@/lib/team";
 import { pathFor, pick, type Locale } from "@/lib/i18n";
@@ -41,7 +42,15 @@ export default async function EkipPage({ locale }: { locale: Locale }) {
                 <article className="tmcard" key={m.id}>
                   <div className="tmphoto">
                     {m.photoUrl ? (
-                      <Image src={m.photoUrl} alt={m.photoAlt || m.name} fill sizes="(max-width:640px) 45vw, 220px" style={{ objectFit: "cover" }} />
+                      <img
+                        src={sanityImg(m.photoUrl, { w: 320, h: 320, fit: "crop" })}
+                        srcSet={sanitySrcSet(m.photoUrl, { w: 320, h: 320, fit: "crop" })}
+                        alt={m.photoAlt || m.name}
+                        width={320}
+                        height={320}
+                        loading="lazy"
+                        decoding="async"
+                      />
                     ) : (
                       <span className="tmavatar" aria-hidden="true">
                         {initials(m.name)}

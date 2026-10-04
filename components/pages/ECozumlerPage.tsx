@@ -14,8 +14,8 @@ const FAQS: Faq[] = [
   {
     q: { tr: "E-çözümler için ayrı bir entegratör lisansı gerekir mi?", en: "Do I need a separate integrator licence for the e-solutions?" },
     a: {
-      tr: "Evet, GİB'e belge iletimi için bir özel entegratör ya da GİB portal yöntemi gerekir; çözümlerimiz entegratör bağımsızdır. SAP tarafındaki dönüşüm, kontrol ve yanıt işleme katmanı bizde kalır, iletim katmanı mevcut ya da seçeceğiniz entegratörle konuşur. Entegratör değiştiğinde SAP süreci değişmez.",
-      en: "Yes — transmission to GİB requires a certified integrator or the GİB portal method; our solutions are integrator-independent. The conversion, validation and response-handling layer stays on the SAP side, and the transmission layer talks to your existing or chosen integrator. Changing integrator does not change the SAP process.",
+      tr: "Evet, GİB'e belge iletimi için bir özel entegratör ya da GİB portal yöntemi gerekir. Belgenin üretimi, kontrolü ve yanıtların işlenmesi SAP tarafında yürür; iletim ise seçilen yöntem üzerinden yapılır. Hangi entegratörle ya da yöntemle çalışılacağı kurulum başında, mevcut sözleşmeleriniz dikkate alınarak belirlenir.",
+      en: "Yes — transmission to GİB requires a certified integrator or the GİB portal method. Generating and validating the document and handling the responses run on the SAP side; transmission goes through the chosen method. Which integrator or method is used is decided at the start of implementation, taking your existing contracts into account.",
     },
   },
   {
@@ -68,8 +68,8 @@ export default async function ECozumlerPage({ locale }: { locale: Locale }) {
           <p className="lead">
             {pick(
               locale,
-              "e-Fatura'dan e-Envanter'e sekiz yasal belge ve elektronik finans süreci, SAP belgesinden GİB'e ve geri dönen yanıta kadar tek akışta. Entegratör bağımsız, mevzuat değiştikçe paket seviyesinde güncellenen kurgular.",
-              "Eight statutory documents and electronic finance processes, from e-Invoice to e-Inventory, in one flow from the SAP document to GİB and back. Integrator-independent, updated at package level as regulation changes."
+              "e-Fatura'dan e-Envanter'e sekiz yasal belge ve elektronik finans süreci, SAP belgesinden GİB'e ve geri dönen yanıta kadar tek akışta. Mevzuat değiştiğinde gereken güncellemeler destek kapsamında yapılır.",
+              "Eight statutory documents and electronic finance processes, from e-Invoice to e-Inventory, in one flow from the SAP document to GİB and back. Updates required by regulatory changes are handled under support."
             )}
           </p>
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 26 }}>
@@ -172,7 +172,7 @@ export default async function ECozumlerPage({ locale }: { locale: Locale }) {
             </li>
             <li>
               <b>{pick(locale, "İletim", "Transmission")}</b>
-              <p>{pick(locale, "Belge, entegratör bağımsız iletim katmanıyla GİB'e gider. Entegratör değişse de SAP süreci aynı kalır.", "The document goes to GİB through an integrator-independent transmission layer. If the integrator changes, the SAP process stays the same.")}</p>
+              <p>{pick(locale, "Belge, kurulumda belirlenen yöntemle (özel entegratör ya da GİB portalı) GİB'e iletilir.", "The document is transmitted to GİB through the method chosen during implementation (a private integrator or the GİB portal).")}</p>
             </li>
             <li>
               <b>{pick(locale, "Yanıt belgeye yazılır", "The response is written back")}</b>

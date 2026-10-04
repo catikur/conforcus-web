@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getPosts, type PostCard } from "@/lib/blog";
 import { pathFor, pick, type Locale } from "@/lib/i18n";
+import { sanityImg, sanitySrcSet } from "@/lib/img";
 
 function fmtDate(iso: string, locale: Locale): string {
   try {
@@ -50,18 +51,25 @@ export default async function BlogPage({ locale }: { locale: Locale }) {
             </p>
           ) : null}
           <div className="bgrid">
-            {posts.map((post) => (
+            {posts.map((post, i) => (
               <Link className="bpost" href={`${base}/${post.slug}`} key={post.slug}>
-                <div
-                  className="bimg"
-                  style={
-                    post.coverUrl
-                      ? { backgroundImage: `url(${post.coverUrl})`, backgroundSize: "cover", backgroundPosition: "center" }
-                      : undefined
-                  }
-                />
+                <div className="bimg">
+                  {post.coverUrl ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={sanityImg(post.coverUrl, { w: 640, h: 336, fit: "crop" })}
+                      srcSet={sanitySrcSet(post.coverUrl, { w: 640, h: 336, fit: "crop" })}
+                      alt=""
+                      width={640}
+                      height={336}
+                      loading={i < 3 ? "eager" : "lazy"}
+                      fetchPriority={i === 0 ? "high" : "auto"}
+                      decoding="async"
+                    />
+                  ) : null}
+                </div>
                 <div className="bbody">
-                  <h4>{post.title}</h4>
+                  <h2>{post.title}</h2>
                   <p>{post.excerpt}</p>
                   <small>{metaText(post, locale)}</small>
                 </div>

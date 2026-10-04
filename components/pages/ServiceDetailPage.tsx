@@ -5,8 +5,11 @@ import { FaqJsonLd } from "@/components/JsonLd";
 import { pathFor, pick, type Locale } from "@/lib/i18n";
 import type { ServicePage } from "@/lib/servicePages";
 import { PRODUCT_PAGES } from "@/lib/productPages";
+import { SERVICE_EXTRAS } from "@/lib/serviceExtras";
+import { LogoWall, type LogoItem } from "@/components/LogoWall";
 
-export default function ServiceDetailPage({ locale, page }: { locale: Locale; page: ServicePage }) {
+export default function ServiceDetailPage({ locale, page, cases = [] }: { locale: Locale; page: ServicePage; cases?: LogoItem[] }) {
+  const extra = SERVICE_EXTRAS[page.key];
   const faqs = localizedFaqs(locale, page.faqs);
   const related = page.related
     .map((slug) => PRODUCT_PAGES[slug])
@@ -40,6 +43,29 @@ export default function ServiceDetailPage({ locale, page }: { locale: Locale; pa
               <li key={i}>{pick(locale, s.tr, s.en)}</li>
             ))}
           </ol>
+          {extra?.sections.map((s, i) => (
+            <div key={i}>
+              <h2>{pick(locale, s.h2.tr, s.h2.en)}</h2>
+              {s.paras.map((p, j) => (
+                <p key={j} style={{ maxWidth: "72ch", color: "var(--ink-2)", margin: "0 0 16px" }}>
+                  {pick(locale, p.tr, p.en)}
+                </p>
+              ))}
+              {s.bullets.length ? (
+                <ul className="sx-list ok" style={{ margin: "4px 0 22px", maxWidth: "72ch" }}>
+                  {s.bullets.map((b, j) => (
+                    <li key={j}>{pick(locale, b.tr, b.en)}</li>
+                  ))}
+                </ul>
+              ) : null}
+            </div>
+          ))}
+          {cases.length ? (
+            <>
+              <h2>{pick(locale, "Vaka sayfaları", "Case pages")}</h2>
+              <LogoWall items={cases} base={pathFor("referanslar", locale)} cols={4} compact />
+            </>
+          ) : null}
           <FaqList locale={locale} faqs={page.faqs} />
           {related.length ? (
             <>

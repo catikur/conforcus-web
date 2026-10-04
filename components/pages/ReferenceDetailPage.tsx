@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
+import { SECTOR_PAGES } from "@/lib/sectorPages";
 import PortableBody from "@/components/PortableBody";
 import { COUNTRY_NAMES_EN } from "@/lib/data";
 import type { RefFull } from "@/lib/references";
@@ -7,8 +8,14 @@ import { pathFor, pick, type Locale } from "@/lib/i18n";
 import MediaSlot from "@/components/MediaSlot";
 import YouTube from "@/components/YouTube";
 import { CaseArticleJsonLd } from "@/components/JsonLd";
+import { sanityImg } from "@/lib/img";
 
 export default function ReferenceDetailPage({ locale, reference }: { locale: Locale; reference: RefFull }) {
+  // Referansın sektör sayfası (varsa): sektör adı ve alttaki düğme oraya bağlanır.
+  const sectorPage = SECTOR_PAGES.find(
+    (s) => (reference.sectorTr && s.sectorLabels.includes(reference.sectorTr)) || (s.refSlugs || []).includes(reference.slug)
+  );
+  const sectorHref = sectorPage ? `${pathFor("sektorler", locale)}/${sectorPage.slug[locale]}` : "";
   const cName = (c: string) => (locale === "tr" ? c : COUNTRY_NAMES_EN[c] || c);
   const t0 = reference.testimonials[0];
 
@@ -28,7 +35,7 @@ export default function ReferenceDetailPage({ locale, reference }: { locale: Loc
             {pick(locale, "← Tüm referanslar", "← All references")}
           </Link>
           <div className="rd-hero">
-            <div className="rd-logo">{reference.logoUrl ? <img src={reference.logoUrl} alt={reference.name} /> : reference.name}</div>
+            <div className="rd-logo">{reference.logoUrl ? <img src={sanityImg(reference.logoUrl, { w: 240, h: 240 })} alt={reference.name} width={120} height={120} /> : reference.name}</div>
             <div className="rd-meta">
               {reference.sector ? <span className="sect">{reference.sector}</span> : null}
               <h1>{reference.name}</h1>
@@ -82,7 +89,7 @@ export default function ReferenceDetailPage({ locale, reference }: { locale: Loc
               {reference.sector ? (
                 <>
                   <div className="k">{pick(locale, "Sektör", "Sector")}</div>
-                  <div className="v">{reference.sector}</div>
+                  <div className="v">{sectorPage ? <Link href={sectorHref}>{reference.sector}</Link> : reference.sector}</div>
                 </>
               ) : null}
               {reference.countries.length ? (
@@ -102,9 +109,17 @@ export default function ReferenceDetailPage({ locale, reference }: { locale: Loc
               ) : null}
             </aside>
           </div>
-          <div style={{ marginTop: 40 }}>
+          <div style={{ marginTop: 40, display: "flex", gap: 12, flexWrap: "wrap" }}>
             <Link className="btn btn-p" href={pathFor("analiz", locale)}>
               {pick(locale, "Ücretsiz SAP Analizi", "Free SAP Analysis")}
+            </Link>
+            {sectorPage ? (
+              <Link className="btn btn-g" href={sectorHref}>
+                {pick(locale, `${sectorPage.name.tr}: sektör deneyimimiz`, `${sectorPage.name.en}: our industry experience`)}
+              </Link>
+            ) : null}
+            <Link className="btn btn-g" href={pathFor("referanslar", locale)}>
+              {pick(locale, "Tüm referanslar", "All references")}
             </Link>
           </div>
         </div>

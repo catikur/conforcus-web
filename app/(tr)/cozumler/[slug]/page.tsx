@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import SolutionDetailPage from "@/components/pages/SolutionDetailPage";
 import { DetailBreadcrumbJsonLd } from "@/components/JsonLd";
-import { getSolution, getSolutionSlugs } from "@/lib/solutions";
+import { getSolution, getSolutions, getSolutionSlugs, relatedSolutions } from "@/lib/solutions";
 import { PRODUCT_PAGES } from "@/lib/productPages";
 import { buildMetadata } from "@/lib/seo";
 import { SITE_URL } from "@/lib/site";
+import { solutionDescription, solutionTitle } from "@/lib/seoText";
 
 export const revalidate = 60;
 export const dynamicParams = true;
@@ -19,8 +20,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   const s = await getSolution("tr", params.slug);
   if (!s) return { title: "Çözüm Kataloğu — Conforcus" };
   const pack = PRODUCT_PAGES[s.slug];
-  const desc = s.seo?.description || pack?.short.tr || s.short || `${s.name} — ${s.module} modülü SAP çözümü.`;
-  const title = s.seo?.title || `${s.name} — Conforcus`;
+  const desc = s.seo?.description || solutionDescription(pack?.short.tr || s.short, s.benefits, s.module, "tr");
+  const title = s.seo?.title || solutionTitle(s.name, s.module, "tr");
   return buildMetadata({
     locale: "tr",
     title,
@@ -40,10 +41,11 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 export default async function Page({ params }: { params: { slug: string } }) {
   const s = await getSolution("tr", params.slug);
   if (!s) notFound();
+  const related = relatedSolutions(await getSolutions("tr"), s);
   return (
     <>
       <DetailBreadcrumbJsonLd locale="tr" parentKey="cozumler" parentName="Çözümler" title={s.name} slug={s.slug} />
-      <SolutionDetailPage locale="tr" sol={s} />
+      <SolutionDetailPage locale="tr" sol={s} related={related} />
     </>
   );
 }

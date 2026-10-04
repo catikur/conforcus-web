@@ -1,0 +1,1084 @@
+[
+  {
+    "key": "uretim",
+    "slug": {
+      "tr": "uretim-imalat",
+      "en": "manufacturing"
+    },
+    "name": {
+      "tr": "Üretim & İmalat",
+      "en": "Manufacturing"
+    },
+    "title": {
+      "tr": "Üretim ve İmalat Sektöründe SAP Danışmanlığı | Conforcus",
+      "en": "SAP Consulting for Manufacturing Companies | Conforcus"
+    },
+    "desc": {
+      "tr": "Üretim şirketleri için SAP danışmanlığı: PP-CO ürün maliyetlendirme, Material Ledger, S/4HANA dönüşümü ve AMS. Borusan Birleşik Boru'da beş ülkede rollout.",
+      "en": "SAP consulting for manufacturers: PP-CO product costing, Material Ledger, S/4HANA transformation and AMS. Five-country rollout at Borusan Birleşik Boru."
+    },
+    "h1": {
+      "tr": "Üretim ve imalat şirketleri için SAP danışmanlığı",
+      "en": "SAP consulting for manufacturing companies"
+    },
+    "lead": {
+      "tr": "Üretim şirketinde finansın ilk sorusu, ürünün gerçekte kaça mal olduğudur. Conforcus; ürün maliyetlendirme, Material Ledger ve PP-CO entegrasyonundaki uzmanlığını S/4HANA dönüşümü, çok ülkeli rollout ve SAP destek (AMS) hizmetleriyle birlikte sunar.",
+      "en": "In a manufacturing company, finance's first question is what a product really costs. Conforcus combines its expertise in product costing, Material Ledger and PP-CO integration with S/4HANA transformation, multi-country rollout and ongoing SAP support (AMS)."
+    },
+    "intro": [
+      {
+        "tr": "Üretimde SAP'nin zor kısmı, fabrikada olanın muhasebeye doğru yansımasıdır. Ürün ağacı, rota ve iş merkezi verisi standart maliyeti belirler; üretim siparişindeki sapmalar, fiyat farkları ve dönem sonu dağıtımları ise fiili maliyeti. Bu zincirin bir halkası eksik kurulduğunda stok değeri, satılan malın maliyeti ve ürün kârlılığı birbirini tutmaz. Türkiye'de buna tekdüzen hesap planının 7'li hesap akışı, yansıtma kayıtları ve enflasyon muhasebesi de eklenir.",
+        "en": "The hard part of SAP in manufacturing is getting shop-floor activity into the books correctly. Bills of material, routings and work centres set the standard cost; order variances, price differences and period-end allocations set the actual cost. When one link is weak, inventory value, cost of goods sold and product profitability stop agreeing. In Türkiye, 7-series cost accounts, reflection postings and inflation accounting add another layer."
+      },
+      {
+        "tr": "Üretim, Conforcus'un en güçlü olduğu sektördür. CO ile entegre ürün maliyetlendirme, Material Ledger ile fiili maliyet ve PP'den gelen üretim siparişi akışını birlikte tasarlarız; MM tarafında satın alma, stok ve onay süreçlerini aynı modele bağlarız. Bu çekirdeğin üzerine S/4HANA dönüşümü, yurt dışı fabrikalar için rollout ve canlı sistemde AMS gelir. SMM tablosu, toplu CKM3N envanter raporu ve 710 fiilileştirme gibi hazır çözümlerimiz kapanış adımlarını SAP içinde tutar.",
+        "en": "Manufacturing is the sector Conforcus knows best. We design CO product costing, Material Ledger actual costing and the PP production order flow as one model, and connect MM purchasing, inventory and approvals to it. On that core come S/4HANA transformation, rollouts to plants abroad and AMS. Ready-made solutions such as the COGS statement, mass CKM3N inventory report and account 710 actualization keep closing steps inside SAP."
+      }
+    ],
+    "challenges": {
+      "h": {
+        "tr": "Üretimde SAP'yi zorlaştıran konular",
+        "en": "What makes SAP hard in manufacturing"
+      },
+      "items": [
+        {
+          "tr": "Standart maliyet ile fiili maliyet arasındaki fark ay sonuna kadar görünmez; sapmanın hangi siparişten geldiği açıklanamaz.",
+          "en": "Standard and actual cost drift apart until month-end, and variances cannot be traced to an order."
+        },
+        {
+          "tr": "Material Ledger kapanışı uzun sürer; fiyat farkları, açılış kayıtları ve 7'li hesap fiilileştirmeleri elle düzeltilir.",
+          "en": "The Material Ledger close runs long; price differences, opening entries and 7-series actualizations are fixed manually."
+        },
+        {
+          "tr": "Satın alma, stok hareketi ve fatura onayları e-posta ve Excel'de yürür; SAP'de onay izi kalmaz.",
+          "en": "Purchasing, goods movement and invoice approvals run in e-mail and Excel, leaving no trail in SAP."
+        },
+        {
+          "tr": "Yurt dışındaki fabrikalar farklı sistem ve hesap planlarıyla çalışır; grup raporlaması her ay yeniden derlenir.",
+          "en": "Plants abroad use different systems and charts of accounts, so group reporting is rebuilt every month."
+        }
+      ]
+    },
+    "approach": {
+      "h": {
+        "tr": "Conforcus üretim şirketlerine ne sunar",
+        "en": "What Conforcus delivers for manufacturers"
+      },
+      "items": [
+        {
+          "tr": "CO ile entegre ürün maliyetlendirme ve Material Ledger tasarımı: standart maliyet, fiili maliyet ve sapma analizi tek modelde.",
+          "en": "CO-integrated product costing and Material Ledger design: standard cost, actual cost and variances in one model."
+        },
+        {
+          "tr": "PP üretim planlama ile fiili maliyet akışının entegrasyonu: üretim siparişinden dönem kapanışına kadar kesintisiz veri.",
+          "en": "PP production planning integrated with the actual cost flow, from production order to period close."
+        },
+        {
+          "tr": "Hazır çözümler: SMM tablosu, toplu CKM3N envanter raporu, 710 fiilileştirme, MR22 fiyat farkı, MM onay süreçleri ve enflasyon muhasebesi.",
+          "en": "Ready-made solutions: COGS statement, mass CKM3N inventory report, account 710 actualization, MR22 price differences, MM approvals, inflation accounting."
+        },
+        {
+          "tr": "S/4HANA dönüşümü, yurt dışı fabrikalara rollout ve canlı geçişten sonra devam eden SAP AMS desteği.",
+          "en": "S/4HANA transformation, rollouts to plants abroad and SAP AMS support after go-live."
+        }
+      ]
+    },
+    "proof": [
+      {
+        "tr": "Borusan Birleşik Boru projemiz, beş ülkede (Türkiye, ABD, Almanya, İtalya, Romanya) rollout içeren bir greenfield S/4HANA kurulumudur. Kapsam: FI, CO, PS, nakit yönetimi (CM) ve hazine (TRM). Raporlama yapısı üst yönetime görünürlük sağlayacak biçimde tasarlandı.",
+        "en": "Our Borusan Birleşik Boru project is a greenfield S/4HANA implementation rolled out in five countries: Türkiye, the USA, Germany, Italy and Romania. Scope: FI, CO, PS, cash management (CM) and treasury (TRM), with reporting designed for C-level visibility."
+      },
+      {
+        "tr": "Arçelik ile çalışmamız Tayland, Bangladeş, Vietnam, Malezya, Endonezya ve Dubai'deki S/4HANA rollout'unu, Arçelik Hitachi'de AMS hizmetini ve Arçelik Pazarlama'da enflasyon muhasebesini kapsar. Çolakoğlu Metalurji'de greenfield S/4HANA dönüşümü ve AMS, Türkiye ile ABD'yi kapsıyor.",
+        "en": "Our work for Arçelik covers the S/4HANA rollout in Thailand, Bangladesh, Vietnam, Malaysia, Indonesia and Dubai, AMS at Arçelik Hitachi and inflation accounting at Arçelik Pazarlama. At Çolakoğlu Metalurji, greenfield S/4HANA and AMS cover Türkiye and the USA."
+      }
+    ],
+    "modules": [
+      "CO",
+      "PP",
+      "MM",
+      "FI",
+      "SD"
+    ],
+    "solutionSlugs": [
+      "cost-of-goods-sold-cogs-statement",
+      "inventory-report-mass-ckm3n",
+      "account-710-actualization-program",
+      "mr22-opening-price-difference-program",
+      "invoice-approval-workflow",
+      "inflation-accounting"
+    ],
+    "sectorLabels": [
+      "Çelik & Metal",
+      "Boru Sanayi",
+      "Cam",
+      "Beyaz Eşya",
+      "Elektrik & Elektronik",
+      "Makine İmalatı",
+      "İş Makineleri",
+      "Alüminyum",
+      "Rulman Sanayi",
+      "Mobilya",
+      "Ambalaj",
+      "Çimento & Yapı Malzemeleri",
+      "Robotik & Otomasyon",
+      "Asansör & Yürüyen Merdiven",
+      "Tarım Makineleri"
+    ],
+    "refSlugs": [
+      "coskunoz-holding"
+    ],
+    "caseSlugs": [
+      "arcelik",
+      "borusan-birlesik-boru"
+    ],
+    "faqs": [
+      {
+        "q": {
+          "tr": "Fiili maliyetlendirmeyi (Material Ledger) nasıl kuruyorsunuz?",
+          "en": "How do you set up actual costing (Material Ledger)?"
+        },
+        "a": {
+          "tr": "Fiili maliyet; ürün maliyetlendirme, PP sipariş akışı ve MM stok hareketleri birlikte tasarlandığında doğru çalışır. Bu üçünü tek model olarak kurar, kapanışta MR22 ve 710 fiilileştirme programlarımızı kullanırız.",
+          "en": "Actual costing works when product costing, PP order flow and MM inventory movements are designed together. We build them as one model and use our MR22 and account 710 programs at close."
+        }
+      },
+      {
+        "q": {
+          "tr": "Yurt dışındaki fabrikalarımıza rollout'u nasıl yürütüyorsunuz?",
+          "en": "How do you run a rollout to our plants abroad?"
+        },
+        "a": {
+          "tr": "Merkezdeki süreç ve hesap yapısını korur, her ülkenin yasal ve vergisel gereksinimlerini lokalizasyonla karşılarız. Rollout referanslarımız arasında Borusan Birleşik Boru'da beş ülke ve Arçelik'te altı lokasyon bulunuyor.",
+          "en": "We keep the central process and account structure and cover each country's legal and tax requirements through localization. Our rollout references include five countries at Borusan Birleşik Boru and six locations at Arçelik."
+        }
+      },
+      {
+        "q": {
+          "tr": "Enflasyon muhasebesini SAP içinde yürütebilir miyiz?",
+          "en": "Can we run inflation accounting inside SAP?"
+        },
+        "a": {
+          "tr": "Evet. Enflasyon muhasebesi çözümümüz SAP FI içinde çalışır ve 25'ten fazla şirkette canlıdadır. Üretim tarafında Netzsch ve Arçelik Pazarlama bu şirketler arasındadır.",
+          "en": "Yes. Our inflation accounting solution runs in SAP FI and is live in 25+ companies, including Netzsch and Arçelik Pazarlama in manufacturing."
+        }
+      }
+    ]
+  },
+  {
+    "key": "otomotiv",
+    "slug": {
+      "tr": "otomotiv",
+      "en": "automotive"
+    },
+    "name": {
+      "tr": "Otomotiv",
+      "en": "Automotive"
+    },
+    "title": {
+      "tr": "Otomotiv Sektöründe SAP Danışmanlığı | Conforcus",
+      "en": "SAP Consulting for the Automotive Industry | Conforcus"
+    },
+    "desc": {
+      "tr": "Otomotiv ve yan sanayi için SAP danışmanlığı: PP-CO üretim maliyetlendirme, MM tedarik süreçleri, S/4HANA. Altay Otomotiv 1 Ocak 2025'te canlıya geçti.",
+      "en": "SAP consulting for automotive manufacturers and suppliers: PP-CO costing, MM supply processes, S/4HANA. Altay Otomotiv went live on 1 January 2025."
+    },
+    "h1": {
+      "tr": "Otomotiv üreticileri ve yan sanayi için SAP danışmanlığı",
+      "en": "SAP consulting for automotive manufacturers and suppliers"
+    },
+    "lead": {
+      "tr": "Otomotivde fiyat baskısı ve teslimat disiplini, parça maliyetinin her ay doğru bilinmesini zorunlu kılar. Conforcus; PP-CO üretim maliyetlendirme, MM tedarik süreçleri ve S/4HANA dönüşümünde otomotiv üreticileri ile yan sanayi şirketlerine danışmanlık verir.",
+      "en": "In automotive, price pressure and delivery discipline mean you need to know the true cost of every part, every month. Conforcus advises vehicle manufacturers and suppliers on PP-CO production costing, MM supply processes and S/4HANA transformation."
+    },
+    "intro": [
+      {
+        "tr": "Otomotiv, üretim uzmanlığının en sıkı sınandığı alandır. Yan sanayi şirketi çok sayıda parça numarasını, sık değişen ürün ağaçlarını ve ana sanayinin yıllık fiyat indirimi beklentisini aynı anda yönetir. Hammadde ve kur dalgalanması parça maliyetini ay içinde değiştirir; teklif maliyeti ile gerçekleşen maliyet arasındaki fark ancak PP, CO ve MM birlikte doğru çalışıyorsa görülür. İhracat ağırlıklı yapılarda ithalat, teşvikli alım ve kur farkı süreçleri de finansın gündemindedir.",
+        "en": "Automotive is where manufacturing expertise is tested hardest. A supplier manages many part numbers, frequently changing bills of material and the OEM's yearly price-reduction targets at once. Raw material and exchange rate swings move part cost within the month; the gap between quoted and actual cost shows only when PP, CO and MM work together. Export-heavy companies also handle imports, incentivized procurement and FX differences."
+      },
+      {
+        "tr": "Conforcus bu sektörde, üretim tarafındaki maliyetlendirme uzmanlığını otomotivin tedarik zinciri gerçeğiyle birleştirir. PP-CO üretim maliyetlendirmeyi, MM satın alma ve tedarik süreçlerini ve SD sevkiyat-faturalama akışını tek tasarım olarak ele alırız; global otomotiv standartlarına uyumu baştan gözetiriz. S/4HANA dönüşümünden sonra sistemi AMS ile destekleriz. Satın alma fiyat onayı, ithalat süreci, SMM tablosu ve enflasyon muhasebesi gibi hazır çözümlerimiz ihtiyaca göre projeye eklenir.",
+        "en": "Conforcus applies its manufacturing costing expertise to the automotive supply chain. We treat PP-CO production costing, MM purchasing and supply, and SD shipping and billing as one design, with global automotive standards in view from the start. After the S/4HANA transformation we support the system through AMS. Ready-made solutions such as purchase price approval, import management, the COGS statement and inflation accounting are added as needed."
+      }
+    ],
+    "challenges": {
+      "h": {
+        "tr": "Otomotivde öne çıkan zorluklar",
+        "en": "Where automotive companies struggle"
+      },
+      "items": [
+        {
+          "tr": "Parça bazında gerçek maliyet ve kârlılık geç görülür; ana sanayi ile fiyat görüşmesine eksik veriyle girilir.",
+          "en": "Cost and margin per part arrive late, so OEM price negotiations start with incomplete data."
+        },
+        {
+          "tr": "Ürün ağacı ve rota değişiklikleri maliyete geç yansır; standart maliyet güncelliğini yitirir, sapmalar büyür.",
+          "en": "Bill of material and routing changes reach costing late; standard cost goes stale and variances grow."
+        },
+        {
+          "tr": "Satın alma fiyatları, teklif karşılaştırmaları ve ithalat masrafları SAP dışında takip edilir; hammadde maliyeti geç netleşir.",
+          "en": "Purchase prices, quotation comparisons and import costs are tracked outside SAP, so material cost settles late."
+        },
+        {
+          "tr": "Eski ERP veya ECC üzerindeki özel geliştirmeler S/4HANA geçişini zorlaştırır; üretimi durdurmadan canlıya geçmek gerekir.",
+          "en": "Custom developments on a legacy ERP or ECC complicate the S/4HANA move, and go-live cannot stop production."
+        }
+      ]
+    },
+    "approach": {
+      "h": {
+        "tr": "Conforcus otomotivde ne sunar",
+        "en": "What Conforcus delivers in automotive"
+      },
+      "items": [
+        {
+          "tr": "PP-CO üretim maliyetlendirme: parça bazında standart ve fiili maliyet, sapma analizi ve SMM tablosu.",
+          "en": "PP-CO production costing: standard and actual cost per part, variance analysis and the COGS statement."
+        },
+        {
+          "tr": "MM tedarik zinciri ve satın alma süreçleri: bilgi kaydı üzerinden fiyat onayı, ithalat süreci ve satın alma KPI raporları.",
+          "en": "MM supply chain and purchasing: price approval via info records, import management and procurement KPI reports."
+        },
+        {
+          "tr": "S/4HANA dönüşümü: finans, üretim, satın alma ve satış süreçlerinin PP, CO, MM ve SD kapsamında yeniden kurulması.",
+          "en": "S/4HANA transformation: finance, production, purchasing and sales processes rebuilt across PP, CO, MM and SD."
+        },
+        {
+          "tr": "Canlı geçişten sonra SAP AMS: finans, üretim maliyeti, satın alma ve satış süreçlerinde süren destek.",
+          "en": "SAP AMS after go-live: ongoing support across finance, production costing, purchasing and sales processes."
+        }
+      ]
+    },
+    "proof": [
+      {
+        "tr": "Altay Otomotiv'in S/4HANA dönüşümü 1 Ocak 2025'te canlıya geçti. Proje PP-CO üretim maliyetlendirme, MM ve SD süreçlerini kapsadı; AMS desteğimiz devam ediyor. Coşkunöz Holding'in otomotiv grubunda ise greenfield S/4HANA dönüşümünü AMS hizmeti izledi.",
+        "en": "Altay Otomotiv's S/4HANA transformation went live on 1 January 2025. The project covered PP-CO production costing, MM and SD, and our AMS support continues. In Coşkunöz Holding's automotive group, a greenfield S/4HANA transformation was followed by AMS."
+      },
+      {
+        "tr": "Enflasyon muhasebesi çözümümüz otomotiv tarafında SAF Holland ve Otokar'da uygulandı. Bu sektördeki diğer referanslarımız arasında BMC, Temsa, Mubea Otomotiv, Doğan Trend, Martur Fompak, Pimsa, Opsan ve Tredin Otomotiv de yer alıyor.",
+        "en": "In automotive, our inflation accounting solution was implemented at SAF Holland and Otokar. Our references in the sector also include BMC, Temsa, Mubea Otomotiv, Doğan Trend, Martur Fompak, Pimsa, Opsan and Tredin Otomotiv."
+      }
+    ],
+    "modules": [
+      "CO",
+      "PP",
+      "MM",
+      "SD",
+      "FI"
+    ],
+    "solutionSlugs": [
+      "cost-of-goods-sold-cogs-statement",
+      "mr22-opening-price-difference-program",
+      "price-approval-via-info-records",
+      "procurement-kpi-reports-from-sap-data",
+      "import-management-process",
+      "inflation-accounting"
+    ],
+    "sectorLabels": [
+      "Otomotiv"
+    ],
+    "refSlugs": [
+      "coskunoz-holding",
+      "otokar"
+    ],
+    "caseSlugs": [
+      "altay-otomotiv"
+    ],
+    "faqs": [
+      {
+        "q": {
+          "tr": "Parça bazında maliyet ve kârlılığı SAP'de nasıl görürüz?",
+          "en": "How do we see cost and margin per part in SAP?"
+        },
+        "a": {
+          "tr": "Standart maliyet ürün ağacı ve rotadan, fiili maliyet ise üretim siparişi ve Material Ledger'dan gelir. PP ile CO'yu birlikte tasarladığımızda parça bazında sapma ve kârlılık aynı sistemden raporlanır.",
+          "en": "Standard cost comes from the bill of material and routing, actual cost from the production order and Material Ledger. With PP and CO designed together, variance and margin per part come from one system."
+        }
+      },
+      {
+        "q": {
+          "tr": "S/4HANA'ya greenfield mi, mevcut sistemi dönüştürerek mi geçmeliyiz?",
+          "en": "Should we move to S/4HANA greenfield or by converting the existing system?"
+        },
+        "a": {
+          "tr": "Karar, mevcut süreç tasarımının ve özel geliştirmelerin ne kadarının korunmaya değer olduğuna bağlıdır. Coşkunöz Holding'in otomotiv grubunda greenfield yaklaşımla ilerledik; her projede önce mevcut sistemi inceleriz.",
+          "en": "It depends on how much of your current process design and custom development is worth keeping. In Coşkunöz Holding's automotive group we went greenfield; we always review the existing system first."
+        }
+      },
+      {
+        "q": {
+          "tr": "Canlı geçişten sonra destek nasıl sürüyor?",
+          "en": "How does support continue after go-live?"
+        },
+        "a": {
+          "tr": "Canlı geçişten sonra SAP AMS hizmetimizle desteğe devam ederiz; Altay Otomotiv ve Coşkunöz Holding'de olduğu gibi. Referans müşterilerimizin çoğu AMS kapsamındadır ve müşterilerimizin %95'i bizimle çalışmaya devam eder.",
+          "en": "After go-live we continue with SAP AMS, as at Altay Otomotiv and Coşkunöz Holding. Most of our reference clients are under AMS, and our client retention rate is 95%."
+        }
+      }
+    ]
+  },
+  {
+    "key": "kimya-fmcg",
+    "slug": {
+      "tr": "kimya-fmcg-ilac",
+      "en": "chemicals-fmcg-pharma"
+    },
+    "name": {
+      "tr": "Kimya, FMCG, Gıda, İlaç & Kozmetik",
+      "en": "Chemicals, FMCG, Food, Pharma & Cosmetics"
+    },
+    "title": {
+      "tr": "Kimya, FMCG ve İlaç Sektöründe SAP Danışmanlığı | Conforcus",
+      "en": "SAP Consulting for Chemicals, FMCG & Pharma | Conforcus"
+    },
+    "desc": {
+      "tr": "Kimya, hızlı tüketim, gıda, ilaç ve kozmetik şirketleri için SAP: global rollout, IFRS lokalizasyonu ve AMS. Hayat Kimya'da beş ülkede S/4HANA rollout.",
+      "en": "SAP for chemicals, FMCG, food, pharma and cosmetics companies: global rollout, IFRS localization and AMS. Five-country S/4HANA rollout at Hayat Kimya."
+    },
+    "h1": {
+      "tr": "Kimya, hızlı tüketim, gıda, ilaç ve kozmetik şirketleri için SAP danışmanlığı",
+      "en": "SAP consulting for chemicals, FMCG, food, pharma and cosmetics companies"
+    },
+    "lead": {
+      "tr": "Yüksek hacimli üretim, bayi ve zincir kanallarına dağıtım ve yurt dışı operasyonlar aynı SAP sisteminde buluşur. Conforcus bu sektöre çok ülkeli S/4HANA rollout, IFRS uyumlu lokalizasyon ve finans-lojistik entegrasyonu sunar.",
+      "en": "High-volume production, distribution through dealers and retail chains, and operations abroad all meet in one SAP system. For this sector Conforcus delivers multi-country S/4HANA rollouts, IFRS-compliant localization and finance-logistics integration."
+    },
+    "intro": [
+      {
+        "tr": "Kimya, hızlı tüketim, gıda, ilaç ve kozmetik şirketlerinin ortak noktası hacimdir: çok sayıda ürün, sık kampanya, yoğun sevkiyat ve fatura trafiği. Fiyat ve iskonto koşulları sürekli değişir; bayi tahsilatı, kredi limiti ve vade takibi finansın günlük işidir. Büyüme çoğu zaman yurt dışı fabrika ve satış şirketleriyle gelir. O noktada her ülkenin vergi, e-fatura ve yasal raporlama kuralları devreye girer; grup ise tüm ülkelerden aynı IFRS diliyle rapor bekler.",
+        "en": "Chemicals, FMCG, food, pharma and cosmetics companies share one thing: volume. Many products, frequent promotions, heavy shipping and invoicing. Prices and discounts change constantly, and dealer collections, credit limits and payment terms are daily work for finance. Growth usually comes through plants and sales companies abroad. Each country brings its own tax, e-invoicing and statutory reporting rules, while the group expects the same IFRS reporting from all."
+      },
+      {
+        "tr": "Bu sektör, Conforcus'un global rollout ve lokalizasyon uzmanlığını en yoğun kullandığı alandır. Merkezde kurulan FI, CO, MM ve SD yapısını yeni ülkelere taşır, IFRS uyumlu lokalizasyonla yerel mevzuatı karşılarız. Hazine (TRM) ve bütçe yönetimi (FM) ihtiyaçlarını aynı finans modeline bağlarız. Türkiye tarafında e-fatura, e-defter, DBS banka entegrasyonu, fiyat-koşul onayı ve enflasyon muhasebesi gibi hazır çözümlerimiz kullanılır; canlı geçişten sonra destek AMS ile sürer.",
+        "en": "Conforcus uses its global rollout and localization expertise most in this sector. We take the FI, CO, MM and SD design built at headquarters to new countries and meet local regulation through IFRS-compliant localization. Treasury (TRM) and budget management (FM) join the same finance model. In Türkiye we add ready-made solutions such as e-invoice, e-ledger, DBS bank integration, pricing approval and inflation accounting; AMS follows go-live."
+      }
+    ],
+    "challenges": {
+      "h": {
+        "tr": "Bu sektörlerde öne çıkan zorluklar",
+        "en": "Where these industries struggle"
+      },
+      "items": [
+        {
+          "tr": "Yeni ülke açıldığında yerel vergi, e-fatura ve yasal raporlama kuralları ile grup standartlarını aynı sistemde tutmak zordur.",
+          "en": "Each new country adds local tax, e-invoicing and reporting rules on top of group standards."
+        },
+        {
+          "tr": "Yerel defter ile IFRS raporlaması ayrı yürür; peşine indirgeme, reeskont ve sınıflama kayıtları dönem sonunda elle hazırlanır.",
+          "en": "Local books and IFRS reporting run separately; discounting, rediscount and reclassification entries are prepared by hand."
+        },
+        {
+          "tr": "Fiyat, iskonto ve kampanya koşulları sık değişir; onaysız koşullar hatalı faturaya ve bayi mutabakat sorunlarına yol açar.",
+          "en": "Prices, discounts and promotion conditions change often; unapproved conditions cause wrong invoices and dealer disputes."
+        },
+        {
+          "tr": "Bayi tahsilatı, kredi limiti ve vade takibi yüksek işlem hacminde finans ekibini manuel işe boğar.",
+          "en": "At high volumes, dealer collections, credit limits and due-date tracking bury finance in manual work."
+        }
+      ]
+    },
+    "approach": {
+      "h": {
+        "tr": "Conforcus bu sektörlere ne sunar",
+        "en": "What Conforcus delivers for these industries"
+      },
+      "items": [
+        {
+          "tr": "Çok ülkeli S/4HANA rollout: FI, CO, MM ve SD yapısının yeni ülkelere taşınması ve IFRS uyumlu lokalizasyon.",
+          "en": "Multi-country S/4HANA rollout: the FI, CO, MM and SD design carried to new countries with IFRS-compliant localization."
+        },
+        {
+          "tr": "Uçtan uca IFRS süreçleri: satış ve satın almanın peşine indirgenmesi, reeskont, sınıflama ve NRV hesapları SAP içinde.",
+          "en": "End-to-end IFRS processes: discounting of sales and purchases, rediscount, reclassification and NRV calculations inside SAP."
+        },
+        {
+          "tr": "Satış, tahsilat ve satın alma için hazır çözümler: fiyat-koşul onayı, DBS banka entegrasyonu, müşteri kredi yönetimi ve fatura onay iş akışı.",
+          "en": "Ready-made sales, collections and purchasing solutions: pricing approval, DBS bank integration, customer credit management, invoice approval workflow."
+        },
+        {
+          "tr": "Hazine (TRM) ve bütçe yönetimi (FM) dahil finans modüllerinde S/4HANA dönüşümü ve canlı geçiş sonrası AMS.",
+          "en": "S/4HANA transformation across the finance modules, including treasury (TRM) and budget management (FM), followed by AMS."
+        }
+      ]
+    },
+    "proof": [
+      {
+        "tr": "Hayat Kimya'da S/4HANA rollout'u Rusya, Endonezya, Vietnam, Tayland ve Malezya'yı kapsıyor; FI, CO, MM ve SD modüllerinde IFRS uyumlu lokalizasyon yapıldı, AMS devam ediyor. Evyap'ın S/4HANA dönüşümü FI, TRM, CO ve FM kapsamında Türkiye, Endonezya, Malezya ve Rusya'yı içeriyor.",
+        "en": "At Hayat Kimya, the S/4HANA rollout covers Russia, Indonesia, Vietnam, Thailand and Malaysia, with IFRS-compliant localization across FI, CO, MM and SD; AMS continues. Evyap's S/4HANA transformation spans FI, TRM, CO and FM in Türkiye, Indonesia, Malaysia and Russia."
+      },
+      {
+        "tr": "Kozmetikte Farmasi ile çalışmamız Türkiye ve ABD'de S/4HANA rollout'unu ve AMS hizmetini kapsıyor. Flormar'ın Almanya rollout'unun kickoff'u yapıldı; kapsamda DATEV ve XRechnung/ZUGFeRD lokalizasyonu var. İlaçta Deva Holding'de SAP MM fatura onay iş akışını kurduk.",
+        "en": "In cosmetics, our work with Farmasi covers an S/4HANA rollout and AMS in Türkiye and the USA. Flormar's Germany rollout has kicked off, with DATEV and XRechnung/ZUGFeRD localization in scope. In pharma, we built Deva Holding's SAP MM invoice approval workflow."
+      }
+    ],
+    "modules": [
+      "FI",
+      "CO",
+      "MM",
+      "SD",
+      "TRM",
+      "FM"
+    ],
+    "solutionSlugs": [
+      "end-to-end-ifrs-processes-discounting-reclassification-nrv",
+      "inflation-accounting",
+      "direct-debit-system-dbs-bank-integration",
+      "pricing-condition-approval",
+      "customer-credit-management",
+      "invoice-approval-workflow"
+    ],
+    "sectorLabels": [
+      "Kimya",
+      "Hızlı Tüketim Malları",
+      "Gıda",
+      "Kozmetik",
+      "İlaç",
+      "Hayvan Sağlığı"
+    ],
+    "refSlugs": [],
+    "caseSlugs": [
+      "hayat-kimya",
+      "evyap",
+      "flormar",
+      "deva-holding"
+    ],
+    "faqs": [
+      {
+        "q": {
+          "tr": "Yeni bir ülkede fabrika veya satış şirketi açıyoruz; SAP'yi oraya nasıl taşırsınız?",
+          "en": "We are opening a plant or sales company in a new country. How do you take SAP there?"
+        },
+        "a": {
+          "tr": "Merkezdeki FI, CO, MM ve SD tasarımını esas alır, ülkenin vergi ve yasal raporlama gereksinimlerini IFRS uyumlu lokalizasyonla ekleriz. Hayat Kimya'nın beş ülkedeki rollout'u bu kapsamda yürüdü.",
+          "en": "We start from the central FI, CO, MM and SD design and add each country's tax and statutory requirements through IFRS-compliant localization. Hayat Kimya's five-country rollout had this scope."
+        }
+      },
+      {
+        "q": {
+          "tr": "Yerel defter ve IFRS raporlamasını aynı SAP sisteminde yürütebilir miyiz?",
+          "en": "Can we run local books and IFRS reporting in the same SAP system?"
+        },
+        "a": {
+          "tr": "Evet. Uçtan uca IFRS süreçleri çözümümüz peşine indirgeme, reeskont, sınıflama ve NRV kayıtlarını SAP içinde yürütür. Rollout projelerinde lokalizasyonu da IFRS uyumlu kurarız.",
+          "en": "Yes. Our end-to-end IFRS solution handles discounting, rediscount, reclassification and NRV entries inside SAP. In rollout projects we also build the localization to be IFRS-compliant."
+        }
+      },
+      {
+        "q": {
+          "tr": "Enflasyon muhasebesini SAP'de nasıl çözüyorsunuz?",
+          "en": "How do you handle inflation accounting in SAP?"
+        },
+        "a": {
+          "tr": "Enflasyon muhasebesi çözümümüz SAP FI içinde çalışır ve 25'ten fazla şirkette canlıdadır. Bu sektörlerde Elanco Türkiye, Şölen ve Green Chemicals'ta uygulandı.",
+          "en": "Our inflation accounting solution runs in SAP FI and is live in 25+ companies. In these industries it was implemented at Elanco Türkiye, Şölen and Green Chemicals."
+        }
+      }
+    ]
+  },
+  {
+    "key": "enerji",
+    "slug": {
+      "tr": "enerji-petrol-gaz",
+      "en": "energy-oil-gas"
+    },
+    "name": {
+      "tr": "Enerji, Petrol & Gaz",
+      "en": "Energy, Oil & Gas"
+    },
+    "title": {
+      "tr": "Enerji, Petrol ve Gaz Sektöründe SAP Danışmanlığı | Conforcus",
+      "en": "SAP Consulting for Energy, Oil & Gas | Conforcus"
+    },
+    "desc": {
+      "tr": "Enerji, petrol ve gaz şirketleri için SAP danışmanlığı: FM bütçe yönetimi, PS ve EPPM ile yatırım portföyü, IS-Oil. TPAO'da S/4HANA projesi ve AMS.",
+      "en": "SAP consulting for energy, oil and gas companies: FM budget management, PS and EPPM investment portfolios, IS-Oil. S/4HANA project and AMS at TPAO."
+    },
+    "h1": {
+      "tr": "Enerji, petrol ve gaz şirketleri için SAP danışmanlığı",
+      "en": "SAP consulting for energy, oil and gas companies"
+    },
+    "lead": {
+      "tr": "Enerjide finansın gündemi bütçe disiplini, uzun soluklu yatırımlar ve regülasyondur. Conforcus; FM ile bütçe yönetimi, PS ve EPPM ile yatırım portföyü ve SAP IS-Oil deneyimini S/4HANA projeleri ve AMS hizmetiyle birlikte sunar.",
+      "en": "In energy, finance is about budget discipline, long-running investments and regulation. Conforcus brings FM budget management, PS and EPPM for investment portfolios and SAP IS-Oil experience, delivered through S/4HANA projects and AMS."
+    },
+    "intro": [
+      {
+        "tr": "Enerji şirketleri sermaye yoğun çalışır: arama, üretim, santral, maden, dağıtım şebekesi ve istasyon yatırımları yıllara yayılır ve her biri ayrı bütçe, taahhüt ve fiili takibi ister. Kamu ve yarı-kamu yapılarda ödenek kontrolü vazgeçilmezdir; bütçe aşımı kayıt atılmadan önce durdurulmalıdır. Petrol ve gazda hidrokarbon ürünlerin miktar ve değer takibi standart lojistikten ayrışır. Akaryakıt dağıtımında ise ÖTV, bayi tahsilatı ve yüksek işlem hacmi finansın gündelik yüküdür.",
+        "en": "Energy companies are capital-intensive: exploration, production, power plants, mines, grids and stations are multi-year investments, each with its own budget, commitment and actuals tracking. In public and semi-public organizations an overrun has to be stopped before the posting is made. In oil and gas, tracking hydrocarbon quantities and values differs from standard logistics. In fuel distribution, special consumption tax, dealer collections and high volumes are the daily load."
+      },
+      {
+        "tr": "Conforcus'un bu sektördeki işi üç alanda toplanır: FM ile kamu ve yarı-kamu bütçe yönetimi, PS ve EPPM ile yatırım portföyü ve proje takibi, SAP IS-Oil ile petrol ve gaza özgü süreçler. Bunları CO ve FI ile tek bir finans modelinde birleştirir, bütçe onay paketi gibi hazır çözümlerle destekleriz. Akaryakıt dağıtımında KDV/ÖTV lokalizasyonu, banka entegrasyonları ve enflasyon muhasebesi öne çıkar. Canlı geçişten sonra destek AMS ile sürer.",
+        "en": "Our work here has three parts: public and semi-public budget management with FM, investment portfolio and project tracking with PS and EPPM, and oil and gas processes with SAP IS-Oil. We join these with CO and FI in one finance model, backed by ready-made solutions such as the budget approval package. In fuel distribution, VAT and special consumption tax localization, bank integrations and inflation accounting matter most. AMS follows go-live."
+      }
+    ],
+    "challenges": {
+      "h": {
+        "tr": "Enerjide öne çıkan zorluklar",
+        "en": "Where energy companies struggle"
+      },
+      "items": [
+        {
+          "tr": "Bütçe ve ödenek kontrolü SAP dışında yürür; aşım, kayıt atıldıktan sonra fark edilir.",
+          "en": "Budget and appropriation control runs outside SAP, so overruns are noticed only after posting."
+        },
+        {
+          "tr": "Yıllara yayılan yatırım projelerinde bütçe, taahhüt ve fiili maliyet ayrı tablolarda izlenir; portföyün toplam resmi görülemez.",
+          "en": "In multi-year investment projects, budget, commitments and actual cost sit in separate spreadsheets, hiding the portfolio picture."
+        },
+        {
+          "tr": "Petrol ve gazda hidrokarbon ürünlerin miktar ve değer takibi standart SAP lojistiğini aşar; IS-Oil bilgisi gerekir.",
+          "en": "Hydrocarbon quantity and value tracking in oil and gas goes beyond standard SAP logistics and needs IS-Oil knowledge."
+        },
+        {
+          "tr": "Sabit kıymet yoğun bilançoda enflasyon muhasebesi ve kur farkı hesapları dönem kapanışını uzatır.",
+          "en": "On an asset-heavy balance sheet, inflation accounting and FX difference calculations stretch the period close."
+        }
+      ]
+    },
+    "approach": {
+      "h": {
+        "tr": "Conforcus enerji şirketlerine ne sunar",
+        "en": "What Conforcus delivers for energy companies"
+      },
+      "items": [
+        {
+          "tr": "FM ile kamu ve yarı-kamu yapılara uygun bütçe yönetimi: ödenek kontrolü, aşım uyarıları ve bütçe onay paketi.",
+          "en": "FM budget management for public and semi-public structures: appropriation control, overrun warnings and the budget approval package."
+        },
+        {
+          "tr": "PS ve EPPM ile yatırım yönetimi: portföy önceliklendirme, proje bütçesi, taahhüt ve fiili maliyet takibi tek akışta.",
+          "en": "Investment management with PS and EPPM: portfolio prioritization, project budgets, commitments and actual cost in one flow."
+        },
+        {
+          "tr": "SAP IS-Oil (Hydrocarbon Solution Extension) deneyimi: petrol ve gaza özgü süreçlerin finans modülleriyle entegrasyonu.",
+          "en": "SAP IS-Oil (Hydrocarbon Solution Extension) experience: oil and gas processes integrated with the finance modules."
+        },
+        {
+          "tr": "Enflasyon muhasebesi, kur farkı raporu ve duran varlık zimmet süreci gibi hazır çözümler; canlı geçiş sonrası AMS.",
+          "en": "Ready-made solutions such as inflation accounting, the FX difference report and fixed asset custody; AMS after go-live."
+        }
+      ]
+    },
+    "proof": [
+      {
+        "tr": "TPAO ile çalışmamız S/4HANA projesini ve AMS hizmetini kapsıyor. Kapsamda kamu bütçe yönetimi (FM), CO, PS ve yatırım portföy yönetimi (EPPM) modülleri ile SAP IS-Oil (Hydrocarbon Solution Extension) yer alıyor.",
+        "en": "Our work with TPAO covers the S/4HANA project and AMS. The scope includes public budget management (FM), CO, PS and investment portfolio management (EPPM), together with SAP IS-Oil (Hydrocarbon Solution Extension)."
+      },
+      {
+        "tr": "Akaryakıt dağıtımında Aytemiz Akaryakıt'ta enflasyon muhasebesi çözümümüzü uyguladık. Sektördeki referanslarımız arasında akaryakıtta Petrol Ofisi ve Opet, enerjide Milangaz, Güzel Enerji, GDZ Elektrik, OEDAŞ, İş Enerji, Biotrend ve Kontrolmatik de bulunuyor.",
+        "en": "In fuel distribution, we implemented our inflation accounting solution at Aytemiz Akaryakıt. Our references also include Petrol Ofisi and Opet in fuel, and Milangaz, Güzel Enerji, GDZ Elektrik, OEDAŞ, İş Enerji, Biotrend and Kontrolmatik in energy."
+      }
+    ],
+    "modules": [
+      "FM",
+      "PS",
+      "EPPM",
+      "CO",
+      "FI"
+    ],
+    "solutionSlugs": [
+      "budget-approval-package",
+      "budget-workflow-package",
+      "project-planning-package",
+      "inflation-accounting",
+      "fx-difference-report",
+      "fixed-asset-custody-assignment"
+    ],
+    "sectorLabels": [
+      "Enerji",
+      "Petrol & Akaryakıt",
+      "Madencilik"
+    ],
+    "refSlugs": [
+      "limak-holding"
+    ],
+    "caseSlugs": [
+      "tpao"
+    ],
+    "faqs": [
+      {
+        "q": {
+          "tr": "Bütçe ve ödenek kontrolünü SAP içinde nasıl kuruyorsunuz?",
+          "en": "How do you set up budget and appropriation control in SAP?"
+        },
+        "a": {
+          "tr": "SAP FM ile bütçeyi fon merkezi ve taahhüt kalemi düzeyinde kurar, ödenek kontrolü ve aşım uyarılarını tanımlarız. Bütçe onaylarını hazır bütçe onay paketimizle SAP içinde yürütürüz; TPAO bu alandaki referansımızdır.",
+          "en": "With SAP FM we set up the budget by fund centre and commitment item, with appropriation control and overrun warnings. Approvals run through our budget approval package; TPAO is our reference."
+        }
+      },
+      {
+        "q": {
+          "tr": "Yatırım projelerimizi ve portföyümüzü SAP'de nasıl izleriz?",
+          "en": "How do we track our investment projects and portfolio in SAP?"
+        },
+        "a": {
+          "tr": "PS ile her yatırımı proje yapısı, bütçe, taahhüt ve fiili maliyetle izleriz; EPPM ile portföy düzeyinde önceliklendirme ve kaynak planlaması yapılır. Proje planlama ve bütçe workflow paketlerimiz bu akışı tamamlar.",
+          "en": "PS tracks each investment by project structure, budget, commitments and actual cost; EPPM adds prioritization and resource planning at portfolio level. Our project planning and budget workflow packages complete the flow."
+        }
+      },
+      {
+        "q": {
+          "tr": "SAP IS-Oil deneyiminiz var mı?",
+          "en": "Do you have SAP IS-Oil experience?"
+        },
+        "a": {
+          "tr": "Evet. IS-Oil deneyimimizin ana referansı, TPAO'daki Hydrocarbon Solution Extension projesidir. Aynı kapsamda kamu bütçe yönetimi (FM), CO, PS ve EPPM de yer alıyor.",
+          "en": "Yes. Our main IS-Oil reference is the Hydrocarbon Solution Extension project at TPAO. The same scope includes FM, CO, PS and EPPM."
+        }
+      }
+    ]
+  },
+  {
+    "key": "insaat-holding",
+    "slug": {
+      "tr": "insaat-holding",
+      "en": "construction-holdings"
+    },
+    "name": {
+      "tr": "İnşaat, Taahhüt & Holdingler",
+      "en": "Construction, Contracting & Holdings"
+    },
+    "title": {
+      "tr": "İnşaat, Taahhüt ve Holdinglerde SAP Danışmanlığı | Conforcus",
+      "en": "SAP Consulting for Construction & Holdings | Conforcus"
+    },
+    "desc": {
+      "tr": "İnşaat, taahhüt ve holdingler için SAP: PS ile proje muhasebesi ve uçtan uca hakediş. Rönesans Holding'de 200+ şirket aynı anda canlıya geçti.",
+      "en": "SAP for construction, contracting and holdings: PS project accounting, end-to-end progress billing. 200+ companies went live at once at Rönesans Holding."
+    },
+    "h1": {
+      "tr": "İnşaat, taahhüt şirketleri ve holdingler için SAP danışmanlığı",
+      "en": "SAP consulting for construction, contracting and holding groups"
+    },
+    "lead": {
+      "tr": "İnşaat ve taahhütte kâr proje bazında oluşur; holdingde ise çok sayıda şirketin tek bir finans yapısında toplanması gerekir. Conforcus, PS ile proje muhasebesi, uçtan uca hakediş ve çok şirketli S/4HANA dönüşümünde uzmanlaşmıştır.",
+      "en": "In construction and contracting, profit is made project by project; in a holding, many companies have to fit into one finance structure. Conforcus specializes in project accounting with PS, end-to-end progress billing and multi-company S/4HANA transformation."
+    },
+    "intro": [
+      {
+        "tr": "Taahhüt işinde her proje ayrı bir işletme gibidir: kendi bütçesi, taşeronları, avansları, hakedişleri ve nakit akışı vardır. Maliyet proje yapısına (WBS) doğru işlenmezse hangi projenin kazandırdığı, hangisinin kaybettirdiği dönem sonunda bile net görülmez. Holdinglerde bu tabloya çok sayıda şirket, ortak girişimler, grup içi işlemler ve farklı ülkeler eklenir. Finans ekibi hem proje bazında hem şirket bazında hem de konsolide düzeyde aynı rakamı vermek zorundadır.",
+        "en": "In contracting, every project is a business of its own, with its own budget, subcontractors, advances, progress payments and cash flow. Unless cost is posted correctly to the project structure (WBS), it is unclear even at period end which project made money. Holdings add many companies, joint ventures, intercompany transactions and several countries. Finance has to give the same number at project, company and consolidated level."
+      },
+      {
+        "tr": "Conforcus bu alanda PS, CO ve FI modüllerini tek bir maliyet akışı olarak kurar: proje yapısı, bütçe, taahhüt, fiili maliyet ve hakediş aynı veriden beslenir. Uçtan uca hakediş paketimiz, proje planlama ve bütçe workflow paketlerimiz bu akışın hazır parçalarıdır. Holding tarafında çok şirketli S/4HANA dönüşümü, hazine ve nakit yönetimi (TRM, CM), bütçe yönetimi (FM) ve gayrimenkul portföyü için RE-FX ile çalışırız; canlı geçişten sonra destek AMS ile sürer.",
+        "en": "Conforcus builds PS, CO and FI as one cost flow: project structure, budget, commitments, actual cost and progress billing draw on the same data. Our progress billing, project planning and budget workflow packages are ready-made parts of that flow. For holdings we deliver multi-company S/4HANA transformation, treasury and cash management (TRM, CM), budget management (FM) and RE-FX for real estate portfolios; AMS follows go-live."
+      }
+    ],
+    "challenges": {
+      "h": {
+        "tr": "İnşaat ve holdinglerde öne çıkan zorluklar",
+        "en": "Where construction and holding groups struggle"
+      },
+      "items": [
+        {
+          "tr": "Proje maliyeti WBS düzeyinde izlenemez; bütçe, taahhüt ve fiili rakamlar şantiye tablolarında dağınık kalır.",
+          "en": "Project cost is not tracked at WBS level; budget, commitments and actuals sit in site spreadsheets."
+        },
+        {
+          "tr": "İşveren ve taşeron hakedişleri, avans ve kesintilerle birlikte SAP dışında hesaplanır; muhasebe kaydı gecikir.",
+          "en": "Employer and subcontractor progress payments, with advances and deductions, are calculated outside SAP and posted late."
+        },
+        {
+          "tr": "Çok sayıda şirket farklı hesap planı ve süreçlerle çalışır; grup içi mutabakat ve dönem kapanışı uzar.",
+          "en": "Group companies use different charts of accounts and processes, so intercompany reconciliation and period close drag on."
+        },
+        {
+          "tr": "Nakit ve kredi pozisyonu şirket şirket izlenir; grubun toplam likiditesi günlük olarak görülemez.",
+          "en": "Cash and loan positions are tracked company by company; the group's daily liquidity stays out of sight."
+        }
+      ]
+    },
+    "approach": {
+      "h": {
+        "tr": "Conforcus inşaat şirketlerine ve holdinglere ne sunar",
+        "en": "What Conforcus delivers for construction and holding groups"
+      },
+      "items": [
+        {
+          "tr": "PS ile proje bazlı muhasebe: WBS yapıları, proje bütçesi, taahhüt yönetimi ve PS-CO-FI entegre maliyet akışı.",
+          "en": "Project-based accounting with PS: WBS structures, project budgets, commitment management and integrated PS-CO-FI cost flow."
+        },
+        {
+          "tr": "Uçtan uca hakediş paketi ile proje planlama ve bütçe workflow paketleri: hakediş ve bütçe onayı SAP içinde.",
+          "en": "End-to-end progress billing, project planning and budget workflow packages: progress billing and budget approval inside SAP."
+        },
+        {
+          "tr": "Çok şirketli S/4HANA dönüşümü: ortak hesap planı ve süreç tasarımı, grup şirketlerinin eşzamanlı canlı geçişi.",
+          "en": "Multi-company S/4HANA transformation: common chart of accounts and process design, simultaneous go-live for group companies."
+        },
+        {
+          "tr": "Holding finansı: hazine (TRM), nakit yönetimi (CM), bütçe (FM), RE-FX ile kira sözleşmeleri, e-fatura, e-defter ve e-mutabakat; ardından AMS.",
+          "en": "Holding finance: treasury (TRM), cash management (CM), budgeting (FM), RE-FX lease contracts, e-invoice, e-ledger and e-reconciliation; then AMS."
+        }
+      ]
+    },
+    "proof": [
+      {
+        "tr": "Rönesans Holding'de greenfield S/4HANA dönüşümünü 200'den fazla şirketin eşzamanlı canlı geçişiyle, planlandığı gibi 1,5 yılda tamamladık. Kapsamda FI, CO ve PS ile proje bazlı muhasebe ve uçtan uca hakediş yer aldı. Çalışma e-fatura, e-defter ve e-mutabakatı da içeriyor; tüm finans modüllerinde AMS sürüyor.",
+        "en": "At Rönesans Holding we completed a greenfield S/4HANA transformation with a simultaneous go-live for more than 200 companies, in 1.5 years as planned. Scope: FI, CO and PS, with project-based accounting and end-to-end progress billing. The engagement also includes e-invoice, e-ledger and e-reconciliation; AMS continues across all financial modules."
+      },
+      {
+        "tr": "Nurol Holding ve grup şirketleriyle çalışmamız, Türkiye ve Birleşik Krallık'ta S/4HANA projesini ve AMS hizmetini kapsıyor. Diğer referanslarımız arasında Zorlu Holding, Limak Holding, Doğan Holding, IC Holding ve Kalyon yer alıyor.",
+        "en": "Our work with Nurol Holding and its group companies covers an S/4HANA project and AMS in Türkiye and the UK. Other references include Zorlu Holding, Limak Holding, Doğan Holding, IC Holding and Kalyon."
+      }
+    ],
+    "modules": [
+      "PS",
+      "CO",
+      "FI",
+      "FM",
+      "TRM",
+      "CM",
+      "RE-FX"
+    ],
+    "solutionSlugs": [
+      "end-to-end-progress-billing-package",
+      "project-planning-package",
+      "budget-workflow-package",
+      "advance-payment-approval",
+      "customer-vendor-e-reconciliation",
+      "e-defter"
+    ],
+    "sectorLabels": [
+      "İnşaat & Taahhüt",
+      "Holding",
+      "Gayrimenkul"
+    ],
+    "refSlugs": [],
+    "caseSlugs": [
+      "ronesans-holding"
+    ],
+    "faqs": [
+      {
+        "q": {
+          "tr": "Proje bazında kârlılığı SAP'de nasıl izleriz?",
+          "en": "How do we track profitability per project in SAP?"
+        },
+        "a": {
+          "tr": "PS'te her proje WBS yapısıyla kurulur; bütçe, taahhüt ve fiili maliyet aynı yapıda izlenir. PS-CO-FI entegre maliyet akışı sayesinde proje kârlılığı muhasebe kayıtlarıyla aynı rakamı verir.",
+          "en": "In PS each project is a WBS structure on which budget, commitments and actual cost are tracked. With an integrated PS-CO-FI cost flow, project profitability matches the accounting records."
+        }
+      },
+      {
+        "q": {
+          "tr": "Hakediş sürecini SAP içinde uçtan uca yürütebilir miyiz?",
+          "en": "Can we run progress billing end to end inside SAP?"
+        },
+        "a": {
+          "tr": "Evet. Uçtan uca hakediş paketimiz hakediş sürecini CO ve PS ile entegre biçimde SAP içinde yürütür. Proje planlama ve bütçe workflow paketlerimizle birlikte hazır çözümlerimiz arasındadır.",
+          "en": "Yes. Our end-to-end progress billing package runs the process inside SAP, integrated with CO and PS. It sits alongside our project planning and budget workflow packages."
+        }
+      },
+      {
+        "q": {
+          "tr": "Holding genelinde nakit ve hazineyi tek yerden izleyebilir miyiz?",
+          "en": "Can we see cash and treasury across the whole holding in one place?"
+        },
+        "a": {
+          "tr": "SAP CM ile nakit pozisyonu ve likidite tahmini, TRM ile hazine işlemleri izlenir. Çok şirketli nakit havuzu yönetimi ve banka entegrasyonları da kapsamımızdadır.",
+          "en": "SAP CM covers cash position and liquidity forecasting, and TRM covers treasury transactions. We also handle multi-company cash pooling and bank integrations."
+        }
+      }
+    ]
+  },
+  {
+    "key": "perakende",
+    "slug": {
+      "tr": "perakende",
+      "en": "retail"
+    },
+    "name": {
+      "tr": "Perakende & Tekstil",
+      "en": "Retail & Apparel"
+    },
+    "title": {
+      "tr": "Perakende ve Tekstilde SAP Danışmanlığı | Conforcus",
+      "en": "SAP Consulting for Retail & Apparel | Conforcus"
+    },
+    "desc": {
+      "tr": "Çok mağazalı perakende ve tekstil şirketleri için SAP: SAP Retail, RE-FX ile kira yönetimi, RISE with SAP. Karaca'da 40 şirket ve 100+ mağaza S/4HANA'da.",
+      "en": "SAP for multi-store retail and apparel companies: SAP Retail, RE-FX lease management, RISE with SAP. 40 companies and 100+ stores on S/4HANA at Karaca."
+    },
+    "h1": {
+      "tr": "Perakende ve tekstil şirketleri için SAP danışmanlığı",
+      "en": "SAP consulting for retail and apparel companies"
+    },
+    "lead": {
+      "tr": "Perakendede SAP; çok sayıda mağazanın satışını, kira sözleşmesini ve kasasını aynı gün muhasebeye taşımak demektir. Conforcus, SAP Retail, SD ve RE-FX uzmanlığını RISE with SAP üzerinde S/4HANA dönüşümü ve AMS hizmetiyle birleştirir.",
+      "en": "In retail, SAP means getting the sales, lease contracts and cash of many stores into the books the same day. Conforcus combines SAP Retail, SD and RE-FX expertise with S/4HANA transformation on RISE with SAP and ongoing AMS."
+    },
+    "intro": [
+      {
+        "tr": "Perakende ve tekstilde işlem sayısı çok yüksek, marj ise dardır. Mağazalar her gün çok sayıda fiş keser; kasa, banka ve kredi kartı tahsilatlarının mutabakatı her gün yapılmalıdır. Mağazaların çoğu kiralıktır: ciro kirası, artış koşulları ve IFRS 16 hesapları her sözleşmede farklıdır. Sezon, koleksiyon ve kampanya değişimleri stok değerini ve mağaza kârlılığını sürekli oynatır. E-ticaret ve mağaza kanalı aynı stoktan beslendiğinde finansın tek bir doğru rakama ihtiyacı vardır.",
+        "en": "In retail and apparel, transaction volumes are high and margins thin. Stores issue many receipts a day, and cash, bank and card collections have to be reconciled daily. Most stores are leased: turnover rent, escalation terms and IFRS 16 calculations differ in every contract. Season, collection and promotion changes keep moving inventory value and store profitability. When e-commerce and stores share one stock, finance needs one correct number."
+      },
+      {
+        "tr": "Perakende, Conforcus'ta SD ve RE-FX uzmanlığının buluştuğu alandır. SAP Retail ile mağaza ve ürün yapısını, SD ile yüksek hacimli satış ve faturalama otomasyonunu, RE-FX ile mağaza kira sözleşmelerini kurarız; kira muhasebesini IFRS 16 paketimizle bütünleştiririz. Altyapı tarafında RISE with SAP üzerinde S/4HANA dönüşümü yürütürüz. Hazır çözümlerimizden e-Arşiv fatura, otomatik denkleştirme, elektronik hesap özeti ve fatura onay iş akışı günlük finans işlerini SAP içinde tutar.",
+        "en": "Retail is where Conforcus's SD and RE-FX expertise meet. We set up store and article structures with SAP Retail, high-volume sales and billing with SD and store lease contracts with RE-FX, linked to our IFRS 16 package. We run S/4HANA transformation on RISE with SAP. Ready-made solutions such as e-archive invoice, automated clearing, electronic bank statement and invoice approval keep daily finance work inside SAP."
+      }
+    ],
+    "challenges": {
+      "h": {
+        "tr": "Perakendede öne çıkan zorluklar",
+        "en": "Where retailers struggle"
+      },
+      "items": [
+        {
+          "tr": "Mağaza kira sözleşmeleri Excel'de izlenir; ciro kirası, artışlar ve IFRS 16 kayıtları her ay elle hesaplanır.",
+          "en": "Store leases are tracked in Excel; turnover rent, escalations and IFRS 16 entries are calculated by hand every month."
+        },
+        {
+          "tr": "Kasa, banka ve kredi kartı tahsilatları yüksek hacimde gelir; mutabakat ve denkleştirme günlerce sürer.",
+          "en": "Cash, bank and card collections arrive in high volume, and reconciliation and clearing take days."
+        },
+        {
+          "tr": "Mağaza, kategori ve kanal bazında kârlılık dönem sonunda ve gecikmeli görülür; kampanya kararları sezgiyle alınır.",
+          "en": "Profitability by store, category and channel is seen late, at period end, so promotion decisions rest on instinct."
+        },
+        {
+          "tr": "Çok sayıda şirket ve mağaza aynı sistemde çalışır; kesinti yaşanmaması için altyapının ve desteğin sürekliliği kritiktir.",
+          "en": "Many companies and stores run on one system, so continuity of the platform and of support is critical."
+        }
+      ]
+    },
+    "approach": {
+      "h": {
+        "tr": "Conforcus perakendecilere ne sunar",
+        "en": "What Conforcus delivers for retailers"
+      },
+      "items": [
+        {
+          "tr": "SAP Retail, SD ve CO: mağaza ve ürün yapısı, yüksek hacimli satış, otomatik faturalama ve mağaza bazında kârlılık.",
+          "en": "SAP Retail, SD and CO: store and article structures, high-volume sales, automated billing and profitability by store."
+        },
+        {
+          "tr": "RE-FX ile mağaza kira sözleşme yönetimi ve IFRS 16 paketiyle entegre kiralama muhasebesi.",
+          "en": "Store lease contract management with RE-FX, and lease accounting integrated with the IFRS 16 package."
+        },
+        {
+          "tr": "RISE with SAP üzerinde S/4HANA dönüşümü; çok şirketli ve çok mağazalı yapıların tek sistemde toplanması.",
+          "en": "S/4HANA transformation on RISE with SAP, bringing multi-company, multi-store structures into one system."
+        },
+        {
+          "tr": "Hazır çözümler ve AMS: e-Arşiv fatura, otomatik denkleştirme, elektronik hesap özeti, fatura onay iş akışı ve süren destek.",
+          "en": "Ready-made solutions and AMS: e-archive invoice, automated clearing, electronic bank statement, invoice approval workflow and ongoing support."
+        }
+      ]
+    },
+    "proof": [
+      {
+        "tr": "Karaca ve Karaca Home projemiz, RISE with SAP üzerinde S/4HANA'yı SAP Retail, FI, CO ve mağaza kira sözleşmeleri için RE-FX ile birlikte kapsıyor. Yapıda 40 şirket ve 100'den fazla mağaza yer alıyor; AMS desteğimiz devam ediyor.",
+        "en": "Our Karaca and Karaca Home project covers S/4HANA on RISE with SAP, with SAP Retail, FI, CO and RE-FX for store lease contracts. The landscape spans 40 companies and more than 100 stores, and our AMS support continues."
+      },
+      {
+        "tr": "Penti ile çalışmamız SAP MM fatura onay iş akışını, finans desteğini ve AMS hizmetini kapsıyor. Sektördeki referanslarımız arasında Migros, CarrefourSA, LC Waikiki (Taha Giyim), Hakmar Mağazacılık, Unifree, Jumbo ve Würth de yer alıyor.",
+        "en": "Our work with Penti covers the SAP MM invoice approval workflow, finance support and AMS. Our references in the sector also include Migros, CarrefourSA, LC Waikiki (Taha Giyim), Hakmar Mağazacılık, Unifree, Jumbo and Würth."
+      }
+    ],
+    "modules": [
+      "SD",
+      "RE-FX",
+      "FI",
+      "CO",
+      "MM"
+    ],
+    "solutionSlugs": [
+      "ifrs-16-package",
+      "automated-billing-process",
+      "e-arsiv",
+      "automated-clearing-processes",
+      "eho-elektronik-hesap-ozeti",
+      "invoice-approval-workflow"
+    ],
+    "sectorLabels": [
+      "Perakende",
+      "Tekstil & Giyim",
+      "Züccaciye & Perakende",
+      "Yapı Malzemeleri & Perakende"
+    ],
+    "refSlugs": [],
+    "caseSlugs": [
+      "karaca-zuccaciye",
+      "penti"
+    ],
+    "faqs": [
+      {
+        "q": {
+          "tr": "Mağaza kira sözleşmelerini ve IFRS 16'yı SAP'de nasıl yönetiriz?",
+          "en": "How do we manage store leases and IFRS 16 in SAP?"
+        },
+        "a": {
+          "tr": "RE-FX ile her mağazanın kira sözleşmesi SAP'de tanımlanır ve kiralama muhasebesi otomatikleşir. IFRS 16 paketimiz RE-FX ile entegre çalışır; Karaca'da mağaza kira sözleşmeleri RE-FX ile yönetiliyor.",
+          "en": "With RE-FX every store lease is defined in SAP and lease accounting is automated. Our IFRS 16 package works with RE-FX; at Karaca, store lease contracts are managed in RE-FX."
+        }
+      },
+      {
+        "q": {
+          "tr": "Yüksek hacimli satış ve tahsilat işlemlerinde manuel işi nasıl azaltırsınız?",
+          "en": "How do you cut manual work in high-volume sales and collections?"
+        },
+        "a": {
+          "tr": "SD tarafında otomatik faturalama, finans tarafında otomatik denkleştirme ve elektronik hesap özeti (EHÖ) çözümlerimizi kullanırız. Hazır çözümlerimiz arasında e-Arşiv fatura da vardır.",
+          "en": "On the SD side we use automated billing; on the finance side, automated clearing and electronic bank statement. Our ready-made solutions also include e-archive invoice."
+        }
+      },
+      {
+        "q": {
+          "tr": "RISE with SAP üzerinde S/4HANA deneyiminiz var mı?",
+          "en": "Do you have experience with S/4HANA on RISE with SAP?"
+        },
+        "a": {
+          "tr": "Evet. Karaca ve Karaca Home projemiz RISE with SAP üzerinde S/4HANA'yı kapsıyor. Aynı yapıda AMS desteğimiz sürüyor.",
+          "en": "Yes. Our Karaca and Karaca Home project covers S/4HANA on RISE with SAP. Our AMS support continues on the same landscape."
+        }
+      }
+    ]
+  },
+  {
+    "key": "savunma",
+    "slug": {
+      "tr": "savunma",
+      "en": "defense"
+    },
+    "name": {
+      "tr": "Savunma",
+      "en": "Defence"
+    },
+    "title": {
+      "tr": "Savunma Sanayiinde SAP Danışmanlığı | Conforcus",
+      "en": "SAP Consulting for the Defence Industry | Conforcus"
+    },
+    "desc": {
+      "tr": "Savunma sanayii için SAP: PS ile proje bazlı maliyet ve hakediş takibi, CO ile üretim maliyetlendirme. Nurol Holding ve grup şirketlerinde S/4HANA ve AMS.",
+      "en": "SAP for the defence industry: project-based cost and progress billing with PS, CO production costing. S/4HANA and AMS at Nurol Holding and group companies."
+    },
+    "h1": {
+      "tr": "Savunma sanayii şirketleri için SAP danışmanlığı",
+      "en": "SAP consulting for defence companies"
+    },
+    "lead": {
+      "tr": "Savunma projeleri yıllarca sürer, sözleşme bazında maliyet ister ve bilgiye erişimi sıkı biçimde sınırlar. Conforcus, PS ile proje bazlı maliyet ve hakediş takibini, CO ile üretim maliyetlendirmeyi ve bu yapıya uygun yetkilendirmeyi birlikte kurar.",
+      "en": "Defence programmes run for years, require cost by contract and restrict access to information tightly. Conforcus sets up project-based cost and progress billing in PS, production costing in CO and an authorization design that fits this structure."
+    },
+    "intro": [
+      {
+        "tr": "Savunma sanayiinde üretim, siparişe ve projeye göre yapılır. Bir platformun geliştirme, prototip, seri üretim ve teslimat aşamaları yıllara yayılır; maliyetin her aşamada sözleşme ve proje kırılımında izlenmesi gerekir. Ürün ağaçları derin ve değişkendir, üretim adetleri düşük, parça maliyetleri yüksektir. Bunlara gizlilik eklenir: kim hangi projenin maliyetini, stokunu ve belgesini görebilir sorusu SAP tasarımının parçasıdır. Standart bir üretim kurulumu bu ihtiyaçları tek başına karşılamaz.",
+        "en": "In defence, production follows orders and projects. Development, prototype, serial production and delivery stretch over years, and cost has to be tracked by contract and project at every phase. Bills of material are deep and change often; volumes are low and part costs high. Then comes confidentiality: who may see which project's cost, stock and documents is part of the SAP design. A standard manufacturing setup does not cover this alone."
+      },
+      {
+        "tr": "Conforcus bu sektörde iki uzmanlığını birleştirir: PS ile proje muhasebesi ve CO ile entegre üretim maliyetlendirme. Proje yapısını (WBS), bütçeyi, taahhüdü, fiili maliyeti ve hakedişi tek akışta kurar; üretim siparişlerinin maliyetini ilgili projeye bağlarız. Yetkilendirmeyi gizlilik gereksinimlerine göre yapılandırırız. Proje planlama paketi, bütçe workflow paketi, uçtan uca hakediş paketi ve mal hareketleri için yetkilendirme genişletmesi bu işte kullandığımız hazır çözümlerdir. Canlı geçişten sonra destek AMS ile sürer.",
+        "en": "Conforcus combines two strengths here: project accounting with PS and integrated production costing with CO. We set up project structure (WBS), budget, commitments, actual cost and progress billing as one flow, and link production order costs to the right project. Authorizations are configured to the confidentiality requirements. Our project planning, budget workflow and progress billing packages and extended authorization for goods movements are the ready-made solutions we use. AMS follows go-live."
+      }
+    ],
+    "challenges": {
+      "h": {
+        "tr": "Savunmada öne çıkan zorluklar",
+        "en": "Where defence companies struggle"
+      },
+      "items": [
+        {
+          "tr": "Yıllara yayılan projelerde bütçe, taahhüt ve fiili maliyet sözleşme bazında izlenemez; sapma geç fark edilir.",
+          "en": "On multi-year projects, budget, commitments and actual cost are not tracked by contract, so overruns surface late."
+        },
+        {
+          "tr": "Projeye özel üretimde sipariş maliyeti proje yapısına bağlanmaz; ürün ve proje kârlılığı ayrı tablolarda hesaplanır.",
+          "en": "In project-specific production, order costs are not linked to the project structure; product and project margins are calculated separately."
+        },
+        {
+          "tr": "Hakediş ve aşama bazlı faturalama SAP dışında hazırlanır; gelir ve maliyet aynı dönemde eşleşmez.",
+          "en": "Progress and milestone billing is prepared outside SAP, so revenue and cost do not match in the same period."
+        },
+        {
+          "tr": "Gizlilik gereği proje, stok ve belge erişimi ayrıştırılmalıdır; standart yetki rolleri çoğu zaman yeterli olmaz.",
+          "en": "Confidentiality requires separating access to projects, stock and documents; standard authorization roles are often not enough."
+        }
+      ]
+    },
+    "approach": {
+      "h": {
+        "tr": "Conforcus savunma şirketlerine ne sunar",
+        "en": "What Conforcus delivers for defence companies"
+      },
+      "items": [
+        {
+          "tr": "PS ile proje bazlı maliyet ve hakediş takibi: WBS yapıları, proje bütçesi, taahhüt ve fiili maliyet.",
+          "en": "Project-based cost and progress billing tracking with PS: WBS structures, project budget, commitments and actual cost."
+        },
+        {
+          "tr": "CO ile entegre üretim maliyetlendirme: üretim siparişi maliyetlerinin proje ve sözleşme kırılımında izlenmesi.",
+          "en": "Integrated production costing with CO: production order costs tracked by project and contract."
+        },
+        {
+          "tr": "Gizlilik gereksinimlerine uygun yetkilendirme tasarımı ve mal hareketleri için hazır yetkilendirme genişletmesi çözümü.",
+          "en": "Authorization design that meets confidentiality requirements, plus our ready-made extended authorization for goods movements."
+        },
+        {
+          "tr": "S/4HANA projeleri ve canlı geçişten sonra AMS; proje planlama, bütçe workflow ve hakediş paketleriyle birlikte.",
+          "en": "S/4HANA projects and AMS after go-live, together with our project planning, budget workflow and progress billing packages."
+        }
+      ]
+    },
+    "proof": [
+      {
+        "tr": "Nurol Holding ve grup şirketleri için S/4HANA projesi ve AMS hizmetimiz Türkiye ile Birleşik Krallık'ı kapsıyor. Otokar'da enflasyon muhasebesi çözümümüzü uyguladık. Savunma alanındaki referanslarımız arasında BMC ve Meteksan da yer alıyor.",
+        "en": "For Nurol Holding and its group companies, our S/4HANA project and AMS cover Türkiye and the UK. At Otokar we implemented our inflation accounting solution. Our references in defence also include BMC and Meteksan."
+      }
+    ],
+    "modules": [
+      "PS",
+      "CO",
+      "PP",
+      "MM",
+      "FI"
+    ],
+    "solutionSlugs": [
+      "project-planning-package",
+      "budget-workflow-package",
+      "end-to-end-progress-billing-package",
+      "extended-authorization-for-goods-movements",
+      "cost-of-goods-sold-cogs-statement",
+      "inflation-accounting"
+    ],
+    "sectorLabels": [
+      "Savunma",
+      "Otomotiv & Savunma"
+    ],
+    "refSlugs": [
+      "nurol",
+      "bmc"
+    ],
+    "caseSlugs": [],
+    "faqs": [
+      {
+        "q": {
+          "tr": "Proje ve sözleşme bazında maliyeti SAP'de nasıl izleriz?",
+          "en": "How do we track cost by project and contract in SAP?"
+        },
+        "a": {
+          "tr": "PS'te her sözleşme bir proje yapısı (WBS) olarak kurulur; bütçe, taahhüt ve fiili maliyet bu yapıda izlenir. Üretim siparişlerinin maliyeti CO üzerinden ilgili projeye aktarılır.",
+          "en": "In PS each contract is set up as a project structure (WBS), where budget, commitments and actual cost are tracked. Production order costs flow to the right project through CO."
+        }
+      },
+      {
+        "q": {
+          "tr": "Gizlilik gereksinimlerimizi SAP yetkilendirmesinde nasıl karşılarsınız?",
+          "en": "How do you meet our confidentiality requirements in SAP authorizations?"
+        },
+        "a": {
+          "tr": "Yetkilendirmeyi gizlilik gereksinimlerinize göre yapılandırırız; kimin hangi projeyi, stoku ve belgeyi göreceği tasarımın parçasıdır. Mal hareketleri için yetkilendirme genişletmesi de hazır çözümlerimiz arasındadır.",
+          "en": "We configure authorizations to your confidentiality requirements; who may see which project, stock and document is part of the design. Extended authorization for goods movements is also among our ready-made solutions."
+        }
+      },
+      {
+        "q": {
+          "tr": "Proje muhasebesi ve hakedişte hangi ölçekte deneyiminiz var?",
+          "en": "At what scale have you delivered project accounting and progress billing?"
+        },
+        "a": {
+          "tr": "Savunma dışından en büyük örnek Rönesans Holding'dir: FI, CO ve PS kapsamında proje bazlı muhasebe ve uçtan uca hakediş, 200'den fazla şirkette aynı anda canlıya alındı. Aynı PS ve CO birikimini savunma projelerine taşıyoruz.",
+          "en": "The largest example comes from outside defence: at Rönesans Holding, project-based accounting and end-to-end progress billing went live across FI, CO and PS for more than 200 companies at once. We bring the same PS and CO experience to defence projects."
+        }
+      }
+    ]
+  }
+]

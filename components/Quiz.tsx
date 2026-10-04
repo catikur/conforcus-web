@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type ChangeEvent, type FormEvent } from "react";
+import { trackEvent } from "@/components/Analytics";
 import { pick, type Locale } from "@/lib/i18n";
 
 /* Ücretsiz SAP analizi — nitelendirici değerlendirme.
@@ -187,6 +188,7 @@ export default function Quiz({ locale }: { locale: Locale }) {
       });
       const data = await res.json();
       setStatus(data.ok ? "sent" : "error");
+      if (data.ok) trackEvent("generate_lead", { method: "sap_analysis_form" });
     } catch {
       setStatus("error");
     }
@@ -203,9 +205,9 @@ export default function Quiz({ locale }: { locale: Locale }) {
 
       {QUESTIONS.map((q, i) => (
         <div className={qCls(i + 1)} data-q={i + 1} key={i}>
-          <h4>
+          <h3>
             {i + 1} · {pick(locale, q.tr, q.en)}
-          </h4>
+          </h3>
           {q.opts.map((o, j) => (
             <button className="opt" onClick={() => choose(o)} key={j}>
               {pick(locale, o.tr, o.en)}

@@ -17,22 +17,28 @@ export default function Footer({ locale }: { locale: Locale }) {
             </p>
           </div>
           <div>
-            <h3>{pick(locale, "Hizmetler", "Services")}</h3>
+            <h2>{pick(locale, "Hizmetler", "Services")}</h2>
             <Link href={pathFor("hizmet-sap-ams", locale)}>{pick(locale, "SAP Destek (AMS)", "SAP Support (AMS)")}</Link>
             <Link href={pathFor("hizmet-s4hana", locale)}>{pick(locale, "S/4HANA Dönüşümleri", "S/4HANA Transformations")}</Link>
             <Link href={pathFor("hizmet-rollout", locale)}>Global Rollout</Link>
             <Link href={pathFor("hizmet-urun", locale)}>{pick(locale, "Ürün & Çözüm Geliştirme", "Product & Solution Development")}</Link>
+            <Link href={pathFor("cozumler", locale)}>{pick(locale, "Çözüm Kataloğu", "Solution Catalogue")}</Link>
+            <Link href={pathFor("e-cozumler", locale)}>{pick(locale, "E-Çözümler", "E-Solutions")}</Link>
+            <Link href={pathFor("sektorler", locale)}>{pick(locale, "Sektörler", "Industries")}</Link>
+            <Link href={pathFor("uzmanlik", locale)}>{pick(locale, "Modül Uzmanlığı", "Module Expertise")}</Link>
           </div>
           <div>
-            <h3>{pick(locale, "Şirket", "Company")}</h3>
+            <h2>{pick(locale, "Şirket", "Company")}</h2>
             <Link href={pathFor("hakkimizda", locale)}>{pick(locale, "Hakkımızda", "About")}</Link>
             <Link href={pathFor("conforcus-way", locale)}>Conforcus Way</Link>
+            <Link href={pathFor("ekip", locale)}>{pick(locale, "Ekibimiz", "Our Team")}</Link>
+            <Link href={pathFor("confiq", locale)}>Confiq AI</Link>
             <Link href={pathFor("referanslar", locale)}>{pick(locale, "Referanslar", "References")}</Link>
             <Link href={pathFor("blog", locale)}>Blog</Link>
             <Link href={pathFor("iletisim", locale)}>{pick(locale, "İletişim", "Contact")}</Link>
           </div>
           <div>
-            <h3>{pick(locale, "İletişim", "Contact")}</h3>
+            <h2>{pick(locale, "İletişim", "Contact")}</h2>
             <a href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a>
             <a href={COMPANY.telHref}>{COMPANY.telephoneDisplay}</a>
             <a href={COMPANY.linkedin} target="_blank" rel="noopener">

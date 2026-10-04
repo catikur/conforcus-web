@@ -33,9 +33,15 @@ type LeadBody = {
   answers?: string[];
   recommendations?: string[];
 };
-const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
-function valid(b: LeadBody): boolean {
-  return typeof b.name === "string" && b.name.trim().length > 1 && typeof b.email === "string" && EMAIL_RE.test(b.email);
+const EMAIL_RE = /^[^@\s<>(),;:"\\]+@[^@\s<>(),;:"\\]+\.[^@\s<>(),;:"\\]+$/;
+const MAX_BODY = 32 * 1024;
+// Tek satırlık alanlar: satır sonu ve kontrol karakterleri atılır, uzunluk sınırlanır.
+const line = (v: unknown, max: number) =>
+  typeof v === "string" ? v.replace(/[\u0000-\u001f\u007f]+/g, " ").replace(/\s+/g, " ").trim().slice(0, max) : "";
+const lines = (v: unknown, maxItems: number, max: number) =>
+  Array.isArray(v) ? v.slice(0, maxItems).map((x) => line(x, max)).filter(Boolean) : [];
+function valid(b: { name: string; email: string }): boolean {
+  return b.name.length > 1 && b.email.length <= 254 && EMAIL_RE.test(b.email);
 }
 
 export async function POST(req: NextRequest) {
@@ -44,16 +50,26 @@ export async function POST(req: NextRequest) {
 
   let body: LeadBody;
   try {
-    body = (await req.json()) as LeadBody;
+    const raw = await req.text();
+    if (raw.length > MAX_BODY) return NextResponse.json({ ok: false, error: "too_large" }, { status: 413 });
+    body = JSON.parse(raw) as LeadBody;
+    if (!body || typeof body !== "object") throw new Error("not an object");
   } catch {
     return NextResponse.json({ ok: false, error: "bad_request" }, { status: 400 });
   }
 
   // honeypot — botlar gizli alanı doldurur
   if (body.website) return NextResponse.json({ ok: true });
-  if (!valid(body)) return NextResponse.json({ ok: false, error: "validation" }, { status: 422 });
 
-  const { name, email, company, score, lang, answers, recommendations } = body;
+  const name = line(body.name, 120);
+  const email = line(body.email, 254);
+  const company = line(body.company, 160);
+  const score = line(body.score, 200);
+  const lang = line(body.lang, 8);
+  const answers = lines(body.answers, 20, 600);
+  const recommendations = lines(body.recommendations, 20, 600);
+  if (!valid({ name, email })) return NextResponse.json({ ok: false, error: "validation" }, { status: 422 });
+
   const subject = `Conforcus — Yeni SAP Analiz talebi: ${name}${company ? ` (${company})` : ""}`;
   const list = (arr?: string[]) => (arr?.length ? arr.map((x, i) => `  ${i + 1}. ${x}`).join("\n") : "  -");
   const text = [

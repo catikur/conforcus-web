@@ -5,6 +5,7 @@ import { DetailBreadcrumbJsonLd } from "@/components/JsonLd";
 import { getReference, getReferenceSlugs } from "@/lib/references";
 import { buildMetadata } from "@/lib/seo";
 import { SITE_URL } from "@/lib/site";
+import { referenceDescription, referenceTitle } from "@/lib/seoText";
 
 export const revalidate = 60;
 export const dynamicParams = true;
@@ -17,8 +18,9 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const r = await getReference("tr", params.slug);
   if (!r) return { title: "Referanslar — Conforcus" };
-  const desc = r.seo?.description || r.blurb || `${r.name} — Conforcus SAP referansı${r.sector ? ` · ${r.sector}` : ""}.`;
-  const title = r.seo?.title || `${r.name} — Conforcus`;
+  const cName = (c: string) => c;
+  const desc = r.seo?.description || referenceDescription(r, "tr", cName);
+  const title = r.seo?.title || referenceTitle(r.name, !!r.hasBody, "tr");
   return buildMetadata({
     locale: "tr",
     title,
@@ -30,7 +32,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       en: `${SITE_URL}/en/references/${r.slug}`,
       "x-default": `${SITE_URL}/referanslar/${r.slug}`,
     },
-    noIndex: !!r.noIndex,
+    // Vaka anlatımı olmayan referans sayfası ince içeriktir: dizine girmez, bağlantıları izlenir.
+    noIndex: !!r.noIndex || !r.hasBody,
     image: r.logoUrl,
     type: "article",
   });

@@ -24,6 +24,9 @@ export type SolutionCard = {
 };
 export type SolutionFull = SolutionCard & {
   body: PTBlock[];
+  benefits?: string[];
+  technical?: string;
+  audience?: string;
   refs?: SolutionRef[];
   faqs?: Faq[];
   seo?: SeoOverride;
@@ -50,6 +53,12 @@ type RawSolFull = RawSol & {
   refs?: SolutionRef[];
   body_tr?: PTBlock[];
   body_en?: PTBlock[];
+  benefits_tr?: string[];
+  benefits_en?: string[];
+  technical_tr?: string;
+  technical_en?: string;
+  audience_tr?: string;
+  audience_en?: string;
   faqs?: RawFaq[];
   seoTitle?: string;
   seoTitle_en?: string;
@@ -149,6 +158,9 @@ export async function getSolution(l: Locale, slug: string): Promise<SolutionFull
         return {
           ...card,
           body: (l === "tr" ? d.body_tr : d.body_en) || d.body_tr || d.body_en || [],
+          benefits: ((l === "tr" ? d.benefits_tr : d.benefits_en) || d.benefits_tr || []).filter(Boolean),
+          technical: loc(l, d.technical_tr, d.technical_en) || undefined,
+          audience: loc(l, d.audience_tr, d.audience_en) || undefined,
           refs: (d.refs || []).filter((r) => r && r.slug),
           faqs: mapFaqs(d.faqs),
           seo: {
@@ -190,6 +202,14 @@ export async function getSolution(l: Locale, slug: string): Promise<SolutionFull
     hasBody: true,
     body: [],
   };
+}
+
+/** Detay sayfasındaki "İlgili çözümler": önce aynı modül, sonra aynı grup; içeriği olanlar. */
+export function relatedSolutions(all: SolutionCard[], current: { slug: string; module: string; group: SolGroup }, max = 4): SolutionCard[] {
+  const ok = all.filter((s) => s.slug !== current.slug && !s.noIndex);
+  const same = ok.filter((s) => s.module === current.module);
+  const rest = ok.filter((s) => s.module !== current.module && s.group === current.group);
+  return [...same, ...rest].slice(0, max);
 }
 
 export async function getSolutionSlugs(): Promise<string[]> {

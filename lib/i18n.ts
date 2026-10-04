@@ -3,6 +3,7 @@
 
 import type { ReactNode } from "react";
 import { SITE_URL } from "./site";
+import { SECTOR_SLUGS } from "./sectorSlugs";
 
 export { SITE_URL } from "./site";
 
@@ -29,7 +30,9 @@ export type RouteKey =
   | "hizmet-sap-ams"
   | "hizmet-s4hana"
   | "hizmet-rollout"
-  | "hizmet-urun";
+  | "hizmet-urun"
+  | "sektorler"
+  | "uzmanlik";
 
 export const NAV_HUBS: RouteKey[] = ["hizmetler", "cozumler", "confiq", "referanslar", "conforcus-way", "blog"];
 
@@ -55,7 +58,7 @@ export const ROUTES: Record<RouteKey, RouteMeta> = {
   hizmetler: {
     tr: "/hizmetler",
     en: "/en/services",
-    title: { tr: "Hizmetler — Conforcus", en: "Services — Conforcus" },
+    title: { tr: "SAP Danışmanlık Hizmetleri: AMS, S/4HANA, Rollout | Conforcus", en: "SAP Consulting Services: AMS, S/4HANA, Rollout | Conforcus" },
     desc: {
       tr: "SAP destek hizmetleri (AMS), S/4HANA dönüşümleri, global rollout ve özel ürün & çözüm geliştirme — SAP yolculuğunuzun her adımında tek ekip.",
       en: "SAP support services (AMS), S/4HANA transformations, global rollout and custom product & solution development — one team at every step of your SAP journey.",
@@ -64,7 +67,7 @@ export const ROUTES: Record<RouteKey, RouteMeta> = {
   cozumler: {
     tr: "/cozumler",
     en: "/en/solutions",
-    title: { tr: "Çözüm Kataloğu — Conforcus", en: "Solution Catalog — Conforcus" },
+    title: { tr: "55+ Hazır SAP Çözümü: FI, CO, MM, SD Kataloğu | Conforcus", en: "55+ Ready-Made SAP Solutions: FI, CO, MM, SD | Conforcus" },
     desc: {
       tr: "Sahada kanıtlanmış, kurulmaya hazır 55+ SAP çözümü: FI, CO, MM, SD, PS ve FM modüllerinde mutabakat, IFRS, ithalat, onay akışları ve daha fazlası.",
       en: "55+ field-proven, ready-to-deploy SAP solutions across FI, CO, MM, SD, PS and FM: reconciliation, IFRS, import, approval workflows and more.",
@@ -73,16 +76,16 @@ export const ROUTES: Record<RouteKey, RouteMeta> = {
   "e-cozumler": {
     tr: "/e-cozumler",
     en: "/en/e-solutions",
-    title: { tr: "E-Çözümler: e-Fatura, e-Defter, e-Mutabakat — Conforcus", en: "E-Solutions: e-Invoice, e-Ledger, e-Reconciliation — Conforcus" },
+    title: { tr: "SAP E-Dönüşüm: e-Fatura, e-Defter, e-Mutabakat | Conforcus", en: "SAP E-Transformation: e-Invoice, e-Ledger | Conforcus" },
     desc: {
-      tr: "GİB e-dönüşüm belgeleri ve elektronik finans süreçleri SAP içinde: e-Fatura, e-Arşiv, e-İrsaliye, e-Defter, e-Mutabakat, EHÖ, e-Beyanname, e-Envanter. 2026 yükümlülük takvimi ve SSS.",
-      en: "Turkish e-transformation documents and electronic finance processes inside SAP: e-Invoice, e-Archive, e-Delivery, e-Ledger, e-Reconciliation, EBS, e-Declaration, e-Inventory. 2026 obligations and FAQ.",
+      tr: "SAP içinde uçtan uca e-dönüşüm: e-Fatura, e-Arşiv, e-İrsaliye, e-Defter, e-Mutabakat, EHÖ, e-Beyanname ve e-Envanter. 2026 yükümlülük takvimi ve SSS.",
+      en: "End-to-end Turkish e-transformation inside SAP: e-Invoice, e-Archive, e-Delivery, e-Ledger, e-Reconciliation and more. 2026 obligations calendar and FAQ.",
     },
   },
   confiq: {
     tr: "/confiq",
     en: "/en/confiq",
-    title: { tr: "Confiq AI Ürün Ailesi — Conforcus", en: "Confiq AI Product Family — Conforcus" },
+    title: { tr: "Confiq: SAP İçin Yapay Zekâ Ürün Ailesi | Conforcus", en: "Confiq: The AI Product Family for SAP | Conforcus" },
     desc: {
       tr: "Confiq: SAP uzmanlığımızın yazılıma dönüşmüş hali. SAP'a doğal dilde soru sorun (Decode), geleceği görün (Predict), modüller arası akışı otomatikleştirin.",
       en: "Confiq: our SAP expertise turned into software. Ask SAP in plain language (Decode), see the future (Predict), automate cross-module flows.",
@@ -91,7 +94,7 @@ export const ROUTES: Record<RouteKey, RouteMeta> = {
   referanslar: {
     tr: "/referanslar",
     en: "/en/references",
-    title: { tr: "Referanslar — Conforcus", en: "References — Conforcus" },
+    title: { tr: "SAP Referanslarımız: 130+ Müşteri, 50+ Ülke | Conforcus", en: "SAP References: 130+ Clients, 50+ Countries | Conforcus" },
     desc: {
       tr: "130+ müşteri, 30+ sektör, 50+ ülke. Türkiye'nin ve dünyanın önde gelen markaları SAP yolculuklarında Conforcus'a güveniyor. Proje haritamızı keşfedin.",
       en: "130+ clients, 30+ industries, 50+ countries. Leading brands of Türkiye and the world trust Conforcus on their SAP journey. Explore our project map.",
@@ -100,7 +103,7 @@ export const ROUTES: Record<RouteKey, RouteMeta> = {
   "conforcus-way": {
     tr: "/conforcus-way",
     en: "/en/conforcus-way",
-    title: { tr: "Conforcus Way & Kariyer — Conforcus", en: "Conforcus Way & Careers — Conforcus" },
+    title: { tr: "Conforcus Way: Kültürümüz ve SAP Kariyeri | Conforcus", en: "Conforcus Way: Our Culture and SAP Careers | Conforcus" },
     desc: {
       tr: "Mutlu çalışan, mutlu müşteri. Conforcus Way kültürümüzün ve kariyer fırsatlarımızın adı — esnek yapı, sürekli gelişim, güven ve işbirliği.",
       en: "Happy employees, happy clients. Conforcus Way is the name of our culture and careers — flexible structure, continuous growth, trust and collaboration.",
@@ -109,7 +112,7 @@ export const ROUTES: Record<RouteKey, RouteMeta> = {
   blog: {
     tr: "/blog",
     en: "/en/blog",
-    title: { tr: "Blog — Conforcus", en: "Blog — Conforcus" },
+    title: { tr: "SAP Blog: S/4HANA, E-Dönüşüm, AMS ve Yapay Zekâ | Conforcus", en: "SAP Blog: S/4HANA, E-Transformation, AMS and AI | Conforcus" },
     desc: {
       tr: "SAP dünyasından güncel gelişmeler, mevzuat değişiklikleri ve ekibimizin saha deneyimleri — S/4HANA, global rollout ve kurumsal yapay zekâ üzerine içgörüler.",
       en: "Updates from the SAP world, regulatory changes and field experience — insights on S/4HANA, global rollout and enterprise AI.",
@@ -118,7 +121,7 @@ export const ROUTES: Record<RouteKey, RouteMeta> = {
   analiz: {
     tr: "/analiz",
     en: "/en/analysis",
-    title: { tr: "Ücretsiz SAP Analizi — Conforcus", en: "Free SAP Analysis — Conforcus" },
+    title: { tr: "Ücretsiz SAP Analizi: 48 Saatte Uzman Notu | Conforcus", en: "Free SAP Analysis: Expert Note in 48 Hours | Conforcus" },
     desc: {
       tr: "5 dakikalık ücretsiz değerlendirmeyle SAP sisteminizin verimlilik ve risk haritasını çıkarın. Confiq Scan altyapısıyla, uzman yorumuyla 48 saatte rapor.",
       en: "Map your SAP system's efficiency and risks with a free 5-minute assessment. Powered by Confiq Scan, with expert commentary delivered in 48 hours.",
@@ -127,7 +130,7 @@ export const ROUTES: Record<RouteKey, RouteMeta> = {
   ekip: {
     tr: "/ekip",
     en: "/en/team",
-    title: { tr: "Ekibimiz — Conforcus", en: "Our Team — Conforcus" },
+    title: { tr: "Ekibimiz: SAP Danışmanları | Conforcus", en: "Our Team: SAP Consultants | Conforcus" },
     desc: {
       tr: "SAP danışmanlarımız: FI, CO, MM, SD, PS ve FM modüllerinde saha deneyimi. Projelerinizde birlikte çalışacağınız ekip.",
       en: "Our SAP consultants: field experience across FI, CO, MM, SD, PS and FM. The team you will actually work with.",
@@ -136,16 +139,16 @@ export const ROUTES: Record<RouteKey, RouteMeta> = {
   hakkimizda: {
     tr: "/hakkimizda",
     en: "/en/about",
-    title: { tr: "Hakkımızda — Conforcus", en: "About Us — Conforcus" },
+    title: { tr: "Hakkımızda: 2015'ten Beri SAP Danışmanlığı | Conforcus", en: "About Us: SAP Consulting Since 2015 | Conforcus" },
     desc: {
-      tr: "Conforcus Bilişim Danışmanlık A.Ş.: SAP destek (AMS), S/4HANA, global rollout ve ürün geliştirme. Merkez Ataşehir / İstanbul.",
-      en: "Conforcus Bilişim Danışmanlık A.Ş.: SAP support (AMS), S/4HANA, global rollout and product development. Headquarters in Ataşehir, Istanbul.",
+      tr: "Conforcus, 2015'ten beri finans modüllerinde derinleşen SAP danışmanlık şirketi: 130+ müşteri, 50+ ülke, 70+ danışman, %95 devamlılık. Merkez İstanbul.",
+      en: "Conforcus is an SAP consultancy with depth in finance modules since 2015: 130+ clients, 50+ countries, 70+ consultants, 95% retention. Based in Istanbul.",
     },
   },
   iletisim: {
     tr: "/iletisim",
     en: "/en/contact",
-    title: { tr: "İletişim — Conforcus", en: "Contact — Conforcus" },
+    title: { tr: "İletişim: SAP Danışmanlığı İçin Bize Yazın | Conforcus", en: "Contact: Talk to Our SAP Consultants | Conforcus" },
     desc: {
       tr: "Conforcus ile iletişime geçin: info@conforcus.com, hr@conforcus.com, +90 850 242 3772. Ataşehir / İstanbul.",
       en: "Contact Conforcus: info@conforcus.com, hr@conforcus.com, +90 850 242 3772. Ataşehir, Istanbul.",
@@ -154,16 +157,16 @@ export const ROUTES: Record<RouteKey, RouteMeta> = {
   kvkk: {
     tr: "/kvkk",
     en: "/en/privacy",
-    title: { tr: "KVKK Aydınlatma Metni — Conforcus", en: "Privacy Notice — Conforcus" },
+    title: { tr: "KVKK Aydınlatma Metni | Conforcus", en: "Privacy Notice | Conforcus" },
     desc: {
-      tr: "Conforcus Bilişim Danışmanlık A.Ş. kişisel verilerin korunması aydınlatma metni. Kısa, dürüst bir iskelet; hukuki tavsiye değildir.",
-      en: "Conforcus Bilişim Danışmanlık A.Ş. privacy notice. A short, honest outline — not legal advice.",
+      tr: "Conforcus Bilişim Danışmanlık A.Ş. kişisel verilerin korunması aydınlatma metni: hangi veriyi, hangi amaçla işlediğimiz ve haklarınız.",
+      en: "Conforcus Bilişim Danışmanlık A.Ş. privacy notice: what personal data we process, for which purpose, and your rights.",
     },
   },
   gizlilik: {
     tr: "/gizlilik",
     en: "/en/privacy",
-    title: { tr: "Gizlilik Politikası — Conforcus", en: "Privacy Policy — Conforcus" },
+    title: { tr: "Gizlilik Politikası | Conforcus", en: "Privacy Policy | Conforcus" },
     desc: {
       tr: "Conforcus web sitesi gizlilik politikası: hangi verileri neden işlediğimiz ve nasıl ulaşabileceğiniz.",
       en: "Conforcus website privacy policy: what we process, why, and how to reach us.",
@@ -173,7 +176,7 @@ export const ROUTES: Record<RouteKey, RouteMeta> = {
   cerez: {
     tr: "/cerez",
     en: "/en/cookies",
-    title: { tr: "Çerez Politikası — Conforcus", en: "Cookie Policy — Conforcus" },
+    title: { tr: "Çerez Politikası | Conforcus", en: "Cookie Policy | Conforcus" },
     desc: {
       tr: "Conforcus sitesinde kullanılan çerezler, amaçları ve tercihlerinizi nasıl yönetebileceğiniz.",
       en: "Cookies used on the Conforcus site, why they are there, and how you can manage them.",
@@ -182,7 +185,7 @@ export const ROUTES: Record<RouteKey, RouteMeta> = {
   "hizmet-sap-ams": {
     tr: "/hizmetler/sap-destek-ams",
     en: "/en/services/sap-ams",
-    title: { tr: "SAP Destek Hizmetleri (AMS) — Conforcus", en: "SAP Support Services (AMS) — Conforcus" },
+    title: { tr: "SAP Destek Hizmetleri (AMS): SLA'lı Sürekli Destek | Conforcus", en: "SAP Support Services (AMS): SLA-Based Support | Conforcus" },
     desc: {
       tr: "Canlı SAP için SLA'lı AMS: hata çözümü, dönem sonu, mevzuat uyarlaması ve sürekli iyileştirme. 130+ şirketin yanında duran destek modeli.",
       en: "SLA-backed AMS for live SAP: incident resolution, period-close, regulatory adaptation and continuous improvement — support as partnership.",
@@ -191,7 +194,7 @@ export const ROUTES: Record<RouteKey, RouteMeta> = {
   "hizmet-s4hana": {
     tr: "/hizmetler/s4hana-donusum",
     en: "/en/services/s4hana-transformation",
-    title: { tr: "S/4HANA Dönüşümleri — Conforcus", en: "S/4HANA Transformations — Conforcus" },
+    title: { tr: "S/4HANA Dönüşümü: Greenfield, Brownfield, RISE | Conforcus", en: "S/4HANA Transformation: Greenfield, Brownfield, RISE | Conforcus" },
     desc: {
       tr: "Greenfield, brownfield ve bluefield S/4HANA dönüşümleri; finans derinliği, Türkiye lokalizasyonu, hypercare. RISE, GROW veya on-premise.",
       en: "Greenfield, brownfield and bluefield S/4HANA transformations with finance depth, local compliance and hypercare — RISE, GROW or on-premise.",
@@ -200,16 +203,34 @@ export const ROUTES: Record<RouteKey, RouteMeta> = {
   "hizmet-rollout": {
     tr: "/hizmetler/global-rollout",
     en: "/en/services/global-rollout",
-    title: { tr: "Global Rollout — Conforcus", en: "Global Rollout — Conforcus" },
+    title: { tr: "SAP Global Rollout: 6 Kıta, 50+ Ülke | Conforcus", en: "SAP Global Rollout: 6 Continents, 50+ Countries | Conforcus" },
     desc: {
       tr: "Kurumsal SAP şablonunu ülke ülke yayın: lokalizasyon, IFRS, çok dilli ekip, eşzamanlı go-live. 6 kıta, 50+ ülke deneyimi.",
       en: "Deploy your corporate SAP template country by country: localization, IFRS, multilingual teams, simultaneous go-lives. 6 continents, 50+ countries.",
     },
   },
+  sektorler: {
+    tr: "/sektorler",
+    en: "/en/industries",
+    title: { tr: "Sektörlere Göre SAP Danışmanlığı | Conforcus", en: "SAP Consulting by Industry | Conforcus" },
+    desc: {
+      tr: "Üretim, otomotiv, kimya ve FMCG, enerji, inşaat ve holdingler, perakende ve savunma: sektörünüzdeki SAP deneyimimiz, çözümlerimiz ve referanslarımız.",
+      en: "Manufacturing, automotive, chemicals & FMCG, energy, construction & holdings, retail and defence: our SAP experience, solutions and references by industry.",
+    },
+  },
+  uzmanlik: {
+    tr: "/uzmanlik",
+    en: "/en/expertise",
+    title: { tr: "SAP Modül Uzmanlığı: FI, CO, PS, FM, TRM | Conforcus", en: "SAP Module Expertise: FI, CO, PS, FM, TRM | Conforcus" },
+    desc: {
+      tr: "Finans modüllerinde derinlik (FI, CO, PS, FM, TRM, CM), lojistikte MM ve SD, teknolojide ABAP, Fiori, BTP ve yapay zekâ: Conforcus'un SAP modül uzmanlığı.",
+      en: "Depth in finance modules (FI, CO, PS, FM, TRM, CM), MM and SD in logistics, ABAP, Fiori, BTP and AI in technology: Conforcus' SAP module expertise.",
+    },
+  },
   "hizmet-urun": {
     tr: "/hizmetler/urun-gelistirme",
     en: "/en/services/product-development",
-    title: { tr: "Ürün & Çözüm Geliştirme — Conforcus", en: "Product & Solution Development — Conforcus" },
+    title: { tr: "SAP Özel Geliştirme: ABAP, Fiori, BTP | Conforcus", en: "SAP Custom Development: ABAP, Fiori, BTP | Conforcus" },
     desc: {
       tr: "ABAP, Fiori ve BTP ile özel geliştirme; 55+ hazır SAP çözümü. FS → TS → CR kalite zinciri, e-dönüşüm ve onay akışları.",
       en: "Custom development with ABAP, Fiori and BTP plus 55+ ready SAP packages. FS → TS → CR quality chain, e-invoicing and approval flows.",
@@ -280,7 +301,7 @@ export function keyFromPath(pathname: string): RouteKey {
 
 export function navKeyFromPath(pathname: string): RouteKey {
   const key = keyFromPath(pathname);
-  if (key.startsWith("hizmet-")) return "hizmetler";
+  if (key.startsWith("hizmet-") || key === "sektorler" || key === "uzmanlik") return "hizmetler";
   return key;
 }
 
@@ -305,7 +326,13 @@ export function oppositePath(pathname: string): { locale: Locale; otherLocale: L
     }
   }
   if (best) {
-    const rest = pathname.slice(ROUTES[best][locale].length);
+    let rest = pathname.slice(ROUTES[best][locale].length);
+    // Sektör detaylarında slug dile göre değişir (otomotiv ↔ automotive).
+    if (best === "sektorler") {
+      const slug = rest.replace(/^\/|\/$/g, "");
+      const hit = SECTOR_SLUGS.find((s) => s[locale] === slug);
+      if (hit) rest = "/" + hit[otherLocale];
+    }
     return { locale, otherLocale, otherPath: ROUTES[best][otherLocale] + rest, key: best };
   }
 

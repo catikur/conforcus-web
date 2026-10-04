@@ -5,19 +5,51 @@ function Script({ data }: { data: object }) {
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />;
 }
 
+// Şirketin makine tarafından okunur uzmanlık alanları — sitede karşılığı olan konularla sınırlı.
+const ORG_KNOWS_ABOUT = [
+  "SAP S/4HANA",
+  "SAP ECC",
+  "SAP Application Management Services (AMS)",
+  "SAP S/4HANA conversion (greenfield, brownfield, bluefield)",
+  "SAP global rollout and localization",
+  "SAP FI (Financial Accounting)",
+  "SAP CO (Controlling)",
+  "SAP PS (Project System)",
+  "SAP FM (Funds Management)",
+  "SAP TRM (Treasury and Risk Management)",
+  "SAP Cash Management",
+  "SAP MM (Materials Management)",
+  "SAP SD (Sales and Distribution)",
+  "ABAP",
+  "SAP Fiori",
+  "SAP BTP",
+  "Inflation accounting in SAP (IAS 29 / TMS 29)",
+  "IFRS 16 in SAP",
+  "Turkish e-transformation in SAP (e-Fatura, e-Arşiv, e-İrsaliye, e-Defter)",
+  "AI for SAP data (natural-language query, forecasting)",
+];
+
 export function OrganizationJsonLd() {
   return (
     <Script
       data={{
         "@context": "https://schema.org",
         "@type": "Organization",
+        "@id": SITE_URL + "/#organization",
         name: COMPANY.name,
         legalName: COMPANY.legalName,
         url: SITE_URL,
         logo: SITE_URL + "/logo.png",
         slogan: COMPANY.slogan,
         description:
-          "SAP danışmanlığında derin uzmanlık: SAP destek (AMS), S/4HANA dönüşümleri, global rollout ve 55+ hazır SAP çözümü.",
+          "SAP danışmanlığında derin uzmanlık: SAP destek (AMS), S/4HANA dönüşümleri, global rollout ve 55+ hazır SAP çözümü. 2015'te İstanbul'da kuruldu; finans modüllerinde (FI, CO, PS, FM, TRM) butik uzmanlık.",
+        foundingDate: "2015",
+        foundingLocation: { "@type": "Place", name: "İstanbul, Türkiye" },
+        numberOfEmployees: { "@type": "QuantitativeValue", minValue: 70 },
+        areaServed: "Worldwide",
+        knowsLanguage: ["tr", "en"],
+        knowsAbout: ORG_KNOWS_ABOUT,
+        brand: { "@type": "Brand", name: "Confiq", description: "SAP için yapay zekâ ürün ailesi / AI product family for SAP" },
         email: COMPANY.email,
         telephone: COMPANY.telephone,
         sameAs: [COMPANY.linkedin],
@@ -83,6 +115,44 @@ export function ProfessionalServiceJsonLd({ locale }: { locale: Locale }) {
             itemOffered: { "@type": "Service", name: s },
           })),
         },
+      }}
+    />
+  );
+}
+
+/* Çözüm detayı — Service şeması: sağlayıcı, kapsam ve hedef kitle. Arama motorlarına ve
+   yapay zekâ asistanlarına "bu bir SAP çözümü, Conforcus sunuyor" bilgisini makine diliyle verir. */
+export function SolutionJsonLd({
+  locale,
+  name,
+  slug,
+  module,
+  description,
+  audience,
+}: {
+  locale: Locale;
+  name: string;
+  slug: string;
+  module: string;
+  description?: string;
+  audience?: string;
+}) {
+  const url = `${SITE_URL}${ROUTES.cozumler[locale]}/${slug}`;
+  const mod = module === "E" ? (locale === "tr" ? "E-Dönüşüm" : "E-Transformation") : module;
+  return (
+    <Script
+      data={{
+        "@context": "https://schema.org",
+        "@type": "Service",
+        name,
+        ...(description ? { description } : {}),
+        serviceType: locale === "tr" ? `SAP ${mod} çözümü` : `SAP ${mod} solution`,
+        category: `SAP ${mod}`,
+        url,
+        inLanguage: locale === "tr" ? "tr-TR" : "en-US",
+        areaServed: "Worldwide",
+        provider: { "@type": "Organization", name: COMPANY.name, url: SITE_URL, logo: SITE_URL + "/logo.png" },
+        ...(audience ? { audience: { "@type": "BusinessAudience", audienceType: audience } } : {}),
       }}
     />
   );

@@ -109,7 +109,7 @@ export default function Catalog({
               <div className="pcard" key={i}>
                 <span className={"mod m-" + s.module}>{modLabel(s.module)}</span>
                 <h3>{s.name}</h3>
-                <Link className="more" style={{ color: "var(--blue)", fontSize: 13, fontWeight: 600 }} href={`${catalogBase}/${s.slug}`}>
+                <Link className="more" style={{ color: "var(--blue-t)", fontSize: 13, fontWeight: 600 }} href={`${catalogBase}/${s.slug}`}>
                   {pick(locale, "Detay →", "Details →")}
                 </Link>
               </div>
