@@ -1,8 +1,18 @@
+import { readFile } from "node:fs/promises";
+import path from "node:path";
 import { ImageResponse } from "next/og";
 
 // Marka OG görseli (sosyal paylaşım kartları). Convention yerine route handler:
 // böylece mutlak URL ile referanslanır, metadataBase'e bağımlı olmaz.
-export function GET() {
+// Next 15+ GET işleyicilerini varsayılan olarak her istekte çalıştırır; görsel sabit olduğu için
+// derleme anında bir kez üretilsin (Next 14'teki davranış).
+export const dynamic = "force-static";
+
+export async function GET() {
+  // next/og'nin gömülü varsayılan yazı tipi Next 16'da değişti (Noto Sans → Geist). Paylaşım kartı
+  // aynı kalsın diye eski yazı tipi açıkça veriliyor (assets/og, SIL OFL 1.1).
+  // Satır yüksekliği 1.18: yeni işleyici lineHeight'ı tam uygular; eski sürümde 1.05 fiilen ~92 px (1.18) veriyordu.
+  const noto = await readFile(path.join(process.cwd(), "assets/og/noto-sans-latin-400.ttf"));
   return new ImageResponse(
     (
       <div
@@ -15,7 +25,7 @@ export function GET() {
           padding: "90px",
           background: "linear-gradient(135deg, #0B2545 0%, #13315C 100%)",
           color: "#fff",
-          fontFamily: "sans-serif",
+          fontFamily: "Noto Sans",
         }}
       >
         <div
@@ -33,10 +43,10 @@ export function GET() {
           <div style={{ width: 56, height: 4, background: "#FFB537", borderRadius: 2 }} />
           Conforcus
         </div>
-        <div style={{ display: "flex", marginTop: 28, fontSize: 78, fontWeight: 700, lineHeight: 1.05, letterSpacing: -2 }}>
+        <div style={{ display: "flex", marginTop: 28, fontSize: 78, fontWeight: 700, lineHeight: 1.18, letterSpacing: -2 }}>
           Deep expertise in SAP.
         </div>
-        <div style={{ display: "flex", fontSize: 78, fontWeight: 700, lineHeight: 1.05, letterSpacing: -2, color: "#1DADFF" }}>
+        <div style={{ display: "flex", fontSize: 78, fontWeight: 700, lineHeight: 1.18, letterSpacing: -2, color: "#1DADFF" }}>
           Lasting trust in your business.
         </div>
         <div style={{ display: "flex", marginTop: 36, fontSize: 30, color: "#B9C6D9" }}>
@@ -44,6 +54,6 @@ export function GET() {
         </div>
       </div>
     ),
-    { width: 1200, height: 630 }
+    { width: 1200, height: 630, fonts: [{ name: "Noto Sans", data: noto, weight: 400, style: "normal" }] }
   );
 }

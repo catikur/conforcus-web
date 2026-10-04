@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { PortableText, type PortableTextComponents } from "@portabletext/react";
 import { urlFor } from "@/lib/sanity.image";
 import type { PTBlock } from "@/lib/blogSamples";

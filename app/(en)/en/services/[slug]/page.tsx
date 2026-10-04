@@ -14,14 +14,14 @@ export function generateStaticParams() {
   return Object.keys(SERVICE_SLUG_EN).map((slug) => ({ slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const key = SERVICE_SLUG_EN[params.slug];
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const key = SERVICE_SLUG_EN[(await params).slug];
   if (!key) return { title: "Services — Conforcus" };
   return pageMetadata(key, "en");
 }
 
-export default async function Page({ params }: { params: { slug: string } }) {
-  const key = SERVICE_SLUG_EN[params.slug] as RouteKey | undefined;
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  const key = SERVICE_SLUG_EN[(await params).slug] as RouteKey | undefined;
   const page = key ? serviceByKey(key) : undefined;
   if (!page) notFound();
   const caseSlugs = SERVICE_EXTRAS[page.key]?.caseSlugs || [];

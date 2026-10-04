@@ -16,8 +16,8 @@ export async function generateStaticParams() {
   return slugs.map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const r = await getReference("en", params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const r = await getReference("en", (await params).slug);
   if (!r) return { title: "References — Conforcus" };
   const cName = (c: string) => COUNTRY_NAMES_EN[c] || c;
   const desc = r.seo?.description || referenceDescription(r, "en", cName);
@@ -40,8 +40,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   });
 }
 
-export default async function Page({ params }: { params: { slug: string } }) {
-  const r = await getReference("en", params.slug);
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  const r = await getReference("en", (await params).slug);
   if (!r) notFound();
   return (
     <>

@@ -18,10 +18,13 @@ export default function MobileMenu({ locale, activeKey }: { locale: Locale; acti
   const [expanded, setExpanded] = useState<string | null>(null);
   const [mounted, setMounted] = useState(false);
 
+  // Menü gövdeye portal ile eklenir; portal hedefi yalnız tarayıcıda vardır.
+  // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => setMounted(true), []);
 
   // Rota değişince kapat.
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setOpen(false);
   }, [pathname]);
 

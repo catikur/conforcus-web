@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { sanityImg, sanitySrcSet } from "@/lib/img";
 import Link from "next/link";
 import { getTeam, initials } from "@/lib/team";

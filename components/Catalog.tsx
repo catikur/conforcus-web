@@ -22,7 +22,9 @@ export default function Catalog({
 }) {
   const [mod, setMod] = useState<string>(initialMod);
 
+  // Adres çubuğundaki ?m= değiştiğinde (ör. uzmanlık sayfasından gelen bağlantı) seçili modül ona uyar.
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMod(initialMod);
   }, [initialMod]);
 

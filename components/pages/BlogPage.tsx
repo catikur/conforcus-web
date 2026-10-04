@@ -55,14 +55,13 @@ export default async function BlogPage({ locale }: { locale: Locale }) {
               <Link className="bpost" href={`${base}/${post.slug}`} key={post.slug}>
                 <div className="bimg">
                   {post.coverUrl ? (
-                    // eslint-disable-next-line @next/next/no-img-element
                     <img
                       src={sanityImg(post.coverUrl, { w: 640, h: 336, fit: "crop" })}
                       srcSet={sanitySrcSet(post.coverUrl, { w: 640, h: 336, fit: "crop" })}
                       alt=""
                       width={640}
                       height={336}
-                      loading={i < 3 ? "eager" : "lazy"}
+                      loading={i === 0 ? "eager" : "lazy"}
                       fetchPriority={i === 0 ? "high" : "auto"}
                       decoding="async"
                     />

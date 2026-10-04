@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { SITE_IS_WWW } from "@/lib/site";
 import { sanityImg, sanitySrcSetW } from "@/lib/img";
 import { pick, type Locale } from "@/lib/i18n";
