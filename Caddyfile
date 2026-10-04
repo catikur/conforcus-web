@@ -81,3 +81,25 @@ racing.conforcus.com {
 	header X-Robots-Tag "noindex, nofollow"
 	reverse_proxy racing-web:8080
 }
+
+# butler.conforcus.com — Agentic Inbox (M365 login gate). /opt/butler stack,
+# alias "butler" on this compose network. Do not start a second Caddy.
+butler.conforcus.com {
+	encode gzip
+	reverse_proxy butler:3000
+}
+
+# atlas.conforcus.com — paper research desk, /opt/atlas-gic stack,
+# alias "atlas-gic" on this compose network. Do not start a second Caddy.
+atlas.conforcus.com {
+	encode gzip
+	reverse_proxy atlas-gic:3000
+}
+
+# Append to /opt/conforcus-web/Caddyfile (back it up first, then `caddy validate` and `caddy reload`).
+# symbiosis.conforcus.com — hybrid desk, /opt/symbiosis stack, alias "symbiosis-api" on this network.
+symbiosis.conforcus.com {
+	encode zstd gzip
+	header X-Robots-Tag "noindex, nofollow"
+	reverse_proxy symbiosis-api:3000
+}

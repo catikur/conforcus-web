@@ -31,3 +31,9 @@ next-env.d.ts
 /studio/node_modules
 /studio/dist
 /studio/.sanity
+
+# Sunucuda Caddyfile düzenlenmeden önce alınan yedekler (yalnız VPS'te durur)
+Caddyfile.bak.*
+
+# Sunucudaki Sanity yedekleri (scripts/sanity-backup.sh)
+/backups/
