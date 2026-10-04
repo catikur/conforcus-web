@@ -46,7 +46,8 @@ export function buildMetadata(opts: {
     alternates: languages
       ? { canonical: url, languages }
       : { canonical: url },
-    robots: opts.noIndex ? { index: false, follow: false } : { index: true, follow: true },
+    // noindex sayfalar da bağlantıları izletir: iç bağlantı değeri listeye geri akar.
+    robots: opts.noIndex ? { index: false, follow: true } : { index: true, follow: true },
     openGraph: {
       title: opts.title,
       description: opts.description,

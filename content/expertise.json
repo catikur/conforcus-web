@@ -1,0 +1,812 @@
+{
+  "page": {
+    "title": {
+      "tr": "SAP Modül Uzmanlığı: FI, CO, PS, MM, SD ve ABAP | Conforcus",
+      "en": "SAP Module Expertise: FI, CO, PS, MM, SD and ABAP | Conforcus"
+    },
+    "desc": {
+      "tr": "Conforcus'un SAP modül uzmanlığı: FI, CO, PS, FM, TRM ve CM'de finans derinliği; MM, SD, PP, RE-FX, EPPM, FCC, PaPM, ABAP, Fiori, BTP ve yapay zekâ.",
+      "en": "Conforcus SAP module expertise: finance depth in FI, CO, PS, FM, TRM and CM, plus MM, SD, PP, RE-FX, EPPM, FCC, PaPM, ABAP, Fiori, BTP and AI."
+    },
+    "h1": {
+      "tr": "SAP modül uzmanlığımız",
+      "en": "Our SAP module expertise"
+    },
+    "lead": {
+      "tr": "Conforcus'un çekirdeği finans ve yönetim kontrol modülleridir: FI, CO, PS, FM, TRM ve CM. Bu derinliği lojistik modülleri, ileri seviye finans ve planlama modülleri ile ABAP, Fiori, BTP ve yapay zekâ tamamlar. Her modülde ne yaptığımızı, hangi hazır çözümleri ve referansları sunduğumuzu aşağıda bulabilirsiniz.",
+      "en": "Conforcus's core is the finance and management-control modules: FI, CO, PS, FM, TRM and CM. Logistics modules, advanced finance and planning modules, and ABAP, Fiori, BTP and AI build on that depth. Below you can see what we do in each module, with the related ready-made solutions and references."
+    },
+    "groups": [
+      {
+        "key": "finance",
+        "name": {
+          "tr": "Finans ve Yönetim Kontrol",
+          "en": "Finance and Management Control"
+        },
+        "blurb": {
+          "tr": "Uzmanlığımızın çekirdeği. Resmi muhasebeden maliyete, proje muhasebesinden bütçeye, hazineden nakde uzanan altı modülü birbirine bağlı tek bir finans yapısı olarak kurarız.",
+          "en": "The core of our expertise. We build six modules, from statutory accounting and costing to project accounting, budgeting, treasury and cash, as one connected finance structure."
+        }
+      },
+      {
+        "key": "logistics",
+        "name": {
+          "tr": "Lojistik",
+          "en": "Logistics"
+        },
+        "blurb": {
+          "tr": "Satın alma, satış ve üretim modülleri. Onay süreçleri, ithalat, ihracat ve faturalama için hazır çözümlerimizle çalışır, üretimi maliyet tarafıyla entegre kurarız.",
+          "en": "Purchasing, sales and production modules. We work with our ready-made solutions for approvals, import, export and billing, and set up production integrated with the cost side."
+        }
+      },
+      {
+        "key": "advanced",
+        "name": {
+          "tr": "İleri Seviye Modüller",
+          "en": "Advanced Modules"
+        },
+        "blurb": {
+          "tr": "Gayrimenkul ve kiralama, portföy yönetimi, dönem sonu kapanış ve kârlılık modellemesi. Çekirdek finans modüllerinin üzerine kurulan, daha özel ihtiyaçlara yanıt veren modüller.",
+          "en": "Real estate and leasing, portfolio management, period-end closing and profitability models. Modules that build on the core finance modules to meet more specific needs."
+        }
+      },
+      {
+        "key": "technical",
+        "name": {
+          "tr": "Teknoloji",
+          "en": "Technology"
+        },
+        "blurb": {
+          "tr": "Modül çalışmalarının arkasındaki teknik katman: ABAP geliştirme, Fiori arayüzleri, BTP ve entegrasyonlar, HANA optimizasyonu ve SAP verisi üzerinde yapay zekâ.",
+          "en": "The technical layer behind the module work: ABAP development, Fiori interfaces, BTP and integrations, HANA optimization and AI on SAP data."
+        }
+      }
+    ],
+    "faqs": [
+      {
+        "q": {
+          "tr": "Conforcus'un çekirdek SAP modülleri hangileri?",
+          "en": "Which SAP modules are Conforcus's core?"
+        },
+        "a": {
+          "tr": "Çekirdeğimiz finans ve yönetim kontrol modülleridir: FI, CO, PS, FM, TRM ve CM. Bunları lojistik tarafta MM ve SD, teknoloji tarafında ABAP, Fiori ve BTP, yapay zekâ tarafında Confiq tamamlar. Enflasyon muhasebesi, IFRS 16 paketi ve hakediş paketi gibi hazır çözümlerimiz de bu modüllerde yer alır.",
+          "en": "Our core is the finance and management-control modules: FI, CO, PS, FM, TRM and CM. They are complemented by MM and SD in logistics, by ABAP, Fiori and BTP in technology, and by Confiq in AI. Ready-made solutions such as inflation accounting, the IFRS 16 package and the progress billing package also sit in these modules."
+        }
+      },
+      {
+        "q": {
+          "tr": "Conforcus lojistik modüllerinde de çalışıyor mu?",
+          "en": "Does Conforcus also work in the logistics modules?"
+        },
+        "a": {
+          "tr": "Evet. MM ve SD'de hem kurulum yapıyor hem de onay süreçleri, ithalat, ihracat ve otomatik faturalama gibi hazır çözümler sunuyoruz. PP modülünü CO ile entegre, üretim maliyetlendirmesiyle birlikte ele alıyoruz. Örneğin Hayat Kimya'nın beş ülkedeki S/4HANA rollout'unda FI ve CO ile birlikte MM ve SD de kapsamdaydı.",
+          "en": "Yes. In MM and SD we both implement the modules and offer ready-made solutions such as approval workflows, import, export and automated billing. We handle PP integrated with CO, together with production costing. In Hayat Kimya's S/4HANA rollout across five countries, for example, MM and SD were in scope alongside FI and CO."
+        }
+      },
+      {
+        "q": {
+          "tr": "Modül ekipleri ile ABAP ekibi bir projede nasıl birlikte çalışır?",
+          "en": "How do module teams and the ABAP team work together on a project?"
+        },
+        "a": {
+          "tr": "Modül danışmanları süreci ve mevzuat gereksinimini tanımlar; ABAP ekibi bunun teknik tarafını geliştirir. Onay iş akışları, e-devlet ve banka entegrasyonları, özel raporlar ile enflasyon muhasebesi ve IFRS süreçlerinin teknik tarafı bu iş bölümüyle ortaya çıkar. S/4HANA dönüşümlerinde eski Z geliştirmelerin S/4HANA uyumlu koda taşınması da ABAP ekibinin işidir.",
+          "en": "Module consultants define the process and the regulatory requirement; the ABAP team builds its technical side. Approval workflows, e-government and bank integrations, custom reports and the technical side of inflation accounting and IFRS processes all come out of this division of work. In S/4HANA transformations the ABAP team also migrates old Z developments to S/4HANA-compatible code."
+        }
+      },
+      {
+        "q": {
+          "tr": "Modül uzmanlığı AMS desteğinde nasıl karşılık buluyor?",
+          "en": "How does module expertise show up in AMS support?"
+        },
+        "a": {
+          "tr": "Referans müşterilerimizin çoğuna SAP AMS kapsamında sürekli destek veriyoruz. Örneğin Rönesans Holding'de AMS tüm finans modüllerini (FI, CO, FM, TRM, PS) kapsıyor; Karaca, Koç Sistem ve Hayat Kimya'da da AMS sürüyor. Teknik tarafta AMS kapsamında periyodik HANA sağlık kontrolü de yapıyoruz.",
+          "en": "Most of our reference clients are served under SAP AMS on an ongoing basis. At Rönesans Holding, for example, AMS covers all financial modules (FI, CO, FM, TRM, PS); AMS also continues at Karaca, Koç Sistem and Hayat Kimya. On the technical side we run periodic HANA health checks as part of AMS."
+        }
+      }
+    ]
+  },
+  "items": [
+    {
+      "key": "fi",
+      "group": "finance",
+      "code": "FI",
+      "name": {
+        "tr": "Finansal Muhasebe",
+        "en": "Financial Accounting"
+      },
+      "intro": {
+        "tr": "FI, şirketin resmi defterlerinin tutulduğu modüldür: genel muhasebe, müşteri ve satıcı hesapları, sabit kıymetler, banka muhasebesi ve dönem sonu kapanış. Conforcus bu modülü Türkiye mevzuatına ve IFRS'e uygun kurar, canlıya alır ve AMS kapsamında destekler. Enflasyon muhasebesi, e-belge ve banka entegrasyonları için hazır çözümlerimiz de bu kurulumun parçasıdır.",
+        "en": "FI is where a company's statutory books are kept: general ledger, accounts receivable and payable, fixed assets, bank accounting and period-end closing. Conforcus implements the module in line with Turkish regulation and IFRS, takes it live and supports it under AMS. Our ready-made solutions for inflation accounting, e-documents and bank integrations are part of that work."
+      },
+      "strengths": [
+        {
+          "tr": "Türkiye lokalizasyonu: e-fatura, e-defter ve e-mutabakat çözümleri ile KDV ve ÖTV süreçlerinin SAP içinde yürütülmesi.",
+          "en": "Turkish localization: e-invoice, e-ledger and e-reconciliation solutions, plus VAT and special consumption tax (ÖTV) processes run inside SAP."
+        },
+        {
+          "tr": "Enflasyon muhasebesi: 25'ten fazla şirkette devreye aldığımız, SAP içinde çalışan hazır paket.",
+          "en": "Inflation accounting: a ready-made package that runs inside SAP and that we have implemented at 25+ companies."
+        },
+        {
+          "tr": "IFRS süreçlerinin tamamı ve IFRS 16 kiralama standardı için SAP üzerinde çalışan hazır paketler.",
+          "en": "Ready-made packages covering the full set of IFRS processes and the IFRS 16 leasing standard."
+        },
+        {
+          "tr": "Banka entegrasyonları: doğrudan borçlandırma sistemi (DBS), e-ödeme ve e-imza akışlarının SAP ile bankalar arasında kurulması.",
+          "en": "Bank integrations: direct debit system (DBS), e-payment and e-signature flows set up between SAP and the banks."
+        }
+      ],
+      "solutionModule": "FI",
+      "solutionSlugs": [
+        "inflation-accounting",
+        "ifrs-16-package",
+        "customer-vendor-e-reconciliation",
+        "direct-debit-system-dbs-bank-integration"
+      ],
+      "refSlugs": [
+        "ronesans-holding",
+        "borusan-birlesik-boru",
+        "karaca-zuccaciye",
+        "koc-sistem"
+      ],
+      "proof": {
+        "tr": "Enflasyon muhasebesi paketimiz Otokar, Aytemiz Akaryakıt, Şölen ve Netzsch dahil 25'ten fazla şirkette canlıda.",
+        "en": "Our inflation accounting suite is live at 25+ companies, including Otokar, Aytemiz Akaryakıt, Şölen and Netzsch."
+      }
+    },
+    {
+      "key": "co",
+      "group": "finance",
+      "code": "CO",
+      "name": {
+        "tr": "Maliyet Muhasebesi ve Kontrol",
+        "en": "Controlling"
+      },
+      "intro": {
+        "tr": "CO, bir şirketin maliyetini ve kârlılığını yönetim gözüyle izler: masraf yerleri, iç siparişler, ürün maliyetlendirme, Material Ledger ile fiili maliyet, kâr merkezleri ve kârlılık analizi. Conforcus, özellikle üretim şirketlerinde üretimden muhasebeye uzanan entegre maliyet modelleri kurar; hakediş, SMM tablosu ve fiili maliyet programlarını hazır çözüm olarak sunar.",
+        "en": "CO tracks a company's costs and profitability from a management point of view: cost centers, internal orders, product costing, actual costing with the Material Ledger, profit centers and profitability analysis. Conforcus builds integrated cost models, especially for manufacturers, running from production through to accounting, and offers progress billing, the COGS statement and actual-costing programs as ready-made solutions."
+      },
+      "strengths": [
+        {
+          "tr": "Üretim sektöründe, üretim siparişinden muhasebe kaydına kadar uzanan entegre maliyet modelleri.",
+          "en": "Integrated cost models for manufacturers, running from the production order through to the accounting entry."
+        },
+        {
+          "tr": "Uçtan uca hakediş paketi ve satılan malın maliyeti (SMM) tablosu gibi hazır CO çözümleri.",
+          "en": "Ready-made CO solutions such as the end-to-end progress billing package and the cost of goods sold (COGS) statement."
+        },
+        {
+          "tr": "Material Ledger ile fiili maliyet hesaplama; MR22 açılış ve fiyat farkı ile 710 fiilileştirme programları.",
+          "en": "Actual costing with the Material Ledger, including the MR22 opening and price difference program and the account 710 actualization program."
+        },
+        {
+          "tr": "Yansıtma kayıtları ve fiyat farkları için hazır programlar; dönem sonu maliyet işlemlerinde kullanılır.",
+          "en": "Ready-made programs for allocation postings and price differences, used in period-end cost processing."
+        }
+      ],
+      "solutionModule": "CO",
+      "solutionSlugs": [
+        "end-to-end-progress-billing-package",
+        "cost-of-goods-sold-cogs-statement",
+        "mr22-opening-price-difference-program",
+        "allocation-posting-program"
+      ],
+      "refSlugs": [
+        "ronesans-holding",
+        "tpao",
+        "karaca-zuccaciye",
+        "borusan-birlesik-boru"
+      ],
+      "proof": {
+        "tr": "Koç Sistem'in yedi şirketi kapsayan greenfield S/4HANA projesinde FI, CO ve PS modüllerini uçtan uca kurduk; AMS desteği sürüyor.",
+        "en": "In Koç Sistem's greenfield S/4HANA project covering seven companies, we delivered FI, CO and PS end to end; AMS support continues."
+      }
+    },
+    {
+      "key": "ps",
+      "group": "finance",
+      "code": "PS",
+      "name": {
+        "tr": "Proje Sistemi",
+        "en": "Project System"
+      },
+      "intro": {
+        "tr": "PS; inşaat ve taahhüt gibi proje bazlı çalışan şirketlerde proje yapısını (PYP/WBS, ağ planı, aktivite), proje bütçesini, açık taahhütleri, fiili maliyetleri ve aşama bazlı faturalamayı (milestone billing) yönetir. Conforcus, çok sayıda proje şirketi olan gruplarda proje muhasebesini kurar ve PS'ten CO ve FI modüllerine uzanan maliyet akışını tek bir yapı olarak tasarlar.",
+        "en": "PS manages project structures (WBS, networks, activities), project budgets, commitments, actual costs and milestone billing for companies that work project by project, such as construction and contracting. Conforcus sets up project accounting for groups with many project companies and designs the cost flow from PS to CO and FI as a single structure."
+      },
+      "strengths": [
+        {
+          "tr": "Çok sayıda proje şirketi olan gruplar için karmaşık PYP (WBS) yapılarının tasarımı ve kurulumu.",
+          "en": "Design and implementation of complex WBS structures for groups with many project companies."
+        },
+        {
+          "tr": "Hazır çözümler: proje planlama paketi ve proje bütçesi için iş akışı (workflow) paketi.",
+          "en": "Ready-made solutions: a project planning package and a workflow package for project budgets."
+        },
+        {
+          "tr": "İnşaat ve taahhüt sektörünün ihtiyaçlarına göre kurulmuş proje muhasebesi ve hakediş süreçleri.",
+          "en": "Project accounting and progress billing processes built for the construction and contracting sector."
+        },
+        {
+          "tr": "Proje maliyetinin PS'ten CO ve FI modüllerine tek bir akış olarak ilerlediği entegre maliyet yapısı.",
+          "en": "An integrated cost structure in which project costs move from PS to CO and FI as one flow."
+        }
+      ],
+      "solutionModule": "PS",
+      "solutionSlugs": [
+        "project-planning-package",
+        "budget-workflow-package",
+        "end-to-end-progress-billing-package"
+      ],
+      "refSlugs": [
+        "ronesans-holding",
+        "tpao",
+        "borusan-birlesik-boru"
+      ],
+      "proof": {
+        "tr": "Rönesans Holding'in S/4HANA dönüşümünde 200'den fazla şirket aynı anda canlıya geçti; proje bazlı muhasebe ve uçtan uca hakediş FI, CO ve PS üzerinde kuruldu.",
+        "en": "In Rönesans Holding's S/4HANA transformation, 200+ companies went live at the same time, with project-based accounting and end-to-end progress billing built on FI, CO and PS."
+      }
+    },
+    {
+      "key": "fm",
+      "group": "finance",
+      "code": "FM",
+      "name": {
+        "tr": "Fon Yönetimi",
+        "en": "Funds Management"
+      },
+      "intro": {
+        "tr": "FM, bütçenin ödenek bazında planlandığı ve harcamanın bütçeye göre kontrol edildiği kurumlarda, özellikle kamu ve yarı kamu yapılarında kullanılır: taahhüt kalemleri, fon merkezleri, bütçe kontrolü ve kullanım takibi. Conforcus kamu bütçe yönetimini SAP üzerinde kurar, ödenek kontrolünü ve aşım uyarılarını tasarlar, bütçe onayını hazır paketiyle yürütür.",
+        "en": "FM is used where budgets are planned as appropriations and spending is checked against them, above all in public and semi-public organizations: commitment items, funds centers, budget control and usage tracking. Conforcus implements public-sector budget management in SAP, designs appropriation checks and overrun warnings, and runs budget approval through its ready-made package."
+      },
+      "strengths": [
+        {
+          "tr": "Kamu sektörüne özgü bütçe yönetimi: taahhüt kalemi ve fon merkezi yapısının kurumun bütçe düzenine göre kurulması.",
+          "en": "Public-sector budget management: commitment item and funds center structures set up to match the organization's budget layout."
+        },
+        {
+          "tr": "Bütçe onay sürecini SAP içinde yürüten hazır çözüm: Bütçe Onay Paketi.",
+          "en": "A ready-made solution that runs the budget approval process inside SAP: the Budget Approval Package."
+        },
+        {
+          "tr": "Ödenek kontrolü ve bütçe aşımlarını ilgili kullanıcılara bildiren uyarı mekanizmalarının tasarımı.",
+          "en": "Design of appropriation checks and warning mechanisms that notify the relevant users of budget overruns."
+        }
+      ],
+      "solutionModule": "FM",
+      "solutionSlugs": [
+        "budget-approval-package"
+      ],
+      "refSlugs": [
+        "tpao"
+      ],
+      "proof": {
+        "tr": "TPAO'nun S/4HANA projesi ve AMS kapsamında kamu bütçe yönetimi (FM) yer alıyor.",
+        "en": "Public budget management (FM) is part of the scope of TPAO's S/4HANA project and AMS."
+      }
+    },
+    {
+      "key": "trm",
+      "group": "finance",
+      "code": "TRM",
+      "name": {
+        "tr": "Hazine ve Risk Yönetimi",
+        "en": "Treasury and Risk Management"
+      },
+      "intro": {
+        "tr": "TRM; para piyasası ve döviz işlemlerini, türev ürünleri, riskten korunma muhasebesini (hedge accounting), risk yönetimini ve finansal enstrümanların muhasebesini tek sistemde yönetir. Conforcus, birden fazla para birimiyle ve birden fazla ülkede çalışan şirketlerde hazine süreçlerini kurar. TRM kurulumlarımız FI modülü ve FI çözümlerimizle entegre çalışır.",
+        "en": "TRM manages money market and foreign exchange transactions, derivatives, hedge accounting, risk management and the accounting of financial instruments in one system. Conforcus sets up treasury processes for companies that work in several currencies and several countries. Our TRM implementations run integrated with FI and with our FI solutions."
+      },
+      "strengths": [
+        {
+          "tr": "Birden fazla para birimiyle çalışan global şirketlerde hazine yönetiminin SAP üzerinde kurulması.",
+          "en": "Treasury management set up in SAP for global companies working in several currencies."
+        },
+        {
+          "tr": "Riskten korunma muhasebesi (hedge accounting) ve türev ürünlerin SAP içinde muhasebeleştirilmesi.",
+          "en": "Hedge accounting and the accounting treatment of derivative instruments inside SAP."
+        },
+        {
+          "tr": "Birden fazla ülkeye yayılmış operasyonlarda ileri seviye finans süreçlerinin tasarımı ve devreye alınması.",
+          "en": "Design and rollout of advanced finance processes for operations spread across several countries."
+        }
+      ],
+      "solutionModule": "FI",
+      "solutionSlugs": [
+        "fx-difference-report"
+      ],
+      "refSlugs": [
+        "borusan-birlesik-boru"
+      ],
+      "proof": {
+        "tr": "Evyap'ın Türkiye, Endonezya, Malezya ve Rusya'yı kapsayan S/4HANA dönüşümünde TRM; FI, CO ve FM ile birlikte kapsamdaydı.",
+        "en": "In Evyap's S/4HANA transformation covering Türkiye, Indonesia, Malaysia and Russia, TRM was in scope together with FI, CO and FM."
+      }
+    },
+    {
+      "key": "cm",
+      "group": "finance",
+      "code": "CM",
+      "name": {
+        "tr": "Nakit Yönetimi",
+        "en": "Cash Management"
+      },
+      "intro": {
+        "tr": "CM; nakit pozisyonunu, likidite tahminini, banka hesap yönetimini, nakit akış raporlamasını ve banka entegrasyonlarını kapsar. Conforcus, çok şirketli grup ve holdinglerde nakit pozisyonu ve likidite tahmini raporlamasını kurar, nakit havuzu yönetimini tasarlar ve doğrudan borçlandırma sistemi (DBS) ile e-ödeme gibi banka entegrasyonlarını FI çözümleriyle birlikte devreye alır.",
+        "en": "CM covers cash position, liquidity forecasting, bank account management, cash flow reporting and bank integrations. Conforcus sets up cash position and liquidity forecast reporting for multi-company groups and holdings, designs cash pooling, and puts bank integrations such as the direct debit system (DBS) and e-payment into operation together with its FI solutions."
+      },
+      "strengths": [
+        {
+          "tr": "Banka entegrasyonları: doğrudan borçlandırma sistemi (DBS) ve banka hareketlerinin otomatik mutabakatı.",
+          "en": "Bank integrations: direct debit system (DBS) and automatic reconciliation of bank transactions."
+        },
+        {
+          "tr": "Likidite tahmini ve nakit pozisyonu raporlamasının şirket ve grup düzeyinde kurulması.",
+          "en": "Liquidity forecasting and cash position reporting set up at company and group level."
+        },
+        {
+          "tr": "Çok şirketli yapılarda nakit havuzu (cash pooling) yönetiminin tasarımı ve kurulumu.",
+          "en": "Design and implementation of cash pool management for groups with many companies."
+        }
+      ],
+      "solutionModule": "FI",
+      "solutionSlugs": [
+        "direct-debit-system-dbs-bank-integration",
+        "e-payment-bank-e-signature-integrations",
+        "eho-elektronik-hesap-ozeti"
+      ],
+      "refSlugs": [
+        "borusan-birlesik-boru"
+      ],
+      "proof": {
+        "tr": "Borusan Birleşik Boru'nun beş ülkedeki greenfield S/4HANA ve rollout projesinde nakit yönetimi (CM) ve hazine (TRM), üst yönetime görünürlük sağlayan raporlama yapısıyla birlikte kuruldu.",
+        "en": "In Borusan Birleşik Boru's greenfield S/4HANA and rollout project across five countries, cash management (CM) and treasury (TRM) were delivered alongside a reporting structure designed for C-level visibility."
+      }
+    },
+    {
+      "key": "mm",
+      "group": "logistics",
+      "code": "MM",
+      "name": {
+        "tr": "Malzeme Yönetimi",
+        "en": "Materials Management"
+      },
+      "intro": {
+        "tr": "MM; satın alma, stok yönetimi, fatura kontrolü, malzeme ana verisi, tedarikçi yönetimi, mal hareketleri ve rezervasyonları kapsar. Conforcus bu modülde ithalat ve teşvikli alım süreçlerini kurar, satın alma onaylarını SAP içine taşır ve SAP'de tutulan veriden satın alma KPI raporları üretir. Bu konuların her biri için hazır çözümümüz vardır.",
+        "en": "MM covers purchasing, inventory management, invoice verification, material master data, vendor management, goods movements and reservations. In this module Conforcus sets up import and incentivized procurement processes, moves purchasing approvals into SAP and builds purchasing KPI reports from the data held in SAP. We have a ready-made solution for each of these."
+      },
+      "strengths": [
+        {
+          "tr": "İthalat sürecinin ve teşvik kapsamındaki alımların SAP içinde izlenmesi ve yönetimi.",
+          "en": "The import process and incentivized procurement, tracked and managed inside SAP."
+        },
+        {
+          "tr": "Kapsamlı onay süreçleri: fatura onayı, avans onayı ve teklif karşılaştırma onayı için hazır iş akışları.",
+          "en": "Extensive approval processes: ready-made workflows for invoice approval, advance payment approval and quotation comparison approval."
+        },
+        {
+          "tr": "Satın alma departmanı için doğrudan SAP'de tutulan veriden üretilen KPI raporları.",
+          "en": "KPI reports for the purchasing department, built directly from the data held in SAP."
+        },
+        {
+          "tr": "Parti yönetimi aktif olmayan malzemelerde KDV iadesi sürecini destekleyen hazır çözüm.",
+          "en": "A ready-made solution that supports VAT refund for materials that are not batch-managed."
+        }
+      ],
+      "solutionModule": "MM",
+      "solutionSlugs": [
+        "import-management-process",
+        "invoice-approval-workflow",
+        "procurement-kpi-reports-from-sap-data",
+        "vat-refund-for-non-batch-managed-materials"
+      ],
+      "refSlugs": [
+        "arcelik",
+        "coskunoz-holding"
+      ],
+      "proof": {
+        "tr": "Penti için ve ilaç sektöründe Deva Holding için SAP MM fatura onay iş akışını geliştirdik.",
+        "en": "We developed the SAP MM invoice approval workflow for Penti and, in pharma, for Deva Holding."
+      }
+    },
+    {
+      "key": "sd",
+      "group": "logistics",
+      "code": "SD",
+      "name": {
+        "tr": "Satış ve Dağıtım",
+        "en": "Sales and Distribution"
+      },
+      "intro": {
+        "tr": "SD; sipariş yönetimi, müşteri ana verisi, fiyat ve koşullar, satış faturalaması, dağıtım, kredi yönetimi ve ihracatı kapsar. Conforcus bu modülde perakende ve üretim şirketleri için siparişten faturaya giden akışı kurar ve hazır çözümleriyle tamamlar: sipariş ve fiyat-koşul onayları, ihracat ve sigorta süreçleri, otomatik faturalama, miktar bazlı teslimat ayrıştırma.",
+        "en": "SD covers order management, customer master data, pricing and conditions, sales billing, distribution, credit management and export. In this module Conforcus sets up the flow from order to invoice for retail and manufacturing companies and completes it with ready-made solutions: order and pricing approvals, export and insurance processes, automated billing and quantity-based delivery split."
+      },
+      "strengths": [
+        {
+          "tr": "Sipariş onayı ve fiyat-koşul onayı için SAP içinde çalışan hazır iş akışları.",
+          "en": "Ready-made workflows inside SAP for sales order approval and pricing and condition approval."
+        },
+        {
+          "tr": "İhracat sürecinin ve yük sigortası sürecinin SAP üzerinde yönetilmesi için hazır çözümler.",
+          "en": "Ready-made solutions for managing the export process and the cargo insurance process in SAP."
+        },
+        {
+          "tr": "Otomatik faturalama süreci ve doğrulanmış brüt ağırlık (VGM) bilgisinin SAP ile entegrasyonu.",
+          "en": "An automated billing process and integration of verified gross mass (VGM) data with SAP."
+        },
+        {
+          "tr": "Miktar bazlı teslimat ayrıştırma: teslimatların SAP içinde miktara göre bölünmesini sağlayan hazır çözüm.",
+          "en": "Quantity-based delivery split: a ready-made solution that splits deliveries by quantity inside SAP."
+        }
+      ],
+      "solutionModule": "SD",
+      "solutionSlugs": [
+        "sales-order-approval-workflow",
+        "export-management-process",
+        "automated-billing-process",
+        "quantity-based-delivery-split"
+      ],
+      "refSlugs": [
+        "karaca-zuccaciye"
+      ],
+      "proof": {
+        "tr": "Hayat Kimya'nın Rusya, Endonezya, Vietnam, Tayland ve Malezya'daki S/4HANA rollout'unda SD; FI, CO ve MM ile birlikte kapsamdaydı; AMS desteği sürüyor.",
+        "en": "In Hayat Kimya's S/4HANA rollout across Russia, Indonesia, Vietnam, Thailand and Malaysia, SD was in scope together with FI, CO and MM; AMS support continues."
+      }
+    },
+    {
+      "key": "pp",
+      "group": "logistics",
+      "code": "PP",
+      "name": {
+        "tr": "Üretim Planlama",
+        "en": "Production Planning"
+      },
+      "intro": {
+        "tr": "PP; üretim planlama, malzeme ihtiyaç planlaması (MRP), üretim siparişleri, kapasite planlama, ürün ağaçları (BOM), iş merkezleri ve rotaları kapsar. Conforcus PP modülünü maliyet tarafıyla birlikte ele alır: üretim siparişinden fiili maliyete giden akışı CO ve ürün maliyetlendirme ile entegre kurar. Bu modülde CO ve MM çözümlerimizle birlikte çalışırız.",
+        "en": "PP covers production planning, MRP, production orders, capacity planning, bills of material (BOM), work centers and routings. Conforcus treats PP together with the cost side: we set up the flow from production order to actual cost integrated with CO and product costing. In this module we work alongside our CO and MM solutions."
+      },
+      "strengths": [
+        {
+          "tr": "Üretim şirketlerinin ağırlıkta olduğu müşteri portföyünden gelen PP-CO entegrasyonu deneyimi.",
+          "en": "Experience in PP-CO integration, drawn from a client portfolio made up largely of manufacturers."
+        },
+        {
+          "tr": "Üretim planlama sürecinin ürün maliyetlendirme ile entegre çalışacak biçimde tasarlanması ve kurulması.",
+          "en": "Production planning designed and set up to work integrated with product costing."
+        },
+        {
+          "tr": "Üretim siparişinden fiili maliyet hesabına kadar uzanan akışın tek bir yapı olarak kurulması.",
+          "en": "The flow from production order to actual cost calculation built as a single structure."
+        }
+      ],
+      "solutionModule": "CO",
+      "solutionSlugs": [
+        "account-710-actualization-program",
+        "cost-of-goods-sold-cogs-statement",
+        "inventory-report-mass-ckm3n"
+      ],
+      "refSlugs": [
+        "arcelik",
+        "coskunoz-holding",
+        "sistem-aluminyum"
+      ],
+      "proof": {
+        "tr": "Altay Otomotiv'in 1 Ocak 2025'te canlıya geçen S/4HANA dönüşümünde PP-CO üretim maliyetlendirmesini MM ve SD ile birlikte kurduk; AMS desteği sürüyor.",
+        "en": "In Altay Otomotiv's S/4HANA transformation, which went live on 1 January 2025, we delivered PP-CO production costing together with MM and SD; AMS support continues."
+      }
+    },
+    {
+      "key": "re-fx",
+      "group": "advanced",
+      "code": "RE-FX",
+      "name": {
+        "tr": "Esnek Gayrimenkul Yönetimi",
+        "en": "Flexible Real Estate Management"
+      },
+      "intro": {
+        "tr": "RE-FX; gayrimenkul yönetimini, kira sözleşmelerini, kiralama muhasebesini ve gayrimenkul portföyünün takibini kapsar; IFRS 16 kiralama standardıyla entegre çalışır. Conforcus, çok mağazalı perakende zincirlerinde ve gayrimenkul portföyü olan holdinglerde kira sözleşmelerini SAP'ye taşır, kiralama muhasebesi kayıtlarını otomatikleştirir ve IFRS 16 tarafını hazır IFRS 16 paketimizle birlikte kurar.",
+        "en": "RE-FX covers real estate management, lease contracts, lease accounting and tracking of the real estate portfolio, and works integrated with the IFRS 16 leasing standard. For multi-store retail chains and holdings with real estate portfolios, Conforcus brings lease contracts into SAP, automates lease accounting entries and sets up the IFRS 16 side together with its ready-made IFRS 16 package."
+      },
+      "strengths": [
+        {
+          "tr": "Kira sözleşmesi yönetimi ve sözleşmelerin IFRS 16 kiralama standardıyla entegrasyonu.",
+          "en": "Lease contract management and its integration with the IFRS 16 leasing standard."
+        },
+        {
+          "tr": "Çok mağazalı perakende zincirleri ve gayrimenkul portföyü olan holding yapılarında deneyim.",
+          "en": "Experience with multi-store retail chains and holding structures that own real estate portfolios."
+        },
+        {
+          "tr": "Kiralama muhasebesinin otomasyonu: muhasebe kayıtlarının kira sözleşmesi verisinden sistem tarafından üretilmesi.",
+          "en": "Lease accounting automation: accounting entries generated by the system from lease contract data."
+        }
+      ],
+      "solutionModule": "FI",
+      "solutionSlugs": [
+        "ifrs-16-package"
+      ],
+      "refSlugs": [
+        "karaca-zuccaciye"
+      ],
+      "proof": {
+        "tr": "Karaca'nın 40 şirketi ve 100'den fazla mağazayı kapsayan, RISE with SAP üzerindeki S/4HANA projesinde mağaza kira sözleşmeleri RE-FX ile yönetiliyor.",
+        "en": "At Karaca, store lease contracts are managed in RE-FX within an S/4HANA on RISE with SAP project covering 40 companies and 100+ stores."
+      }
+    },
+    {
+      "key": "eppm",
+      "group": "advanced",
+      "code": "EPPM",
+      "name": {
+        "tr": "Kurumsal Portföy ve Proje Yönetimi",
+        "en": "Enterprise Portfolio and Project Management"
+      },
+      "intro": {
+        "tr": "EPPM; kurumsal portföy yönetimini, proje portföyünün önceliklendirilmesini, kaynak planlamayı, portföy bütçesini ve yatırım yönetimini kapsar. Conforcus, büyük proje portföyleri yöneten kurumlarda portföyden projeye uzanan akışı PS ile entegre kurar; böylece yatırım öncelikleri ve kaynak dağılımı tek bir yapıda izlenir. Bu modülde PS tarafındaki proje planlama ve bütçe iş akışı paketlerimizle birlikte çalışırız.",
+        "en": "EPPM covers enterprise portfolio management, prioritization of the project portfolio, resource planning, portfolio budgets and investment management. For organizations running large project portfolios, Conforcus sets up the flow from portfolio to project integrated with PS, so that investment priorities and resource allocation are tracked in one structure. In this module we work alongside our project planning and budget workflow packages on the PS side."
+      },
+      "strengths": [
+        {
+          "tr": "Büyük ölçekli proje ve yatırım portföylerinin SAP üzerinde yönetimine dair proje deneyimi.",
+          "en": "Project experience in managing large project and investment portfolios in SAP."
+        },
+        {
+          "tr": "PS ile entegre çalışan, portföyden tek tek projelere uzanan portföy-proje akışı.",
+          "en": "A portfolio-to-project flow that runs integrated with PS, from the portfolio down to individual projects."
+        },
+        {
+          "tr": "Yatırımların önceliklendirilmesi ve kaynakların projeler arasında en uygun biçimde dağıtılması için süreç tasarımı.",
+          "en": "Process design for prioritizing investments and allocating resources across projects in the best way."
+        }
+      ],
+      "solutionModule": "PS",
+      "solutionSlugs": [
+        "project-planning-package",
+        "budget-workflow-package"
+      ],
+      "refSlugs": [
+        "tpao"
+      ],
+      "proof": {
+        "tr": "TPAO'da yatırım portföy yönetimi (EPPM), CO ve PS ile birlikte S/4HANA projesi ve AMS kapsamında yer alıyor.",
+        "en": "At TPAO, investment portfolio management (EPPM) sits alongside CO and PS within the scope of the S/4HANA project and AMS."
+      }
+    },
+    {
+      "key": "fcc",
+      "group": "advanced",
+      "code": "FCC",
+      "name": {
+        "tr": "Finansal Kapanış Kokpiti",
+        "en": "Financial Closing Cockpit"
+      },
+      "intro": {
+        "tr": "FCC, dönem sonu kapanışını tek merkezden yönetir: kapanış görev listesi, otomatik çalışan kapanış adımları ve kapanışın izlenmesi. Conforcus, kapanış süreci karmaşık olan çok şirketli holdinglerde kapanış adımlarını tek bir görev listesinde toplar, tekrarlayan görevleri otomatikleştirir ve kapanış süresini kısaltmayı hedefler. FCC kurulumlarımız FI tarafındaki kapanış programlarımızla entegre çalışır.",
+        "en": "FCC manages period-end closing from one place: the closing task list, automated closing steps and monitoring of the close. For multi-company holdings with complex closing processes, Conforcus brings closing steps together in a single task list, automates repetitive tasks and aims to shorten the closing period. Our FCC work runs integrated with our closing programs on the FI side."
+      },
+      "strengths": [
+        {
+          "tr": "Çok şirketli yapılarda dönem sonu kapanış adımlarının tek merkezden planlanması ve yürütülmesi.",
+          "en": "Period-end closing steps planned and run from one place across multi-company structures."
+        },
+        {
+          "tr": "Dönem sonu kapanış süresinin kısaltılmasına (fast close) odaklanan süreç ve sistem tasarımı.",
+          "en": "Process and system design focused on shortening the period-end close (fast close)."
+        },
+        {
+          "tr": "Kapanış görevlerinin otomasyonu ve her adımın kim tarafından, ne zaman tamamlandığının izlenebilmesi.",
+          "en": "Automation of closing tasks and traceability of who completed each step and when."
+        }
+      ],
+      "solutionModule": "FI",
+      "solutionSlugs": [
+        "automated-clearing-processes",
+        "accrual-periodization-with-automated-mm-fi-master-data",
+        "end-to-end-ifrs-processes-discounting-reclassification-nrv"
+      ],
+      "refSlugs": [],
+      "proof": {
+        "tr": "",
+        "en": ""
+      }
+    },
+    {
+      "key": "papm",
+      "group": "advanced",
+      "code": "PaPM",
+      "name": {
+        "tr": "Kârlılık ve Performans Yönetimi",
+        "en": "Profitability and Performance Management"
+      },
+      "intro": {
+        "tr": "PaPM; kârlılık ve performans modellemesi, maliyet dağıtım simülasyonları, gelişmiş dağıtım (allocation) kuralları ve olası senaryo (what-if) analizleri için kullanılır. Conforcus, ileri finansal analitik ihtiyacı olan kurumlar için karmaşık maliyet dağıtımı ve kârlılık modellerini kurar; PaPM modülünü CO-PA kârlılık analizini tamamlayan bir ileri analitik katmanı olarak konumlar ve CO çözümleriyle birlikte uygular.",
+        "en": "PaPM is used for profitability and performance models, cost allocation simulations, advanced allocation rules and what-if scenario analysis. For organizations that need advanced financial analytics, Conforcus builds complex cost allocation and profitability models, positions PaPM as an advanced analytics layer that complements CO-PA profitability analysis, and delivers it together with its CO solutions."
+      },
+      "strengths": [
+        {
+          "tr": "Karmaşık maliyet dağıtımı ve kârlılık modellerinin tasarlanması ve SAP üzerinde kurulması.",
+          "en": "Design and implementation of complex cost allocation and profitability models in SAP."
+        },
+        {
+          "tr": "CO-PA ile yapılan kârlılık analizini tamamlayan ileri analitik modellerin kurulması.",
+          "en": "Advanced analytics models that complement the profitability analysis done in CO-PA."
+        },
+        {
+          "tr": "Finansal simülasyon ve senaryo analizi: kararların sonuca etkisini önceden görmek için what-if çalışmaları.",
+          "en": "Financial simulation and scenario analysis: what-if work that shows the effect of a decision in advance."
+        }
+      ],
+      "solutionModule": "CO",
+      "solutionSlugs": [],
+      "refSlugs": [],
+      "proof": {
+        "tr": "",
+        "en": ""
+      }
+    },
+    {
+      "key": "abap",
+      "group": "technical",
+      "code": "ABAP",
+      "name": {
+        "tr": "ABAP Geliştirme",
+        "en": "ABAP Development"
+      },
+      "intro": {
+        "tr": "ABAP, SAP'nin standart olarak karşılamadığı ihtiyaçların geliştirildiği dildir: raporlar, formlar, iş akışları, BAdI ve user exit ile genişletmeler, CDS view'lar ve IDoc, RFC, BAPI ile entegrasyonlar. Conforcus'un 55'ten fazla hazır çözümünün ve müşteriye özel tüm geliştirmelerin arkasında ABAP ekibi vardır. Ekip, S/4HANA dönüşümlerinde eski Z geliştirmeleri S/4HANA uyumlu koda da taşır.",
+        "en": "ABAP is the language in which needs that standard SAP does not cover are built: reports, forms, workflows, enhancements with BAdIs and user exits, CDS views, and integrations via IDoc, RFC and BAPI. The ABAP team is behind Conforcus's 55+ ready-made solutions and all client-specific developments. In S/4HANA transformations the team also migrates old Z developments to S/4HANA-compatible code."
+      },
+      "strengths": [
+        {
+          "tr": "Onay ve iş akışı (workflow) kurguları: MM, SD ve FI onay paketlerinin teknik geliştirmesi.",
+          "en": "Approval and workflow designs: the technical build of the MM, SD and FI approval packages."
+        },
+        {
+          "tr": "E-devlet ve banka entegrasyonları: e-fatura, e-defter, e-imza ve DBS banka entegrasyonu.",
+          "en": "E-government and bank integrations: e-invoice, e-ledger, e-signature and DBS bank integration."
+        },
+        {
+          "tr": "Özel raporlama: KPI panoları, müşteri ve satıcı yaşlandırma raporları, mizan raporları.",
+          "en": "Custom reporting: KPI dashboards, customer and vendor aging reports, trial balance reports."
+        },
+        {
+          "tr": "Mevzuat kaynaklı geliştirmeler: enflasyon muhasebesi ve IFRS süreçlerinin teknik tarafının ABAP ile kurulması.",
+          "en": "Regulation-driven developments: the technical side of inflation accounting and IFRS processes, built in ABAP."
+        }
+      ],
+      "solutionModule": null,
+      "solutionSlugs": [
+        "invoice-approval-workflow",
+        "e-defter",
+        "customer-vendor-aging-reports",
+        "inflation-accounting"
+      ],
+      "refSlugs": [],
+      "proof": {
+        "tr": "Rönesans Holding'de e-fatura, e-defter ve e-mutabakat çözümlerimiz kullanılıyor.",
+        "en": "Rönesans Holding uses our e-invoice, e-ledger and e-reconciliation solutions."
+      }
+    },
+    {
+      "key": "fiori",
+      "group": "technical",
+      "code": "Fiori",
+      "name": {
+        "tr": "Fiori ve UI5 Geliştirme",
+        "en": "Fiori and UI5 Development"
+      },
+      "intro": {
+        "tr": "Fiori ve UI5, SAP'yi tarayıcıda ve mobil cihazda kullanılabilen sade ekranlara taşır. Conforcus standart Fiori uygulamalarını etkinleştirir ve uyarlar, Fiori Elements ve serbest (freestyle) UI5 ile özel uygulamalar geliştirir, Fiori Launchpad'i yapılandırır. Onay süreçlerinin mobil arayüzleri ile satın alma ve finans için KPI panoları da bu kapsamdadır.",
+        "en": "Fiori and UI5 bring SAP to simple screens that work in a browser and on mobile devices. Conforcus activates and adapts standard Fiori apps, builds custom applications with Fiori Elements and freestyle UI5, and configures the Fiori Launchpad. Mobile interfaces for approval processes and KPI dashboards for purchasing and finance are part of the same scope."
+      },
+      "strengths": [
+        {
+          "tr": "Onay uygulamaları: hazır çözümlerimizdeki onay süreçlerinin mobil ve Fiori arayüzleri.",
+          "en": "Approval apps: mobile and Fiori interfaces for the approval processes in our ready-made solutions."
+        },
+        {
+          "tr": "Özel KPI panoları: satın alma KPI'ları ve finansal raporlama ekranları.",
+          "en": "Custom KPI dashboards, including purchasing KPIs and financial reporting screens."
+        },
+        {
+          "tr": "Kullanıcı deneyimi: SAP'nin karmaşık ekranlarını sadeleştiren, işe özel Fiori uygulamaları.",
+          "en": "User experience: custom Fiori apps that simplify SAP's complex screens for a specific job."
+        }
+      ],
+      "solutionModule": null,
+      "solutionSlugs": [
+        "procurement-kpi-reports-from-sap-data",
+        "sales-order-approval-workflow",
+        "advance-payment-approval"
+      ],
+      "refSlugs": [],
+      "proof": {
+        "tr": "",
+        "en": ""
+      }
+    },
+    {
+      "key": "btp",
+      "group": "technical",
+      "code": "BTP",
+      "name": {
+        "tr": "BTP ve Entegrasyonlar",
+        "en": "BTP and Integrations"
+      },
+      "intro": {
+        "tr": "BTP, SAP'nin bulut tabanlı geliştirme ve entegrasyon platformudur. Conforcus bu platformda CAP ve RAP ile uygulama geliştirir, Integration Suite ile entegrasyon senaryoları kurar, SAP Analytics Cloud bağlantılarını ve çekirdek sisteme dokunmayan yan yana (side-by-side) uzantıları hazırlar. Banka, e-devlet ve SAP dışı sistem entegrasyonları ile HANA performans çalışmaları da bu başlıktadır.",
+        "en": "BTP is SAP's cloud platform for development and integration. On it, Conforcus builds applications with CAP and RAP, sets up integration scenarios with Integration Suite, and delivers SAP Analytics Cloud connections and side-by-side extensions that leave the core system untouched. Bank, e-government and non-SAP system integrations, along with HANA performance work, also sit under this heading."
+      },
+      "strengths": [
+        {
+          "tr": "BTP üzerinde CAP ve RAP ile uygulama geliştirme; Integration Suite ile entegrasyon senaryoları.",
+          "en": "Application development on BTP with CAP and RAP; integration scenarios with Integration Suite."
+        },
+        {
+          "tr": "SAP ile Java ve .NET tabanlı kurumsal sistemler arasında köprüler; REST ve SOAP web servis entegrasyonları.",
+          "en": "Bridges between SAP and Java or .NET-based enterprise systems; REST and SOAP web service integrations."
+        },
+        {
+          "tr": "Banka ve e-devlet entegrasyonları: DBS, e-imza, e-ödeme, e-fatura, e-defter ve e-irsaliye.",
+          "en": "Bank and e-government integrations: DBS, e-signature, e-payment, e-invoice, e-ledger and e-delivery note."
+        },
+        {
+          "tr": "HANA optimizasyonu: performans iyileştirme, CDS view optimizasyonu ve AMS kapsamında periyodik HANA sağlık kontrolü.",
+          "en": "HANA optimization: performance tuning, CDS view optimization and periodic HANA health checks under AMS."
+        }
+      ],
+      "solutionModule": null,
+      "solutionSlugs": [
+        "e-fatura",
+        "e-irsaliye",
+        "direct-debit-system-dbs-bank-integration",
+        "e-payment-bank-e-signature-integrations"
+      ],
+      "refSlugs": [],
+      "proof": {
+        "tr": "",
+        "en": ""
+      }
+    },
+    {
+      "key": "ai-ml",
+      "group": "technical",
+      "code": "AI/ML",
+      "name": {
+        "tr": "Yapay Zekâ ve Makine Öğrenmesi",
+        "en": "AI and Machine Learning"
+      },
+      "intro": {
+        "tr": "Yapay zekâ ve makine öğrenmesi hizmetimiz, SAP'de biriken veriyi tahmine, uyarıya ve öneriye dönüştürür. Conforcus, SAP verisi üzerinde tahminleme ve anomali tespiti modelleri, doğal dille çalışan asistanlar ve süreç otomasyonu geliştirir; bunları müşteriye özel proje olarak sunar. Aynı çalışma, ürünleşmiş yapay zekâ ailemiz Confiq'i de besler.",
+        "en": "Our AI and machine learning service turns the data that accumulates in SAP into forecasts, alerts and recommendations. Conforcus builds forecasting and anomaly detection models on SAP data, natural-language assistants and process automation, delivered as client-specific projects. The same work feeds Confiq, our productized AI family."
+      },
+      "strengths": [
+        {
+          "tr": "SAP verisi üzerinde makine öğrenmesi modelleri: tahminleme ve anomali tespiti.",
+          "en": "Machine learning models on SAP data: forecasting and anomaly detection."
+        },
+        {
+          "tr": "Doğal dil işleme: kullanıcıların yazarak soru sorabildiği sohbet robotları ve akıllı asistanlar.",
+          "en": "Natural language processing: chatbots and smart assistants that users can question in writing."
+        },
+        {
+          "tr": "SAP verisinin harici yapay zekâ servisleriyle (LLM API'leri, ML platformları) entegrasyonu ve özel yapay zekâ uygulamalarının SAP süreçlerine bağlanması.",
+          "en": "Integration of SAP data with external AI services (LLM APIs, ML platforms) and connection of custom AI applications to SAP processes."
+        },
+        {
+          "tr": "Süreç otomasyonu ve akıllı öneriler sunan, müşteriye özel yapay zekâ destekli kurumsal uygulamalar.",
+          "en": "Client-specific, AI-supported enterprise applications that provide process automation and smart recommendations."
+        }
+      ],
+      "solutionModule": null,
+      "solutionSlugs": [],
+      "refSlugs": [],
+      "proof": {
+        "tr": "",
+        "en": ""
+      }
+    }
+  ]
+}

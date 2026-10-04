@@ -2,12 +2,13 @@
   "name": "conforcus-studio",
   "private": true,
   "version": "1.0.0",
-  "description": "Conforcus blog — Sanity Studio (hosted)",
+  "description": "Conforcus blog \u2014 Sanity Studio (hosted)",
   "scripts": {
     "dev": "sanity dev",
     "start": "sanity start",
     "build": "sanity build",
-    "deploy": "sanity deploy"
+    "deploy": "npm run check && sanity deploy",
+    "check": "tsx scripts-check-schemas.ts"
   },
   "dependencies": {
     "@sanity/vision": "^6.1.0",
@@ -18,6 +19,7 @@
   },
   "devDependencies": {
     "@types/react": "^18.2",
-    "typescript": "^5"
+    "typescript": "^5",
+    "tsx": "^4.19.0"
   }
 }

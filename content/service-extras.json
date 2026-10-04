@@ -1,0 +1,489 @@
+{
+  "hizmet-sap-ams": {
+    "sections": [
+      {
+        "h2": {
+          "tr": "AMS neleri kapsar",
+          "en": "What AMS covers"
+        },
+        "paras": [
+          {
+            "tr": "AMS hizmetini sürekli, sözleşmeye ve SLA’ya bağlı bir model içinde veriyoruz. Kapsam yalnızca hata çözmekle sınırlı değildir: sistemin bakımı, küçük geliştirmeler, mevzuat değişiklikleri ve kullanıcıların günlük soruları da aynı sözleşmenin içindedir. Hizmet beş iş kaleminden oluşur; her birinin ağırlığı sizin sisteminize ve kapanış takviminize göre belirlenir.",
+            "en": "We deliver AMS as a continuous service under a contract and an SLA. It is not limited to fixing errors: system maintenance, small enhancements, regulatory changes and users’ day-to-day questions sit in the same agreement. The service has five work items, and the weight of each is set by your system and your close calendar."
+          }
+        ],
+        "bullets": [
+          {
+            "tr": "Kritik sistemler için destek: işi durduran olaylarda destek ekibine kesintisiz erişim; kapsamı sözleşmede tanımlanır.",
+            "en": "Support for critical systems: uninterrupted access to the support team when an incident stops the business, as defined in the contract."
+          },
+          {
+            "tr": "Bakım ve optimizasyon: performans takibi, HANA iyileştirmesi (tuning) ve periyodik sistem sağlık kontrolleri.",
+            "en": "Maintenance and optimization: performance monitoring, HANA tuning and periodic system health checks."
+          },
+          {
+            "tr": "Sürekli iyileştirme: küçük geliştirmeler ve yeni iş gereksinimlerinin sisteme alınması.",
+            "en": "Continuous improvement: small enhancements and new business requirements built into the system."
+          },
+          {
+            "tr": "Mevzuat güncellemeleri: e-fatura, e-defter, enflasyon muhasebesi ve IFRS değişikliklerinin sisteme uyarlanması.",
+            "en": "Regulatory updates: changes in e-invoice, e-ledger, inflation accounting and IFRS applied to the system."
+          },
+          {
+            "tr": "Kullanıcı desteği: son kullanıcı sorularının yanıtlanması, eğitim ve dokümantasyon.",
+            "en": "User support: answers to end-user questions, training and documentation."
+          }
+        ]
+      },
+      {
+        "h2": {
+          "tr": "Öncelik sınıfları ve SLA modeli",
+          "en": "Priority classes and the SLA model"
+        },
+        "paras": [
+          {
+            "tr": "Her talep, iş üzerindeki etkisine göre dört öncelik sınıfından birine alınır; sınıf, talebin ne kadar hızlı ele alınacağını belirler. Aşağıdaki hedefler bu modelin genel çerçevesidir. Kesin yanıt ve çözüm süreleri ise her sözleşmeye ayrıca yazılır ve o müşterinin kapanış takvimine göre belirlenir.",
+            "en": "Every request is placed in one of four priority classes according to its business impact, and the class decides how fast it is handled. The targets below are the general framework of the model. Exact response and resolution times are written into each contract and set around that client’s close calendar."
+          }
+        ],
+        "bullets": [
+          {
+            "tr": "P1, sistem durması: canlı sistem kullanılamıyor; müdahale hemen başlar.",
+            "en": "P1, system down: the live system cannot be used; intervention starts immediately."
+          },
+          {
+            "tr": "P2, kritik iş etkisi: sistem çalışıyor ama kritik bir iş süreci yürümüyor; hedef, iki saat içinde müdahale.",
+            "en": "P2, critical business impact: the system runs but a critical business process is blocked; the target is intervention within two hours."
+          },
+          {
+            "tr": "P3, standart talep: işi durdurmayan olağan destek talepleri; sözleşmedeki SLA’ya göre ele alınır.",
+            "en": "P3, standard request: routine support requests that do not stop the business, handled under the SLA in the contract."
+          },
+          {
+            "tr": "P4, düşük öncelik veya iyileştirme: acil olmayan talepler; iş planına alınarak yürütülür.",
+            "en": "P4, low priority or improvement: non-urgent requests, scheduled and carried out as planned work."
+          }
+        ]
+      },
+      {
+        "h2": {
+          "tr": "Destek verdiğimiz modüller",
+          "en": "Modules we support"
+        },
+        "paras": [
+          {
+            "tr": "Desteğin çekirdeği altı finans ve yönetim kontrolü modülüdür: FI (finansal muhasebe), CO (maliyet ve kârlılık), PS (proje muhasebesi), FM (bütçe yönetimi), TRM (hazine) ve CM (nakit yönetimi). Finans kayıtlarının önemli bir bölümü satın alma ve satış süreçlerinde doğduğu için MM ve SD desteği bu çekirdeğin arkasında durur. Geliştirme veya arayüz gerektiren talepleri ABAP ve Fiori danışmanları karşılar.",
+            "en": "The core of the support is six finance and management-control modules: FI (financial accounting), CO (cost and profitability), PS (project accounting), FM (budget management), TRM (treasury) and CM (cash management). A large share of finance postings start in purchasing and sales, so MM and SD support stands behind that core. ABAP and Fiori consultants take the requests that need development or a user interface."
+          }
+        ],
+        "bullets": []
+      },
+      {
+        "h2": {
+          "tr": "Sahadan: canlıya geçişten sonra AMS",
+          "en": "From the field: AMS after go-live"
+        },
+        "paras": [
+          {
+            "tr": "Büyük programların çoğu canlıya geçtikten sonra AMS ile devam eder. Bugün referans müşterilerimizin büyük bölümüne AMS kapsamında hizmet veriyoruz ve müşteri devamlılığı oranımız %95. Aşağıdaki beş müşterinin S/4HANA dönüşümünde görev aldık; canlıya geçişten sonra aynı sistemlere AMS ile destek vermeyi sürdürüyoruz.",
+            "en": "Most large programmes continue under AMS after go-live. Today we serve most of our reference clients under AMS, and our client retention rate is 95%. We worked on the S/4HANA transformation of the five clients below and still support the same systems under AMS."
+          }
+        ],
+        "bullets": [
+          {
+            "tr": "Rönesans Holding: 200’den fazla şirket aynı anda canlıya geçti; AMS tüm finansal modüllerde (FI, CO, FM, TRM, PS) sürüyor.",
+            "en": "Rönesans Holding: 200+ companies went live at the same time; AMS continues across all financial modules (FI, CO, FM, TRM, PS)."
+          },
+          {
+            "tr": "Koç Sistem: yedi şirketlik greenfield S/4HANA projesinin ardından AMS devam ediyor.",
+            "en": "Koç Sistem: AMS continues after a greenfield S/4HANA project for seven companies."
+          },
+          {
+            "tr": "Karaca: RISE with SAP üzerindeki S/4HANA yapısı 40 şirketi ve 100’den fazla mağazayı kapsıyor; AMS devam ediyor.",
+            "en": "Karaca: S/4HANA on RISE with SAP covering 40 companies and 100+ stores; AMS continues."
+          },
+          {
+            "tr": "TPAO: S/4HANA projesi ve AMS; kapsamda kamu bütçe yönetimi (FM), CO, PS ve yatırım portföyü yönetimi (EPPM) var.",
+            "en": "TPAO: S/4HANA project and AMS; scope includes public budget management (FM), CO, PS and investment portfolio management (EPPM)."
+          },
+          {
+            "tr": "Altay Otomotiv: S/4HANA’ya 1 Ocak 2025’te geçti; AMS devam ediyor.",
+            "en": "Altay Otomotiv: went live on S/4HANA on 1 January 2025; AMS continues."
+          }
+        ]
+      }
+    ],
+    "caseSlugs": [
+      "ronesans-holding",
+      "koc-sistem",
+      "karaca-zuccaciye",
+      "tpao",
+      "altay-otomotiv",
+      "hayat-kimya"
+    ]
+  },
+  "hizmet-s4hana": {
+    "sections": [
+      {
+        "h2": {
+          "tr": "Dört geçiş senaryosu",
+          "en": "The four migration scenarios"
+        },
+        "paras": [
+          {
+            "tr": "SAP ECC’den S/4HANA’ya geçişin dört senaryosunda da proje yürütüyoruz. İlk ikisi sisteme nasıl geçileceğini, son ikisi sistemin nerede çalışacağını tanımlar; her proje bu iki soruya da yanıt verir. Doğru yanıt şirketin mevcut sistemine, veri kalitesine ve süreçlerini ne kadar değiştirmek istediğine bağlıdır.",
+            "en": "We run projects in all four scenarios for moving from SAP ECC to S/4HANA. The first two describe how you move, the last two where the system runs; every project answers both questions. The right answer depends on your current system, your data quality and how far you want to change your processes."
+          }
+        ],
+        "bullets": [
+          {
+            "tr": "Greenfield: S/4HANA sıfırdan kurulur; süreçler SAP’nin en iyi uygulamalarına göre yeniden tasarlanır.",
+            "en": "Greenfield: S/4HANA is built from scratch and processes are redesigned on SAP best practices."
+          },
+          {
+            "tr": "Brownfield: mevcut ECC sistemi S/4HANA’ya dönüştürülür (system conversion); kurulu yapı ve geçmiş veri korunur.",
+            "en": "Brownfield: the existing ECC system is converted to S/4HANA (system conversion); current setup and historical data are kept."
+          },
+          {
+            "tr": "Bulut: S/4HANA, RISE with SAP veya S/4HANA Cloud ile bulutta çalışır; altyapıyı şirket kendi veri merkezinde işletmez.",
+            "en": "Cloud: S/4HANA runs in the cloud through RISE with SAP or S/4HANA Cloud, not on infrastructure you operate yourself."
+          },
+          {
+            "tr": "On-premise: S/4HANA şirketin kendi veri merkezinde çalışır; verinin nerede duracağı sizin kontrolünüzde kalır.",
+            "en": "On-premise: S/4HANA runs in your own data centre, so you keep control of where the data sits."
+          }
+        ]
+      },
+      {
+        "h2": {
+          "tr": "Finans tarafında taşıdığımız konular",
+          "en": "What we carry in finance"
+        },
+        "paras": [
+          {
+            "tr": "S/4HANA, finans tarafında ECC’den farklı bir veri modeli ve yeni zorunluluklar getirir. Aşağıdaki altı konu tasarım aşamasında, canlıya geçişten çok önce karara bağlanır; her biri kapanışı ve raporlamayı doğrudan etkiler. Bu konularda tasarımı, veri dönüşümünü ve testi finans ekibinizle birlikte biz yürütürüz.",
+            "en": "In finance, S/4HANA brings a different data model from ECC and some new mandatory elements. The six topics below are decided in the design phase, well before go-live, and each directly affects the close and reporting. We run their design, data conversion and testing together with your finance team."
+          }
+        ],
+        "bullets": [
+          {
+            "tr": "Universal Journal: finansal muhasebe ve maliyet kayıtları tek tabloda tutulur; FI ile CO arasında ayrıca mutabakat gerekmez.",
+            "en": "Universal Journal: financial and cost postings sit in one table, so FI and CO no longer need to be reconciled."
+          },
+          {
+            "tr": "Business Partner: müşteri ve satıcı kartları tek ana veri yapısında birleşir; geçişten önce eşleştirme ve temizlik gerekir.",
+            "en": "Business Partner: customer and vendor records merge into one master-data object, which needs mapping and clean-up before the move."
+          },
+          {
+            "tr": "Yeni varlık muhasebesi: her değerleme (örneğin IFRS ve VUK) için kayıt anında ayrı belge oluşur.",
+            "en": "New asset accounting: each valuation (for example IFRS and local GAAP) is posted in real time with its own document."
+          },
+          {
+            "tr": "Paralel defterler: aynı işlem IFRS ve yerel mevzuat (VUK) için ayrı defterlerde, ayrı değerlemeyle izlenir.",
+            "en": "Parallel ledgers: the same transaction is tracked in separate ledgers, with separate valuation, for IFRS and local GAAP."
+          },
+          {
+            "tr": "Türkiye lokalizasyonu: e-fatura, e-defter, e-mutabakat ile KDV ve ÖTV gereksinimleri tasarımın içinde ele alınır.",
+            "en": "Türkiye localization: e-invoice, e-ledger, e-reconciliation, VAT and special consumption tax (ÖTV) requirements are handled within the design."
+          },
+          {
+            "tr": "Enflasyon muhasebesi: hazır çözüm paketimiz 25’ten fazla şirkette canlıda; dönüşüm projesine dahil edilebilir.",
+            "en": "Inflation accounting: our ready-made suite is live in 25+ companies and can be included in the transformation project."
+          }
+        ]
+      },
+      {
+        "h2": {
+          "tr": "Sahadan: beş S/4HANA programı",
+          "en": "From the field: five S/4HANA programmes"
+        },
+        "paras": [],
+        "bullets": [
+          {
+            "tr": "Rönesans Holding: greenfield S/4HANA; 200’den fazla şirket aynı anda canlıya geçti, proje planlandığı gibi 1,5 yılda tamamlandı.",
+            "en": "Rönesans Holding: greenfield S/4HANA; 200+ companies went live simultaneously, and the project was completed in 1.5 years as planned."
+          },
+          {
+            "tr": "Koç Sistem: yedi şirket için greenfield S/4HANA; FI, CO ve PS uçtan uca kuruldu.",
+            "en": "Koç Sistem: greenfield S/4HANA for seven companies, with FI, CO and PS implemented end to end."
+          },
+          {
+            "tr": "Karaca: RISE with SAP üzerinde S/4HANA ve SAP Retail; 40 şirket, 100’den fazla mağaza ve mağaza kira sözleşmeleri için RE-FX.",
+            "en": "Karaca: S/4HANA and SAP Retail on RISE with SAP; 40 companies, 100+ stores, and RE-FX for store lease contracts."
+          },
+          {
+            "tr": "TPAO: S/4HANA projesi; kamu bütçe yönetimi (FM), CO, PS, yatırım portföyü yönetimi (EPPM) ve SAP IS-Oil.",
+            "en": "TPAO: S/4HANA project with public budget management (FM), CO, PS, investment portfolio management (EPPM) and SAP IS-Oil."
+          },
+          {
+            "tr": "Altay Otomotiv: S/4HANA dönüşümü 1 Ocak 2025’te canlıya geçti; PP-CO üretim maliyetlendirme, MM ve SD.",
+            "en": "Altay Otomotiv: S/4HANA transformation live since 1 January 2025; PP-CO production costing, MM and SD."
+          }
+        ]
+      },
+      {
+        "h2": {
+          "tr": "Canlıya geçişten sonra: hypercare ve AMS",
+          "en": "After go-live: hypercare, then AMS"
+        },
+        "paras": [
+          {
+            "tr": "Canlıya geçişi hypercare dönemi izler: proje ekibi sistemin başında kalır, açılan talepleri öncelikle çözer ve ilk kapanışa eşlik eder. Talep sayısı düştüğünde ve ilk kapanış tamamlandığında destek, ayrı bir sözleşme ve SLA ile AMS’e devredilir. Rönesans Holding, Koç Sistem, Karaca, TPAO ve Altay Otomotiv’de dönüşümün ardından AMS devam ediyor.",
+            "en": "Go-live is followed by hypercare: the project team stays on the system, resolves incoming requests with priority and works through the first close with you. Once request volume drops and the first close is done, support moves to AMS under a separate contract and SLA. At Rönesans Holding, Koç Sistem, Karaca, TPAO and Altay Otomotiv, AMS continues after the transformation."
+          }
+        ],
+        "bullets": []
+      }
+    ],
+    "caseSlugs": [
+      "ronesans-holding",
+      "koc-sistem",
+      "karaca-zuccaciye",
+      "tpao",
+      "altay-otomotiv",
+      "evyap"
+    ]
+  },
+  "hizmet-rollout": {
+    "sections": [
+      {
+        "h2": {
+          "tr": "Bir rollout çalışması neleri içerir",
+          "en": "What a rollout engagement includes"
+        },
+        "paras": [
+          {
+            "tr": "Rollout, merkezde kurulan ortak SAP şablonunun yeni ülkelere yayılması ve her ülkenin yerel mevzuatına uyarlanmasıdır. Çok ülkeli, çok dilli ve çok mevzuatlı projelerde bu işi şablonun tasarımından son ülkenin canlıya geçişine kadar üstleniyoruz. Bir rollout çalışması aşağıdaki beş iş kaleminden oluşur.",
+            "en": "A rollout takes the SAP template built at the centre into new countries and adapts it to each country’s local regulations. On multi-country, multi-language, multi-regulation projects we take this on from the design of the template to the go-live of the last country. A rollout engagement consists of the five work items below."
+          }
+        ],
+        "bullets": [
+          {
+            "tr": "Şablon tasarımı: bütün ülkelerde ortak kalacak merkezi süreç şablonunun oluşturulması.",
+            "en": "Template design: building the central process template that stays common to every country."
+          },
+          {
+            "tr": "Rollout yürütme: şablonun ülke ülke, planlı bir sırayla canlıya alınması.",
+            "en": "Rollout execution: taking the template live country by country, in a planned order."
+          },
+          {
+            "tr": "Lokalizasyon: her ülkenin yerel mevzuatına, vergi kurallarına ve raporlama yükümlülüklerine uyum.",
+            "en": "Localization: compliance with each country’s local regulations, tax rules and reporting obligations."
+          },
+          {
+            "tr": "Çok dilli yürütme: farklı dillerde ve saat dilimlerinde proje yönetimi.",
+            "en": "Multilingual delivery: project management across different languages and time zones."
+          },
+          {
+            "tr": "Üst yönetim görünürlüğü: üst yönetimin ihtiyacına göre tasarlanmış raporlama yapısı.",
+            "en": "Top-management visibility: a reporting structure designed for what top management needs to see."
+          }
+        ]
+      },
+      {
+        "h2": {
+          "tr": "Lokalizasyon: yerel mevzuata uyum",
+          "en": "Localization: meeting local rules"
+        },
+        "paras": [
+          {
+            "tr": "Yerel mevzuata ve yerel iş gereksinimlerine uyum, rollout hizmetimizin merkezindedir. Grup merkezi çoğu zaman IFRS’ye göre raporlar; ülkedeki şirket ise yerel vergi idaresine karşı sorumludur ve defterini yerel mevzuata göre tutar. Lokalizasyon çalışması bu iki ihtiyacı aynı sistemde, şablonun ortak yapısını koruyarak karşılar ve dört başlıkta toplanır.",
+            "en": "Meeting local regulations and local business requirements is at the centre of our rollout service. Group headquarters usually reports under IFRS, while each country company answers to its local tax authority and keeps its books under local rules. Localization meets both needs in the same system while keeping the common structure of the template. The work falls under four headings."
+          }
+        ],
+        "bullets": [
+          {
+            "tr": "IFRS uyumlu lokalizasyon: yerel kayıtlar grup raporlamasının IFRS gereklerini de karşılayacak şekilde kurulur.",
+            "en": "IFRS-compliant localization: local postings are set up so they also meet the IFRS needs of group reporting."
+          },
+          {
+            "tr": "Ülkeye özel vergi ve raporlama: o ülkenin vergi kuralları ve yasal raporları sisteme işlenir.",
+            "en": "Country-specific tax and reporting: that country’s tax rules and statutory reports are built into the system."
+          },
+          {
+            "tr": "Çok para birimi: işlemler yerel para biriminde tutulurken grup para biriminde de izlenir.",
+            "en": "Multi-currency: transactions are kept in local currency and tracked in group currency as well."
+          },
+          {
+            "tr": "Çok şirketli konsolidasyon: ülke şirketlerinin verisi grup konsolidasyonuna uygun yapıda üretilir.",
+            "en": "Multi-company consolidation: country companies produce their data in a structure ready for group consolidation."
+          }
+        ]
+      },
+      {
+        "h2": {
+          "tr": "Çok ülkeli yapıda hazine ve nakit yönetimi",
+          "en": "Treasury and cash management across countries"
+        },
+        "paras": [
+          {
+            "tr": "Ülke sayısı arttıkça finansın iki konusu öne çıkar: hazine ve nakit. Çok para birimli gruplarda döviz işlemleri ve riskten korunma muhasebesi TRM ile, şirketlerin nakit pozisyonu ve likidite tahmini CM ile yönetilir. Bu modülleri rollout kapsamına alabiliyoruz: Borusan Birleşik Boru’nun beş ülkeli programında FI, CO ve PS’nin yanında CM ve TRM de vardı.",
+            "en": "As the number of countries grows, two finance topics come forward: treasury and cash. In multi-currency groups, foreign-exchange transactions and hedge accounting are managed in TRM, and each company’s cash position and liquidity forecast in CM. We can bring these modules into the rollout scope: Borusan Birleşik Boru’s five-country programme included CM and TRM alongside FI, CO and PS."
+          }
+        ],
+        "bullets": []
+      },
+      {
+        "h2": {
+          "tr": "Sahadan: beş rollout çalışması",
+          "en": "From the field: five rollout engagements"
+        },
+        "paras": [
+          {
+            "tr": "Bugüne kadar 6 kıtada, 50’den fazla ülkede SAP uygulama ve rollout projelerinde çalıştık. Aşağıdaki beş örnekte ülke sayısı, sektör ve modül kapsamı birbirinden farklıdır; ortak olan iş, merkezi şablonu her ülkenin mevzuatına uyarlayarak yaymaktır. Rollout’un ardından destek AMS ile sürebilir; Hayat Kimya ve Farmasi’ye AMS hizmeti de veriyoruz.",
+            "en": "We have worked on SAP implementation and rollout projects in 50+ countries on 6 continents. The five examples below differ in country count, sector and module scope; the common job is rolling out a central template adapted to each country’s regulations. After a rollout, support can continue under AMS; we also provide AMS to Hayat Kimya and Farmasi."
+          }
+        ],
+        "bullets": [
+          {
+            "tr": "Borusan Birleşik Boru: beş ülkede (Türkiye, ABD, Almanya, İtalya, Romanya) greenfield S/4HANA ve rollout; FI, CO, PS, CM ve TRM.",
+            "en": "Borusan Birleşik Boru: greenfield S/4HANA and rollout in five countries (Türkiye, USA, Germany, Italy, Romania); FI, CO, PS, CM and TRM."
+          },
+          {
+            "tr": "Hayat Kimya: Rusya, Endonezya, Vietnam, Tayland ve Malezya’da S/4HANA rollout; IFRS uyumlu lokalizasyon; FI, CO, MM ve SD.",
+            "en": "Hayat Kimya: S/4HANA rollout in Russia, Indonesia, Vietnam, Thailand and Malaysia; IFRS-compliant localization; FI, CO, MM and SD."
+          },
+          {
+            "tr": "Arçelik: Tayland, Bangladeş, Vietnam, Malezya, Endonezya ve Dubai’de S/4HANA rollout.",
+            "en": "Arçelik: S/4HANA rollout in Thailand, Bangladesh, Vietnam, Malaysia, Indonesia and Dubai."
+          },
+          {
+            "tr": "Farmasi: Türkiye ve ABD’yi kapsayan S/4HANA rollout ve AMS.",
+            "en": "Farmasi: S/4HANA rollout and AMS covering Türkiye and the USA."
+          },
+          {
+            "tr": "Flormar: Almanya rollout’unun kickoff’u yapıldı; kapsamda FI, CO, SD ve MM var.",
+            "en": "Flormar: the Germany rollout has had its kickoff; FI, CO, SD and MM are in scope."
+          }
+        ]
+      }
+    ],
+    "caseSlugs": [
+      "borusan-birlesik-boru",
+      "hayat-kimya",
+      "arcelik",
+      "flormar"
+    ]
+  },
+  "hizmet-urun": {
+    "sections": [
+      {
+        "h2": {
+          "tr": "Teknik yetkinlikler",
+          "en": "Technical capabilities"
+        },
+        "paras": [
+          {
+            "tr": "Hazır çözümlerimizin ve müşteriye özel geliştirmelerin temelinde ABAP vardır. Kullanıcının onay verdiği veya veri girdiği ekranlarda Fiori, SAP dışındaki sistemlere bağlanmak gerektiğinde BTP ve entegrasyon araçları kullanılır. Eski Z geliştirmelerin S/4HANA’ya uyarlanması da bu işin parçasıdır. Teknik ekibimiz aşağıdaki beş alanda çalışır.",
+            "en": "ABAP is the base of both our ready-made solutions and client-specific developments. Fiori is used on the screens where users approve or enter data, and BTP and integration tools where SAP has to connect to other systems. Adapting old Z developments to S/4HANA is part of the same work. Our technical team works in the five areas below."
+          }
+        ],
+        "bullets": [
+          {
+            "tr": "ABAP: raporlar, geliştirmeler (BAdI, enhancement), onay iş akışları, IDoc ve BAPI entegrasyonları, S/4HANA ile uyumlu kod.",
+            "en": "ABAP: reports, enhancements (BAdI, enhancement framework), approval workflows, IDoc and BAPI integrations, S/4HANA-compatible code."
+          },
+          {
+            "tr": "Fiori: standart uygulamaların devreye alınması, özel UI5 uygulamaları, mobil onay ekranları ve Launchpad yapılandırması.",
+            "en": "Fiori: activation of standard apps, custom UI5 applications, mobile approval apps and Launchpad configuration."
+          },
+          {
+            "tr": "BTP ve entegrasyon: CAP ve RAP ile uygulama geliştirme, Integration Suite, SAC, REST/SOAP servisleri, Java ve .NET köprüleri.",
+            "en": "BTP and integration: application development with CAP and RAP, Integration Suite, SAC, REST/SOAP services, Java and .NET bridges."
+          },
+          {
+            "tr": "HANA optimizasyonu: performans iyileştirmesi (tuning), CDS view optimizasyonu ve raporların hızlandırılması.",
+            "en": "HANA optimization: performance tuning, CDS view optimization and faster in-memory reporting."
+          },
+          {
+            "tr": "Yapay zekâ ve makine öğrenmesi: SAP verisiyle tahminleme ve anomali tespiti, doğal dil asistanları, süreç otomasyonu.",
+            "en": "AI and machine learning: forecasting and anomaly detection on SAP data, natural-language assistants, process automation."
+          }
+        ]
+      },
+      {
+        "h2": {
+          "tr": "Hazır çözüm kataloğu",
+          "en": "The ready-made solution catalog"
+        },
+        "paras": [
+          {
+            "tr": "Katalogda FI, CO, MM, SD, PS ve FM modüllerine ve e-dönüşüme yayılan 55’ten fazla hazır çözüm var. Hepsi SAP’nin içinde çalışan süreç paketleridir. Onay süreçleri, mevzuat geliştirmeleri, entegrasyonlar ve özel raporlar kataloğun ana başlıklarıdır. Onay tarafında fatura onayı, avans onayı, teklif karşılaştırma, sipariş onayı ve fiyat onayı hazır pakettir; kullanıcı onayını Fiori üzerinden, mobil cihazdan da verebilir. Öne çıkan altı çözüm aşağıdadır.",
+            "en": "The catalog holds 55+ ready-made solutions across FI, CO, MM, SD, PS, FM and Turkish e-transformation. All of them are process packages that run inside SAP. Approval workflows, regulatory developments, integrations and custom reports are the main groups. On the approval side, invoice approval, advance payment approval, quotation comparison, sales order approval and price approval are ready packages, and users can also approve through Fiori on a mobile device. Six that stand out are listed below."
+          }
+        ],
+        "bullets": [
+          {
+            "tr": "Enflasyon muhasebesi: 25’ten fazla şirkette canlıda çalışan çözüm paketi.",
+            "en": "Inflation accounting: a solution suite live in 25+ companies."
+          },
+          {
+            "tr": "IFRS 16 paketi: kira sözleşmelerinin IFRS 16’ya göre muhasebeleştirilmesi.",
+            "en": "IFRS 16 package: accounting for lease contracts under IFRS 16."
+          },
+          {
+            "tr": "e-Mutabakat: müşteri ve satıcılarla cari hesap mutabakatının SAP içinden yürütülmesi.",
+            "en": "e-Reconciliation: account reconciliation with customers and vendors, run from inside SAP."
+          },
+          {
+            "tr": "İthalat süreci: ithalat işlemlerinin SAP MM modülü üzerinde yönetimi.",
+            "en": "Import process: management of import transactions within SAP MM."
+          },
+          {
+            "tr": "Uçtan uca hakediş paketi: proje bazlı işlerde hakediş sürecinin baştan sona yönetimi.",
+            "en": "End-to-end progress billing package: the whole progress billing process for project-based business."
+          },
+          {
+            "tr": "Toplu CKM3N envanter raporu: CKM3N verisinin birçok malzeme için tek raporda alınması.",
+            "en": "Mass CKM3N inventory report: CKM3N data for many materials in a single report."
+          }
+        ]
+      },
+      {
+        "h2": {
+          "tr": "Banka ve e-devlet entegrasyonları",
+          "en": "Bank and e-government integrations"
+        },
+        "paras": [
+          {
+            "tr": "Finans süreçlerinin bir bölümü SAP dışındaki kurumlarla veri alışverişi gerektirir. Bankalarla ödeme ve tahsilat, GİB ile e-belge akışı bunların başında gelir. Bu entegrasyonları kataloğumuzdaki hazır çözümlerle, SAP’nin içinde çalışacak şekilde kuruyoruz. Canlıya geçtikten sonra mevzuat değiştiğinde gereken güncelleme AMS kapsamında yapılabilir.",
+            "en": "Some finance processes require exchanging data with institutions outside SAP. Payments and collections with banks, and e-document traffic with the Revenue Administration (GİB), come first. We build these integrations with the ready-made solutions in our catalog, so that they run inside SAP. After go-live, the updates that a regulatory change requires can be handled under AMS."
+          }
+        ],
+        "bullets": [
+          {
+            "tr": "Bankalar: DBS (doğrudan borçlandırma sistemi) entegrasyonu, e-ödeme ve e-imza.",
+            "en": "Banks: DBS (direct debit system) integration, e-payment and e-signature."
+          },
+          {
+            "tr": "E-devlet: e-fatura, e-defter ve e-irsaliye süreçlerinin SAP içinden yürütülmesi.",
+            "en": "E-government: e-invoice, e-ledger and e-despatch processes run from inside SAP."
+          },
+          {
+            "tr": "Diğer e-çözümler: e-arşiv fatura, e-beyanname, e-envanter ve elektronik hesap özeti (EHÖ).",
+            "en": "Other e-solutions: e-archive invoice, e-tax declaration, e-inventory ledger and electronic bank statement (EBS)."
+          }
+        ]
+      },
+      {
+        "h2": {
+          "tr": "Sahadan: çözümlerin kullanıldığı müşteriler",
+          "en": "From the field: where the solutions are in use"
+        },
+        "paras": [
+          {
+            "tr": "Fatura onay iş akışını Penti ve Deva Holding’de SAP MM üzerinde kurduk. Rönesans Holding’de kapsam, proje bazlı muhasebe ve uçtan uca hakediş ile e-fatura, e-defter ve e-mutabakat çözümlerini içeriyor. Enflasyon muhasebesini uyguladığımız şirketler arasında Arçelik Pazarlama, Otokar, Şölen ve Aytemiz Akaryakıt var.",
+            "en": "We built the invoice approval workflow on SAP MM at Penti and Deva Holding. At Rönesans Holding the scope includes project-based accounting and end-to-end progress billing, along with the e-invoice, e-ledger and e-reconciliation solutions. The companies where we implemented inflation accounting include Arçelik Pazarlama, Otokar, Şölen and Aytemiz Akaryakıt."
+          }
+        ],
+        "bullets": []
+      }
+    ],
+    "caseSlugs": [
+      "penti",
+      "deva-holding",
+      "ronesans-holding",
+      "arcelik"
+    ]
+  }
+}

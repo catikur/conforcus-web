@@ -24,10 +24,10 @@ export default function HizmetlerPage({ locale }: { locale: Locale }) {
       <section className="sblock">
         <div className="wrap sgrid">
           <div>
-            <div className="eyebrow" style={{ color: "var(--blue)" }}>
+            <div className="eyebrow" style={{ color: "var(--blue-t)" }}>
               {pick(locale, "Sürekli Destek", "Ongoing Support")}
             </div>
-            <h3>{pick(locale, "SAP Destek Hizmetleri", "SAP Support Services")}</h3>
+            <h2 className="sb-title">{pick(locale, "SAP Destek Hizmetleri", "SAP Support Services")}</h2>
             <p className="lead">
               {pick(
                 locale,
@@ -75,10 +75,10 @@ export default function HizmetlerPage({ locale }: { locale: Locale }) {
       <section className="sblock">
         <div className="wrap sgrid">
           <div>
-            <div className="eyebrow" style={{ color: "var(--amber-d)" }}>
+            <div className="eyebrow" style={{ color: "var(--amber-t)" }}>
               {pick(locale, "Dönüşüm", "Transformation")}
             </div>
-            <h3>{pick(locale, "S/4HANA Dönüşümleri", "S/4HANA Transformations")}</h3>
+            <h2 className="sb-title">{pick(locale, "S/4HANA Dönüşümleri", "S/4HANA Transformations")}</h2>
             <p className="lead">
               {pick(
                 locale,
@@ -110,10 +110,10 @@ export default function HizmetlerPage({ locale }: { locale: Locale }) {
       <section className="sblock">
         <div className="wrap sgrid">
           <div>
-            <div className="eyebrow" style={{ color: "var(--indigo)" }}>
+            <div className="eyebrow" style={{ color: "var(--indigo-t)" }}>
               {pick(locale, "Global Yaygınlaştırma", "Global Deployment")}
             </div>
-            <h3>Global Rollout</h3>
+            <h2 className="sb-title">Global Rollout</h2>
             <p className="lead">
               {pick(
                 locale,
@@ -144,10 +144,10 @@ export default function HizmetlerPage({ locale }: { locale: Locale }) {
       <section className="sblock">
         <div className="wrap sgrid">
           <div>
-            <div className="eyebrow" style={{ color: "var(--green)" }}>
+            <div className="eyebrow" style={{ color: "var(--green-t)" }}>
               {pick(locale, "Özel Geliştirme", "Custom Development")}
             </div>
-            <h3>{pick(locale, "Ürün & Çözüm Geliştirme", "Product & Solution Development")}</h3>
+            <h2 className="sb-title">{pick(locale, "Ürün & Çözüm Geliştirme", "Product & Solution Development")}</h2>
             <p className="lead">
               {pick(
                 locale,
@@ -171,6 +171,55 @@ export default function HizmetlerPage({ locale }: { locale: Locale }) {
             </ul>
             <Link className="btn btn-b" href={pathFor("hizmet-urun", locale)} style={{ marginTop: 18 }}>
               {pick(locale, "Geliştirme detayı →", "Development details →")}
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="sblock">
+        <div className="wrap">
+          <div className="eyebrow">{pick(locale, "Derinlik", "Depth")}</div>
+          <h2 className="sb-title">{pick(locale, "Sektörünüzü ve modülünüzü bilen ekip", "A team that knows your industry and your module")}</h2>
+          <p className="lead">
+            {pick(
+              locale,
+              "Dört hizmetin arkasında aynı çekirdek var: finans modüllerinde derinleşmiş danışmanlar ve onları besleyen sektör deneyimi. Hangi modülde ne yaptığımızı ve sektörünüzde kimlerle çalıştığımızı ayrı sayfalarda anlattık.",
+              "Behind the four services sits the same core: consultants with depth in finance modules, and the industry experience that feeds them. We describe what we do in each module, and who we work with in your industry, on separate pages."
+            )}
+          </p>
+          <div className="sx-grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", marginTop: 26 }}>
+            <Link className="sx-card" href={pathFor("uzmanlik", locale)}>
+              <h3>{pick(locale, "Modül uzmanlığımız", "Our module expertise")}</h3>
+              <p>
+                {pick(
+                  locale,
+                  "Finansta FI, CO, PS, FM, TRM ve CM; lojistikte MM, SD ve PP; ileri finansta RE-FX, EPPM, FCC ve PaPM; teknolojide ABAP, Fiori, BTP ve yapay zekâ.",
+                  "FI, CO, PS, FM, TRM and CM in finance; MM, SD and PP in logistics; RE-FX, EPPM, FCC and PaPM in advanced finance; ABAP, Fiori, BTP and AI in technology."
+                )}
+              </p>
+              <small>{pick(locale, "17 başlıkta ne yaptığımız →", "What we do across 17 areas →")}</small>
+            </Link>
+            <Link className="sx-card" href={pathFor("sektorler", locale)}>
+              <h3>{pick(locale, "Sektörlere göre deneyim", "Experience by industry")}</h3>
+              <p>
+                {pick(
+                  locale,
+                  "Üretim ve imalat, otomotiv, kimya ve FMCG, enerji ve petrol, inşaat ve holdingler, perakende, savunma: her sektörde çözdüğümüz sorunlar ve referanslarımız.",
+                  "Manufacturing, automotive, chemicals and FMCG, energy and oil, construction and holdings, retail, defence: the problems we solve and our references in each."
+                )}
+              </p>
+              <small>{pick(locale, "7 sektör sayfası →", "7 industry pages →")}</small>
+            </Link>
+            <Link className="sx-card" href={pathFor("cozumler", locale)}>
+              <h3>{pick(locale, "55+ hazır çözüm", "55+ ready-made solutions")}</h3>
+              <p>
+                {pick(
+                  locale,
+                  "Enflasyon muhasebesi, IFRS 16, e-mutabakat, fatura onay, ithalat, hakediş ve e-dönüşüm paketleri: sahada kanıtlanmış, kurulmaya hazır.",
+                  "Inflation accounting, IFRS 16, e-reconciliation, invoice approval, import, progress billing and e-transformation packages: field-proven and ready to deploy."
+                )}
+              </p>
+              <small>{pick(locale, "Çözüm kataloğu →", "Solution catalogue →")}</small>
             </Link>
           </div>
         </div>

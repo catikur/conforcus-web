@@ -4,6 +4,8 @@ import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata("hakkimizda", "tr");
 
+export const revalidate = 60; // çözüm sayısı Sanity'den
+
 export default function Page() {
   return (
     <>

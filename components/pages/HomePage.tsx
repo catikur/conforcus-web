@@ -415,7 +415,7 @@ export default async function HomePage({ locale }: { locale: Locale }) {
           {references.length > 12 ? (
             <p className="lw-more">
               <b>{pick(locale, `ve ${references.length - 12} marka daha`, `and ${references.length - 12} more brands`)}</b>
-              <span>{references.filter((r) => !r.logoUrl).slice(0, 6).map((r) => r.name).join(" · ")}</span>
+              <span>{references.slice(12).filter((r) => r.logoUrl).slice(0, 6).map((r) => r.name).join(" · ")}</span>
               <Link href={p("referanslar")}>{pick(locale, "tümünü gör →", "see all →")}</Link>
             </p>
           ) : null}

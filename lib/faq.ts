@@ -63,8 +63,8 @@ export const FAQ: FaqItem[] = [
       en: "What do you offer for Turkish e-transformation (e-invoice, e-ledger, e-reconciliation)?",
     },
     a: {
-      tr: "GİB e-dönüşüm belgelerinin tamamını SAP içinde uçtan uca kuruyoruz: e-Fatura, e-Arşiv, e-İrsaliye, e-Defter, e-Beyanname, e-Envanter; ayrıca cari ve BA/BS e-Mutabakat ile elektronik hesap özeti (EHÖ) entegrasyonu. Paketler mevzuat değiştikçe güncellenir; entegratör bağımsızdır.",
-      en: "We implement the full set of Turkish e-transformation documents end to end inside SAP: e-Invoice, e-Archive, e-Delivery note, e-Ledger, e-Declaration, e-Inventory; plus customer/vendor and BA/BS e-Reconciliation and electronic bank statement (EBS) integration. Packages are updated as regulation changes and are integrator-independent.",
+      tr: "GİB e-dönüşüm belgelerinin tamamını SAP içinde uçtan uca kuruyoruz: e-Fatura, e-Arşiv, e-İrsaliye, e-Defter, e-Beyanname, e-Envanter; ayrıca müşteri ve satıcılarla e-Mutabakat ve elektronik hesap özeti (EHÖ) entegrasyonu. Mevzuat değiştiğinde gereken güncellemeler destek (AMS) kapsamında yapılabilir.",
+      en: "We implement the full set of Turkish e-transformation documents end to end inside SAP: e-Invoice, e-Archive, e-Delivery note, e-Ledger, e-Declaration, e-Inventory; plus customer and vendor e-Reconciliation and electronic bank statement (EBS) integration. The updates a regulatory change requires can be handled under support (AMS).",
     },
   },
   {

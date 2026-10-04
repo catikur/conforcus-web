@@ -11,6 +11,8 @@ export type RefCard = {
   slug: string;
   name: string;
   sector: string;
+  /** Türkçe sektör etiketi — sektör sayfası eşlemesi her iki dilde bununla yapılır. */
+  sectorTr?: string;
   countries: string[];
   blurb: string;
   logoUrl?: string;
@@ -46,6 +48,7 @@ type RawRefFull = RawRef & {
   body_tr?: PTBlock[];
   body_en?: PTBlock[];
   seoTitle?: string;
+  seoTitle_en?: string;
   seoDesc?: string;
   seoDesc_en?: string;
   testimonials?: { quote_tr?: string; quote_en?: string; person: string; role?: string; role_tr?: string; role_en?: string; company?: string }[];
@@ -59,6 +62,7 @@ function rawToCard(r: RawRef, l: Locale): RefCard {
     slug: r.slug,
     name: r.name,
     sector: loc(l, r.sector_tr, r.sector_en) || (fb ? fb.sector[l] : ""),
+    sectorTr: r.sector_tr || (fb ? fb.sector.tr : ""),
     countries: r.countries?.length ? r.countries : fb?.countries || [],
     blurb: loc(l, r.blurb_tr, r.blurb_en) || (fb ? fb.blurb[l] : ""),
     logoUrl: r.logoUrl,
@@ -74,6 +78,7 @@ function fallbackCard(r: Ref, l: Locale): RefCard {
     slug: slugify(r.n),
     name: r.n,
     sector: l === "tr" ? r.s : r.se,
+    sectorTr: r.s,
     countries: fb?.countries || [],
     blurb: fb ? fb.blurb[l] : "",
     featured: false,
@@ -125,7 +130,7 @@ export async function getReference(l: Locale, slug: string): Promise<RefFull | n
           projectImageAlt: d.projectImageAlt,
           body: useBody,
           seo: {
-            title: d.seoTitle,
+            title: l === "tr" ? d.seoTitle : d.seoTitle_en,
             description: l === "tr" ? d.seoDesc : d.seoDesc_en,
             noIndex: !!d.noIndex,
           },

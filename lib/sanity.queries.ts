@@ -1,4 +1,4 @@
-import { groq } from "next-sanity";
+import { groq } from "./groq";
 
 export const POSTS_QUERY = groq`*[_type == "post" && defined(slug.current) && seo.noIndex != true] | order(publishedAt desc){
   "slug": slug.current,
@@ -52,9 +52,11 @@ export const REFERENCE_QUERY = groq`*[_type == "clientReference" && slug.current
   "logoUrl": logo.asset->url,
   "logoAlt": logo.alt,
   "noIndex": seo.noIndex == true,
-  "seoTitle": coalesce(seo.title, name),
-  "seoDesc": coalesce(seo.description, blurb_tr),
-  "seoDesc_en": coalesce(seo.description, blurb_en),
+  // Dikkat: burada coalesce(…, name) YOK — yedek başlık/açıklama sayfa kodunda kurulur (lib/seoText.ts).
+  "seoTitle": seo.title,
+  "seoTitle_en": coalesce(seo.title_en, seo.title),
+  "seoDesc": seo.description,
+  "seoDesc_en": coalesce(seo.description_en, seo.description),
   "hasBody": length(pt::text(coalesce(body_tr, []))) > 200 || length(pt::text(coalesce(body_en, []))) > 200,
   _updatedAt,
   "testimonials": *[_type == "testimonial" && reference._ref == ^._id] | order(order asc){
@@ -89,12 +91,14 @@ export const SOLUTIONS_QUERY = groq`*[_type == "solution"] | order(order asc, na
 export const SOLUTION_QUERY = groq`*[_type == "solution" && slug.current == $slug][0]{
   "refs": references[]->{ name, "slug": slug.current, "logoUrl": logo.asset->url },
   "slug": slug.current, name_tr, name_en, module, group, short_tr, short_en, body_tr, body_en, featured,
+  benefits_tr, benefits_en, technical_tr, technical_en, audience_tr, audience_en,
   faqs,
   "noIndex": seo.noIndex == true,
-  "seoTitle": coalesce(seo.title, name_tr),
-  "seoTitle_en": coalesce(seo.title, name_en),
-  "seoDesc": coalesce(seo.description, short_tr),
-  "seoDesc_en": coalesce(seo.description, short_en),
+  // coalesce(…, name) YOK — yedek başlık/açıklama sayfa kodunda kurulur (lib/seoText.ts).
+  "seoTitle": seo.title,
+  "seoTitle_en": coalesce(seo.title_en, seo.title),
+  "seoDesc": seo.description,
+  "seoDesc_en": coalesce(seo.description_en, seo.description),
   "hasBody": length(pt::text(coalesce(body_tr, []))) > 400 || length(pt::text(coalesce(body_en, []))) > 400,
   "bodyChars": length(pt::text(coalesce(body_tr, []))),
   _updatedAt

@@ -6,11 +6,13 @@ export default function LegalPage({
   title,
   paras,
   crumbKey,
+  extra,
 }: {
   locale: Locale;
   title: string;
   paras: string[];
   crumbKey: RouteKey;
+  extra?: React.ReactNode;
 }) {
   return (
     <main data-page={crumbKey} className="active" id="main" tabIndex={-1}>
@@ -24,6 +26,7 @@ export default function LegalPage({
           {paras.map((t, i) => (
             <p key={i}>{t}</p>
           ))}
+          {extra ? <p>{extra}</p> : null}
           <p>
             <Link className="mega-cta" href={pathFor("home", locale)}>
               {pick(locale, "← Ana sayfa", "← Home")}

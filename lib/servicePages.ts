@@ -17,7 +17,7 @@ export type ServicePage = {
 export const SERVICE_PAGES: ServicePage[] = [
   {
     key: "hizmet-sap-ams",
-    color: "var(--blue)",
+    color: "var(--blue-t)",
     eyebrow: { tr: "Sürekli Destek", en: "Ongoing Support" },
     h1: { tr: "SAP Destek Hizmetleri (AMS)", en: "SAP Support Services (AMS)" },
     lead: {
@@ -47,7 +47,7 @@ export const SERVICE_PAGES: ServicePage[] = [
   },
   {
     key: "hizmet-s4hana",
-    color: "var(--amber-d)",
+    color: "var(--amber-t)",
     eyebrow: { tr: "Dönüşüm", en: "Transformation" },
     h1: { tr: "S/4HANA Dönüşümleri", en: "S/4HANA Transformations" },
     lead: {
@@ -78,7 +78,7 @@ export const SERVICE_PAGES: ServicePage[] = [
   },
   {
     key: "hizmet-rollout",
-    color: "var(--indigo)",
+    color: "var(--indigo-t)",
     eyebrow: { tr: "Global Yaygınlaştırma", en: "Global Deployment" },
     h1: { tr: "Global Rollout", en: "Global Rollout" },
     lead: {
@@ -108,7 +108,7 @@ export const SERVICE_PAGES: ServicePage[] = [
   },
   {
     key: "hizmet-urun",
-    color: "var(--green)",
+    color: "var(--green-t)",
     eyebrow: { tr: "Özel Geliştirme", en: "Custom Development" },
     h1: { tr: "Ürün & Çözüm Geliştirme", en: "Product & Solution Development" },
     lead: {

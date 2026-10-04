@@ -46,6 +46,8 @@ export const NAV_SECTIONS: NavSection[] = [
       { key: "hizmet-s4hana", tr: "S/4HANA Dönüşümleri", en: "S/4HANA Transformations", sub_tr: "Greenfield, brownfield, bulut ve on-premise", sub_en: "Greenfield, brownfield, cloud & on-premise" },
       { key: "hizmet-rollout", tr: "Global Rollout", en: "Global Rollout", sub_tr: "6 kıtada, 50+ ülkede şablon yaygınlaştırma", sub_en: "Template deployment across 50+ countries" },
       { key: "hizmet-urun", tr: "Ürün & Çözüm Geliştirme", en: "Product & Solution Development", sub_tr: "ABAP, Fiori ve bulutla özel geliştirme", sub_en: "Custom builds with ABAP, Fiori & cloud" },
+      { key: "uzmanlik", tr: "Modül Uzmanlığı", en: "Module Expertise", sub_tr: "FI, CO, PS, FM, TRM, MM, SD ve teknoloji", sub_en: "FI, CO, PS, FM, TRM, MM, SD & technology" },
+      { key: "sektorler", tr: "Sektörler", en: "Industries", sub_tr: "Üretimden enerjiye 7 sektörde deneyim", sub_en: "Experience across 7 industries" },
     ],
   },
   {
@@ -101,7 +103,7 @@ export const NAV_SECTIONS: NavSection[] = [
     links: [
       { key: "referanslar", tr: "Proje Haritası", en: "Project Map", sub_tr: "6 kıta, 50+ ülke", sub_en: "6 continents, 50+ countries" },
       { key: "referanslar", tr: "Markalar", en: "Brands", sub_tr: "130+ aktif müşteri", sub_en: "130+ active clients" },
-      { key: "referanslar", tr: "Sektörler", en: "Industries", sub_tr: "30+ sektörde deneyim", sub_en: "Experience across 30+ industries" },
+      { key: "sektorler", tr: "Sektörler", en: "Industries", sub_tr: "30+ sektörde deneyim", sub_en: "Experience across 30+ industries" },
     ],
   },
   {

@@ -6,23 +6,23 @@ const nextConfig = {
   output: "standalone",
   reactStrictMode: true,
   poweredByHeader: false,
-  images: {
-    // Fotoğraflar eklendiğinde sayfa ağırlığını korumak için: modern format + ölçekleme.
-    formats: ["image/avif", "image/webp"],
-    remotePatterns: [
-      { protocol: "https", hostname: "cdn.sanity.io" }, // Sanity görselleri
-      { protocol: "https", hostname: "i.ytimg.com" }, // YouTube kapak görselleri
-    ],
-    deviceSizes: [360, 480, 640, 828, 1080, 1280, 1600],
-    imageSizes: [64, 96, 128, 200, 320, 420],
-  },
+  // Sunucu tarafı görsel optimizasyonu (/_next/image) KAPALI: uç nokta 404 döner.
+  // Görseller Sanity CDN'de ölçeklenir (lib/img.ts). Neden: Next 14 hattında düzeltilmeyen
+  // Image Optimization API açıkları (2026) ve VPS'te gereksiz CPU yükü.
+  images: { unoptimized: true },
   async redirects() {
-    /** Eski Hostinger HTML yolları — yalnızca bilinen dört adres. */
+    /** Eski Hostinger statik sitesinin tüm adresleri (2026-10-04 taramasında bulunan sayfalar). */
     const paths = [
+      { source: "/index.html", destination: "/", permanent: true },
       { source: "/indexen.html", destination: "/en", permanent: true },
+      { source: "/hizmetlerimiz.html", destination: "/hizmetler", permanent: true },
       { source: "/ourservices.html", destination: "/en/services", permanent: true },
       { source: "/hakkimizda.html", destination: "/hakkimizda", permanent: true },
       { source: "/aboutus.html", destination: "/en/about", permanent: true },
+      { source: "/referanslarimiz.html", destination: "/referanslar", permanent: true },
+      { source: "/ourreferences.html", destination: "/en/references", permanent: true },
+      { source: "/iletisim.html", destination: "/iletisim", permanent: true },
+      { source: "/contact.html", destination: "/en/contact", permanent: true },
     ];
     // Apex / web. → www yalnızca production canonical www iken. Preview web. çalışmaya devam eder.
     if (WWW) {

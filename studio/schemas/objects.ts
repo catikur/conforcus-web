@@ -5,8 +5,10 @@ export const seoType = defineType({
   title: "SEO",
   type: "object",
   fields: [
-    defineField({ name: "title", title: "Title override / Başlık", type: "string", description: "Boşsa belge başlığı kullanılır" }),
-    defineField({ name: "description", title: "Description / Açıklama", type: "text", rows: 3 }),
+    defineField({ name: "title", title: "Title override (TR) / Başlık", type: "string", description: "Boşsa site başlığı otomatik kurar (ad + bağlam + Conforcus). Yalnız özel bir arama başlığı istiyorsanız doldurun." }),
+    defineField({ name: "title_en", title: "Title override (EN)", type: "string", description: "Boşsa TR geçersiz kılma, o da boşsa otomatik başlık kullanılır." }),
+    defineField({ name: "description", title: "Description (TR) / Açıklama", type: "text", rows: 3, description: "Arama sonucunda görünen açıklama; 120–158 karakter idealdir." }),
+    defineField({ name: "description_en", title: "Description (EN)", type: "text", rows: 3 }),
     defineField({
       name: "image",
       title: "Social image / Paylaşım görseli",
