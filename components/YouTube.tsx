@@ -45,7 +45,6 @@ export default function YouTube({
           />
         ) : (
           <button type="button" className="yt-play" onClick={() => setPlay(true)} aria-label={`${label} — ${pick(locale, "oynat", "play")}`}>
-            {/* eslint-disable-next-line @next/next/no-img-element -- kapak YouTube CDN'inden, tek boyut yeterli */}
             <img src={`https://i.ytimg.com/vi/${id}/hqdefault.jpg`} alt="" loading="lazy" />
             <span className="yt-btn" aria-hidden="true">
               <svg viewBox="0 0 24 24" width="26" height="26">

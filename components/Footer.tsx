@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { pathFor, pick, type Locale } from "@/lib/i18n";
 import { COMPANY, LOGO_SIZE } from "@/lib/site";

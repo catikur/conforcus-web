@@ -7,8 +7,8 @@ export const metadata = pageMetadata("cozumler", "en");
 
 export const revalidate = 60; // ISR — Sanity icerigi 60sn'de tazelenir
 
-export default function Page({ searchParams }: { searchParams: { m?: string } }) {
-  const m = searchParams?.m;
+export default async function Page({ searchParams }: { searchParams: Promise<{ m?: string }> }) {
+  const m = (await searchParams)?.m;
   const initialMod = m && (MODS as readonly string[]).includes(m) ? m : "ALL";
   return (
     <>

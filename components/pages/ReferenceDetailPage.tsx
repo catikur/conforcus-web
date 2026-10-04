@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { SECTOR_PAGES } from "@/lib/sectorPages";
 import PortableBody from "@/components/PortableBody";

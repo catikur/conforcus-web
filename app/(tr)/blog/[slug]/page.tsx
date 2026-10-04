@@ -14,8 +14,8 @@ export async function generateStaticParams() {
   return slugs.map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const post = await getPost("tr", params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const post = await getPost("tr", (await params).slug);
   if (!post) return { title: "Blog — Conforcus", robots: { index: false, follow: false } };
   return buildMetadata({
     locale: "tr",
@@ -35,8 +35,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   });
 }
 
-export default async function Page({ params }: { params: { slug: string } }) {
-  const post = await getPost("tr", params.slug);
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  const post = await getPost("tr", (await params).slug);
   if (!post) notFound();
   return (
     <>

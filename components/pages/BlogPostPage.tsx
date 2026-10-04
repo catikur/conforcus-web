@@ -27,7 +27,9 @@ export default function BlogPostPage({ locale, post }: { locale: Locale; post: P
       <article>
         <div className="phero">
           <div className="wrap" style={{ maxWidth: 780 }}>
-            <Link href={pathFor("blog", locale)} className="mega-cta" style={{ display: "inline-block", marginBottom: 18 }}>
+            {/* prefetch kapalı: React 19, ön yüklenen liste sayfasının kapak görsellerini de indirir ve
+                bu yazının kendi görseliyle yarışır (Lighthouse'ta LCP +0,6 sn ölçüldü). */}
+            <Link href={pathFor("blog", locale)} prefetch={false} className="mega-cta" style={{ display: "inline-block", marginBottom: 18 }}>
               {pick(locale, "← Tüm yazılar", "← All posts")}
             </Link>
             {post.category ? (
@@ -45,7 +47,6 @@ export default function BlogPostPage({ locale, post }: { locale: Locale; post: P
 
         {post.coverUrl ? (
           <div className="wrap" style={{ maxWidth: 900, marginTop: 36 }}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={sanityImg(post.coverUrl, { w: 900 })}
               srcSet={sanitySrcSet(post.coverUrl, { w: 900 })}

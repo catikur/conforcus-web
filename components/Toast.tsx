@@ -18,7 +18,7 @@ const MSGS: Record<string, { tr: string; en: string }> = {
 
 export default function Toast({ locale }: { locale: Locale }) {
   const ref = useRef<HTMLDivElement>(null);
-  const timer = useRef<ReturnType<typeof setTimeout>>();
+  const timer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   useEffect(() => {
     const onClick = (e: MouseEvent) => {

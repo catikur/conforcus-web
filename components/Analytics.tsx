@@ -48,7 +48,6 @@ function loadGa(gaId: string) {
   loaded = true;
   window.dataLayer = window.dataLayer || [];
   const gtag: Gtag = function () {
-    // eslint-disable-next-line prefer-rest-params
     window.dataLayer!.push(arguments);
   };
   window.gtag = gtag;
@@ -89,6 +88,8 @@ export default function Analytics({ gaId, locale }: { gaId: string; locale: Loca
   useEffect(() => {
     const c = read();
     if (c === "granted") loadGa(gaId);
+    // Tercih tarayıcı depolamasında durur; sunucu çıktısıyla aynı kalmak için ancak yüklendikten sonra okunabilir.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     else if (c === null) setOpen(true);
     const reopen = () => setOpen(true);
     window.addEventListener(CONSENT_OPEN_EVENT, reopen);

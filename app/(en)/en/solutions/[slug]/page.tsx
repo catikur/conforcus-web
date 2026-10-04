@@ -16,8 +16,8 @@ export async function generateStaticParams() {
   return slugs.map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const s = await getSolution("en", params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const s = await getSolution("en", (await params).slug);
   if (!s) return { title: "Solution Catalog — Conforcus" };
   const pack = PRODUCT_PAGES[s.slug];
   const desc = s.seo?.description || solutionDescription(pack?.short.en || s.short, s.benefits, s.module, "en");
@@ -38,8 +38,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   });
 }
 
-export default async function Page({ params }: { params: { slug: string } }) {
-  const s = await getSolution("en", params.slug);
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  const s = await getSolution("en", (await params).slug);
   if (!s) notFound();
   const related = relatedSolutions(await getSolutions("en"), s);
   return (

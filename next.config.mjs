@@ -1,14 +1,23 @@
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+// Proje kökü açıkça verilir: Next, üst dizinlerde başka bir package-lock.json görürse
+// çalışma alanı kökünü yanlış seçip standalone çıktısının düzenini değiştirebilir.
+const ROOT = path.dirname(fileURLToPath(import.meta.url));
+
 /** @type {import('next').NextConfig} */
 const SITE = (process.env.NEXT_PUBLIC_SITE_URL || "https://web.conforcus.com").replace(/\/+$/, "");
 const WWW = SITE === "https://www.conforcus.com";
 
 const nextConfig = {
   output: "standalone",
+  outputFileTracingRoot: ROOT,
+  turbopack: { root: ROOT },
   reactStrictMode: true,
   poweredByHeader: false,
   // Sunucu tarafı görsel optimizasyonu (/_next/image) KAPALI: uç nokta 404 döner.
-  // Görseller Sanity CDN'de ölçeklenir (lib/img.ts). Neden: Next 14 hattında düzeltilmeyen
-  // Image Optimization API açıkları (2026) ve VPS'te gereksiz CPU yükü.
+  // Görseller Sanity CDN'de ölçeklenir (lib/img.ts); VPS'te gereksiz CPU yükü ve saldırı yüzeyi
+  // oluşmasın diye bilinçli olarak kapalı tutulur (2026'daki Image Optimization API açıkları bu uçtaydı).
   images: { unoptimized: true },
   async redirects() {
     /** Eski Hostinger statik sitesinin tüm adresleri (2026-10-04 taramasında bulunan sayfalar). */

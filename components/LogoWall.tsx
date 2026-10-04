@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import type { RefCard } from "@/lib/references";
 import { sanityImg } from "@/lib/img";
