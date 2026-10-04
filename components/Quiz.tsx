@@ -219,7 +219,7 @@ export default function Quiz({ locale }: { locale: Locale }) {
               style={{
                 background: "none",
                 border: "none",
-                color: "var(--mute)",
+                color: "var(--mute-t)",
                 font: "inherit",
                 fontSize: 13.5,
                 cursor: "pointer",
