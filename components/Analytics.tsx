@@ -39,7 +39,12 @@ function write(v: Choice) {
 
 let loaded = false;
 function loadGa(gaId: string) {
-  if (loaded) return;
+  // Ölçüm kodu bu oturumda zaten yüklüyse (kabul → ret → yeniden kabul) yalnızca onay geri verilir;
+  // aksi halde tercih "kabul" görünürken ölçüm sayfa yenilenene kadar kapalı kalırdı.
+  if (loaded) {
+    window.gtag?.("consent", "update", { analytics_storage: "granted" });
+    return;
+  }
   loaded = true;
   window.dataLayer = window.dataLayer || [];
   const gtag: Gtag = function () {
@@ -58,6 +63,23 @@ function loadGa(gaId: string) {
   s.async = true;
   s.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(gaId)}`;
   document.head.appendChild(s);
+}
+
+// Onay geri alındığında daha önce yazılmış ölçüm çerezleri (_ga, _ga_*) de silinir.
+function clearGaCookies() {
+  try {
+    const host = window.location.hostname;
+    const parent = host.split(".").slice(-2).join(".");
+    for (const part of document.cookie.split(";")) {
+      const name = part.split("=")[0].trim();
+      if (!name.startsWith("_ga")) continue;
+      for (const domain of ["", `; domain=${host}`, `; domain=.${parent}`]) {
+        document.cookie = `${name}=; Max-Age=0; path=/${domain}`;
+      }
+    }
+  } catch {
+    /* çerezlere erişilemiyorsa yapılacak bir şey yok */
+  }
 }
 
 export default function Analytics({ gaId, locale }: { gaId: string; locale: Locale }) {
@@ -80,7 +102,10 @@ export default function Analytics({ gaId, locale }: { gaId: string; locale: Loca
     write(v);
     setOpen(false);
     if (v === "granted") loadGa(gaId);
-    else if (loaded && window.gtag) window.gtag("consent", "update", { analytics_storage: "denied" });
+    else {
+      if (loaded && window.gtag) window.gtag("consent", "update", { analytics_storage: "denied" });
+      clearGaCookies();
+    }
   };
 
   return (

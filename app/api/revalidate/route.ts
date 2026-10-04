@@ -37,7 +37,8 @@ export async function POST(req: NextRequest) {
 
   switch (type) {
     case "post":
-      add("/blog", "/en/blog");
+      // llms-full belgeleri blog listesini de içerir; saatlik önbelleği beklemeden tazelensin.
+      add("/blog", "/en/blog", ...LLMS_PATHS);
       if (slug) add(`/blog/${slug}`, `/en/blog/${slug}`);
       break;
     case "clientReference":
