@@ -71,7 +71,10 @@ body[data-lang="en"] .tr{display:none!important;}
 
 /* PAGES */
 main[data-page]{display:none;}
-main[data-page].active{display:block;animation:pgin .35s ease;}
+main[data-page].active{display:block;}
+/* Giriş animasyonu yalnız site içi geçişte: Sweep ilk <main>'i data-first ile işaretler, <html data-nav> koyar.
+   İlk yüklemede opacity:0 ile başlamak LCP'yi animasyon sonuna erteliyordu. */
+html[data-nav] main[data-page].active:not([data-first]){animation:pgin .35s ease;}
 @keyframes pgin{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
 
 /* HERO CAROUSEL */

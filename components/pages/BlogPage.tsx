@@ -1,4 +1,4 @@
-import Link from "next/link";
+import IntentLink from "@/components/IntentLink";
 import { getPosts, type PostCard } from "@/lib/blog";
 import { pathFor, pick, type Locale } from "@/lib/i18n";
 import { sanityImg, sanitySrcSet } from "@/lib/img";
@@ -52,12 +52,13 @@ export default async function BlogPage({ locale }: { locale: Locale }) {
           ) : null}
           <div className="bgrid">
             {posts.map((post, i) => (
-              <Link className="bpost" href={`${base}/${post.slug}`} key={post.slug}>
+              <IntentLink className="bpost" href={`${base}/${post.slug}`} key={post.slug}>
+                {/* İlk kapak LCP adayı: aynı kaynaktan (/img) gelir. Diğerleri tembel yüklenir, CDN'den. */}
                 <div className="bimg">
                   {post.coverUrl ? (
                     <img
-                      src={sanityImg(post.coverUrl, { w: 640, h: 336, fit: "crop" })}
-                      srcSet={sanitySrcSet(post.coverUrl, { w: 640, h: 336, fit: "crop" })}
+                      src={sanityImg(post.coverUrl, { w: 640, h: 336, fit: "crop", local: i === 0 })}
+                      srcSet={sanitySrcSet(post.coverUrl, { w: 640, h: 336, fit: "crop", local: i === 0 })}
                       alt=""
                       width={640}
                       height={336}
@@ -72,7 +73,7 @@ export default async function BlogPage({ locale }: { locale: Locale }) {
                   <p>{post.excerpt}</p>
                   <small>{metaText(post, locale)}</small>
                 </div>
-              </Link>
+              </IntentLink>
             ))}
           </div>
         </div>
