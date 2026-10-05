@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { useEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 
 // Sayfa geçişi süpürme perdesi (#sweep). Prototipte hashchange'de oynar;
 // burada rota değişiminde oynatılır. prefers-reduced-motion'da devre dışı.
@@ -9,6 +9,14 @@ export default function Sweep() {
   const pathname = usePathname();
   const first = useRef(true);
   const ref = useRef<HTMLDivElement>(null);
+
+  // Sayfa giriş animasyonu (pgin) da yalnız site içi geçişte oynar: sunucudan gelen ilk
+  // <main> işaretlenir, ardından <html data-nav> konur; sonradan eklenen her <main> canlanır.
+  // Sıra önemli — ikisi aynı çerçevede, önce işaret; yoksa ilk <main> baştan canlanır.
+  useLayoutEffect(() => {
+    document.querySelector("main[data-page]")?.setAttribute("data-first", "");
+    document.documentElement.setAttribute("data-nav", "");
+  }, []);
 
   useEffect(() => {
     if (first.current) {
