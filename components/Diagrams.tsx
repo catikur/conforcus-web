@@ -42,7 +42,7 @@ export function S4Journey({ locale }: D) {
             <text x={x} y="42" textAnchor={i === 3 ? "end" : "start"} dx={i === 3 ? 14 : -2} fill="var(--navy)" fontSize="16" style={T}>
               {s.t}
             </text>
-            <text x={x} y="64" textAnchor={i === 3 ? "end" : "start"} dx={i === 3 ? 14 : -2} fill="var(--mute)" fontSize="12.5" style={{ fontFamily: "var(--body)" }}>
+            <text x={x} y="64" textAnchor={i === 3 ? "end" : "start"} dx={i === 3 ? 14 : -2} fill="var(--mute-t)" fontSize="12.5" style={{ fontFamily: "var(--body)" }}>
               {s.s}
             </text>
             <text x={x} y="122" textAnchor={i === 3 ? "end" : "start"} dx={i === 3 ? 14 : -2} fill="var(--ink-2)" fontSize="12" style={{ fontFamily: "var(--body)" }}>
@@ -57,7 +57,7 @@ export function S4Journey({ locale }: D) {
           </g>
         );
       })}
-      <text x="40" y="166" fill="var(--mute)" fontSize="12" style={{ fontFamily: "var(--body)", fontStyle: "italic" }}>
+      <text x="40" y="166" fill="var(--mute-t)" fontSize="12" style={{ fontFamily: "var(--body)", fontStyle: "italic" }}>
         {pick(locale, "Takvim, hazırlık analizinin sonucuna göre netleşir.", "The timeline firms up after the readiness assessment.")}
       </text>
     </Frame>
@@ -83,7 +83,7 @@ export function AmsFlow({ locale }: D) {
             <text x={x + 16} y="84" fill="var(--navy)" fontSize="15" style={T}>
               {n.t}
             </text>
-            <text x={x + 16} y="105" fill="var(--mute)" fontSize="12" style={{ fontFamily: "var(--body)" }}>
+            <text x={x + 16} y="105" fill="var(--mute-t)" fontSize="12" style={{ fontFamily: "var(--body)" }}>
               {n.s}
             </text>
             {i < 3 ? <path d={`M${x + 152} 90 l16 0 m-6 -5 l6 5 -6 5`} stroke="var(--blue)" strokeWidth="2" fill="none" strokeLinecap="round" /> : null}
@@ -124,13 +124,13 @@ export function RolloutTemplate({ locale }: D) {
             <text x={x + 65} y="156" textAnchor="middle" fill="var(--navy)" fontSize="14" style={T}>
               {c}
             </text>
-            <text x={x + 65} y="176" textAnchor="middle" fill="var(--mute)" fontSize="11.5" style={{ fontFamily: "var(--body)" }}>
+            <text x={x + 65} y="176" textAnchor="middle" fill="var(--mute-t)" fontSize="11.5" style={{ fontFamily: "var(--body)" }}>
               {pick(locale, "yerel mevzuat", "local statutory")}
             </text>
           </g>
         );
       })}
-      <text x="360" y="218" textAnchor="middle" fill="var(--mute)" fontSize="12" style={{ fontFamily: "var(--body)", fontStyle: "italic" }}>
+      <text x="360" y="218" textAnchor="middle" fill="var(--mute-t)" fontSize="12" style={{ fontFamily: "var(--body)", fontStyle: "italic" }}>
         {pick(locale, "Lokalizasyon şablonu bozmadan eklenir — kritik denge budur.", "Localisation is added without breaking the template — that is the balance.")}
       </text>
     </Frame>
@@ -145,7 +145,7 @@ export function ConfiqArchitecture({ locale }: D) {
       <text x="122" y="70" textAnchor="middle" fill="var(--navy)" fontSize="15" style={T}>
         {pick(locale, "SAP sisteminiz", "Your SAP system")}
       </text>
-      <text x="122" y="92" textAnchor="middle" fill="var(--mute)" fontSize="12" style={{ fontFamily: "var(--body)" }}>
+      <text x="122" y="92" textAnchor="middle" fill="var(--mute-t)" fontSize="12" style={{ fontFamily: "var(--body)" }}>
         {pick(locale, "veri burada kalır", "data stays here")}
       </text>
       <rect x="52" y="108" width="138" height="44" rx="8" fill="#fff" stroke="var(--line)" />
@@ -169,7 +169,7 @@ export function ConfiqArchitecture({ locale }: D) {
       <text x="598" y="70" textAnchor="middle" fill="var(--navy)" fontSize="15" style={T}>
         {pick(locale, "Ekibiniz", "Your team")}
       </text>
-      <text x="598" y="92" textAnchor="middle" fill="var(--mute)" fontSize="12" style={{ fontFamily: "var(--body)" }}>
+      <text x="598" y="92" textAnchor="middle" fill="var(--mute-t)" fontSize="12" style={{ fontFamily: "var(--body)" }}>
         {pick(locale, "doğal dille sorar", "asks in plain language")}
       </text>
       <rect x="528" y="108" width="138" height="44" rx="8" fill="#fff" stroke="var(--amber)" />
@@ -179,7 +179,7 @@ export function ConfiqArchitecture({ locale }: D) {
 
       <path d="M222 105 l32 0 m-8 -5 l8 5 -8 5" stroke="var(--blue)" strokeWidth="2" fill="none" strokeLinecap="round" />
       <path d="M498 105 l-32 0 m8 -5 l-8 5 8 5" stroke="var(--amber)" strokeWidth="2" fill="none" strokeLinecap="round" />
-      <text x="360" y="202" textAnchor="middle" fill="var(--mute)" fontSize="12" style={{ fontFamily: "var(--body)", fontStyle: "italic" }}>
+      <text x="360" y="202" textAnchor="middle" fill="var(--mute-t)" fontSize="12" style={{ fontFamily: "var(--body)", fontStyle: "italic" }}>
         {pick(locale, "Kullanıcı, SAP'ta göremediği veriyi Confiq üzerinden de göremez.", "A user cannot see through Confiq what they cannot see in SAP.")}
       </text>
     </Frame>

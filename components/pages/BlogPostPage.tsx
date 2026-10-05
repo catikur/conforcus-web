@@ -40,7 +40,7 @@ export default function BlogPostPage({ locale, post }: { locale: Locale; post: P
             <h1>{post.title}</h1>
             {post.excerpt ? <p className="lead">{post.excerpt}</p> : null}
             {meta ? (
-              <p style={{ marginTop: 14, fontSize: 13.5, color: "var(--mute)", fontWeight: 500 }}>{meta}</p>
+              <p style={{ marginTop: 14, fontSize: 13.5, color: "var(--mute-t)", fontWeight: 500 }}>{meta}</p>
             ) : null}
           </div>
         </div>
