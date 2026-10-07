@@ -1,10 +1,12 @@
 // Ölçüm ve arama konsolu ayarları — hepsi ortam değişkeniyle açılır, boşken hiçbir şey yüklenmez.
-// GA_MEASUREMENT_ID      : Google Analytics 4 ölçüm kimliği (G-XXXXXXXXXX)
+// PLAUSIBLE_DOMAIN        : Plausible'da tanımlı site adı (ör. conforcus.com). Doluysa çerezsiz ziyaret ölçümü açılır.
 // GOOGLE_SITE_VERIFICATION / BING_SITE_VERIFICATION : arama konsolu doğrulama meta değerleri
-const id = (process.env.GA_MEASUREMENT_ID || "").trim();
+const domain = (process.env.PLAUSIBLE_DOMAIN || "").trim().toLowerCase();
 
-export const GA_ID = /^G-[A-Z0-9]{4,}$/.test(id) ? id : "";
-export const ANALYTICS_ON = Boolean(GA_ID);
+export const PLAUSIBLE_DOMAIN = /^[a-z0-9-]+(\.[a-z0-9-]+)+$/.test(domain) ? domain : "";
+export const ANALYTICS_ON = Boolean(PLAUSIBLE_DOMAIN);
+/** Olayların gönderildiği aynı-kaynak uç; app/olcum/event/route.ts Plausible'a iletir. */
+export const PLAUSIBLE_ENDPOINT = "/olcum/event";
 
 export const SITE_VERIFICATION = {
   google: (process.env.GOOGLE_SITE_VERIFICATION || "").trim() || undefined,

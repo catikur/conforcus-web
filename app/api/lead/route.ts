@@ -1,5 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import nodemailer from "nodemailer";
+import { readBodyCapped } from "@/lib/readBody";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -50,8 +51,8 @@ export async function POST(req: NextRequest) {
 
   let body: LeadBody;
   try {
-    const raw = await req.text();
-    if (raw.length > MAX_BODY) return NextResponse.json({ ok: false, error: "too_large" }, { status: 413 });
+    const raw = await readBodyCapped(req, MAX_BODY);
+    if (raw === null) return NextResponse.json({ ok: false, error: "too_large" }, { status: 413 });
     body = JSON.parse(raw) as LeadBody;
     if (!body || typeof body !== "object") throw new Error("not an object");
   } catch {

@@ -7,7 +7,7 @@ import Toast from "./Toast";
 import Sweep from "./Sweep";
 import { OrganizationJsonLd, WebSiteJsonLd } from "./JsonLd";
 import Analytics from "./Analytics";
-import { GA_ID } from "@/lib/analytics";
+import { PLAUSIBLE_DOMAIN, PLAUSIBLE_ENDPOINT } from "@/lib/analytics";
 import { pick, type Locale } from "@/lib/i18n";
 
 // Her iki kök layout'un (TR/EN) paylaştığı gövde.
@@ -30,7 +30,7 @@ export default function Shell({ locale, children }: { locale: Locale; children: 
       <div id="tip" />
       <ScrollProgress />
       <Reveals locale={locale} />
-      {GA_ID ? <Analytics gaId={GA_ID} locale={locale} /> : null}
+      {PLAUSIBLE_DOMAIN ? <Analytics domain={PLAUSIBLE_DOMAIN} endpoint={PLAUSIBLE_ENDPOINT} /> : null}
     </>
   );
 }

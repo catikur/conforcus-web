@@ -21,12 +21,55 @@
 	}
 }
 
+# Erişim günlüğü — yalnız conforcus-web blokları import eder (başka projelerin bloklarına eklemeyin).
+# Kişisel veriyi azaltmak için IP adresinin son bölümü maskelenir; çerez, yetkilendirme başlığı ve
+# webhook gizli anahtarı kaydedilmez. Dosyalar caddy_data biriminde durur; her gün yeni dosyaya
+# geçilir ve 89 günden eski dosyalar silinir, yani hiçbir kayıt 90 günden uzun saklanmaz
+# (çerez politikasındaki süreyle aynı — birini değiştirirseniz diğerini de değiştirin).
+# Özet için: scripts/log-report.py
+(erisim_gunlugu) {
+	log {
+		output file /data/logs/conforcus-web-access.log {
+			roll_size 20MiB
+			roll_interval 24h
+			roll_keep 100
+			roll_keep_for 2136h
+		}
+		format filter {
+			wrap json
+			fields {
+				request>remote_ip ip_mask {
+					ipv4 24
+					ipv6 48
+				}
+				request>client_ip ip_mask {
+					ipv4 24
+					ipv6 48
+				}
+				request>headers>Cookie delete
+				request>headers>Authorization delete
+				request>headers>X-Revalidate-Secret delete
+				request>headers>X-Forwarded-For delete
+				request>uri query {
+					delete secret
+				}
+				resp_headers>Set-Cookie delete
+			}
+		}
+	}
+}
+
 # ── TEST / ÖNİZLEME ────────────────────────────────────────────
 # Yalnızca doğrulama içindir; arama motorlarına KAPALI (X-Robots-Tag).
 # Cutover'da www.conforcus.com üretim olur, burası web.→www yönlenir.
 srv1709361.hstgr.cloud, web.conforcus.com {
 	import guvenlik
+	import erisim_gunlugu
 	header X-Robots-Tag "noindex, nofollow"
+	# İstek gövdesi sınırı: sitedeki en büyük meşru gövde analiz formu (en çok 32 KB).
+	request_body {
+		max_size 64KB
+	}
 	encode zstd gzip
 	reverse_proxy web:3000
 }
@@ -38,6 +81,10 @@ srv1709361.hstgr.cloud, web.conforcus.com {
 #
 # www.conforcus.com {
 # 	import guvenlik
+# 	import erisim_gunlugu
+# 	request_body {
+# 		max_size 64KB
+# 	}
 # 	encode zstd gzip
 # 	reverse_proxy web:3000
 # }
