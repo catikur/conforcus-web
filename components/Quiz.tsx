@@ -188,7 +188,7 @@ export default function Quiz({ locale }: { locale: Locale }) {
       });
       const data = await res.json();
       setStatus(data.ok ? "sent" : "error");
-      if (data.ok) trackEvent("generate_lead", { method: "sap_analysis_form" });
+      if (data.ok) trackEvent("Lead", { form: "sap-analiz" });
     } catch {
       setStatus("error");
     }

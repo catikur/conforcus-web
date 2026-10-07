@@ -1,6 +1,6 @@
 import LegalPage from "@/components/pages/LegalPage";
 import { BreadcrumbJsonLd } from "@/components/JsonLd";
-import { ConsentReset } from "@/components/Analytics";
+import { MeasurementToggle } from "@/components/Analytics";
 import { pageMetadata } from "@/lib/seo";
 import { LEGAL, cookieParas } from "@/lib/legalPages";
 import { ANALYTICS_ON } from "@/lib/analytics";
@@ -16,7 +16,7 @@ export default function Page() {
         crumbKey="cerez"
         title={LEGAL.cerez.h1.tr}
         paras={cookieParas("tr", ANALYTICS_ON)}
-        extra={ANALYTICS_ON ? <ConsentReset locale="tr" /> : undefined}
+        extra={ANALYTICS_ON ? <MeasurementToggle locale="tr" /> : undefined}
       />
     </>
   );
