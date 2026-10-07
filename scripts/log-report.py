@@ -88,7 +88,9 @@ def classify(ua):
     for token, name, kind in BOTS:
         if token.lower() in ua.lower():
             return name, kind
-    if not ua or GENERIC_BOT.search(ua):
+    # Gerçek tarayıcıların hepsi "Mozilla/" ile başlar; başlamayan (curl, node, betikler) ya da genel bot
+    # kalıbına uyan her şey otomatik sayılır. Kendini tarayıcı gibi tanıtan botlar ayırt edilemez.
+    if not ua.startswith("Mozilla/") or GENERIC_BOT.search(ua):
         return "Diğer otomatik istek", "diger"
     return None, "insan"
 
