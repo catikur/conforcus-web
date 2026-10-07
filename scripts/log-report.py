@@ -61,6 +61,7 @@ BOTS = [
     ("DataForSeoBot", "DataForSEO", TOOL),
     ("Chrome-Lighthouse", "Lighthouse", TOOL),
 ]
+BROWSER_PREFIXES = ("Mozilla/", "Opera/")
 GENERIC_BOT = re.compile(r"bot\b|bot/|crawl|spider|slurp|curl/|wget|python-|go-http-client|okhttp|headless|scrapy|httpclient|monitor|uptime|node-fetch|axios|libwww|java/", re.I)
 CLASS_TITLES = {
     AI_FETCH: "Yapay zekâ asistanı — kullanıcının sorusu üzerine sayfayı okudu",
@@ -88,9 +89,10 @@ def classify(ua):
     for token, name, kind in BOTS:
         if token.lower() in ua.lower():
             return name, kind
-    # Gerçek tarayıcıların hepsi "Mozilla/" ile başlar; başlamayan (curl, node, betikler) ya da genel bot
-    # kalıbına uyan her şey otomatik sayılır. Kendini tarayıcı gibi tanıtan botlar ayırt edilemez.
-    if not ua.startswith("Mozilla/") or GENERIC_BOT.search(ua):
+    # Tarayıcılar "Mozilla/" ile, Opera Mini ve eski Opera ise "Opera/" ile başlar; böyle başlamayan
+    # (curl, node, betikler) ya da genel bot kalıbına uyan her şey otomatik sayılır. Kendini tarayıcı
+    # gibi tanıtan botlar ayırt edilemez.
+    if not ua.startswith(BROWSER_PREFIXES) or GENERIC_BOT.search(ua):
         return "Diğer otomatik istek", "diger"
     return None, "insan"
 
