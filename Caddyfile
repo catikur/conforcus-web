@@ -66,6 +66,10 @@ srv1709361.hstgr.cloud, web.conforcus.com {
 	import guvenlik
 	import erisim_gunlugu
 	header X-Robots-Tag "noindex, nofollow"
+	# İstek gövdesi sınırı: sitedeki en büyük meşru gövde analiz formu (en çok 32 KB).
+	request_body {
+		max_size 64KB
+	}
 	encode zstd gzip
 	reverse_proxy web:3000
 }
@@ -78,6 +82,9 @@ srv1709361.hstgr.cloud, web.conforcus.com {
 # www.conforcus.com {
 # 	import guvenlik
 # 	import erisim_gunlugu
+# 	request_body {
+# 		max_size 64KB
+# 	}
 # 	encode zstd gzip
 # 	reverse_proxy web:3000
 # }

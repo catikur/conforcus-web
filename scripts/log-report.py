@@ -71,6 +71,16 @@ CLASS_TITLES = {
 }
 # Yapay zekâ asistanlarından gelen ziyaret: yönlendiren alan adı ya da utm_source değeri.
 AI_REFERRERS = ["chatgpt.com", "chat.openai.com", "perplexity.ai", "claude.ai", "gemini.google.com", "copilot.microsoft.com", "you.com", "phind.com", "poe.com", "chat.deepseek.com", "chat.mistral.ai", "meta.ai", "duck.ai", "kagi.com"]
+# Form ucunun yanıt kodları. 200, isteğin kabul edildiğini gösterir; e-postanın gerçekten gittiği
+# günlükten anlaşılmaz (SMTP ayarlı değilken ve botların doldurduğu gizli alanda da 200 döner).
+LEAD_LABELS = {
+    200: "kabul edildi (200)",
+    400: "geçersiz istek (400)",
+    413: "gövde çok büyük (413)",
+    422: "eksik ya da hatalı alan (422)",
+    429: "hız sınırına takıldı (429)",
+    502: "e-posta gönderilemedi (502)",
+}
 ASSET = re.compile(r"^/(_next/|img/|olcum/|api/|favicon\.ico|icon\.png|apple-icon\.png|logo\.png|og$|robots\.txt|sitemap\.xml|llms)")
 
 
@@ -150,7 +160,7 @@ def main():
         if path.startswith("/llms"):
             llms[(path, name or "tarayıcı")] += 1
         if method == "POST" and path == "/api/lead":
-            leads["teslim edildi" if status == 200 else f"reddedildi ({status})"] += 1
+            leads[LEAD_LABELS.get(status, f"diğer ({status})")] += 1
         if status == 404 and kind == "insan" and not ASSET.match(path):
             not_found[path] += 1
 
@@ -240,7 +250,7 @@ def main():
 
     table("llms.txt dosyalarını okuyanlar", [(f"{p} · {n}", c) for (p, n), c in llms.most_common(args.top)], "okunmadı")
     table("Bulunamayan adresler (404, tarayıcıdan)", not_found.most_common(args.top), "yok")
-    table("Analiz formu gönderimleri", sorted(leads.items()), "gönderim yok")
+    table("Analiz formu gönderimleri (kabul, teslim anlamına gelmez; teslim için info@ kutusuna bakın)", sorted(leads.items()), "gönderim yok")
 
 
 if __name__ == "__main__":

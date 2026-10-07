@@ -1,5 +1,6 @@
 import type { NextRequest } from "next/server";
 import { PLAUSIBLE_DOMAIN } from "@/lib/analytics";
+import { readBodyCapped } from "@/lib/readBody";
 
 export const runtime = "nodejs";
 
@@ -15,8 +16,8 @@ const reply = (status: number) => new Response(null, { status, headers: { "cache
 export async function POST(req: NextRequest) {
   if (!PLAUSIBLE_DOMAIN) return reply(404);
 
-  const body = await req.text();
-  if (body.length > MAX_BODY) return reply(413);
+  const body = await readBodyCapped(req, MAX_BODY);
+  if (body === null) return reply(413);
   let site: unknown;
   try {
     site = (JSON.parse(body) as { d?: unknown }).d;
