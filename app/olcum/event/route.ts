@@ -11,7 +11,16 @@ export const runtime = "nodejs";
 const UPSTREAM = (process.env.PLAUSIBLE_API || "").trim() || "https://plausible.io/api/event";
 const MAX_BODY = 4096;
 
-const reply = (status: number) => new Response(null, { status, headers: { "cache-control": "no-store" } });
+// Plausible, bot saydığı ya da tanımadığı site için düşürdüğü olayı yine 202 ile yanıtlar ve bunu
+// yalnız x-plausible-dropped başlığıyla bildirir; tanı için başlık tarayıcıya aynen iletilir.
+const reply = (status: number, dropped?: string | null) =>
+  new Response(null, {
+    status,
+    headers: {
+      "cache-control": "no-store",
+      ...(dropped && /^\d{1,3}$/.test(dropped) ? { "x-plausible-dropped": dropped } : {}),
+    },
+  });
 
 export async function POST(req: NextRequest) {
   if (!PLAUSIBLE_DOMAIN) return reply(404);
@@ -41,7 +50,7 @@ export async function POST(req: NextRequest) {
       signal: AbortSignal.timeout(5000),
     });
     await up.body?.cancel().catch(() => {});
-    return reply(up.ok ? 202 : 502);
+    return reply(up.ok ? 202 : 502, up.headers.get("x-plausible-dropped"));
   } catch {
     return reply(502);
   }

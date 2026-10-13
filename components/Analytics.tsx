@@ -15,10 +15,23 @@ const IGNORE_EVENT = "cfx:measure-pref";
 
 let started = false;
 
+/* İzleyici "sayfada geçirilen süre" olayını ölçüm dışı kaydına bakmadan gönderir; kayda yalnız sayfa
+   görüntülemede ve özel olaylarda bakar. Ziyaretçi ölçüm dışında kalmayı seçtikten sonra tarayıcıdan
+   hiçbir olay çıkmasın diye ölçüm ucuna giden istek burada durdurulur; başka isteğe dokunulmaz.
+   İzleyici (0.4.6) olayları fetch(endpoint, …) ile gönderir — sürüm yükseltirken yeniden sına. */
+function holdWhenIgnored(endpoint: string) {
+  const send = window.fetch;
+  window.fetch = (input, options) =>
+    input === endpoint && ignored()
+      ? Promise.resolve(new Response(null, { status: 202 }))
+      : send.call(window, input, options);
+}
+
 export default function Analytics({ domain, endpoint }: { domain: string; endpoint: string }) {
   useEffect(() => {
     if (started) return; // init yalnız bir kez çağrılabilir
     started = true;
+    holdWhenIgnored(endpoint);
     init({ domain, endpoint, outboundLinks: true, logging: false });
   }, [domain, endpoint]);
   return null;
